@@ -115,7 +115,6 @@ def search_reddit():
 
             s = Service('/home/ily/tb_bot/webdriver/geckodriver')
             browser = webdriver.Firefox(service=s)
-            
             # browser = webdriver.Chrome('/home/ily/tb_bot/webdriver/chromedriver')
             # browser.get("www.google.com")
             # webdriver.Chrome(executable_path=r"C:\\bottelegramm\\chromedriver.exe") # Указываем путь до веб драйвера
