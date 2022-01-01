@@ -168,8 +168,35 @@ def send_post_dev(app):
 # schedule.every(1).minutes.do(publication_attr, app) #Запуск функц установки признака публикации ~каждые 30мин час
 # schedule.every(2).minutes.do(moder_post) #Публикация в моджерку
 
-schedule.every(2).minutes.do(send_post_dev, app) #Отправки на dev поста с пометкой ~каждый час
-schedule.every(3).minutes.do(search_reddit) #Запуск парсера ~каждые 40 мин
+ # Функция для создания потоков на расписание 
+def run_threaded(job_func):
+    job_thread = threading.Thread(target=job_func, args=(app,))
+    job_thread.start()
+
+ # Функция для создания потоков на парсинг
+def run_threaded_pars(job_func):
+    job_thread = threading.Thread(target=job_func)
+    job_thread.start()
+
+#Отправки на dev поста с пометкой ~каждый час
+schedule.every().day.at("07:30").do(run_threaded, send_post_dev)
+schedule.every().day.at("08:00").do(run_threaded, send_post_dev)
+schedule.every().day.at("09:00").do(run_threaded, send_post_dev)
+schedule.every().day.at("10:00").do(run_threaded, send_post_dev)
+schedule.every().day.at("11:00").do(run_threaded, send_post_dev)
+schedule.every().day.at("12:00").do(run_threaded, send_post_dev)
+schedule.every().day.at("13:00").do(run_threaded, send_post_dev)
+schedule.every().day.at("14:00").do(run_threaded, send_post_dev)
+schedule.every().day.at("15:00").do(run_threaded, send_post_dev)
+schedule.every().day.at("16:00").do(run_threaded, send_post_dev)
+schedule.every().day.at("17:00").do(run_threaded, send_post_dev)
+schedule.every().day.at("18:00").do(run_threaded, send_post_dev)
+schedule.every().day.at("19:00").do(run_threaded, send_post_dev)
+schedule.every().day.at("20:00").do(run_threaded, send_post_dev)
+schedule.every().day.at("21:00").do(run_threaded, send_post_dev)
+schedule.every().day.at("22:00").do(run_threaded, send_post_dev)
+schedule.every().day.at("23:00").do(run_threaded, send_post_dev)
+schedule.every(30).minutes.do(run_threaded_pars,search_reddit) #Запуск парсера ~каждые 30 мин
 
 while True:
     schedule.run_pending()

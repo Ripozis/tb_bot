@@ -113,11 +113,17 @@ def search_reddit():
         for row in redit:
             redit = row
 
+<<<<<<< HEAD
             s = Service('/home/ily/tb_bot/webdriver/geckodriver')
             browser = webdriver.Firefox(service=s)
+=======
+            # s = Service('/home/ily/tb_bot/webdriver/geckodriver')
+            # browser = webdriver.Firefox(service=s)
+            
+>>>>>>> 7dbc9facc4ef593b7649422ac8ef5431ce7e71bb
             # browser = webdriver.Chrome('/home/ily/tb_bot/webdriver/chromedriver')
             # browser.get("www.google.com")
-            # webdriver.Chrome(executable_path=r"C:\\bottelegramm\\chromedriver.exe") # Указываем путь до веб драйвера
+            browser = webdriver.Chrome(executable_path=r"C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\webdriver\\chromedriver.exe") # Указываем путь до веб драйвера
             try: #- это обработчик ошибок
             #Заходим на страницу авторизации
                 browser.get('https://www.reddit.com/login/?dest=https%3A%2F%2Fwww.reddit.com%2F')
@@ -175,7 +181,7 @@ def search_reddit():
 
             # #####_Создаем БД SQL
             create_tbl()
-            print("Начинаемписать в БД из паблика " + redit)
+            print("Начинаем писать в БД из паблика " + redit)
 
             #Читаем данные из переменой dist и пишем их в таблицу
             for item in dist:
@@ -215,14 +221,14 @@ def search_reddit():
                         print("Нет пути к файлу" + path_file)
                     else:
                         print("Файл на удаление" + path_file)
-                        os.remove('/home/ily/tb_bot/images/'+ path_file) # удаление файла
+                        os.remove(r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images\\' + path_file) # удаление файла
                         print("Файл удален")
                         delite_post(id_post)
                 except Exception as ex:
                     print(ex)
 
     redit_login(username, password, redit)
-search_reddit()
+# search_reddit()
 
 
 
