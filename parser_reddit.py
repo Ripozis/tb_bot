@@ -15,115 +15,23 @@ from deep_translator import (GoogleTranslator)
 import threading
 import schedule
 
-# def search_reddit():
-#     def redit_login(username, password, redit):
-#         browser = webdriver.Chrome('chromedriver.exe') # Указываем путь до веб драйвера
-        
-#         #Заходим на страницу авторизации
-#         browser.get('https://www.reddit.com/login/?dest=https%3A%2F%2Fwww.reddit.com%2F')
-#         time.sleep(random.randrange(3, 5))
-#         #Пеедаем данные username из файла auth_date
-#         username_input = browser.find_element_by_name('username')
-#         username_input.clear()
-#         username_input.send_keys(username)
-#         time.sleep(2)
-#         # Предаем данные password из файла auth_date
-#         password_input = browser.find_element_by_name('password')
-#         password_input.clear()
-#         password_input.send_keys(password)
-#         password_input.send_keys(Keys.ENTER)
-#         time.sleep(10)
-#         #переход по ссылке
-#         browser.get(f'https://www.reddit.com/r/{redit}.json') #в redit передается значение
-#             # time.sleep(10)
-#             # Получает источник текущей страницы html на странице и записываем в переменную
-#         html = browser.page_source
-#             # time.sleep(10)
-#             # # сохраняем страницу в файл
-#         with open('data.html', 'w', encoding='utf=8') as file:
-#                     file.write(html)
-#         browser.close()
-#         browser.quit()
-#     redit_login(username, password, 'interestingasfuck') #подставляет занчение в место {redit}
-    
-#     with open("data.html") as file:
-#         src = file.read()
-#     soup = BeautifulSoup(src, "lxml")
-#     js = soup.get_text()# выниваем данне json из html
-
-#     #####_Создаем data.json по данным из html
-#     with open("data.json", "w") as file:
-#         file.write(js)
-#         dictData = json.loads(js)
-
-#     # #####_Вынимаем необходмые данне из data.json 
-#     with open("data.json") as file:
-#         datJs = file.read()
-#     data = json.loads(datJs)
-#     dictChildren = data['data']
-#     dist = dictChildren['children']
-
-#     # #####_Создаем БД SQL
-#     create_tbl()
-
-#     #Читаем данные из переменой dist и пишем их в таблицу
-#     for item in dist:
-#         postOffice = item['data']
-#         # print(postOffice)
-#         # print(postOffice.keys())
-#         created = (postOffice['created']) # дата создания поста
-#         creadat = (datetime.utcfromtimestamp(created).strftime('%Y-%m-%d %H:%M:%S'))
-#         # print(created)
-#         # print(postOffice['title'])
-#         # print(postOffice['url'])
-#         title = (postOffice['title'])
-#         title_ru = GoogleTranslator ( source = 'en' , target = 'ru' ).translate(title)
-#         url = (postOffice['url'])
-#         #####_Записываем таблицу SQL parser значения из переменных (title, url)
-#         recordingDateJson(title, url, creadat, title_ru)
-
-#     # функция для скачивания фоток и записи пути к файлу
-#     link = url_fot_tbl()
-#     # print(link)
-#     linklen = len(link) # Считаем количество количество элементов в списке
-#     # print(linklen)
-
-#     # # Проходим в цикле по всем элементам списка для скачивания файла 
-#     for linklen in link:
-#         lin = linklen[0]
-#         url_link= linklen[0]
-#         lin = lin.split('/')[-1] #выявляет по слешу название файла
-#         # path = r"C:\bottelegramm\images"
-#         # add = '\\'
-#         # path_file = (path + add + lin)
-#         path_file = (lin)
-#         # print(lin)
-#         # print(path_file)
-#         r = requests.get(linklen[0], allow_redirects=True)
-#         os.chdir(r'C:\bottelegramm\images') # Определяем директорию
-#         open(lin, 'wb').write(r.content)
-#         # print(url_link)
-#         sql_update(url_link, path_file)
-# search_reddit()
-###########################################
+"""test browser"""
+# s = Service('/home/ily/tb_bot/webdriver/chromedriver')
+# browser = webdriver.Chrome(service=s)
+# browser.get('https://www.reddit.com/login/?dest=https%3A%2F%2Fwww.reddit.com%2F')
+# time.sleep(10)
+# browser.close()
+# browser.quit()
 
 def search_reddit():
     def redit_login(username, password, redit):
         # browser = webdriver.Firefox('/home/ily/tb_bot/webdriver/geckodriver')
         for row in redit:
             redit = row
-
-<<<<<<< HEAD
-            s = Service('/home/ily/tb_bot/webdriver/geckodriver')
-            browser = webdriver.Firefox(service=s)
-=======
-            # s = Service('/home/ily/tb_bot/webdriver/geckodriver')
+            s = Service('/home/ily/tb_bot/webdriver/chromedriver')
             # browser = webdriver.Firefox(service=s)
-            
->>>>>>> 7dbc9facc4ef593b7649422ac8ef5431ce7e71bb
-            # browser = webdriver.Chrome('/home/ily/tb_bot/webdriver/chromedriver')
-            # browser.get("www.google.com")
-            browser = webdriver.Chrome(executable_path=r"C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\webdriver\\chromedriver.exe") # Указываем путь до веб драйвера
+            browser = webdriver.Chrome(service=s)
+            # browser = webdriver.Chrome(executable_path=r"C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\webdriver\\chromedriver.exe") # Указываем путь до веб драйвера
             try: #- это обработчик ошибок
             #Заходим на страницу авторизации
                 browser.get('https://www.reddit.com/login/?dest=https%3A%2F%2Fwww.reddit.com%2F')
@@ -211,7 +119,8 @@ def search_reddit():
                 #####_Записываем таблицу SQL parser значения из переменных (title, url)
                 recordingDateJson(title, url, creadat, title_ru,format_cont,likes)
             print("Закончили писать в БД из паблика " + redit)
-            # Удвление файлов из БД помеченных на удаление 
+            # Удаление файлов из БД помеченных на удаление 
+            print("Удаление файлов из БД помеченных на удаление")
             r = remov()
             for row in r:
                 path_file = (row[0])
@@ -221,7 +130,7 @@ def search_reddit():
                         print("Нет пути к файлу" + path_file)
                     else:
                         print("Файл на удаление" + path_file)
-                        os.remove(r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images\\' + path_file) # удаление файла
+                        os.remove(r'/home/ily/tb_bot/images' + path_file) # удаление файла
                         print("Файл удален")
                         delite_post(id_post)
                 except Exception as ex:
@@ -229,31 +138,3 @@ def search_reddit():
 
     redit_login(username, password, redit)
 # search_reddit()
-
-
-
-
-    # # функция для скачивания фоток и записи пути к файлу//// перенести в бота модерации
-    # link = url_fot_tbl()
-    # # print(link)
-    # linklen = len(link) # Считаем количество количество элементов в списке
-    # # print(linklen)
-
-    # # # Проходим в цикле по всем элементам списка для скачивания файла 
-    # for linklen in link:
-    #     lin = linklen[0]
-    #     url_link = linklen[0]
-    #     id_post = linklen[1]
-    #     lin = lin.split('/')[-1] #выявляет по слешу название файла
-    #     lin = str(id_post) + lin # добавляем id в название файла
-    #     # path = r"C:\bottelegramm\images"
-    #     # add = '\\'
-    #     # path_file = (path + add + lin)
-    #     path_file = (lin)
-    #     # print(lin)
-    #     # print(path_file)
-    #     r = requests.get(linklen[0], allow_redirects=True)
-    #     os.chdir(r'/home/ily/tb_bot/images') # Определяем директорию
-    #     open(lin, 'wb').write(r.content)
-    #     # print(url_link)
-    #     sql_update(url_link, path_file)
