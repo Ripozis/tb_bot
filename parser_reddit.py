@@ -16,9 +16,15 @@ import threading
 import schedule
 
 """test browser"""
+# # options
+# options = webdriver.ChromeOptions()
+# options.add_argument("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36") # Прописываем user agent
+# options.add_argument("--disable-blink-features=AutomationControlled") # Отключаем режим веб драйвера
+# options.headless = True # Запускаем браузер в фоновом режиме
 # s = Service('/home/ily/tb_bot/webdriver/chromedriver')
-# browser = webdriver.Chrome(service=s)
-# browser.get('https://www.reddit.com/login/?dest=https%3A%2F%2Fwww.reddit.com%2F')
+# browser = webdriver.Chrome(service=s, options=options)
+# browser.get("https://intoli.com/blog/not-possible-to-block-chrome-headless/chrome-headless-test.html")
+
 # time.sleep(10)
 # browser.close()
 # browser.quit()
@@ -28,19 +34,23 @@ def search_reddit():
         # browser = webdriver.Firefox('/home/ily/tb_bot/webdriver/geckodriver')
         for row in redit:
             redit = row
+            options = webdriver.ChromeOptions()
+            options.add_argument("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36") # Прописываем user agent
+            options.add_argument("--disable-blink-features=AutomationControlled") # Отключаем режим веб драйвера
+            options.headless = True # Запускаем браузер в фоновом режиме
             s = Service('/home/ily/tb_bot/webdriver/chromedriver')
+            browser = webdriver.Chrome(service=s, options=options)
             # browser = webdriver.Firefox(service=s)
-            browser = webdriver.Chrome(service=s)
             # browser = webdriver.Chrome(executable_path=r"C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\webdriver\\chromedriver.exe") # Указываем путь до веб драйвера
             try: #- это обработчик ошибок
             #Заходим на страницу авторизации
                 browser.get('https://www.reddit.com/login/?dest=https%3A%2F%2Fwww.reddit.com%2F')
-                time.sleep(random.randrange(3, 5))
+                time.sleep(random.randrange(4, 7))
             #Передаем данные username из файла auth_date
                 username_input = browser.find_element_by_name('username')
                 username_input.clear()
                 username_input.send_keys(username)
-                time.sleep(2)
+                time.sleep(3)
             # Передаем данные password из файла auth_date
                 password_input = browser.find_element_by_name('password')
                 password_input.clear()

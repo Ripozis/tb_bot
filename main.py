@@ -104,6 +104,7 @@ def run_threaded_pars(job_func):
     job_thread.start()
 
 #Отправки на dev поста с пометкой ~каждый час
+# # schedule.every().hour.do(send_post_dev, app) #Отправки на dev поста с пометкой ~каждый час
 schedule.every().day.at("07:30").do(run_threaded, send_post_dev)
 schedule.every().day.at("08:00").do(run_threaded, send_post_dev)
 schedule.every().day.at("09:00").do(run_threaded, send_post_dev)
