@@ -40,17 +40,14 @@ async def test_message(message: types.Message):
     # Проходим в цикле по всем элементам списка для публикации в модерку
     for row in re:
         title = (row[0]) # из списка выбераем 1е значенеие - title
-        url = (row[1])  # из списка выбераем 2е значенеие - url
-        # print(url)
-        # path_file = (row[2])
+        url_link = (row[1]) # из списка выбераем 2е значенеие - url
         id_post = str((row[3]))
         # Выполняем скачивание файла
-        url_link = (row[1]) 
         lin = url_link.split('/')[-1] #выявляет по слешу название файла
         lin = str(id_post) + lin # добавляем id в название файла
         path_file = (lin)
         r = requests.get(url_link, allow_redirects=True)
-        os.chdir(r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images')
+        os.chdir(r'/home/ily/tb_bot/images')
         open(lin, 'wb').write(r.content)
         sql_update(url_link, path_file)
         print(path_file)
