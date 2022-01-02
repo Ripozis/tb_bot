@@ -4,7 +4,7 @@ from aiogram.dispatcher.filters import Text
 from aiogram.types import CallbackQuery, Message,\
     InlineKeyboardButton, InlineKeyboardMarkup, user
 from aiogram.utils.callback_data import CallbackData
-from sql import read_tbl,moder_msgid,publication_attribute_update,to_remove,content_error_update,sql_update
+from sql import read_tbl,moder_msgid,publication_attribute_update,to_remove,content_error_update,sql_update, post_on_publik_all
 import os
 import time
 from pyrogram import Client, filters
@@ -19,7 +19,7 @@ async def start(message: types.Message):
     userid = int(message.from_user.id)
 
     if 467601941 == userid:
-        start_buttons = ["Пост на одобрение", "Посты на публикацию", "Удалить пост"]
+        start_buttons = ["Пост на одобрение", "Все посты на публикацию"]
         keyboard =types.ReplyKeyboardMarkup(resize_keyboard=True)
         keyboard.add(*start_buttons)
         await message.answer("Бот готов к работе 👍", reply_markup=keyboard)
@@ -91,7 +91,14 @@ async def test_message(message: types.Message):
         # moder_msgid(moder_id,id_post)
         # # print(mid)
         
-        
+@dp.message_handler(Text(equals="Все посты на публикацию"))
+async def test_message(message: types.Message):
+    post_on_publ_all = post_on_publik_all()
+    for row in post_on_publ_all:
+        post_on_publ_all = str(row[0])
+        print(post_on_publ_all)
+        await message.answer('Всего постов на публикацию: ' + post_on_publ_all)
+
 ## Описание клавиатуры
 lnkb = InlineKeyboardMarkup(row_width=2).add(InlineKeyboardButton(text='Опубликовать', callback_data='pudlik'),\
                             InlineKeyboardButton(text='Удалить', callback_data='del'))

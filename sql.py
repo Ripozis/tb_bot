@@ -84,7 +84,7 @@ def publication_attribute_update(moder_id):
 
 # функция выборки постов на публикацию
 def post_on_publik():
-        con = """SELECT title_ru, path_file,id_post,url from parser where id_post in(SELECT max(id_post) from parser where path_file is not null and publication_attribute=1 and public_attr_dev is NULL and content_error is NULL and to_remove=0 and for_editing =0)"""
+        con = """SELECT title_ru, path_file,id_post,url from parser where likes in(SELECT max(likes) from parser where path_file is not null and publication_attribute=1 and public_attr_dev is NULL and content_error is NULL and to_remove=0 and for_editing =0)"""
         cur.execute(con)
         on_publik = cur.fetchall()
         return (on_publik)
@@ -125,3 +125,10 @@ def remov():
 def delite_post(id_post):
         cur.execute("""DELETE FROM parser where id_post = ?""", (id_post,))
         con.commit()
+
+# функция вывода кол-ва постов на публикацию
+def post_on_publik_all():
+        con = """SELECT count(id_post) as post from parser where publication_attribute=1 and public_attr_dev is NULL"""
+        cur.execute(con)
+        post_on_publik_all = cur.fetchall()
+        return (post_on_publik_all)
