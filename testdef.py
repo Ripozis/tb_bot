@@ -4,15 +4,16 @@ from aiogram.dispatcher.filters import Text
 from aiogram.types import CallbackQuery, Message,\
     InlineKeyboardButton, InlineKeyboardMarkup, user
 from aiogram.utils.callback_data import CallbackData
-from sql import read_tbl,moder_msgid,publication_attribute_update,to_remove,content_error_update,sql_update, post_on_publik_all
+from sql import read_tbl,moder_msgid,publication_attribute_update,to_remove,content_error_update,sql_update, post_on_publik_all,for_editing
 import os
 import time
 from pyrogram import Client, filters
 import requests
 from loguru import logger
+from auth_date import token
 
 logger.add("logger/bot_log.log", format="{time:YYYY-MM-DD at HH:mm:ss}|{level}|{message}", rotation="2 MB")
-bot = Bot(token="2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8")
+bot = Bot(token=token)
 dp =Dispatcher(bot)
 
 @logger.catch
@@ -115,8 +116,7 @@ async def test_message(message: types.Message):
 
 ## Описание клавиатуры
 lnkb = InlineKeyboardMarkup(row_width=2).add(InlineKeyboardButton(text='Опубликовать', callback_data='pudlik'),\
-                            InlineKeyboardButton(text='Удалить', callback_data='del'))
-
+                            InlineKeyboardButton(text='Удалить', callback_data='del'),  InlineKeyboardButton(text='Редактировать', callback_data='editing'))
 
 ##действие кнопки при нажатии 'Опубликовать'
 @logger.catch
@@ -143,6 +143,19 @@ async def public_priz(calback : types.CallbackQuery,):
     # print('Сработала кнопка "Удалить"')
     await calback.answer("Пост помечен на удаление")
     await calback.message.answer('Пост помечен на удаление')
+
+##действие кнопки при нажатии 'Редактировать'
+@logger.catch
+@dp.callback_query_handler(text='editing')
+async def editing(calback : types.CallbackQuery,):
+    moder_id = calback.message.message_id
+    for_editing(moder_id)
+    logger.debug("Пост помечен на редактирование: " + str(moder_id))
+    # id Сообщения на удаление 
+    logger.success('Сработала кнопка "Редактировать"')
+    # print('Сработала кнопка "Удалить"')
+    await calback.answer("Пост помечен на редактирование")
+    await calback.message.answer('Пост помечен на редактирование')
 
 # def kb_likes():
 #     likes = num["likes"]

@@ -1,0 +1,30 @@
+2022-01-02T20:53:41.637512+0300 INFO Пишем пременую f
+2022-01-02T20:53:41.639512+0300 INFO Пишем пременую g
+2022-01-02T20:53:41.641513+0300 ERROR An error has been caught in function '<module>', process 'MainProcess' (8032), thread 'MainThread' (3944):
+Traceback (most recent call last):
+
+> File "c:/Users/Илья/Desktop/tb_bot/tb_bot/test_11.py", line 21, in <module>
+    log()
+    └ <function log at 0x00000000025035E8>
+
+  File "c:/Users/Илья/Desktop/tb_bot/tb_bot/test_11.py", line 19, in log
+    t= f+g
+       │ └ 1
+       └ 'по русски'
+
+TypeError: can only concatenate str (not "int") to str
+2022-01-02T20:54:13.210141+0300 | INFO | Пишем пременую f
+2022-01-02T20:54:13.211141+0300 | INFO | Пишем пременую g
+2022-01-02T20:54:13.212141+0300 | ERROR | An error has been caught in function '<module>', process 'MainProcess' (4884), thread 'MainThread' (8980):
+Traceback (most recent call last):
+
+> File "c:/Users/Илья/Desktop/tb_bot/tb_bot/test_11.py", line 21, in <module>
+    log()
+    └ <function log at 0x00000000024045E8>
+
+  File "c:/Users/Илья/Desktop/tb_bot/tb_bot/test_11.py", line 19, in log
+    t= f+g
+       │ └ 1
+       └ 'по русски'
+
+TypeError: can only concatenate str (not "int") to str

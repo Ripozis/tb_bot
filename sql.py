@@ -79,7 +79,7 @@ def last_post():
 
 # функция установки признака публикации 
 def publication_attribute_update(moder_id):
-    cur.execute("""UPDATE parser SET publication_attribute=1 where publication_attribute =0 AND moder_id = ?""", (moder_id,))
+    cur.execute("""UPDATE parser SET publication_attribute=1, to_remove=0, for_editing=0 where publication_attribute =0 AND moder_id = ?""", (moder_id,))
     con.commit()
 
 # функция выборки постов на публикацию
@@ -101,12 +101,12 @@ def  content_error_update(id_post):
 
 # функция пометки постов на удаление
 def to_remove(moder_id):
-        cur.execute("""UPDATE parser SET to_remove=1 where moder_id = ?""", (moder_id,))
+        cur.execute("""UPDATE parser SET to_remove=1, for_editing=0, publication_attribute=0 where moder_id = ?""", (moder_id,))
         con.commit()
 
 # функция пометки постов на редактирование
-def for_editing(id_post_ed):
-        cur.execute("""UPDATE parser SET for_editing=1 where id_post = ?""", (id_post_ed,))
+def for_editing(moder_id,):
+        cur.execute("""UPDATE parser SET for_editing=1, to_remove=0, publication_attribute=0 where moder_id = ?""", (moder_id,))
         con.commit()
 
 # функция записи id сообщения из модер бота
