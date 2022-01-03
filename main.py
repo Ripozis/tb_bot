@@ -17,6 +17,9 @@ from sql import (attr_dev, create_tbl, cur, last_post, post_on_publik,
                  sql_update, url_fot_tbl,content_error_update,for_editing,to_remove)
 import threading
 from queue import Queue
+from loguru import logger
+
+logger.add("logger/main_log.log", format="{time:YYYY-MM-DD at HH:mm:ss}|{level}|{message}", rotation="2 MB")
 # ----------------
 # Функция запуска парсера
 # search_reddit()
@@ -28,9 +31,11 @@ app = Client("my_account")
 app.start()
 
 # ----------------
-# функция Отправки на dev поста с пометкой 
+# функция Отправки на dev поста с пометкой
+@logger.catch
 def send_post_dev(app):
     post_on_pub = post_on_publik()
+    logger.info("Получаем посты для публикации")
     # post_on_pub = post_on_pub[0]
     row = len(post_on_pub)
     def on_publik (app,row, post_on_pub):
@@ -39,49 +44,57 @@ def send_post_dev(app):
                 path_file = (row[1])
                 id_post = int((row[2]))
 
-                
-                # try:
-                #     print('Блок отправка сообщений в ДЕВ')
-                #     attr_dev(id_post)
-                #     app.send_photo("Testyfakt", path_file, title)
-                # except:
-                #     print("Ошибка при публикации " + path_file)
-                        # Отправка анимации 
+                # Отправка анимации 
                 print(id_post)
                 os.chdir(r'/home/ily/tb_bot/images')
                 if '.gif' in path_file:
+                    logger.success("Будем отправлять анимацию" + str(path_file))
                     print("анимация и пнг")
                     try: 
+                        logger.debug("Формируем собщение поста с id: " + str(id_post))
                         attr_dev(id_post)
                         app.send_animation("Testyfakt", path_file, title)
+                        logger.success("Собщение сформировано")
                         os.remove('/home/ily/tb_bot/images/'+ path_file) # удаление файла
+                        logger.success("Файл " + str(path_file) + " удален с диска")
                     except Exception as ex:
+                        logger.exception("Ошибка с анимацией для DEV" +  str(path_file) + " id: " + str(id_post))
                         print("Ошибка с анимацией для DEV" + path_file)
                         print(ex)
                         content_error_update(id_post) #Помечаем пост с ошибкой в контенте
 
                 elif '.jpg' in path_file or '.png' in path_file or '.jpeg' in path_file:
+                    logger.success("Будем отправлять изображение" + str(path_file))
                     try:
+                        logger.debug("Формируем собщение поста с id: " + str(id_post))
                         attr_dev(id_post)
                         app.send_photo("Testyfakt", path_file, title)
+                        logger.success("Собщение сформировано")
                         os.remove('/home/ily/tb_bot/images/'+ path_file) # удаление файла
+                        logger.success("Файл " + str(path_file) + " удален с диска")
                     except Exception as ex:
+                        logger.exception("Ошибка с картинкой для DEV" +  str(path_file) + " id: " + str(id_post))
                         print("Ошибка с картинкой для DEV" + path_file)
                         print(ex)
                         content_error_update(id_post) #Помечаем пост с ошибкой в контенте
 
                 elif '.mp4' in path_file:
+                    logger.success("Будем отправлять видео" + str(path_file))
                     print("Отправка видео")
                     try:
+                        logger.debug("Формируем собщение поста с id: " + str(id_post))
                         attr_dev(id_post)
                         app.send_video("Testyfakt", video=path_file, caption=title)
+                        logger.success("Собщение сформировано")
                         os.remove('/home/ily/tb_bot/images/'+ path_file) # удаление файла
+                        logger.success("Файл " + str(path_file) + " удален с диска")
                     except Exception as ex:
+                        logger.exception("Ошибка с видео для DEV" +  str(path_file) + " id: " + str(id_post))
                         print("Ошибка с видео для DEV" + path_file)
                         print(ex)
                         content_error_update(id_post) #Помечаем пост с ошибкой в контенте
                 
-    on_publik (app,row, post_on_pub)
+    on_publik (app, row, post_on_pub)
 
 # # # ----------------
 
