@@ -9,11 +9,12 @@ from sql import create_tbl, recordingDateJson, cur, url_fot_tbl, sql_update, rem
 from bs4 import BeautifulSoup
 import json
 from datetime import datetime
-import requests
 import os
 from deep_translator import (GoogleTranslator)
-import threading
-import schedule
+from loguru import logger
+
+logger.add("logger/parser_log.log", format="{time:YYYY-MM-DD at HH:mm:ss}|{level}|{message}", rotation="2 MB")
+
 
 """test browser"""
 # # options
@@ -28,22 +29,25 @@ import schedule
 # time.sleep(10)
 # browser.close()
 # browser.quit()
-
+@logger.catch
 def search_reddit():
     def redit_login(username, password, redit):
         # browser = webdriver.Firefox('/home/ily/tb_bot/webdriver/geckodriver')
         for row in redit:
             redit = row
+            logger.info("Получен список каналов")
             options = webdriver.ChromeOptions()
             options.add_argument("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36") # Прописываем user agent
             options.add_argument("--disable-blink-features=AutomationControlled") # Отключаем режим веб драйвера
             options.headless = True # Запускаем браузер в фоновом режиме
             s = Service('/home/ily/tb_bot/webdriver/chromedriver')
             browser = webdriver.Chrome(service=s, options=options)
+            logger.success("Определены настройки веб драйвера")
             # browser = webdriver.Firefox(service=s)
             # browser = webdriver.Chrome(executable_path=r"C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\webdriver\\chromedriver.exe") # Указываем путь до веб драйвера
             try: #- это обработчик ошибок
             #Заходим на страницу авторизации
+                logger.debug("Логинимся на reddit")
                 browser.get('https://www.reddit.com/login/?dest=https%3A%2F%2Fwww.reddit.com%2F')
                 time.sleep(random.randrange(4, 7))
             #Передаем данные username из файла auth_date
@@ -57,10 +61,13 @@ def search_reddit():
                 password_input.send_keys(password)
                 password_input.send_keys(Keys.ENTER)
                 time.sleep(10)
+                logger.success("Учпешно залогинились")
             #переход по ссылке
-                print (redit)
+                logger.debug("Переходим в канал " + str(redit))
+                # print (redit)
                 try:
                     browser.get(f'https://www.reddit.com/r/{redit}.json') #в redit передается значение
+                    logger.success("Зашли в канал " + str(redit) + " и сформировали json")
                 # time.sleep(10)
                 # Получает источник текущей страницы html на странице и записываем в переменную
                     html = browser.page_source
@@ -70,16 +77,20 @@ def search_reddit():
                         file.write(html)
                     browser.close()
                     browser.quit()
+                    logger.success("Завершили скачивание из канала " + str(redit))
                 except Exception as ex:
+                    logger.exception("Ошибка при формировани файла data.html")
                     print(ex)
                     browser.close()
                     browser.quit()
 
-            except Exception as ex: #При возникновении ошибки, в принте она появиться
+            except Exception as ex: #При возникновении ошибки, в принте она появиться авторизации
+                logger.exception("Ошибка при авторизации")
                 print(ex)
                 browser.close()
                 browser.quit()
-         #подставляет занчение в место {redit}
+
+            logger.info("Выниваем данне json из html")
             with open("data.html") as file:
                 src = file.read()
             soup = BeautifulSoup(src, "lxml")
@@ -96,11 +107,11 @@ def search_reddit():
             data = json.loads(datJs)
             dictChildren = data['data']
             dist = dictChildren['children']
-
+            logger.success("Завершили формирование Json")
             # #####_Создаем БД SQL
             create_tbl()
-            print("Начинаем писать в БД из паблика " + redit)
-
+            # print("Начинаем писать в БД из паблика " + redit)
+            logger.info("Начинаем писать в БД из паблика " + str(redit))
             #Читаем данные из переменой dist и пишем их в таблицу
             for item in dist:
                 postOffice = item['data']
@@ -128,23 +139,30 @@ def search_reddit():
                         # print(url + " " + title) # Cсылка на видео
                 #####_Записываем таблицу SQL parser значения из переменных (title, url)
                 recordingDateJson(title, url, creadat, title_ru,format_cont,likes)
-            print("Закончили писать в БД из паблика " + redit)
+            logger.success("Закончили писать в БД из паблика " + str(redit))
+            # print("Закончили писать в БД из паблика " + redit)
             # Удаление файлов из БД помеченных на удаление 
-            print("Удаление файлов из БД помеченных на удаление")
+            # print("Удаление файлов из БД помеченных на удаление")
             r = remov()
+            logger.debug("Запуск удаления файлов из БД помеченных на удаление" + str(r))
             for row in r:
                 path_file = (row[0])
                 id_post = (row[1])
                 try:
-                    if 'None' in path_file:
-                        print("Нет пути к файлу" + path_file)
-                    else:
+                    if path_file is not None:
                         print("Файл на удаление" + path_file)
-                        os.remove(r'/home/ily/tb_bot/images' + path_file) # удаление файла
-                        print("Файл удален")
-                        delite_post(id_post)
+                        try:
+                            os.remove(r'/home/ily/tb_bot/images/' + path_file) # удаление файла
+                            print("Файл удален")
+                            delite_post(id_post)
+                        except Exception as ex:
+                            logger.exception("Ошибка при поиске файла: ")
+                    else:
+                        logger.debug("Нет пути к файлу")
+                        print("Нет пути к файлу")
                 except Exception as ex:
+                    logger.exception("Ошибка при удалении файла: ")
                     print(ex)
 
     redit_login(username, password, redit)
-# search_reddit()
+search_reddit()
