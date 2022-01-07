@@ -2,6 +2,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
 from auth_date import username, password, redit
 import time
 import random
@@ -22,7 +23,7 @@ logger.add("logger/parser_log.log", format="{time:YYYY-MM-DD at HH:mm:ss}|{level
 # options.add_argument("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36") # Прописываем user agent
 # options.add_argument("--disable-blink-features=AutomationControlled") # Отключаем режим веб драйвера
 # options.headless = True # Запускаем браузер в фоновом режиме
-# s = Service('/home/ily/tb_bot/webdriver/chromedriver')
+# s = Service('/home/ripo/tb_bot/webdriver/chromedriver')
 # browser = webdriver.Chrome(service=s, options=options)
 # browser.get("https://intoli.com/blog/not-possible-to-block-chrome-headless/chrome-headless-test.html")
 
@@ -32,15 +33,16 @@ logger.add("logger/parser_log.log", format="{time:YYYY-MM-DD at HH:mm:ss}|{level
 @logger.catch
 def search_reddit():
     def redit_login(username, password, redit):
-        # browser = webdriver.Firefox('/home/ily/tb_bot/webdriver/geckodriver')
+        # browser = webdriver.Firefox('/home/ripo/tb_bot/webdriver/geckodriver')
         for row in redit:
             redit = row
             logger.info("Получен список каналов")
             options = webdriver.ChromeOptions()
-            options.add_argument("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36") # Прописываем user agent
+            #options.add_argument("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36") # Прописываем user agent
             options.add_argument("--disable-blink-features=AutomationControlled") # Отключаем режим веб драйвера
+            options.add_argument("--no-sandbox")
             options.headless = True # Запускаем браузер в фоновом режиме
-            s = Service('/home/ily/tb_bot/webdriver/chromedriver')
+            s = Service('/home/ripo/tb_bot/webdriver/chromedriver')
             browser = webdriver.Chrome(service=s, options=options)
             logger.success("Определены настройки веб драйвера")
             # browser = webdriver.Firefox(service=s)
@@ -51,12 +53,12 @@ def search_reddit():
                 browser.get('https://www.reddit.com/login/?dest=https%3A%2F%2Fwww.reddit.com%2F')
                 time.sleep(random.randrange(4, 7))
             #Передаем данные username из файла auth_date
-                username_input = browser.find_element_by_name('username')
+                username_input = browser.find_element(By.NAME,'username')
                 username_input.clear()
                 username_input.send_keys(username)
                 time.sleep(3)
             # Передаем данные password из файла auth_date
-                password_input = browser.find_element_by_name('password')
+                password_input = browser.find_element(By.NAME,'password')
                 password_input.clear()
                 password_input.send_keys(password)
                 password_input.send_keys(Keys.ENTER)
@@ -152,7 +154,7 @@ def search_reddit():
                     if path_file is not None:
                         print("Файл на удаление" + path_file)
                         try:
-                            os.remove(r'/home/ily/tb_bot/images/' + path_file) # удаление файла
+                            os.remove(r'/home/ripo/tb_bot/images/' + path_file) # удаление файла
                             print("Файл удален")
                             delite_post(id_post)
                         except Exception as ex:
@@ -165,4 +167,4 @@ def search_reddit():
                     print(ex)
 
     redit_login(username, password, redit)
-search_reddit()
+#search_reddit()

@@ -41,21 +41,21 @@ def send_post_dev(app):
     def on_publik (app,row, post_on_pub):
             for row in post_on_pub:
                 title = (row[0]) # из списка выбераем 1е значенеие - title
-                path_file = (row[1])
+                path_file = str(row[1])
                 id_post = int((row[2]))
 
                 # Отправка анимации 
                 print(id_post)
-                os.chdir(r'/home/ily/tb_bot/images')
+                os.chdir('/home/ripo/tb_bot/images')
                 if '.gif' in path_file:
-                    logger.success("Будем отправлять анимацию" + str(path_file))
+                    logger.success("Будем отправлять анимацию " + str(path_file))
                     print("анимация и пнг")
                     try: 
                         logger.debug("Формируем собщение поста с id: " + str(id_post))
-                        attr_dev(id_post)
                         app.send_animation("Testyfakt", path_file, title)
                         logger.success("Собщение сформировано")
-                        os.remove('/home/ily/tb_bot/images/'+ path_file) # удаление файла
+                        attr_dev(id_post)
+                        os.remove('/home/ripo/tb_bot/images/'+ path_file) # удаление файла
                         logger.success("Файл " + str(path_file) + " удален с диска")
                     except Exception as ex:
                         logger.exception("Ошибка с анимацией для DEV" +  str(path_file) + " id: " + str(id_post))
@@ -64,13 +64,14 @@ def send_post_dev(app):
                         content_error_update(id_post) #Помечаем пост с ошибкой в контенте
 
                 elif '.jpg' in path_file or '.png' in path_file or '.jpeg' in path_file:
-                    logger.success("Будем отправлять изображение" + str(path_file))
+                    logger.success("Будем отправлять изображение " + str(path_file))
                     try:
                         logger.debug("Формируем собщение поста с id: " + str(id_post))
-                        attr_dev(id_post)
+                        
                         app.send_photo("Testyfakt", path_file, title)
                         logger.success("Собщение сформировано")
-                        os.remove('/home/ily/tb_bot/images/'+ path_file) # удаление файла
+                        attr_dev(id_post)
+                        os.remove('/home/ripo/tb_bot/images/'+ path_file) # удаление файла
                         logger.success("Файл " + str(path_file) + " удален с диска")
                     except Exception as ex:
                         logger.exception("Ошибка с картинкой для DEV" +  str(path_file) + " id: " + str(id_post))
@@ -83,10 +84,11 @@ def send_post_dev(app):
                     print("Отправка видео")
                     try:
                         logger.debug("Формируем собщение поста с id: " + str(id_post))
-                        attr_dev(id_post)
+                        
                         app.send_video("Testyfakt", video=path_file, caption=title)
                         logger.success("Собщение сформировано")
-                        os.remove('/home/ily/tb_bot/images/'+ path_file) # удаление файла
+                        attr_dev(id_post)
+                        os.remove('/home/ripo/tb_bot/images/'+ path_file) # удаление файла
                         logger.success("Файл " + str(path_file) + " удален с диска")
                     except Exception as ex:
                         logger.exception("Ошибка с видео для DEV" +  str(path_file) + " id: " + str(id_post))
@@ -112,34 +114,38 @@ def run_threaded(job_func):
     job_thread.start()
 
  # Функция для создания потоков на парсинг
-def run_threaded_pars(job_func):
-    job_thread = threading.Thread(target=job_func)
+def run_threaded_pars(job_func1):
+    job_thread = threading.Thread(target=job_func1)
     job_thread.start()
+
+#При многопотоке появляеться ошибка
+#in _wait_for_tstate_lock     elif lock.acquire(block, timeout):
 
 #Отправки на dev поста с пометкой ~каждый час
 # # schedule.every().hour.do(send_post_dev, app) #Отправки на dev поста с пометкой ~каждый час
-schedule.every().day.at("07:30").do(run_threaded, send_post_dev)
-schedule.every().day.at("08:00").do(run_threaded, send_post_dev)
-schedule.every().day.at("09:00").do(run_threaded, send_post_dev)
-schedule.every().day.at("10:00").do(run_threaded, send_post_dev)
-schedule.every().day.at("11:00").do(run_threaded, send_post_dev)
-schedule.every().day.at("12:00").do(run_threaded, send_post_dev)
-schedule.every().day.at("13:00").do(run_threaded, send_post_dev)
-schedule.every().day.at("14:00").do(run_threaded, send_post_dev)
-schedule.every().day.at("15:00").do(run_threaded, send_post_dev)
-schedule.every().day.at("16:00").do(run_threaded, send_post_dev)
-schedule.every().day.at("17:00").do(run_threaded, send_post_dev)
-schedule.every().day.at("18:00").do(run_threaded, send_post_dev)
-schedule.every().day.at("19:00").do(run_threaded, send_post_dev)
-schedule.every().day.at("20:00").do(run_threaded, send_post_dev)
-schedule.every().day.at("21:00").do(run_threaded, send_post_dev)
-schedule.every().day.at("22:00").do(run_threaded, send_post_dev)
-schedule.every().day.at("23:00").do(run_threaded, send_post_dev)
-schedule.every(30).minutes.do(run_threaded_pars,search_reddit) #Запуск парсера ~каждые 30 мин
+schedule.every(1).minutes.do(send_post_dev, app)
+# schedule.every().day.at("07:30").do(run_threaded, send_post_dev)
+# schedule.every().day.at("08:00").do(run_threaded, send_post_dev)
+# schedule.every().day.at("09:00").do(run_threaded, send_post_dev)
+# schedule.every().day.at("10:00").do(run_threaded, send_post_dev)
+# schedule.every().day.at("11:00").do(run_threaded, send_post_dev)
+# schedule.every().day.at("12:00").do(run_threaded, send_post_dev)
+# schedule.every().day.at("13:00").do(run_threaded, send_post_dev)
+# schedule.every().day.at("14:00").do(run_threaded, send_post_dev)
+# schedule.every().day.at("15:00").do(run_threaded, send_post_dev)
+# schedule.every().day.at("16:00").do(run_threaded, send_post_dev)
+# schedule.every().day.at("17:00").do(run_threaded, send_post_dev)
+# schedule.every().day.at("18:00").do(run_threaded, send_post_dev)
+# schedule.every().day.at("19:00").do(run_threaded, send_post_dev)
+# schedule.every().day.at("20:00").do(run_threaded, send_post_dev)
+# schedule.every().day.at("21:00").do(run_threaded, send_post_dev)
+# schedule.every().day.at("22:00").do(run_threaded, send_post_dev)
+# schedule.every().day.at("23:00").do(run_threaded, send_post_dev)
+schedule.every(10).minutes.do(search_reddit) #Запуск парсера ~каждые 30 мин
 
 while True:
     schedule.run_pending()
-    time.sleep(3)
+    time.sleep(4)
 # # ----------------
 
 # Склеить это пиример https://russianblogs.com/article/21691175263/ с ПРИМЕР 30 https://python.hotexamples.com/ru/examples/schedule/-/run_pending/python-run_pending-function-examples.html

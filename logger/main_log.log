@@ -1,0 +1,76 @@
+2022-01-06 at 18:42:57|ERROR|An error has been caught in function 'run', process 'MainProcess' (571), thread 'Thread-1' (140670580815616):
+Traceback (most recent call last):
+
+  File "/usr/lib/python3.7/threading.py", line 885, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x7ff073061ae8>
+    └ <Thread(Thread-1, started 140670580815616)>
+  File "/usr/lib/python3.7/threading.py", line 917, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x7ff0730618c8>
+    └ <Thread(Thread-1, started 140670580815616)>
+> File "/usr/lib/python3.7/threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1, started 140670580815616)>
+    │    │        │    └ (<pyrogram.client.Client object at 0x7ff070b29048>,)
+    │    │        └ <Thread(Thread-1, started 140670580815616)>
+    │    └ <function send_post_dev at 0x7ff070a110d0>
+    └ <Thread(Thread-1, started 140670580815616)>
+
+  File "main.py", line 37, in send_post_dev
+    post_on_pub = post_on_publik()
+                  └ <function post_on_publik at 0x7ff071ab9e18>
+
+  File "/home/ripo/tb_bot/sql.py", line 88, in post_on_publik
+    cur.execute(con)
+    │   │       └ 'SELECT title_ru, path_file,id_post,url from parser where likes in(SELECT max(likes) from parser where path_file is not null ...
+    │   └ <method 'execute' of 'sqlite3.Cursor' objects>
+    └ <sqlite3.Cursor object at 0x7ff071b17650>
+
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 140670708647744 and this is thread id 140670580815616.
+2022-01-07 at 10:53:24|INFO|Получаем посты для публикации
+2022-01-07 at 10:53:24|SUCCESS|Будем отправлять видео145DASH_480.mp4
+2022-01-07 at 10:53:24|DEBUG|Формируем собщение поста с id: 145
+2022-01-07 at 10:58:24|INFO|Получен список каналов
+2022-01-07 at 10:58:24|INFO|Получаем посты для публикации
+2022-01-07 at 10:58:24|SUCCESS|Будем отправлять анимацию158w3uctv6p8zx71.gif
+2022-01-07 at 10:58:24|DEBUG|Формируем собщение поста с id: 158
+2022-01-07 at 10:58:26|SUCCESS|Определены настройки веб драйвера
+2022-01-07 at 10:58:26|DEBUG|Логинимся на reddit
+2022-01-07 at 10:58:44|SUCCESS|Учпешно залогинились
+2022-01-07 at 10:58:44|DEBUG|Переходим в канал interestingasfuck
+2022-01-07 at 10:58:45|SUCCESS|Зашли в канал interestingasfuck и сформировали json
+2022-01-07 at 10:58:45|SUCCESS|Завершили скачивание из канала interestingasfuck
+2022-01-07 at 10:58:45|INFO|Выниваем данне json из html
+2022-01-07 at 10:58:45|SUCCESS|Завершили формирование Json
+2022-01-07 at 10:58:45|INFO|Начинаем писать в БД из паблика interestingasfuck
+2022-01-07 at 10:59:10|SUCCESS|Закончили писать в БД из паблика interestingasfuck
+2022-01-07 at 10:59:10|DEBUG|Запуск удаления файлов из БД помеченных на удаление[('111DASH_720.mp4', 111)]
+2022-01-07 at 10:59:10|INFO|Получен список каналов
+2022-01-07 at 10:59:11|SUCCESS|Определены настройки веб драйвера
+2022-01-07 at 10:59:11|DEBUG|Логинимся на reddit
+2022-01-07 at 10:59:30|SUCCESS|Учпешно залогинились
+2022-01-07 at 10:59:30|DEBUG|Переходим в канал gifsthatkeepongiving
+2022-01-07 at 10:59:30|SUCCESS|Зашли в канал gifsthatkeepongiving и сформировали json
+2022-01-07 at 10:59:30|SUCCESS|Завершили скачивание из канала gifsthatkeepongiving
+2022-01-07 at 10:59:30|INFO|Выниваем данне json из html
+2022-01-07 at 10:59:30|SUCCESS|Завершили формирование Json
+2022-01-07 at 10:59:30|INFO|Начинаем писать в БД из паблика gifsthatkeepongiving
+2022-01-07 at 10:59:53|SUCCESS|Закончили писать в БД из паблика gifsthatkeepongiving
+2022-01-07 at 10:59:53|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-07 at 10:59:53|INFO|Получен список каналов
+2022-01-07 at 10:59:53|SUCCESS|Определены настройки веб драйвера
+2022-01-07 at 10:59:53|DEBUG|Логинимся на reddit
+2022-01-07 at 11:00:11|SUCCESS|Учпешно залогинились
+2022-01-07 at 11:00:11|DEBUG|Переходим в канал oddlysatisfying
+2022-01-07 at 11:00:12|SUCCESS|Зашли в канал oddlysatisfying и сформировали json
+2022-01-07 at 11:00:12|SUCCESS|Завершили скачивание из канала oddlysatisfying
+2022-01-07 at 11:00:12|INFO|Выниваем данне json из html
+2022-01-07 at 11:00:12|SUCCESS|Завершили формирование Json
+2022-01-07 at 11:00:12|INFO|Начинаем писать в БД из паблика oddlysatisfying
+2022-01-07 at 11:00:33|SUCCESS|Закончили писать в БД из паблика oddlysatisfying
+2022-01-07 at 11:00:33|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-07 at 11:03:25|INFO|Получаем посты для публикации
+2022-01-07 at 11:03:25|SUCCESS|Будем отправлять видео143DASH_720.mp4
+2022-01-07 at 11:03:25|DEBUG|Формируем собщение поста с id: 143

@@ -336,3 +336,408 @@ FileNotFoundError: [Errno 2] No such file or directory: '/home/ily/tb_bot/images
 2022-01-03 at 15:32:06|DEBUG|Запуск удаления файлов из БД помеченных на удаление[(None, 4), (None, 7), ('184517f8rmi8m081.gif', 184), ('199lp7g7lt4cu081.jpg', 199)]
 2022-01-03 at 15:32:06|DEBUG|Нет пути к файлу
 2022-01-03 at 15:32:06|DEBUG|Нет пути к файлу
+2022-01-06 at 14:59:12|INFO|Получен список каналов
+2022-01-06 at 14:59:12|ERROR|An error has been caught in function '<module>', process 'MainProcess' (2157), thread 'MainThread' (140078971242304):
+Traceback (most recent call last):
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/common/service.py", line 76, in start
+    creationflags=self.creationflags)
+                  │    └ 0
+                  └ <selenium.webdriver.chrome.service.Service object at 0x7f66ab538208>
+  File "/usr/lib/python3.7/subprocess.py", line 775, in __init__
+    restore_signals, start_new_session)
+    │                └ False
+    └ True
+  File "/usr/lib/python3.7/subprocess.py", line 1522, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+          │                    │          │        └ '/home/ripo/tb_bot/webdriver/chromedriver'
+          │                    │          └ 'Permission denied'
+          │                    └ 13
+          └ <class 'OSError'>
+
+PermissionError: [Errno 13] Permission denied: '/home/ripo/tb_bot/webdriver/chromedriver'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+> File "parser_reddit.py", line 169, in <module>
+    search_reddit()
+    └ <function search_reddit at 0x7f66ac4b7d90>
+
+  File "parser_reddit.py", line 168, in search_reddit
+    redit_login(username, password, redit)
+    │           │         │         └ ('interestingasfuck', 'gifsthatkeepongiving', 'oddlysatisfying')
+    │           │         └ 'UOgyiog8374fgboa8fgdOU6e93ced923c%^CvV'
+    │           └ 'Ripozi'
+    └ <function search_reddit.<locals>.redit_login at 0x7f66ab524bf8>
+
+  File "parser_reddit.py", line 45, in redit_login
+    browser = webdriver.Chrome(service=s, options=options)
+              │         │              │          └ <selenium.webdriver.chrome.options.Options object at 0x7f66ab538240>
+              │         │              └ <selenium.webdriver.chrome.service.Service object at 0x7f66ab538208>
+              │         └ <class 'selenium.webdriver.chrome.webdriver.WebDriver'>
+              └ <module 'selenium.webdriver' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/__init__.py'>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 73, in __init__
+    service_log_path, service, keep_alive)
+    │                 │        └ True
+    │                 └ <selenium.webdriver.chrome.service.Service object at 0x7f66ab538208>
+    └ None
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/chromium/webdriver.py", line 90, in __init__
+    self.service.start()
+    │    │       └ <function Service.start at 0x7f66ac81b048>
+    │    └ <selenium.webdriver.chrome.service.Service object at 0x7f66ab538208>
+    └ <unprintable WebDriver object>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/common/service.py", line 88, in start
+    os.path.basename(self.path), self.start_error_message)
+    │  │    │        │    │      │    └ 'Please see https://chromedriver.chromium.org/home'
+    │  │    │        │    │      └ <selenium.webdriver.chrome.service.Service object at 0x7f66ab538208>
+    │  │    │        │    └ '/home/ripo/tb_bot/webdriver/chromedriver'
+    │  │    │        └ <selenium.webdriver.chrome.service.Service object at 0x7f66ab538208>
+    │  │    └ <function basename at 0x7f66ad2b3f28>
+    │  └ <module 'posixpath' from '/usr/lib/python3.7/posixpath.py'>
+    └ <module 'os' from '/usr/lib/python3.7/os.py'>
+
+selenium.common.exceptions.WebDriverException: Message: 'chromedriver' executable may have wrong permissions. Please see https://chromedriver.chromium.org/home
+
+2022-01-06 at 15:05:39|INFO|Получен список каналов
+2022-01-06 at 15:05:39|ERROR|An error has been caught in function '<module>', process 'MainProcess' (2176), thread 'MainThread' (140610750998336):
+Traceback (most recent call last):
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/common/service.py", line 76, in start
+    creationflags=self.creationflags)
+                  │    └ 0
+                  └ <selenium.webdriver.chrome.service.Service object at 0x7fe27bde5240>
+  File "/usr/lib/python3.7/subprocess.py", line 775, in __init__
+    restore_signals, start_new_session)
+    │                └ False
+    └ True
+  File "/usr/lib/python3.7/subprocess.py", line 1522, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+          │                    │          │        └ '/home/ripo/tb_bot/webdriver/chromedriver'
+          │                    │          └ 'Permission denied'
+          │                    └ 13
+          └ <class 'OSError'>
+
+PermissionError: [Errno 13] Permission denied: '/home/ripo/tb_bot/webdriver/chromedriver'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+> File "parser_reddit.py", line 169, in <module>
+    search_reddit()
+    └ <function search_reddit at 0x7fe27cd68d90>
+
+  File "parser_reddit.py", line 168, in search_reddit
+    redit_login(username, password, redit)
+    │           │         │         └ ('interestingasfuck', 'gifsthatkeepongiving', 'oddlysatisfying')
+    │           │         └ 'UOgyiog8374fgboa8fgdOU6e93ced923c%^CvV'
+    │           └ 'Ripozi'
+    └ <function search_reddit.<locals>.redit_login at 0x7fe27bdd4bf8>
+
+  File "parser_reddit.py", line 45, in redit_login
+    browser = webdriver.Chrome(service=s, options=options)
+              │         │              │          └ <selenium.webdriver.chrome.options.Options object at 0x7fe27bde5278>
+              │         │              └ <selenium.webdriver.chrome.service.Service object at 0x7fe27bde5240>
+              │         └ <class 'selenium.webdriver.chrome.webdriver.WebDriver'>
+              └ <module 'selenium.webdriver' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/__init__.py'>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 73, in __init__
+    service_log_path, service, keep_alive)
+    │                 │        └ True
+    │                 └ <selenium.webdriver.chrome.service.Service object at 0x7fe27bde5240>
+    └ None
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/chromium/webdriver.py", line 90, in __init__
+    self.service.start()
+    │    │       └ <function Service.start at 0x7fe27d0cd048>
+    │    └ <selenium.webdriver.chrome.service.Service object at 0x7fe27bde5240>
+    └ <unprintable WebDriver object>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/common/service.py", line 88, in start
+    os.path.basename(self.path), self.start_error_message)
+    │  │    │        │    │      │    └ 'Please see https://chromedriver.chromium.org/home'
+    │  │    │        │    │      └ <selenium.webdriver.chrome.service.Service object at 0x7fe27bde5240>
+    │  │    │        │    └ '/home/ripo/tb_bot/webdriver/chromedriver'
+    │  │    │        └ <selenium.webdriver.chrome.service.Service object at 0x7fe27bde5240>
+    │  │    └ <function basename at 0x7fe27db65f28>
+    │  └ <module 'posixpath' from '/usr/lib/python3.7/posixpath.py'>
+    └ <module 'os' from '/usr/lib/python3.7/os.py'>
+
+selenium.common.exceptions.WebDriverException: Message: 'chromedriver' executable may have wrong permissions. Please see https://chromedriver.chromium.org/home
+
+2022-01-06 at 15:27:06|INFO|Получен список каналов
+2022-01-06 at 15:30:52|INFO|Получен список каналов
+2022-01-06 at 15:33:57|INFO|Получен список каналов
+2022-01-06 at 15:37:33|INFO|Получен список каналов
+2022-01-06 at 15:48:10|INFO|Получен список каналов
+2022-01-06 at 15:49:53|INFO|Получен список каналов
+2022-01-06 at 16:06:10|INFO|Получен список каналов
+2022-01-06 at 16:06:10|ERROR|An error has been caught in function '<module>', process 'MainProcess' (4688), thread 'MainThread' (140458374063936):
+Traceback (most recent call last):
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/common/service.py", line 76, in start
+    creationflags=self.creationflags)
+                  │    └ 0
+                  └ <selenium.webdriver.chrome.service.Service object at 0x7fbf00916358>
+  File "/usr/lib/python3.7/subprocess.py", line 775, in __init__
+    restore_signals, start_new_session)
+    │                └ False
+    └ True
+  File "/usr/lib/python3.7/subprocess.py", line 1522, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+          │                    │          │        └ '/home/ripo/tb_bot/webdriver/chromedriver'
+          │                    │          └ 'Permission denied'
+          │                    └ 13
+          └ <class 'OSError'>
+
+PermissionError: [Errno 13] Permission denied: '/home/ripo/tb_bot/webdriver/chromedriver'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "main.py", line 14, in <module>
+    from parser_reddit import search_reddit
+
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+
+> File "/home/ripo/tb_bot/parser_reddit.py", line 169, in <module>
+    search_reddit()
+    └ <function search_reddit at 0x7fbf0178cea0>
+
+  File "/home/ripo/tb_bot/parser_reddit.py", line 168, in search_reddit
+    redit_login(username, password, redit)
+    │           │         │         └ ('interestingasfuck', 'gifsthatkeepongiving', 'oddlysatisfying')
+    │           │         └ 'UOgyiog8374fgboa8fgdOU6e93ced923c%^CvV'
+    │           └ 'Ripozi'
+    └ <function search_reddit.<locals>.redit_login at 0x7fbf00908c80>
+
+  File "/home/ripo/tb_bot/parser_reddit.py", line 45, in redit_login
+    browser = webdriver.Chrome(service=s, options=options)
+              │         │              │          └ <selenium.webdriver.chrome.options.Options object at 0x7fbf00916390>
+              │         │              └ <selenium.webdriver.chrome.service.Service object at 0x7fbf00916358>
+              │         └ <class 'selenium.webdriver.chrome.webdriver.WebDriver'>
+              └ <module 'selenium.webdriver' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/__init__.py'>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 73, in __init__
+    service_log_path, service, keep_alive)
+    │                 │        └ True
+    │                 └ <selenium.webdriver.chrome.service.Service object at 0x7fbf00916358>
+    └ None
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/chromium/webdriver.py", line 90, in __init__
+    self.service.start()
+    │    │       └ <function Service.start at 0x7fbf01940b70>
+    │    └ <selenium.webdriver.chrome.service.Service object at 0x7fbf00916358>
+    └ <unprintable WebDriver object>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/common/service.py", line 88, in start
+    os.path.basename(self.path), self.start_error_message)
+    │  │    │        │    │      │    └ 'Please see https://chromedriver.chromium.org/home'
+    │  │    │        │    │      └ <selenium.webdriver.chrome.service.Service object at 0x7fbf00916358>
+    │  │    │        │    └ '/home/ripo/tb_bot/webdriver/chromedriver'
+    │  │    │        └ <selenium.webdriver.chrome.service.Service object at 0x7fbf00916358>
+    │  │    └ <function basename at 0x7fbf0356df28>
+    │  └ <module 'posixpath' from '/usr/lib/python3.7/posixpath.py'>
+    └ <module 'os' from '/usr/lib/python3.7/os.py'>
+
+selenium.common.exceptions.WebDriverException: Message: 'chromedriver' executable may have wrong permissions. Please see https://chromedriver.chromium.org/home
+
+2022-01-06 at 16:09:21|INFO|Получен список каналов
+2022-01-06 at 16:13:27|INFO|Получен список каналов
+2022-01-06 at 16:18:54|INFO|Получен список каналов
+2022-01-06 at 16:38:37|DEBUG|Логинимся на reddit
+2022-01-06 at 16:38:39|DEBUG|Зашли на reddit
+2022-01-06 at 16:40:50|INFO|Получен список каналов
+2022-01-06 at 16:40:51|SUCCESS|Определены настройки веб драйвера
+2022-01-06 at 16:40:51|DEBUG|Логинимся на reddit
+2022-01-06 at 16:41:10|SUCCESS|Учпешно залогинились
+2022-01-06 at 16:41:10|DEBUG|Переходим в канал interestingasfuck
+2022-01-06 at 16:41:12|SUCCESS|Зашли в канал interestingasfuck и сформировали json
+2022-01-06 at 16:41:12|SUCCESS|Завершили скачивание из канала interestingasfuck
+2022-01-06 at 16:41:12|INFO|Выниваем данне json из html
+2022-01-06 at 16:41:12|SUCCESS|Завершили формирование Json
+2022-01-06 at 16:41:12|INFO|Начинаем писать в БД из паблика interestingasfuck
+2022-01-06 at 16:41:35|SUCCESS|Закончили писать в БД из паблика interestingasfuck
+2022-01-06 at 16:41:35|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-06 at 16:41:35|INFO|Получен список каналов
+2022-01-06 at 16:41:35|SUCCESS|Определены настройки веб драйвера
+2022-01-06 at 16:41:35|DEBUG|Логинимся на reddit
+2022-01-06 at 16:41:55|SUCCESS|Учпешно залогинились
+2022-01-06 at 16:41:55|DEBUG|Переходим в канал gifsthatkeepongiving
+2022-01-06 at 16:41:56|SUCCESS|Зашли в канал gifsthatkeepongiving и сформировали json
+2022-01-06 at 16:41:56|SUCCESS|Завершили скачивание из канала gifsthatkeepongiving
+2022-01-06 at 16:41:56|INFO|Выниваем данне json из html
+2022-01-06 at 16:41:56|SUCCESS|Завершили формирование Json
+2022-01-06 at 16:41:56|INFO|Начинаем писать в БД из паблика gifsthatkeepongiving
+2022-01-06 at 16:42:22|SUCCESS|Закончили писать в БД из паблика gifsthatkeepongiving
+2022-01-06 at 16:42:22|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-06 at 16:42:22|INFO|Получен список каналов
+2022-01-06 at 16:42:23|SUCCESS|Определены настройки веб драйвера
+2022-01-06 at 16:42:23|DEBUG|Логинимся на reddit
+2022-01-06 at 16:42:41|SUCCESS|Учпешно залогинились
+2022-01-06 at 16:42:41|DEBUG|Переходим в канал oddlysatisfying
+2022-01-06 at 16:42:41|SUCCESS|Зашли в канал oddlysatisfying и сформировали json
+2022-01-06 at 16:42:42|SUCCESS|Завершили скачивание из канала oddlysatisfying
+2022-01-06 at 16:42:42|INFO|Выниваем данне json из html
+2022-01-06 at 16:42:42|SUCCESS|Завершили формирование Json
+2022-01-06 at 16:42:42|INFO|Начинаем писать в БД из паблика oddlysatisfying
+2022-01-06 at 16:43:02|SUCCESS|Закончили писать в БД из паблика oddlysatisfying
+2022-01-06 at 16:43:02|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-06 at 16:50:44|INFO|Получен список каналов
+2022-01-06 at 16:50:45|SUCCESS|Определены настройки веб драйвера
+2022-01-06 at 16:50:45|DEBUG|Логинимся на reddit
+2022-01-06 at 16:51:04|SUCCESS|Учпешно залогинились
+2022-01-06 at 16:51:04|DEBUG|Переходим в канал interestingasfuck
+2022-01-06 at 16:51:04|SUCCESS|Зашли в канал interestingasfuck и сформировали json
+2022-01-06 at 16:51:05|SUCCESS|Завершили скачивание из канала interestingasfuck
+2022-01-06 at 16:51:05|INFO|Выниваем данне json из html
+2022-01-06 at 16:51:05|SUCCESS|Завершили формирование Json
+2022-01-06 at 16:51:05|INFO|Начинаем писать в БД из паблика interestingasfuck
+2022-01-06 at 16:51:08|SUCCESS|Закончили писать в БД из паблика interestingasfuck
+2022-01-06 at 16:51:08|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-06 at 16:51:08|INFO|Получен список каналов
+2022-01-06 at 16:51:08|SUCCESS|Определены настройки веб драйвера
+2022-01-06 at 16:51:08|DEBUG|Логинимся на reddit
+2022-01-06 at 16:51:27|SUCCESS|Учпешно залогинились
+2022-01-06 at 16:51:27|DEBUG|Переходим в канал gifsthatkeepongiving
+2022-01-06 at 16:51:28|SUCCESS|Зашли в канал gifsthatkeepongiving и сформировали json
+2022-01-06 at 16:51:28|SUCCESS|Завершили скачивание из канала gifsthatkeepongiving
+2022-01-06 at 16:51:28|INFO|Выниваем данне json из html
+2022-01-06 at 16:51:28|SUCCESS|Завершили формирование Json
+2022-01-06 at 16:51:28|INFO|Начинаем писать в БД из паблика gifsthatkeepongiving
+2022-01-06 at 16:51:30|SUCCESS|Закончили писать в БД из паблика gifsthatkeepongiving
+2022-01-06 at 16:51:30|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-06 at 16:51:30|INFO|Получен список каналов
+2022-01-06 at 16:51:31|SUCCESS|Определены настройки веб драйвера
+2022-01-06 at 16:51:31|DEBUG|Логинимся на reddit
+2022-01-06 at 16:51:50|SUCCESS|Учпешно залогинились
+2022-01-06 at 16:51:50|DEBUG|Переходим в канал oddlysatisfying
+2022-01-06 at 16:51:51|SUCCESS|Зашли в канал oddlysatisfying и сформировали json
+2022-01-06 at 16:51:51|SUCCESS|Завершили скачивание из канала oddlysatisfying
+2022-01-06 at 16:51:51|INFO|Выниваем данне json из html
+2022-01-06 at 16:51:51|SUCCESS|Завершили формирование Json
+2022-01-06 at 16:51:51|INFO|Начинаем писать в БД из паблика oddlysatisfying
+2022-01-06 at 16:51:53|SUCCESS|Закончили писать в БД из паблика oddlysatisfying
+2022-01-06 at 16:51:53|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-06 at 16:56:32|INFO|Получен список каналов
+2022-01-06 at 16:56:33|SUCCESS|Определены настройки веб драйвера
+2022-01-06 at 16:56:33|DEBUG|Логинимся на reddit
+2022-01-06 at 16:56:51|SUCCESS|Учпешно залогинились
+2022-01-06 at 16:56:51|DEBUG|Переходим в канал interestingasfuck
+2022-01-06 at 16:56:52|SUCCESS|Зашли в канал interestingasfuck и сформировали json
+2022-01-06 at 16:56:52|SUCCESS|Завершили скачивание из канала interestingasfuck
+2022-01-06 at 16:56:52|INFO|Выниваем данне json из html
+2022-01-06 at 16:56:52|SUCCESS|Завершили формирование Json
+2022-01-06 at 16:56:52|INFO|Начинаем писать в БД из паблика interestingasfuck
+2022-01-06 at 16:56:54|SUCCESS|Закончили писать в БД из паблика interestingasfuck
+2022-01-06 at 16:56:54|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-06 at 16:56:54|INFO|Получен список каналов
+2022-01-06 at 16:56:55|SUCCESS|Определены настройки веб драйвера
+2022-01-06 at 16:56:55|DEBUG|Логинимся на reddit
+2022-01-06 at 16:57:14|SUCCESS|Учпешно залогинились
+2022-01-06 at 16:57:14|DEBUG|Переходим в канал gifsthatkeepongiving
+2022-01-06 at 16:57:15|SUCCESS|Зашли в канал gifsthatkeepongiving и сформировали json
+2022-01-06 at 16:57:15|SUCCESS|Завершили скачивание из канала gifsthatkeepongiving
+2022-01-06 at 16:57:15|INFO|Выниваем данне json из html
+2022-01-06 at 16:57:15|SUCCESS|Завершили формирование Json
+2022-01-06 at 16:57:15|INFO|Начинаем писать в БД из паблика gifsthatkeepongiving
+2022-01-06 at 16:57:17|SUCCESS|Закончили писать в БД из паблика gifsthatkeepongiving
+2022-01-06 at 16:57:17|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-06 at 16:57:17|INFO|Получен список каналов
+2022-01-06 at 16:57:17|SUCCESS|Определены настройки веб драйвера
+2022-01-06 at 16:57:17|DEBUG|Логинимся на reddit
+2022-01-06 at 16:57:37|SUCCESS|Учпешно залогинились
+2022-01-06 at 16:57:37|DEBUG|Переходим в канал oddlysatisfying
+2022-01-06 at 16:57:38|SUCCESS|Зашли в канал oddlysatisfying и сформировали json
+2022-01-06 at 16:57:38|SUCCESS|Завершили скачивание из канала oddlysatisfying
+2022-01-06 at 16:57:38|INFO|Выниваем данне json из html
+2022-01-06 at 16:57:38|SUCCESS|Завершили формирование Json
+2022-01-06 at 16:57:38|INFO|Начинаем писать в БД из паблика oddlysatisfying
+2022-01-06 at 16:57:40|SUCCESS|Закончили писать в БД из паблика oddlysatisfying
+2022-01-06 at 16:57:40|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-06 at 18:42:57|ERROR|An error has been caught in function 'run', process 'MainProcess' (571), thread 'Thread-1' (140670580815616):
+Traceback (most recent call last):
+
+  File "/usr/lib/python3.7/threading.py", line 885, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x7ff073061ae8>
+    └ <Thread(Thread-1, started 140670580815616)>
+  File "/usr/lib/python3.7/threading.py", line 917, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x7ff0730618c8>
+    └ <Thread(Thread-1, started 140670580815616)>
+> File "/usr/lib/python3.7/threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1, started 140670580815616)>
+    │    │        │    └ (<pyrogram.client.Client object at 0x7ff070b29048>,)
+    │    │        └ <Thread(Thread-1, started 140670580815616)>
+    │    └ <function send_post_dev at 0x7ff070a110d0>
+    └ <Thread(Thread-1, started 140670580815616)>
+
+  File "main.py", line 37, in send_post_dev
+    post_on_pub = post_on_publik()
+                  └ <function post_on_publik at 0x7ff071ab9e18>
+
+  File "/home/ripo/tb_bot/sql.py", line 88, in post_on_publik
+    cur.execute(con)
+    │   │       └ 'SELECT title_ru, path_file,id_post,url from parser where likes in(SELECT max(likes) from parser where path_file is not null ...
+    │   └ <method 'execute' of 'sqlite3.Cursor' objects>
+    └ <sqlite3.Cursor object at 0x7ff071b17650>
+
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 140670708647744 and this is thread id 140670580815616.
+2022-01-07 at 10:53:24|INFO|Получаем посты для публикации
+2022-01-07 at 10:53:24|SUCCESS|Будем отправлять видео145DASH_480.mp4
+2022-01-07 at 10:53:24|DEBUG|Формируем собщение поста с id: 145
+2022-01-07 at 10:58:24|INFO|Получен список каналов
+2022-01-07 at 10:58:24|INFO|Получаем посты для публикации
+2022-01-07 at 10:58:24|SUCCESS|Будем отправлять анимацию158w3uctv6p8zx71.gif
+2022-01-07 at 10:58:24|DEBUG|Формируем собщение поста с id: 158
+2022-01-07 at 10:58:26|SUCCESS|Определены настройки веб драйвера
+2022-01-07 at 10:58:26|DEBUG|Логинимся на reddit
+2022-01-07 at 10:58:44|SUCCESS|Учпешно залогинились
+2022-01-07 at 10:58:44|DEBUG|Переходим в канал interestingasfuck
+2022-01-07 at 10:58:45|SUCCESS|Зашли в канал interestingasfuck и сформировали json
+2022-01-07 at 10:58:45|SUCCESS|Завершили скачивание из канала interestingasfuck
+2022-01-07 at 10:58:45|INFO|Выниваем данне json из html
+2022-01-07 at 10:58:45|SUCCESS|Завершили формирование Json
+2022-01-07 at 10:58:45|INFO|Начинаем писать в БД из паблика interestingasfuck
+2022-01-07 at 10:59:10|SUCCESS|Закончили писать в БД из паблика interestingasfuck
+2022-01-07 at 10:59:10|DEBUG|Запуск удаления файлов из БД помеченных на удаление[('111DASH_720.mp4', 111)]
+2022-01-07 at 10:59:10|INFO|Получен список каналов
+2022-01-07 at 10:59:11|SUCCESS|Определены настройки веб драйвера
+2022-01-07 at 10:59:11|DEBUG|Логинимся на reddit
+2022-01-07 at 10:59:30|SUCCESS|Учпешно залогинились
+2022-01-07 at 10:59:30|DEBUG|Переходим в канал gifsthatkeepongiving
+2022-01-07 at 10:59:30|SUCCESS|Зашли в канал gifsthatkeepongiving и сформировали json
+2022-01-07 at 10:59:30|SUCCESS|Завершили скачивание из канала gifsthatkeepongiving
+2022-01-07 at 10:59:30|INFO|Выниваем данне json из html
+2022-01-07 at 10:59:30|SUCCESS|Завершили формирование Json
+2022-01-07 at 10:59:30|INFO|Начинаем писать в БД из паблика gifsthatkeepongiving
+2022-01-07 at 10:59:53|SUCCESS|Закончили писать в БД из паблика gifsthatkeepongiving
+2022-01-07 at 10:59:53|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-07 at 10:59:53|INFO|Получен список каналов
+2022-01-07 at 10:59:53|SUCCESS|Определены настройки веб драйвера
+2022-01-07 at 10:59:53|DEBUG|Логинимся на reddit
+2022-01-07 at 11:00:11|SUCCESS|Учпешно залогинились
+2022-01-07 at 11:00:11|DEBUG|Переходим в канал oddlysatisfying
+2022-01-07 at 11:00:12|SUCCESS|Зашли в канал oddlysatisfying и сформировали json
+2022-01-07 at 11:00:12|SUCCESS|Завершили скачивание из канала oddlysatisfying
+2022-01-07 at 11:00:12|INFO|Выниваем данне json из html
+2022-01-07 at 11:00:12|SUCCESS|Завершили формирование Json
+2022-01-07 at 11:00:12|INFO|Начинаем писать в БД из паблика oddlysatisfying
+2022-01-07 at 11:00:33|SUCCESS|Закончили писать в БД из паблика oddlysatisfying
+2022-01-07 at 11:00:33|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-07 at 11:03:25|INFO|Получаем посты для публикации
+2022-01-07 at 11:03:25|SUCCESS|Будем отправлять видео143DASH_720.mp4
+2022-01-07 at 11:03:25|DEBUG|Формируем собщение поста с id: 143

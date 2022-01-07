@@ -51,7 +51,7 @@ async def test_message(message: types.Message):
         lin = str(id_post) + lin # добавляем id в название файла
         path_file = (lin)
         r = requests.get(url_link, allow_redirects=True)
-        os.chdir(r'/home/ily/tb_bot/images')
+        os.chdir(r'/home/ripo/tb_bot/images')
         open(lin, 'wb').write(r.content)
         sql_update(url_link, path_file)
         logger.debug("Файл на загрузку: " + str(path_file))
