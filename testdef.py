@@ -16,6 +16,7 @@ logger.add("logger/bot_log.log", format="{time:YYYY-MM-DD at HH:mm:ss}|{level}|{
 bot = Bot(token=token)
 dp =Dispatcher(bot)
 
+
 @logger.catch
 @dp.message_handler(commands="start")
 async def start(message: types.Message):

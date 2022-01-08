@@ -5,6 +5,7 @@ import sqlite3 as sq
 with sq.connect("parsreddit.db", check_same_thread=False) as con:
         cur = con.cursor()
 
+
 ##Создаем таблицу. Добавить столбец для отслеживания отправленных постов
 def create_tbl():
     cur.execute("""CREATE TABLE IF NOT EXISTS parser (

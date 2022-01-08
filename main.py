@@ -155,7 +155,7 @@ while True:
 #     job_thread = threading.Thread(target=job_func)
 #     job_thread.start()
 
-
+ 
 # schedule.every(1).minutes.do(run_threaded, search_reddit)
 # #---------реализация с потоками 
 

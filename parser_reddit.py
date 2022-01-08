@@ -17,6 +17,7 @@ from loguru import logger
 logger.add("logger/parser_log.log", format="{time:YYYY-MM-DD at HH:mm:ss}|{level}|{message}", rotation="2 MB")
 
 
+
 """test browser"""
 # # options
 # options = webdriver.ChromeOptions()
