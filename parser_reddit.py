@@ -63,7 +63,7 @@ def search_reddit():
                 password_input.clear()
                 password_input.send_keys(password)
                 password_input.send_keys(Keys.ENTER)
-                time.sleep(10)
+                time.sleep(random.randrange(4, 10))
                 logger.success("Учпешно залогинились")
             #переход по ссылке
                 logger.debug("Переходим в канал " + str(redit))

@@ -109,14 +109,14 @@ def send_post_dev(app):
 # schedule.every(2).minutes.do(moder_post) #Публикация в моджерку
 
  # Функция для создания потоков на расписание 
-def run_threaded(job_func):
-    job_thread = threading.Thread(target=job_func, args=(app,))
-    job_thread.start()
+# def run_threaded(job_func):
+#     job_thread = threading.Thread(target=job_func, args=(app,))
+#     job_thread.start()
 
- # Функция для создания потоков на парсинг
-def run_threaded_pars(job_func1):
-    job_thread = threading.Thread(target=job_func1)
-    job_thread.start()
+#  # Функция для создания потоков на парсинг
+# def run_threaded_pars(job_func1):
+#     job_thread = threading.Thread(target=job_func1)
+#     job_thread.start()
 
 #При многопотоке появляеться ошибка
 #in _wait_for_tstate_lock     elif lock.acquire(block, timeout):
@@ -141,7 +141,7 @@ schedule.every(1).minutes.do(send_post_dev, app)
 # schedule.every().day.at("21:00").do(run_threaded, send_post_dev)
 # schedule.every().day.at("22:00").do(run_threaded, send_post_dev)
 # schedule.every().day.at("23:00").do(run_threaded, send_post_dev)
-schedule.every(10).minutes.do(search_reddit) #Запуск парсера ~каждые 30 мин
+schedule.every(5).minutes.do(search_reddit) #Запуск парсера ~каждые 30 мин
 
 while True:
     schedule.run_pending()
