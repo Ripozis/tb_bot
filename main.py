@@ -19,7 +19,7 @@ import threading
 from queue import Queue
 from loguru import logger
 
-logger.add("logger/main_log.log", format="{time:YYYY-MM-DD at HH:mm:ss}|{level}|{message}", rotation="2 MB")
+logger.add("logger/main_log.log", format="{time:YYYY-MM-DD at HH:mm:ss}|{level}|{message}", rotation="100 MB", compression="zip")
 # ----------------
 # Функция запуска парсера
 # search_reddit()
@@ -124,6 +124,7 @@ def send_post_dev(app):
 #Отправки на dev поста с пометкой ~каждый час
 # # schedule.every().hour.do(send_post_dev, app) #Отправки на dev поста с пометкой ~каждый час
 schedule.every(1).minutes.do(send_post_dev, app)
+# Минасануть на 3 часа расписание
 # schedule.every().day.at("07:30").do(run_threaded, send_post_dev)
 # schedule.every().day.at("08:00").do(run_threaded, send_post_dev)
 # schedule.every().day.at("09:00").do(run_threaded, send_post_dev)

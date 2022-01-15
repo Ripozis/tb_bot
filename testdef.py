@@ -12,7 +12,7 @@ import requests
 from loguru import logger
 from auth_date import token
 
-logger.add("logger/bot_log.log", format="{time:YYYY-MM-DD at HH:mm:ss}|{level}|{message}", rotation="2 MB")
+logger.add("logger/bot_log.log", format="{time:YYYY-MM-DD at HH:mm:ss}|{level}|{message}", rotation="100 MB", compression="zip")
 bot = Bot(token=token)
 dp =Dispatcher(bot)
 
@@ -50,19 +50,19 @@ async def test_message(message: types.Message):
         # Выполняем скачивание файла
         lin = url_link.split('/')[-1] #выявляет по слешу название файла
         lin = str(id_post) + lin # добавляем id в название файла
-        path_file = (lin)
+        path_file = str(lin)
         r = requests.get(url_link, allow_redirects=True)
         os.chdir(r'/home/ripo/tb_bot/images')
         open(lin, 'wb').write(r.content)
         sql_update(url_link, path_file)
         logger.debug("Файл на загрузку: " + str(path_file))
         # print(path_file)
-        file = open(path_file, 'rb')
+        #file = open(path_file, 'rb')
 
         if '.gif' in path_file:
             logger.debug("Отправка анимации: " + str(path_file))
             try: 
-                await bot.send_animation(chat_id=message.from_user.id, animation=file, reply_markup=lnkb, caption=title)
+                await bot.send_animation(chat_id=message.from_user.id, animation=path_file, reply_markup=lnkb, caption=title)
                 moder_id = message.message_id + 1
                 moder_msgid(moder_id, id_post)
                 logger.success("В БД отправлен id сообщения: " + str(moder_id))
@@ -75,12 +75,12 @@ async def test_message(message: types.Message):
         elif '.jpg' in path_file or '.png' in path_file or '.jpeg' in path_file:
             logger.debug("Отправка изображения: " + str(path_file))
             try:
-                await bot.send_photo(chat_id=message.from_user.id, photo=file, reply_markup=lnkb, caption=title)
+                await bot.send_photo(chat_id=message.from_user.id, photo=path_file, reply_markup=lnkb, caption=title)
                 moder_id = message.message_id + 1
                 moder_msgid(moder_id, id_post)
                 logger.success("В БД отправлен id сообщения: " + str(moder_id))
             except Exception as ex:
-                logger.exception("Ошибка с картинкой для DEV" + str(path_file))
+                logger.exception("Ошибка с картинкой для DEV " + str(path_file))
                 # print("Ошибка с картинкой для DEV" + path_file)
                 # print(ex)
                 content_error_update(id_post) #Помечаем пост с ошибкой в контенте
@@ -89,7 +89,7 @@ async def test_message(message: types.Message):
             logger.debug("Отправка видео " + str(path_file))
             # print("Отправка видео")
             try:
-                await bot.send_video(chat_id=message.from_user.id, video=file, reply_markup=lnkb, caption=title)
+                await bot.send_video(chat_id=message.from_user.id, video=path_file, reply_markup=lnkb, caption=title)
                 moder_id = message.message_id + 1
                 moder_msgid(moder_id, id_post)
                 logger.success("В БД отправлен id сообщения: " + str(moder_id))

@@ -72,3 +72,1268 @@
 2022-01-07 at 10:56:09|SUCCESS|В БД отправлен id сообщения: 767
 2022-01-07 at 10:56:20|DEBUG|id Сообщения на публикацию: 767
 2022-01-07 at 10:56:20|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-07 at 11:24:45|SUCCESS|Получены кол-во постов на публикацию
+2022-01-07 at 11:24:48|DEBUG|Получены данные из БД:[('[OC] Десять самых популярных детских имен в США, 1880–2020 гг.', 'https://v.redd.it/e12lqmzrafx71/DASH_1080.mp4', 14070, 124)]
+2022-01-07 at 11:24:53|DEBUG|Файл на загрузку: 124DASH_1080.mp4
+2022-01-07 at 11:24:53|DEBUG|Отправка видео 124DASH_1080.mp4
+2022-01-07 at 11:24:55|SUCCESS|В БД отправлен id сообщения: 772
+2022-01-07 at 11:25:03|DEBUG|Пост помечен на удаление: 772
+2022-01-07 at 11:25:03|SUCCESS|Сработала кнопка "Удалить"
+2022-01-07 at 11:25:09|DEBUG|Получены данные из БД:[('[OC] Самые высокооплачиваемые знаменитости десятилетия', 'https://v.redd.it/iv0307dn8dx71/DASH_1080.mp4', 11420, 134)]
+2022-01-07 at 11:25:21|DEBUG|Файл на загрузку: 134DASH_1080.mp4
+2022-01-07 at 11:25:21|DEBUG|Отправка видео 134DASH_1080.mp4
+2022-01-07 at 11:25:21|ERROR|Ошибка с видео для DEV134DASH_1080.mp4
+Traceback (most recent call last):
+
+  File "testdef.py", line 189, in <module>
+    executor.start_polling(dp, skip_updates=True)
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7fde84b174e0>
+    │        └ <function start_polling at 0x7fde85c85ae8>
+    └ <module 'aiogram.utils.executor' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py'>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py", line 50, in start_polling
+    allowed_updates=allowed_updates
+                    └ None
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7fde87986950>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 539, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7fde8798a378>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 1775, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7fde879dd6a8>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7fde84b4bee8>(<Future finished result=None>)>
+  File "/usr/lib/python3.7/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskWakeupMethWrapper object at 0x7fde84b4bee8>(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskWakeupMethWrapper object at 0x7fde84b4bee8>(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7fde84b4bee8>(<Future finished result=None>)>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 51957303, "message": {"message_id": 774, "from": {"id": 467601941, "is_bot": false, "first_name": "Иль...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7fde84b174e0>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7...
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x7fde85ea4cc0>
+                 │    │                │      └ <Update {"update_id": 51957303, "message": {"message_id": 774, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья...
+                 │    │                └ <function Handler.notify at 0x7fde85e24598>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x7fde84b17470>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7fde84b174e0>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 774, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья", "username": "ripozis", "langua...
+                     │           └ <function test_message at 0x7fde84b26950>
+                     └ Handler.HandlerObj(handler=<function test_message at 0x7fde84b26950>, spec=FullArgSpec(args=['message'], varargs=None, varkw=...
+
+> File "testdef.py", line 91, in test_message
+    await bot.send_video(chat_id=message.from_user.id, video=file, reply_markup=lnkb, caption=title)
+          │   │                  │       │                   │                  │             └ '[OC] Самые высокооплачиваемые знаменитости десятилетия'
+          │   │                  │       │                   │                  └ <InlineKeyboardMarkup {"inline_keyboard": [[{"text": "Опубликовать", "callback_data": "pudlik"}, {"text": "Удалить", "callbac...
+          │   │                  │       │                   └ <_io.BufferedReader name='134DASH_1080.mp4'>
+          │   │                  │       └ <aiogram.types.fields.Field object at 0x7fde85f50ba8>
+          │   │                  └ <Message {"message_id": 774, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья", "username": "ripozis", "languag...
+          │   └ <function Bot.send_video at 0x7fde85df3ea0>
+          └ <aiogram.bot.bot.Bot object at 0x7fde84b17320>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/bot.py", line 800, in send_video
+    result = await self.request(api.Methods.SEND_VIDEO, payload, files)
+                   │    │       │   │       │           │        └ {'video': <_io.BufferedReader name='134DASH_1080.mp4'>}
+                   │    │       │   │       │           └ {'chat_id': 467601941, 'caption': '[OC] Самые высокооплачиваемые знаменитости десятилетия', 'reply_markup': '{"inline_keyboar...
+                   │    │       │   │       └ <aiogram.utils.helper.Item object at 0x7fde85e2cba8>
+                   │    │       │   └ <class 'aiogram.bot.api.Methods'>
+                   │    │       └ <module 'aiogram.bot.api' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py'>
+                   │    └ <function BaseBot.request at 0x7fde85ded6a8>
+                   └ <aiogram.bot.bot.Bot object at 0x7fde84b17320>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/base.py", line 232, in request
+    proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+          │    │                 │    │                   │    │          └ {}
+          │    │                 │    │                   │    └ <property object at 0x7fde85e5c188>
+          │    │                 │    │                   └ <aiogram.bot.bot.Bot object at 0x7fde84b17320>
+          │    │                 │    └ None
+          │    │                 └ <aiogram.bot.bot.Bot object at 0x7fde84b17320>
+          │    └ None
+          └ <aiogram.bot.bot.Bot object at 0x7fde84b17320>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           │            │       │        │             │        │             │        └ <function ClientResponse.text at 0x7fde8668b6a8>
+           │            │       │        │             │        │             └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [413 Request Entity Too...
+           │            │       │        │             │        └ 413
+           │            │       │        │             └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [413 Request Entity Too...
+           │            │       │        └ <property object at 0x7fde8707bd18>
+           │            │       └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [413 Request Entity Too...
+           │            └ 'sendVideo'
+           └ <function check_result at 0x7fde85e2ed90>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py", line 123, in check_result
+    raise exceptions.NetworkError('File too large for uploading. '
+          │          └ <class 'aiogram.utils.exceptions.NetworkError'>
+          └ <module 'aiogram.utils.exceptions' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/exceptions.py'>
+
+aiogram.utils.exceptions.NetworkError: File too large for uploading. Check telegram api limits https://core.telegram.org/bots/api#senddocument
+2022-01-07 at 11:26:55|DEBUG|Получены данные из БД:[('Кадры, показывающие, как большие толпы людей ведут себя как жидкость.', 'https://v.redd.it/g1jg7yfjf1y71/DASH_240.mp4', 10628, 147)]
+2022-01-07 at 11:26:55|DEBUG|Файл на загрузку: 147DASH_240.mp4
+2022-01-07 at 11:26:55|DEBUG|Отправка видео 147DASH_240.mp4
+2022-01-07 at 11:26:55|SUCCESS|В БД отправлен id сообщения: 776
+2022-01-07 at 11:29:45|DEBUG|Получены данные из БД:[('Кадры, показывающие, как большие толпы людей ведут себя как жидкость.', 'https://v.redd.it/g1jg7yfjf1y71/DASH_240.mp4', 10628, 147)]
+2022-01-07 at 11:29:45|DEBUG|Файл на загрузку: 147DASH_240.mp4
+2022-01-07 at 11:29:45|DEBUG|Отправка видео 147DASH_240.mp4
+2022-01-07 at 11:29:45|SUCCESS|В БД отправлен id сообщения: 778
+2022-01-07 at 11:29:56|DEBUG|id Сообщения на публикацию: 778
+2022-01-07 at 11:29:56|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-07 at 11:29:59|DEBUG|Получены данные из БД:[('Пассажиры используют тренажерный зал на борту «Титаника». Этот человек использует раннюю модель гребного тренажера.', 'https://i.redd.it/0gudztqaqyx71.jpg', 9071, 166)]
+2022-01-07 at 11:29:59|DEBUG|Файл на загрузку: 1660gudztqaqyx71.jpg
+2022-01-07 at 11:29:59|DEBUG|Отправка изображения: 1660gudztqaqyx71.jpg
+2022-01-07 at 11:30:00|SUCCESS|В БД отправлен id сообщения: 781
+2022-01-07 at 11:30:24|DEBUG|id Сообщения на публикацию: 781
+2022-01-07 at 11:30:24|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-07 at 11:30:30|DEBUG|Получены данные из БД:[('Черная точка - планета Меркурий.', 'https://i.redd.it/4g17qestryx71.jpg', 7940, 167)]
+2022-01-07 at 11:30:30|DEBUG|Файл на загрузку: 1674g17qestryx71.jpg
+2022-01-07 at 11:30:30|DEBUG|Отправка изображения: 1674g17qestryx71.jpg
+2022-01-07 at 11:30:31|SUCCESS|В БД отправлен id сообщения: 784
+2022-01-07 at 11:30:38|DEBUG|id Сообщения на публикацию: 784
+2022-01-07 at 11:30:38|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-07 at 11:30:42|DEBUG|Получены данные из БД:[('Эта татуировка Людей Икс ..', 'https://i.redd.it/bzsbp02sg0y71.jpg', 5924, 153)]
+2022-01-07 at 11:30:42|DEBUG|Файл на загрузку: 153bzsbp02sg0y71.jpg
+2022-01-07 at 11:30:42|DEBUG|Отправка изображения: 153bzsbp02sg0y71.jpg
+2022-01-07 at 11:30:42|SUCCESS|В БД отправлен id сообщения: 787
+2022-01-07 at 11:30:54|DEBUG|id Сообщения на публикацию: 787
+2022-01-07 at 11:30:54|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-07 at 11:33:25|SUCCESS|Получены кол-во постов на публикацию
+2022-01-12 at 17:02:10|DEBUG|Получены данные из БД:[('BMW представляет технологию, позволяющую менять цвет кузова на выставке CES 2022', 'https://v.redd.it/32ixrtzavw981/DASH_720.mp4', 123963, 238)]
+2022-01-12 at 17:02:10|DEBUG|Файл на загрузку: 238DASH_720.mp4
+2022-01-12 at 17:02:10|DEBUG|Отправка видео 238DASH_720.mp4
+2022-01-12 at 17:02:11|SUCCESS|В БД отправлен id сообщения: 792
+2022-01-12 at 17:02:25|DEBUG|id Сообщения на публикацию: 792
+2022-01-12 at 17:02:25|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 17:02:29|SUCCESS|Получены кол-во постов на публикацию
+2022-01-12 at 17:02:38|DEBUG|Получены данные из БД:[('Как различные комбинации береговой защиты, волн и приливов влияют на риск переполнения и наводнений', 'https://v.redd.it/vfbb2v82v0y71/DASH_480.mp4', 90479, 145)]
+2022-01-12 at 17:02:39|DEBUG|Файл на загрузку: 145DASH_480.mp4
+2022-01-12 at 17:02:39|DEBUG|Отправка видео 145DASH_480.mp4
+2022-01-12 at 17:02:41|SUCCESS|В БД отправлен id сообщения: 797
+2022-01-12 at 17:02:45|DEBUG|id Сообщения на публикацию: 797
+2022-01-12 at 17:02:45|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 17:02:47|DEBUG|Получены данные из БД:[('Открытие ворот плотины после того, как они были закрыты в течение многих лет', 'https://v.redd.it/11k53je8gz981/DASH_480.mp4', 88751, 273)]
+2022-01-12 at 17:02:47|DEBUG|Файл на загрузку: 273DASH_480.mp4
+2022-01-12 at 17:02:47|DEBUG|Отправка видео 273DASH_480.mp4
+2022-01-12 at 17:02:48|SUCCESS|В БД отправлен id сообщения: 800
+2022-01-12 at 17:02:55|DEBUG|id Сообщения на публикацию: 800
+2022-01-12 at 17:02:55|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 17:03:28|DEBUG|Получены данные из БД:[('Молодая самка леопарда привязывается к детенышу бабуина; иногда плотоядные животные сбиваются с толку своими материнскими инстинктами.', 'https://v.redd.it/d0s87ejfi3a81/DASH_720.mp4', 83879, 306)]
+2022-01-12 at 17:03:30|DEBUG|Файл на загрузку: 306DASH_720.mp4
+2022-01-12 at 17:03:30|DEBUG|Отправка видео 306DASH_720.mp4
+2022-01-12 at 17:03:30|ERROR|Ошибка с видео для DEV306DASH_720.mp4
+Traceback (most recent call last):
+
+  File "testdef.py", line 189, in <module>
+    executor.start_polling(dp, skip_updates=True)
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f7a670fe6a0>
+    │        └ <function start_polling at 0x7f7a6849bae8>
+    └ <module 'aiogram.utils.executor' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py'>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py", line 50, in start_polling
+    allowed_updates=allowed_updates
+                    └ None
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7f7a6a19a950>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 539, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7f7a6a19e378>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 1775, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7f7a6a1f16a8>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7f7a6713ef78>(<Future finished result=None>)>
+  File "/usr/lib/python3.7/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskWakeupMethWrapper object at 0x7f7a6713ef78>(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskWakeupMethWrapper object at 0x7f7a6713ef78>(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7f7a6713ef78>(<Future finished result=None>)>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 51957321, "message": {"message_id": 802, "from": {"id": 467601941, "is_bot": false, "first_name": "Иль...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f7a670fe6a0>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7...
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x7f7a686bac88>
+                 │    │                │      └ <Update {"update_id": 51957321, "message": {"message_id": 802, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья...
+                 │    │                └ <function Handler.notify at 0x7f7a68638598>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x7f7a670fe630>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f7a670fe6a0>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 802, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья", "username": "ripozis", "langua...
+                     │           └ <function test_message at 0x7f7a6710eb70>
+                     └ Handler.HandlerObj(handler=<function test_message at 0x7f7a6710eb70>, spec=FullArgSpec(args=['message'], varargs=None, varkw=...
+
+> File "testdef.py", line 91, in test_message
+    await bot.send_video(chat_id=message.from_user.id, video=file, reply_markup=lnkb, caption=title)
+          │   │                  │       │                   │                  │             └ 'Молодая самка леопарда привязывается к детенышу бабуина; иногда плотоядные животные сбиваются с толку своими материнскими ин...
+          │   │                  │       │                   │                  └ <InlineKeyboardMarkup {"inline_keyboard": [[{"text": "Опубликовать", "callback_data": "pudlik"}, {"text": "Удалить", "callbac...
+          │   │                  │       │                   └ <_io.BufferedReader name='306DASH_720.mp4'>
+          │   │                  │       └ <aiogram.types.fields.Field object at 0x7f7a68763b70>
+          │   │                  └ <Message {"message_id": 802, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья", "username": "ripozis", "languag...
+          │   └ <function Bot.send_video at 0x7f7a68606ea0>
+          └ <aiogram.bot.bot.Bot object at 0x7f7a670fe518>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/bot.py", line 800, in send_video
+    result = await self.request(api.Methods.SEND_VIDEO, payload, files)
+                   │    │       │   │       │           │        └ {'video': <_io.BufferedReader name='306DASH_720.mp4'>}
+                   │    │       │   │       │           └ {'chat_id': 467601941, 'caption': 'Молодая самка леопарда привязывается к детенышу бабуина; иногда плотоядные животные сбиваю...
+                   │    │       │   │       └ <aiogram.utils.helper.Item object at 0x7f7a686beba8>
+                   │    │       │   └ <class 'aiogram.bot.api.Methods'>
+                   │    │       └ <module 'aiogram.bot.api' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py'>
+                   │    └ <function BaseBot.request at 0x7f7a686026a8>
+                   └ <aiogram.bot.bot.Bot object at 0x7f7a670fe518>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/base.py", line 232, in request
+    proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+          │    │                 │    │                   │    │          └ {}
+          │    │                 │    │                   │    └ <property object at 0x7f7a6866e408>
+          │    │                 │    │                   └ <aiogram.bot.bot.Bot object at 0x7f7a670fe518>
+          │    │                 │    └ None
+          │    │                 └ <aiogram.bot.bot.Bot object at 0x7f7a670fe518>
+          │    └ None
+          └ <aiogram.bot.bot.Bot object at 0x7f7a670fe518>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           │            │       │        │             │        │             │        └ <function ClientResponse.text at 0x7f7a68e9f6a8>
+           │            │       │        │             │        │             └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [413 Request Entity Too...
+           │            │       │        │             │        └ 413
+           │            │       │        │             └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [413 Request Entity Too...
+           │            │       │        └ <property object at 0x7f7a6988fd68>
+           │            │       └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [413 Request Entity Too...
+           │            └ 'sendVideo'
+           └ <function check_result at 0x7f7a68642d90>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py", line 123, in check_result
+    raise exceptions.NetworkError('File too large for uploading. '
+          │          └ <class 'aiogram.utils.exceptions.NetworkError'>
+          └ <module 'aiogram.utils.exceptions' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/exceptions.py'>
+
+aiogram.utils.exceptions.NetworkError: File too large for uploading. Check telegram api limits https://core.telegram.org/bots/api#senddocument
+2022-01-12 at 17:04:46|SUCCESS|Получены кол-во постов на публикацию
+2022-01-12 at 17:05:26|DEBUG|Получены данные из БД:[('Немного инженерии', 'https://i.redd.it/w3uctv6p8zx71.gif', 63643, 158)]
+2022-01-12 at 17:05:27|DEBUG|Файл на загрузку: 158w3uctv6p8zx71.gif
+2022-01-12 at 17:05:27|DEBUG|Отправка анимации: 158w3uctv6p8zx71.gif
+2022-01-12 at 17:05:28|SUCCESS|В БД отправлен id сообщения: 806
+2022-01-12 at 17:07:37|SUCCESS|Получены кол-во постов на публикацию
+2022-01-12 at 17:09:48|SUCCESS|Получены кол-во постов на публикацию
+2022-01-12 at 17:27:24|DEBUG|Получены данные из БД:[('Немного инженерии', 'https://i.redd.it/w3uctv6p8zx71.gif', 63643, 158)]
+2022-01-12 at 17:27:25|DEBUG|Файл на загрузку: 158w3uctv6p8zx71.gif
+2022-01-12 at 17:27:25|DEBUG|Отправка анимации: 158w3uctv6p8zx71.gif
+2022-01-12 at 17:27:27|SUCCESS|В БД отправлен id сообщения: 813
+2022-01-12 at 17:33:56|SUCCESS|Получены кол-во постов на публикацию
+2022-01-12 at 17:35:37|SUCCESS|Получены кол-во постов на публикацию
+2022-01-12 at 17:36:30|DEBUG|Получены данные из БД:[('Немного инженерии', 'https://i.redd.it/w3uctv6p8zx71.gif', 63643, 158)]
+2022-01-12 at 17:36:31|DEBUG|Файл на загрузку: 158w3uctv6p8zx71.gif
+2022-01-12 at 17:36:31|DEBUG|Отправка анимации: 158w3uctv6p8zx71.gif
+2022-01-12 at 17:36:33|SUCCESS|В БД отправлен id сообщения: 819
+2022-01-12 at 17:36:46|DEBUG|id Сообщения на публикацию: 819
+2022-01-12 at 17:36:46|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 17:37:33|SUCCESS|Получены кол-во постов на публикацию
+2022-01-12 at 17:37:35|DEBUG|Получены данные из БД:[('Я не метеоролог, но похоже, что это кучево-дождевое облако, увенчанное линзовидным облаком.', 'https://v.redd.it/6mjvdmgjk2y71/DASH_720.mp4', 45877, 143)]
+2022-01-12 at 17:37:35|DEBUG|Файл на загрузку: 143DASH_720.mp4
+2022-01-12 at 17:37:35|DEBUG|Отправка видео 143DASH_720.mp4
+2022-01-12 at 17:37:37|SUCCESS|В БД отправлен id сообщения: 824
+2022-01-12 at 17:37:40|DEBUG|id Сообщения на публикацию: 824
+2022-01-12 at 17:37:40|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 17:38:21|DEBUG|Получены данные из БД:[('Что это за чёрная магия?', 'https://i.redd.it/u4tral8yqex71.gif', 27550, 95)]
+2022-01-12 at 17:38:21|DEBUG|Файл на загрузку: 95u4tral8yqex71.gif
+2022-01-12 at 17:38:21|DEBUG|Отправка анимации: 95u4tral8yqex71.gif
+2022-01-12 at 17:38:22|SUCCESS|В БД отправлен id сообщения: 827
+2022-01-12 at 17:38:26|DEBUG|id Сообщения на публикацию: 827
+2022-01-12 at 17:38:26|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 17:40:17|DEBUG|Получены данные из БД:[('Никогда не поздно признать тот факт, что городские магистрали - это исправимая ошибка.', 'https://i.redd.it/m61dwhwu4tx71.jpg', 19716, 135)]
+2022-01-12 at 17:40:17|DEBUG|Файл на загрузку: 135m61dwhwu4tx71.jpg
+2022-01-12 at 17:40:17|DEBUG|Отправка изображения: 135m61dwhwu4tx71.jpg
+2022-01-12 at 17:40:17|SUCCESS|В БД отправлен id сообщения: 830
+2022-01-12 at 17:40:21|SUCCESS|Получены кол-во постов на публикацию
+2022-01-12 at 17:40:25|DEBUG|id Сообщения на публикацию: 830
+2022-01-12 at 17:40:25|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 17:41:46|DEBUG|Получены данные из БД:[('Вот как бы выглядела планета, если бы она находилась на таком же расстоянии, как луна', 'https://v.redd.it/mnov47u9uzx71/DASH_240.mp4', 18196, 152)]
+2022-01-12 at 17:41:46|DEBUG|Файл на загрузку: 152DASH_240.mp4
+2022-01-12 at 17:41:46|DEBUG|Отправка видео 152DASH_240.mp4
+2022-01-12 at 17:41:47|SUCCESS|В БД отправлен id сообщения: 835
+2022-01-12 at 17:42:31|SUCCESS|Получены кол-во постов на публикацию
+2022-01-12 at 17:42:36|DEBUG|id Сообщения на публикацию: 835
+2022-01-12 at 17:42:36|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 17:42:40|DEBUG|Получены данные из БД:[('[OC] Десять самых популярных детских имен в США, 1880–2020 гг.', 'https://v.redd.it/e12lqmzrafx71/DASH_1080.mp4', 14070, 124)]
+2022-01-12 at 17:42:44|DEBUG|Файл на загрузку: 124DASH_1080.mp4
+2022-01-12 at 17:42:44|DEBUG|Отправка видео 124DASH_1080.mp4
+2022-01-12 at 17:42:47|SUCCESS|В БД отправлен id сообщения: 840
+2022-01-12 at 17:42:55|DEBUG|Пост помечен на удаление: 840
+2022-01-12 at 17:42:55|SUCCESS|Сработала кнопка "Удалить"
+2022-01-12 at 17:42:59|DEBUG|Получены данные из БД:[('[OC] Самые высокооплачиваемые знаменитости десятилетия', 'https://v.redd.it/iv0307dn8dx71/DASH_1080.mp4', 11420, 134)]
+2022-01-12 at 17:43:09|DEBUG|Файл на загрузку: 134DASH_1080.mp4
+2022-01-12 at 17:43:09|DEBUG|Отправка видео 134DASH_1080.mp4
+2022-01-12 at 17:43:09|ERROR|Ошибка с видео для DEV134DASH_1080.mp4
+Traceback (most recent call last):
+
+  File "testdef.py", line 189, in <module>
+    executor.start_polling(dp, skip_updates=True)
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f31c5c5e7f0>
+    │        └ <function start_polling at 0x7f31c6ffbae8>
+    └ <module 'aiogram.utils.executor' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py'>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py", line 50, in start_polling
+    allowed_updates=allowed_updates
+                    └ None
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7f31c8cfa950>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 539, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7f31c8cfe378>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 1775, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7f31c8d516a8>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7f31c5ca8a98>(<Future finished result=None>)>
+  File "/usr/lib/python3.7/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskWakeupMethWrapper object at 0x7f31c5ca8a98>(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskWakeupMethWrapper object at 0x7f31c5ca8a98>(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7f31c5ca8a98>(<Future finished result=None>)>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 51957345, "message": {"message_id": 842, "from": {"id": 467601941, "is_bot": false, "first_name": "Иль...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f31c5c5e7f0>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7...
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x7f31c7218cc0>
+                 │    │                │      └ <Update {"update_id": 51957345, "message": {"message_id": 842, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья...
+                 │    │                └ <function Handler.notify at 0x7f31c7198598>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x7f31c5c5e780>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f31c5c5e7f0>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 842, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья", "username": "ripozis", "langua...
+                     │           └ <function test_message at 0x7f31c5c6db70>
+                     └ Handler.HandlerObj(handler=<function test_message at 0x7f31c5c6db70>, spec=FullArgSpec(args=['message'], varargs=None, varkw=...
+
+> File "testdef.py", line 91, in test_message
+    await bot.send_video(chat_id=message.from_user.id, video=file, reply_markup=lnkb, caption=title)
+          │   │                  │       │                   │                  │             └ '[OC] Самые высокооплачиваемые знаменитости десятилетия'
+          │   │                  │       │                   │                  └ <InlineKeyboardMarkup {"inline_keyboard": [[{"text": "Опубликовать", "callback_data": "pudlik"}, {"text": "Удалить", "callbac...
+          │   │                  │       │                   └ <_io.BufferedReader name='134DASH_1080.mp4'>
+          │   │                  │       └ <aiogram.types.fields.Field object at 0x7f31c72c3ba8>
+          │   │                  └ <Message {"message_id": 842, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья", "username": "ripozis", "languag...
+          │   └ <function Bot.send_video at 0x7f31c7167ea0>
+          └ <aiogram.bot.bot.Bot object at 0x7f31c5c5e668>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/bot.py", line 800, in send_video
+    result = await self.request(api.Methods.SEND_VIDEO, payload, files)
+                   │    │       │   │       │           │        └ {'video': <_io.BufferedReader name='134DASH_1080.mp4'>}
+                   │    │       │   │       │           └ {'chat_id': 467601941, 'caption': '[OC] Самые высокооплачиваемые знаменитости десятилетия', 'reply_markup': '{"inline_keyboar...
+                   │    │       │   │       └ <aiogram.utils.helper.Item object at 0x7f31c71a0ba8>
+                   │    │       │   └ <class 'aiogram.bot.api.Methods'>
+                   │    │       └ <module 'aiogram.bot.api' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py'>
+                   │    └ <function BaseBot.request at 0x7f31c71626a8>
+                   └ <aiogram.bot.bot.Bot object at 0x7f31c5c5e668>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/base.py", line 232, in request
+    proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+          │    │                 │    │                   │    │          └ {}
+          │    │                 │    │                   │    └ <property object at 0x7f31c71ce408>
+          │    │                 │    │                   └ <aiogram.bot.bot.Bot object at 0x7f31c5c5e668>
+          │    │                 │    └ None
+          │    │                 └ <aiogram.bot.bot.Bot object at 0x7f31c5c5e668>
+          │    └ None
+          └ <aiogram.bot.bot.Bot object at 0x7f31c5c5e668>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           │            │       │        │             │        │             │        └ <function ClientResponse.text at 0x7f31c79ff6a8>
+           │            │       │        │             │        │             └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [413 Request Entity Too...
+           │            │       │        │             │        └ 413
+           │            │       │        │             └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [413 Request Entity Too...
+           │            │       │        └ <property object at 0x7f31c83efdb8>
+           │            │       └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [413 Request Entity Too...
+           │            └ 'sendVideo'
+           └ <function check_result at 0x7f31c71a2d90>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py", line 123, in check_result
+    raise exceptions.NetworkError('File too large for uploading. '
+          │          └ <class 'aiogram.utils.exceptions.NetworkError'>
+          └ <module 'aiogram.utils.exceptions' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/exceptions.py'>
+
+aiogram.utils.exceptions.NetworkError: File too large for uploading. Check telegram api limits https://core.telegram.org/bots/api#senddocument
+2022-01-12 at 17:44:05|DEBUG|Получены данные из БД:[('Кадры, показывающие, как большие толпы людей ведут себя как жидкость.', 'https://v.redd.it/g1jg7yfjf1y71/DASH_240.mp4', 10628, 147)]
+2022-01-12 at 17:44:05|DEBUG|Файл на загрузку: 147DASH_240.mp4
+2022-01-12 at 17:44:05|DEBUG|Отправка видео 147DASH_240.mp4
+2022-01-12 at 17:44:06|SUCCESS|В БД отправлен id сообщения: 844
+2022-01-12 at 17:45:00|DEBUG|id Сообщения на публикацию: 844
+2022-01-12 at 17:45:00|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 17:45:20|DEBUG|Получены данные из БД:[('Пассажиры используют тренажерный зал на борту «Титаника». Этот человек использует раннюю модель гребного тренажера.', 'https://i.redd.it/0gudztqaqyx71.jpg', 9071, 166)]
+2022-01-12 at 17:45:20|DEBUG|Файл на загрузку: 1660gudztqaqyx71.jpg
+2022-01-12 at 17:45:20|DEBUG|Отправка изображения: 1660gudztqaqyx71.jpg
+2022-01-12 at 17:45:20|SUCCESS|В БД отправлен id сообщения: 847
+2022-01-12 at 17:45:24|DEBUG|id Сообщения на публикацию: 847
+2022-01-12 at 17:45:24|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 17:45:33|SUCCESS|Получены кол-во постов на публикацию
+2022-01-12 at 17:45:51|SUCCESS|Получены кол-во постов на публикацию
+2022-01-12 at 17:48:41|SUCCESS|Получены кол-во постов на публикацию
+2022-01-12 at 17:49:53|DEBUG|Получены данные из БД:[('Черная точка - планета Меркурий.', 'https://i.redd.it/4g17qestryx71.jpg', 7940, 167)]
+2022-01-12 at 17:49:53|DEBUG|Файл на загрузку: 1674g17qestryx71.jpg
+2022-01-12 at 17:49:53|DEBUG|Отправка изображения: 1674g17qestryx71.jpg
+2022-01-12 at 17:49:53|SUCCESS|В БД отправлен id сообщения: 856
+2022-01-12 at 17:50:04|DEBUG|id Сообщения на публикацию: 856
+2022-01-12 at 17:50:04|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 17:50:05|DEBUG|Получены данные из БД:[('Эта татуировка Людей Икс ..', 'https://i.redd.it/bzsbp02sg0y71.jpg', 5924, 153)]
+2022-01-12 at 17:50:05|DEBUG|Файл на загрузку: 153bzsbp02sg0y71.jpg
+2022-01-12 at 17:50:05|DEBUG|Отправка изображения: 153bzsbp02sg0y71.jpg
+2022-01-12 at 17:50:05|SUCCESS|В БД отправлен id сообщения: 859
+2022-01-12 at 17:50:07|DEBUG|id Сообщения на публикацию: 859
+2022-01-12 at 17:50:07|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 17:50:10|DEBUG|Получены данные из БД:[('[OC] Выбросы CO2 на душу населения с 1800 г.', 'https://v.redd.it/lyweuljq1rx71/DASH_1080.mp4', 5369, 110)]
+2022-01-12 at 17:50:13|DEBUG|Файл на загрузку: 110DASH_1080.mp4
+2022-01-12 at 17:50:13|DEBUG|Отправка видео 110DASH_1080.mp4
+2022-01-12 at 17:50:15|SUCCESS|В БД отправлен id сообщения: 862
+2022-01-12 at 17:50:17|DEBUG|id Сообщения на публикацию: 862
+2022-01-12 at 17:50:17|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 17:51:16|DEBUG|Получены данные из БД:[('Это не спираль: вы видите серию концентрических кругов, и причина кроется в так называемой иллюзии спирали Фрейзера.', 'https://i.redd.it/uv5k0xmr9dx71.jpg', 5150, 96)]
+2022-01-12 at 17:51:16|DEBUG|Файл на загрузку: 96uv5k0xmr9dx71.jpg
+2022-01-12 at 17:51:16|DEBUG|Отправка изображения: 96uv5k0xmr9dx71.jpg
+2022-01-12 at 17:51:16|SUCCESS|В БД отправлен id сообщения: 865
+2022-01-12 at 17:51:18|DEBUG|id Сообщения на публикацию: 865
+2022-01-12 at 17:51:18|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 17:52:44|SUCCESS|Получены кол-во постов на публикацию
+2022-01-12 at 17:52:52|DEBUG|Получены данные из БД:[('Если вы видели Band of Brothers, вот вам настоящая легкая компания в Eagle’s Nest.', 'https://i.redd.it/9jbkziw082y71.jpg', 4766, 146)]
+2022-01-12 at 17:52:52|DEBUG|Файл на загрузку: 1469jbkziw082y71.jpg
+2022-01-12 at 17:52:52|DEBUG|Отправка изображения: 1469jbkziw082y71.jpg
+2022-01-12 at 17:52:53|SUCCESS|В БД отправлен id сообщения: 870
+2022-01-12 at 17:53:09|DEBUG|Пост помечен на удаление: 870
+2022-01-12 at 17:53:09|SUCCESS|Сработала кнопка "Удалить"
+2022-01-12 at 17:54:02|SUCCESS|Получены кол-во постов на публикацию
+2022-01-12 at 17:54:03|DEBUG|Получены данные из БД:[('Художественная установка, где из машины течет гидравлическая жидкость. он пытается удержать его внутри, но утечка все равно его убьет. @nicwashere', 'https://v.redd.it/tiompbylt3y71/DASH_480.mp4', 3974, 144)]
+2022-01-12 at 17:54:03|DEBUG|Файл на загрузку: 144DASH_480.mp4
+2022-01-12 at 17:54:03|DEBUG|Отправка видео 144DASH_480.mp4
+2022-01-12 at 17:54:04|SUCCESS|В БД отправлен id сообщения: 875
+2022-01-12 at 17:54:05|DEBUG|id Сообщения на публикацию: 875
+2022-01-12 at 17:54:05|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 17:54:10|DEBUG|Получены данные из БД:[('В Помпеях только что обнаружили совершенно неповрежденную спальню раба. В тесноте жилого помещения стояли три деревянные кровати и ночной горшок.', 'https://i.redd.it/elhur2ifl1y71.jpg', 3464, 151)]
+2022-01-12 at 17:54:10|DEBUG|Файл на загрузку: 151elhur2ifl1y71.jpg
+2022-01-12 at 17:54:10|DEBUG|Отправка изображения: 151elhur2ifl1y71.jpg
+2022-01-12 at 17:54:11|SUCCESS|В БД отправлен id сообщения: 878
+2022-01-12 at 17:54:15|DEBUG|id Сообщения на публикацию: 878
+2022-01-12 at 17:54:15|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 17:54:19|DEBUG|Получены данные из БД:[('Краны подъемные прочие.', 'https://i.redd.it/vt189y2vjox71.jpg', 3337, 85)]
+2022-01-12 at 17:54:19|DEBUG|Файл на загрузку: 85vt189y2vjox71.jpg
+2022-01-12 at 17:54:19|DEBUG|Отправка изображения: 85vt189y2vjox71.jpg
+2022-01-12 at 17:54:19|SUCCESS|В БД отправлен id сообщения: 881
+2022-01-12 at 17:54:22|DEBUG|id Сообщения на публикацию: 881
+2022-01-12 at 17:54:22|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 17:54:24|SUCCESS|Получены кол-во постов на публикацию
+2022-01-12 at 17:54:25|DEBUG|Получены данные из БД:[('Лимузины, спроектированные Джеем Орбергом, который также построил Back to the Future Delorean и Batman Returns Batmobile.', 'https://i.imgur.com/Ie5pevJ.jpg', 2913, 162)]
+2022-01-12 at 17:54:25|DEBUG|Файл на загрузку: 162Ie5pevJ.jpg
+2022-01-12 at 17:54:25|DEBUG|Отправка изображения: 162Ie5pevJ.jpg
+2022-01-12 at 17:54:25|ERROR|Ошибка с картинкой для DEV162Ie5pevJ.jpg
+Traceback (most recent call last):
+
+  File "testdef.py", line 189, in <module>
+    executor.start_polling(dp, skip_updates=True)
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f31c5c5e7f0>
+    │        └ <function start_polling at 0x7f31c6ffbae8>
+    └ <module 'aiogram.utils.executor' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py'>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py", line 50, in start_polling
+    allowed_updates=allowed_updates
+                    └ None
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7f31c8cfa950>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 539, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7f31c8cfe378>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 1775, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7f31c8d516a8>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7f31c5ca8a98>(<Future finished result=None>)>
+  File "/usr/lib/python3.7/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskWakeupMethWrapper object at 0x7f31c5ca8a98>(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskWakeupMethWrapper object at 0x7f31c5ca8a98>(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7f31c5ca8a98>(<Future finished result=None>)>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 51957372, "message": {"message_id": 885, "from": {"id": 467601941, "is_bot": false, "first_name": "Иль...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f31c5c5e7f0>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7...
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x7f31c7218cc0>
+                 │    │                │      └ <Update {"update_id": 51957372, "message": {"message_id": 885, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья...
+                 │    │                └ <function Handler.notify at 0x7f31c7198598>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x7f31c5c5e780>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f31c5c5e7f0>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 885, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья", "username": "ripozis", "langua...
+                     │           └ <function test_message at 0x7f31c5c6db70>
+                     └ Handler.HandlerObj(handler=<function test_message at 0x7f31c5c6db70>, spec=FullArgSpec(args=['message'], varargs=None, varkw=...
+
+> File "testdef.py", line 77, in test_message
+    await bot.send_photo(chat_id=message.from_user.id, photo=file, reply_markup=lnkb, caption=title)
+          │   │                  │       │                   │                  │             └ 'Лимузины, спроектированные Джеем Орбергом, который также построил Back to the Future Delorean и Batman Returns Batmobile.'
+          │   │                  │       │                   │                  └ <InlineKeyboardMarkup {"inline_keyboard": [[{"text": "Опубликовать", "callback_data": "pudlik"}, {"text": "Удалить", "callbac...
+          │   │                  │       │                   └ <_io.BufferedReader name='162Ie5pevJ.jpg'>
+          │   │                  │       └ <aiogram.types.fields.Field object at 0x7f31c72c3ba8>
+          │   │                  └ <Message {"message_id": 885, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья", "username": "ripozis", "languag...
+          │   └ <function Bot.send_photo at 0x7f31c7167d08>
+          └ <aiogram.bot.bot.Bot object at 0x7f31c5c5e668>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/bot.py", line 527, in send_photo
+    result = await self.request(api.Methods.SEND_PHOTO, payload, files)
+                   │    │       │   │       │           │        └ {'photo': <_io.BufferedReader name='162Ie5pevJ.jpg'>}
+                   │    │       │   │       │           └ {'chat_id': 467601941, 'caption': 'Лимузины, спроектированные Джеем Орбергом, который также построил Back to the Future Delor...
+                   │    │       │   │       └ <aiogram.utils.helper.Item object at 0x7f31c71a0b00>
+                   │    │       │   └ <class 'aiogram.bot.api.Methods'>
+                   │    │       └ <module 'aiogram.bot.api' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py'>
+                   │    └ <function BaseBot.request at 0x7f31c71626a8>
+                   └ <aiogram.bot.bot.Bot object at 0x7f31c5c5e668>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/base.py", line 232, in request
+    proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+          │    │                 │    │                   │    │          └ {}
+          │    │                 │    │                   │    └ <property object at 0x7f31c71ce408>
+          │    │                 │    │                   └ <aiogram.bot.bot.Bot object at 0x7f31c5c5e668>
+          │    │                 │    └ None
+          │    │                 └ <aiogram.bot.bot.Bot object at 0x7f31c5c5e668>
+          │    └ None
+          └ <aiogram.bot.bot.Bot object at 0x7f31c5c5e668>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           │            │       │        │             │        │             │        └ <function ClientResponse.text at 0x7f31c79ff6a8>
+           │            │       │        │             │        │             └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendPhoto) [400 Bad Request]>
+           │            │       │        │             │        │               <CIM...
+           │            │       │        │             │        └ 400
+           │            │       │        │             └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendPhoto) [400 Bad Request]>
+           │            │       │        │               <CIM...
+           │            │       │        └ <property object at 0x7f31c83efdb8>
+           │            │       └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendPhoto) [400 Bad Request]>
+           │            │         <CIM...
+           │            └ 'sendPhoto'
+           └ <function check_result at 0x7f31c71a2d90>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+    │          │          │      └ 'Bad Request: file must be non-empty'
+    │          │          └ <classmethod object at 0x7f31c71aad30>
+    │          └ <class 'aiogram.utils.exceptions.BadRequest'>
+    └ <module 'aiogram.utils.exceptions' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/exceptions.py'>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/exceptions.py", line 141, in detect
+    raise cls(description)
+          │   └ 'bad request: file must be non-empty'
+          └ <class 'aiogram.utils.exceptions.BadRequest'>
+
+aiogram.utils.exceptions.BadRequest: File must be non-empty
+2022-01-12 at 17:54:54|DEBUG|Получены данные из БД:[('Я снял туманности Конская Голова и Пламя с помощью домашнего телескопа.', 'https://i.redd.it/lpcep1mno2y71.jpg', 1949, 149)]
+2022-01-12 at 17:54:55|DEBUG|Файл на загрузку: 149lpcep1mno2y71.jpg
+2022-01-12 at 17:54:55|DEBUG|Отправка изображения: 149lpcep1mno2y71.jpg
+2022-01-12 at 17:54:57|SUCCESS|В БД отправлен id сообщения: 887
+2022-01-12 at 17:54:59|DEBUG|id Сообщения на публикацию: 887
+2022-01-12 at 17:54:59|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 17:55:34|DEBUG|Получены данные из БД:[('Шифу использует матричную ловкость, чтобы уклоняться от ударов, сражаясь со змеей.', 'https://v.redd.it/bccfoxk9v1y71/DASH_240.mp4', 1901, 154)]
+2022-01-12 at 17:55:34|DEBUG|Файл на загрузку: 154DASH_240.mp4
+2022-01-12 at 17:55:34|DEBUG|Отправка видео 154DASH_240.mp4
+2022-01-12 at 17:55:34|SUCCESS|В БД отправлен id сообщения: 890
+2022-01-12 at 17:55:49|DEBUG|id Сообщения на публикацию: 890
+2022-01-12 at 17:55:49|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 17:56:03|DEBUG|Получены данные из БД:[('Вулканический кратер в Исландии', 'https://i.redd.it/w341f3n2z0y71.jpg', 1800, 163)]
+2022-01-12 at 17:56:04|DEBUG|Файл на загрузку: 163w341f3n2z0y71.jpg
+2022-01-12 at 17:56:04|DEBUG|Отправка изображения: 163w341f3n2z0y71.jpg
+2022-01-12 at 17:56:04|SUCCESS|В БД отправлен id сообщения: 893
+2022-01-12 at 17:56:08|DEBUG|id Сообщения на публикацию: 893
+2022-01-12 at 17:56:08|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 17:59:16|DEBUG|Получены данные из БД:[('Заброшенный парадный подъезд.', 'https://i.redd.it/zza3re1rt1y71.jpg', 1760, 155)]
+2022-01-12 at 17:59:17|DEBUG|Файл на загрузку: 155zza3re1rt1y71.jpg
+2022-01-12 at 17:59:17|DEBUG|Отправка изображения: 155zza3re1rt1y71.jpg
+2022-01-12 at 17:59:18|SUCCESS|В БД отправлен id сообщения: 896
+2022-01-12 at 17:59:20|DEBUG|id Сообщения на публикацию: 896
+2022-01-12 at 17:59:20|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 17:59:22|SUCCESS|Получены кол-во постов на публикацию
+2022-01-12 at 17:59:24|DEBUG|Получены данные из БД:[('Как положение света влияет на фотографию!', 'https://i.redd.it/4h1ojk6zh3y71.gif', 1549, 148)]
+2022-01-12 at 17:59:24|DEBUG|Файл на загрузку: 1484h1ojk6zh3y71.gif
+2022-01-12 at 17:59:24|DEBUG|Отправка анимации: 1484h1ojk6zh3y71.gif
+2022-01-12 at 17:59:25|SUCCESS|В БД отправлен id сообщения: 901
+2022-01-12 at 17:59:27|DEBUG|id Сообщения на публикацию: 901
+2022-01-12 at 17:59:27|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 17:59:45|DEBUG|Получены данные из БД:[('Собаки-терапевты ждут, чтобы их впустили, чтобы утешить пациентов в больнице', 'https://i.redd.it/kx4srsifg3y71.jpg', 1025, 150)]
+2022-01-12 at 17:59:45|DEBUG|Файл на загрузку: 150kx4srsifg3y71.jpg
+2022-01-12 at 17:59:45|DEBUG|Отправка изображения: 150kx4srsifg3y71.jpg
+2022-01-12 at 17:59:45|SUCCESS|В БД отправлен id сообщения: 904
+2022-01-12 at 17:59:47|DEBUG|id Сообщения на публикацию: 904
+2022-01-12 at 17:59:47|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 18:01:27|SUCCESS|Получены кол-во постов на публикацию
+2022-01-12 at 18:01:29|DEBUG|Получены данные из БД:[('Эта красивая красноглазая квакша со своими младенцами', 'https://i.redd.it/t6osf24jm2y71.jpg', 912, 159)]
+2022-01-12 at 18:01:29|DEBUG|Файл на загрузку: 159t6osf24jm2y71.jpg
+2022-01-12 at 18:01:29|DEBUG|Отправка изображения: 159t6osf24jm2y71.jpg
+2022-01-12 at 18:01:30|SUCCESS|В БД отправлен id сообщения: 909
+2022-01-12 at 18:01:32|DEBUG|id Сообщения на публикацию: 909
+2022-01-12 at 18:01:32|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 18:01:41|DEBUG|Получены данные из БД:[('[OC] Как часто Трамп твитнул со словами «фальшивка, фальсификация, Обама и Байден» в период с 2016 по 2021 год?', 'https://i.redd.it/6prwhua2qnx71.png', 692, 113)]
+2022-01-12 at 18:01:41|DEBUG|Файл на загрузку: 1136prwhua2qnx71.png
+2022-01-12 at 18:01:41|DEBUG|Отправка изображения: 1136prwhua2qnx71.png
+2022-01-12 at 18:01:42|SUCCESS|В БД отправлен id сообщения: 912
+2022-01-12 at 18:01:50|DEBUG|id Сообщения на публикацию: 912
+2022-01-12 at 18:01:50|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 18:04:50|DEBUG|Получены данные из БД:[('Коробчатый трансформатор', 'https://v.redd.it/3voxyw3pwsx71/DASH_1080.mp4', 581, 105)]
+2022-01-12 at 18:04:52|DEBUG|Файл на загрузку: 105DASH_1080.mp4
+2022-01-12 at 18:04:52|DEBUG|Отправка видео 105DASH_1080.mp4
+2022-01-12 at 18:04:53|SUCCESS|В БД отправлен id сообщения: 915
+2022-01-12 at 18:05:13|DEBUG|Пост помечен на редактирование: 915
+2022-01-12 at 18:05:13|SUCCESS|Сработала кнопка "Редактировать"
+2022-01-12 at 18:05:17|DEBUG|Получены данные из БД:[('Закат на Земле из космоса.', 'https://i.redd.it/7hyvgcfihtx71.png', 511, 136)]
+2022-01-12 at 18:05:17|DEBUG|Файл на загрузку: 1367hyvgcfihtx71.png
+2022-01-12 at 18:05:17|DEBUG|Отправка изображения: 1367hyvgcfihtx71.png
+2022-01-12 at 18:05:17|SUCCESS|В БД отправлен id сообщения: 918
+2022-01-12 at 18:05:22|DEBUG|id Сообщения на публикацию: 918
+2022-01-12 at 18:05:22|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 18:05:24|SUCCESS|Получены кол-во постов на публикацию
+2022-01-12 at 18:06:37|DEBUG|Получены данные из БД:[('Этот человек создал экосистему в банке за три года! Автор @amberxdiamond', 'https://v.redd.it/nc1ondalf3y71/DASH_720.mp4', 483, 160)]
+2022-01-12 at 18:06:38|DEBUG|Файл на загрузку: 160DASH_720.mp4
+2022-01-12 at 18:06:38|DEBUG|Отправка видео 160DASH_720.mp4
+2022-01-12 at 18:06:40|SUCCESS|В БД отправлен id сообщения: 923
+2022-01-12 at 18:06:52|DEBUG|id Сообщения на публикацию: 923
+2022-01-12 at 18:06:52|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 18:07:05|DEBUG|Получены данные из БД:[('Ikea в Сингапуре решила выпустить полностью черный хот-дог.', 'https://i.redd.it/jd4dugpe84y71.jpg', 373, 157)]
+2022-01-12 at 18:07:05|DEBUG|Файл на загрузку: 157jd4dugpe84y71.jpg
+2022-01-12 at 18:07:05|DEBUG|Отправка изображения: 157jd4dugpe84y71.jpg
+2022-01-12 at 18:07:05|SUCCESS|В БД отправлен id сообщения: 926
+2022-01-12 at 18:07:16|DEBUG|id Сообщения на публикацию: 926
+2022-01-12 at 18:07:16|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 18:09:53|DEBUG|Получены данные из БД:[('Как статуя «Пробуждение» в Мэриленде выглядит обычно, а как она выглядит затопленной', 'https://i.imgur.com/nIVzBAj.png', 365, 161)]
+2022-01-12 at 18:09:53|DEBUG|Файл на загрузку: 161nIVzBAj.png
+2022-01-12 at 18:09:53|DEBUG|Отправка изображения: 161nIVzBAj.png
+2022-01-12 at 18:09:53|ERROR|Ошибка с картинкой для DEV161nIVzBAj.png
+Traceback (most recent call last):
+
+  File "testdef.py", line 189, in <module>
+    executor.start_polling(dp, skip_updates=True)
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f31c5c5e7f0>
+    │        └ <function start_polling at 0x7f31c6ffbae8>
+    └ <module 'aiogram.utils.executor' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py'>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py", line 50, in start_polling
+    allowed_updates=allowed_updates
+                    └ None
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7f31c8cfa950>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 539, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7f31c8cfe378>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 1775, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7f31c8d516a8>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7f31c5ca8fd8>(<Future finished result=None>)>
+  File "/usr/lib/python3.7/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskWakeupMethWrapper object at 0x7f31c5ca8fd8>(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskWakeupMethWrapper object at 0x7f31c5ca8fd8>(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7f31c5ca8fd8>(<Future finished result=None>)>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 51957400, "message": {"message_id": 928, "from": {"id": 467601941, "is_bot": false, "first_name": "Иль...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f31c5c5e7f0>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7...
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x7f31c7218cc0>
+                 │    │                │      └ <Update {"update_id": 51957400, "message": {"message_id": 928, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья...
+                 │    │                └ <function Handler.notify at 0x7f31c7198598>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x7f31c5c5e780>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f31c5c5e7f0>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 928, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья", "username": "ripozis", "langua...
+                     │           └ <function test_message at 0x7f31c5c6db70>
+                     └ Handler.HandlerObj(handler=<function test_message at 0x7f31c5c6db70>, spec=FullArgSpec(args=['message'], varargs=None, varkw=...
+
+> File "testdef.py", line 77, in test_message
+    await bot.send_photo(chat_id=message.from_user.id, photo=file, reply_markup=lnkb, caption=title)
+          │   │                  │       │                   │                  │             └ 'Как статуя «Пробуждение» в Мэриленде выглядит обычно, а как она выглядит затопленной'
+          │   │                  │       │                   │                  └ <InlineKeyboardMarkup {"inline_keyboard": [[{"text": "Опубликовать", "callback_data": "pudlik"}, {"text": "Удалить", "callbac...
+          │   │                  │       │                   └ <_io.BufferedReader name='161nIVzBAj.png'>
+          │   │                  │       └ <aiogram.types.fields.Field object at 0x7f31c72c3ba8>
+          │   │                  └ <Message {"message_id": 928, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья", "username": "ripozis", "languag...
+          │   └ <function Bot.send_photo at 0x7f31c7167d08>
+          └ <aiogram.bot.bot.Bot object at 0x7f31c5c5e668>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/bot.py", line 527, in send_photo
+    result = await self.request(api.Methods.SEND_PHOTO, payload, files)
+                   │    │       │   │       │           │        └ {'photo': <_io.BufferedReader name='161nIVzBAj.png'>}
+                   │    │       │   │       │           └ {'chat_id': 467601941, 'caption': 'Как статуя «Пробуждение» в Мэриленде выглядит обычно, а как она выглядит затопленной', 're...
+                   │    │       │   │       └ <aiogram.utils.helper.Item object at 0x7f31c71a0b00>
+                   │    │       │   └ <class 'aiogram.bot.api.Methods'>
+                   │    │       └ <module 'aiogram.bot.api' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py'>
+                   │    └ <function BaseBot.request at 0x7f31c71626a8>
+                   └ <aiogram.bot.bot.Bot object at 0x7f31c5c5e668>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/base.py", line 232, in request
+    proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+          │    │                 │    │                   │    │          └ {}
+          │    │                 │    │                   │    └ <property object at 0x7f31c71ce408>
+          │    │                 │    │                   └ <aiogram.bot.bot.Bot object at 0x7f31c5c5e668>
+          │    │                 │    └ None
+          │    │                 └ <aiogram.bot.bot.Bot object at 0x7f31c5c5e668>
+          │    └ None
+          └ <aiogram.bot.bot.Bot object at 0x7f31c5c5e668>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           │            │       │        │             │        │             │        └ <function ClientResponse.text at 0x7f31c79ff6a8>
+           │            │       │        │             │        │             └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendPhoto) [400 Bad Request]>
+           │            │       │        │             │        │               <CIM...
+           │            │       │        │             │        └ 400
+           │            │       │        │             └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendPhoto) [400 Bad Request]>
+           │            │       │        │               <CIM...
+           │            │       │        └ <property object at 0x7f31c83efdb8>
+           │            │       └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendPhoto) [400 Bad Request]>
+           │            │         <CIM...
+           │            └ 'sendPhoto'
+           └ <function check_result at 0x7f31c71a2d90>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+    │          │          │      └ 'Bad Request: file must be non-empty'
+    │          │          └ <classmethod object at 0x7f31c71aad30>
+    │          └ <class 'aiogram.utils.exceptions.BadRequest'>
+    └ <module 'aiogram.utils.exceptions' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/exceptions.py'>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/exceptions.py", line 141, in detect
+    raise cls(description)
+          │   └ 'bad request: file must be non-empty'
+          └ <class 'aiogram.utils.exceptions.BadRequest'>
+
+aiogram.utils.exceptions.BadRequest: File must be non-empty
+2022-01-12 at 18:10:06|DEBUG|Получены данные из БД:[('Я создал иллюзию сижу на облаке. Мой приятель поймал эту фотографию, на которой я выступал на прошлой неделе в ночном клубе.', 'https://i.redd.it/i79j3qww3rx71.jpg', 340, 86)]
+2022-01-12 at 18:10:06|DEBUG|Файл на загрузку: 86i79j3qww3rx71.jpg
+2022-01-12 at 18:10:06|DEBUG|Отправка изображения: 86i79j3qww3rx71.jpg
+2022-01-12 at 18:10:06|SUCCESS|В БД отправлен id сообщения: 930
+2022-01-12 at 18:10:23|DEBUG|Пост помечен на удаление: 930
+2022-01-12 at 18:10:23|SUCCESS|Сработала кнопка "Удалить"
+2022-01-12 at 18:10:24|DEBUG|Получены данные из БД:[('Что-то похожее на кучево-дождевое облако, увенчанное линзовидным облаком.', 'https://v.redd.it/37ae57shi4y71/DASH_1080.mp4', 324, 156)]
+2022-01-12 at 18:10:27|DEBUG|Файл на загрузку: 156DASH_1080.mp4
+2022-01-12 at 18:10:27|DEBUG|Отправка видео 156DASH_1080.mp4
+2022-01-12 at 18:10:28|SUCCESS|В БД отправлен id сообщения: 933
+2022-01-12 at 18:10:50|DEBUG|id Сообщения на публикацию: 933
+2022-01-12 at 18:10:50|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 18:11:06|SUCCESS|Получены кол-во постов на публикацию
+2022-01-12 at 18:11:09|DEBUG|Получены данные из БД:[('Некоторые вещи никогда не меняются (Рафа Надаль)', 'https://i.redd.it/txv5t3ium3y71.jpg', 317, 164)]
+2022-01-12 at 18:11:09|DEBUG|Файл на загрузку: 164txv5t3ium3y71.jpg
+2022-01-12 at 18:11:09|DEBUG|Отправка изображения: 164txv5t3ium3y71.jpg
+2022-01-12 at 18:11:09|SUCCESS|В БД отправлен id сообщения: 938
+2022-01-12 at 18:11:18|DEBUG|Пост помечен на удаление: 938
+2022-01-12 at 18:11:18|SUCCESS|Сработала кнопка "Удалить"
+2022-01-12 at 18:11:20|DEBUG|Получены данные из БД:[('Губернаторы США с дипломами инженеров, издание 2022 г. [OC]', 'https://i.redd.it/2q2yxi8aylx71.png', 234, 120)]
+2022-01-12 at 18:11:21|DEBUG|Файл на загрузку: 1202q2yxi8aylx71.png
+2022-01-12 at 18:11:21|DEBUG|Отправка изображения: 1202q2yxi8aylx71.png
+2022-01-12 at 18:11:21|SUCCESS|В БД отправлен id сообщения: 941
+2022-01-12 at 18:11:30|DEBUG|Пост помечен на удаление: 941
+2022-01-12 at 18:11:30|SUCCESS|Сработала кнопка "Удалить"
+2022-01-12 at 18:13:50|DEBUG|Получены данные из БД:[('По запросу разрешен аборт на неделе "X" беременности в США и ЕС. Данные за сентябрь 2021 г. [OC]', 'https://i.imgur.com/Vhtfg17.png', 230, 129)]
+2022-01-12 at 18:13:50|DEBUG|Файл на загрузку: 129Vhtfg17.png
+2022-01-12 at 18:13:50|DEBUG|Отправка изображения: 129Vhtfg17.png
+2022-01-12 at 18:13:50|ERROR|Ошибка с картинкой для DEV129Vhtfg17.png
+Traceback (most recent call last):
+
+  File "testdef.py", line 189, in <module>
+    executor.start_polling(dp, skip_updates=True)
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f31c5c5e7f0>
+    │        └ <function start_polling at 0x7f31c6ffbae8>
+    └ <module 'aiogram.utils.executor' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py'>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py", line 50, in start_polling
+    allowed_updates=allowed_updates
+                    └ None
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7f31c8cfa950>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 539, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7f31c8cfe378>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 1775, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7f31c8d516a8>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7f31c5c74078>(<Future finished result=None>)>
+  File "/usr/lib/python3.7/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskWakeupMethWrapper object at 0x7f31c5c74078>(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskWakeupMethWrapper object at 0x7f31c5c74078>(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7f31c5c74078>(<Future finished result=None>)>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 51957410, "message": {"message_id": 943, "from": {"id": 467601941, "is_bot": false, "first_name": "Иль...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f31c5c5e7f0>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7...
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x7f31c7218cc0>
+                 │    │                │      └ <Update {"update_id": 51957410, "message": {"message_id": 943, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья...
+                 │    │                └ <function Handler.notify at 0x7f31c7198598>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x7f31c5c5e780>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f31c5c5e7f0>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 943, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья", "username": "ripozis", "langua...
+                     │           └ <function test_message at 0x7f31c5c6db70>
+                     └ Handler.HandlerObj(handler=<function test_message at 0x7f31c5c6db70>, spec=FullArgSpec(args=['message'], varargs=None, varkw=...
+
+> File "testdef.py", line 77, in test_message
+    await bot.send_photo(chat_id=message.from_user.id, photo=file, reply_markup=lnkb, caption=title)
+          │   │                  │       │                   │                  │             └ 'По запросу разрешен аборт на неделе "X" беременности в США и ЕС. Данные за сентябрь 2021 г. [OC]'
+          │   │                  │       │                   │                  └ <InlineKeyboardMarkup {"inline_keyboard": [[{"text": "Опубликовать", "callback_data": "pudlik"}, {"text": "Удалить", "callbac...
+          │   │                  │       │                   └ <_io.BufferedReader name='129Vhtfg17.png'>
+          │   │                  │       └ <aiogram.types.fields.Field object at 0x7f31c72c3ba8>
+          │   │                  └ <Message {"message_id": 943, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья", "username": "ripozis", "languag...
+          │   └ <function Bot.send_photo at 0x7f31c7167d08>
+          └ <aiogram.bot.bot.Bot object at 0x7f31c5c5e668>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/bot.py", line 527, in send_photo
+    result = await self.request(api.Methods.SEND_PHOTO, payload, files)
+                   │    │       │   │       │           │        └ {'photo': <_io.BufferedReader name='129Vhtfg17.png'>}
+                   │    │       │   │       │           └ {'chat_id': 467601941, 'caption': 'По запросу разрешен аборт на неделе "X" беременности в США и ЕС. Данные за сентябрь 2021 г...
+                   │    │       │   │       └ <aiogram.utils.helper.Item object at 0x7f31c71a0b00>
+                   │    │       │   └ <class 'aiogram.bot.api.Methods'>
+                   │    │       └ <module 'aiogram.bot.api' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py'>
+                   │    └ <function BaseBot.request at 0x7f31c71626a8>
+                   └ <aiogram.bot.bot.Bot object at 0x7f31c5c5e668>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/base.py", line 232, in request
+    proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+          │    │                 │    │                   │    │          └ {}
+          │    │                 │    │                   │    └ <property object at 0x7f31c71ce408>
+          │    │                 │    │                   └ <aiogram.bot.bot.Bot object at 0x7f31c5c5e668>
+          │    │                 │    └ None
+          │    │                 └ <aiogram.bot.bot.Bot object at 0x7f31c5c5e668>
+          │    └ None
+          └ <aiogram.bot.bot.Bot object at 0x7f31c5c5e668>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           │            │       │        │             │        │             │        └ <function ClientResponse.text at 0x7f31c79ff6a8>
+           │            │       │        │             │        │             └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendPhoto) [400 Bad Request]>
+           │            │       │        │             │        │               <CIM...
+           │            │       │        │             │        └ 400
+           │            │       │        │             └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendPhoto) [400 Bad Request]>
+           │            │       │        │               <CIM...
+           │            │       │        └ <property object at 0x7f31c83efdb8>
+           │            │       └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendPhoto) [400 Bad Request]>
+           │            │         <CIM...
+           │            └ 'sendPhoto'
+           └ <function check_result at 0x7f31c71a2d90>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+    │          │          │      └ 'Bad Request: file must be non-empty'
+    │          │          └ <classmethod object at 0x7f31c71aad30>
+    │          └ <class 'aiogram.utils.exceptions.BadRequest'>
+    └ <module 'aiogram.utils.exceptions' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/exceptions.py'>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/exceptions.py", line 141, in detect
+    raise cls(description)
+          │   └ 'bad request: file must be non-empty'
+          └ <class 'aiogram.utils.exceptions.BadRequest'>
+
+aiogram.utils.exceptions.BadRequest: File must be non-empty
+2022-01-12 at 18:14:13|DEBUG|Получены данные из БД:[('Винт Архимеда в действии', 'https://i.redd.it/qyn7g7ybutx71.gif', 228, 138)]
+2022-01-12 at 18:14:19|DEBUG|Файл на загрузку: 138qyn7g7ybutx71.gif
+2022-01-12 at 18:14:19|DEBUG|Отправка анимации: 138qyn7g7ybutx71.gif
+2022-01-12 at 18:14:19|ERROR|Ошибка с анимацией для DEV138qyn7g7ybutx71.gif
+Traceback (most recent call last):
+
+  File "testdef.py", line 189, in <module>
+    executor.start_polling(dp, skip_updates=True)
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f31c5c5e7f0>
+    │        └ <function start_polling at 0x7f31c6ffbae8>
+    └ <module 'aiogram.utils.executor' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py'>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py", line 50, in start_polling
+    allowed_updates=allowed_updates
+                    └ None
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7f31c8cfa950>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 539, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7f31c8cfe378>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 1775, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7f31c8d516a8>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7f31c5c74ac8>(<Future finished result=None>)>
+  File "/usr/lib/python3.7/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskWakeupMethWrapper object at 0x7f31c5c74ac8>(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskWakeupMethWrapper object at 0x7f31c5c74ac8>(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7f31c5c74ac8>(<Future finished result=None>)>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 51957411, "message": {"message_id": 944, "from": {"id": 467601941, "is_bot": false, "first_name": "Иль...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f31c5c5e7f0>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7...
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x7f31c7218cc0>
+                 │    │                │      └ <Update {"update_id": 51957411, "message": {"message_id": 944, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья...
+                 │    │                └ <function Handler.notify at 0x7f31c7198598>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x7f31c5c5e780>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f31c5c5e7f0>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 944, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья", "username": "ripozis", "langua...
+                     │           └ <function test_message at 0x7f31c5c6db70>
+                     └ Handler.HandlerObj(handler=<function test_message at 0x7f31c5c6db70>, spec=FullArgSpec(args=['message'], varargs=None, varkw=...
+
+> File "testdef.py", line 64, in test_message
+    await bot.send_animation(chat_id=message.from_user.id, animation=file, reply_markup=lnkb, caption=title)
+          │   │                      │       │                       │                  │             └ 'Винт Архимеда в действии'
+          │   │                      │       │                       │                  └ <InlineKeyboardMarkup {"inline_keyboard": [[{"text": "Опубликовать", "callback_data": "pudlik"}, {"text": "Удалить", "callbac...
+          │   │                      │       │                       └ <_io.BufferedReader name='138qyn7g7ybutx71.gif'>
+          │   │                      │       └ <aiogram.types.fields.Field object at 0x7f31c72c3ba8>
+          │   │                      └ <Message {"message_id": 944, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья", "username": "ripozis", "languag...
+          │   └ <function Bot.send_animation at 0x7f31c7167f28>
+          └ <aiogram.bot.bot.Bot object at 0x7f31c5c5e668>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/bot.py", line 895, in send_animation
+    result = await self.request(api.Methods.SEND_ANIMATION, payload, files)
+                   │    │       │   │       │               │        └ {'animation': <_io.BufferedReader name='138qyn7g7ybutx71.gif'>}
+                   │    │       │   │       │               └ {'chat_id': 467601941, 'caption': 'Винт Архимеда в действии', 'reply_markup': '{"inline_keyboard": [[{"text": "Опубликовать",...
+                   │    │       │   │       └ <aiogram.utils.helper.Item object at 0x7f31c71a0be0>
+                   │    │       │   └ <class 'aiogram.bot.api.Methods'>
+                   │    │       └ <module 'aiogram.bot.api' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py'>
+                   │    └ <function BaseBot.request at 0x7f31c71626a8>
+                   └ <aiogram.bot.bot.Bot object at 0x7f31c5c5e668>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/base.py", line 232, in request
+    proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+          │    │                 │    │                   │    │          └ {}
+          │    │                 │    │                   │    └ <property object at 0x7f31c71ce408>
+          │    │                 │    │                   └ <aiogram.bot.bot.Bot object at 0x7f31c5c5e668>
+          │    │                 │    └ None
+          │    │                 └ <aiogram.bot.bot.Bot object at 0x7f31c5c5e668>
+          │    └ None
+          └ <aiogram.bot.bot.Bot object at 0x7f31c5c5e668>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           │            │       │        │             │        │             │        └ <function ClientResponse.text at 0x7f31c79ff6a8>
+           │            │       │        │             │        │             └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendAnimation) [413 Request Entity...
+           │            │       │        │             │        └ 413
+           │            │       │        │             └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendAnimation) [413 Request Entity...
+           │            │       │        └ <property object at 0x7f31c83efdb8>
+           │            │       └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendAnimation) [413 Request Entity...
+           │            └ 'sendAnimation'
+           └ <function check_result at 0x7f31c71a2d90>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py", line 123, in check_result
+    raise exceptions.NetworkError('File too large for uploading. '
+          │          └ <class 'aiogram.utils.exceptions.NetworkError'>
+          └ <module 'aiogram.utils.exceptions' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/exceptions.py'>
+
+aiogram.utils.exceptions.NetworkError: File too large for uploading. Check telegram api limits https://core.telegram.org/bots/api#senddocument
+2022-01-12 at 18:14:24|DEBUG|Получены данные из БД:[('[OC] Обновление Animal Crossing v2.0 - Личность и вид', 'https://v.redd.it/mcaidd6tplx71/DASH_720.mp4', 208, 123)]
+2022-01-12 at 18:14:25|DEBUG|Файл на загрузку: 123DASH_720.mp4
+2022-01-12 at 18:14:25|DEBUG|Отправка видео 123DASH_720.mp4
+2022-01-12 at 18:14:26|SUCCESS|В БД отправлен id сообщения: 946
+2022-01-12 at 18:14:32|DEBUG|Пост помечен на удаление: 946
+2022-01-12 at 18:14:32|SUCCESS|Сработала кнопка "Удалить"
+2022-01-12 at 18:14:45|DEBUG|Получены данные из БД:[('Художник создает трехмерную оптическую иллюзию лестницы в небеса с помощью двухмерной скульптуры.', 'https://v.redd.it/wafqkr07xtx71/DASH_1080.mp4', 195, 139)]
+2022-01-12 at 18:14:47|DEBUG|Файл на загрузку: 139DASH_1080.mp4
+2022-01-12 at 18:14:47|DEBUG|Отправка видео 139DASH_1080.mp4
+2022-01-12 at 18:14:49|SUCCESS|В БД отправлен id сообщения: 949
+2022-01-12 at 18:14:52|DEBUG|id Сообщения на публикацию: 949
+2022-01-12 at 18:14:52|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 18:15:11|DEBUG|Получены данные из БД:[('1000-летняя корейская пьющая игра умирает.', 'https://i.redd.it/ayhbkwn0otx71.jpg', 178, 137)]
+2022-01-12 at 18:15:12|DEBUG|Файл на загрузку: 137ayhbkwn0otx71.jpg
+2022-01-12 at 18:15:12|DEBUG|Отправка изображения: 137ayhbkwn0otx71.jpg
+2022-01-12 at 18:15:12|SUCCESS|В БД отправлен id сообщения: 952
+2022-01-12 at 18:15:36|DEBUG|Пост помечен на удаление: 952
+2022-01-12 at 18:15:36|SUCCESS|Сработала кнопка "Удалить"
+2022-01-12 at 18:15:38|DEBUG|Получены данные из БД:[('[OC] Обновлен рекомендуемый сабреддит из более 150 миллионов комментариев. Могут ли текстовые данные быть красивыми?', 'https://v.redd.it/jqj701du9mx71/DASH_480.mp4', 169, 121)]
+2022-01-12 at 18:15:38|DEBUG|Файл на загрузку: 121DASH_480.mp4
+2022-01-12 at 18:15:38|DEBUG|Отправка видео 121DASH_480.mp4
+2022-01-12 at 18:15:39|SUCCESS|В БД отправлен id сообщения: 955
+2022-01-12 at 18:15:52|DEBUG|Пост помечен на удаление: 955
+2022-01-12 at 18:15:52|SUCCESS|Сработала кнопка "Удалить"
+2022-01-12 at 18:15:56|DEBUG|Получены данные из БД:[('Жуткое сходство между жизнями Авраама Линкольна и Джона Ф. Кеннеди', 'https://i.redd.it/joxptctsj4y71.jpg', 149, 169)]
+2022-01-12 at 18:15:57|DEBUG|Файл на загрузку: 169joxptctsj4y71.jpg
+2022-01-12 at 18:15:57|DEBUG|Отправка изображения: 169joxptctsj4y71.jpg
+2022-01-12 at 18:15:57|SUCCESS|В БД отправлен id сообщения: 958
+2022-01-12 at 18:16:16|DEBUG|Пост помечен на удаление: 958
+2022-01-12 at 18:16:16|SUCCESS|Сработала кнопка "Удалить"
+2022-01-12 at 18:16:18|DEBUG|Получены данные из БД:[('Художник создает простые абстрактные скульптуры животных, искажая полоски металла.', 'https://i.redd.it/300m2vzvztx71.jpg', 127, 140)]
+2022-01-12 at 18:16:18|DEBUG|Файл на загрузку: 140300m2vzvztx71.jpg
+2022-01-12 at 18:16:18|DEBUG|Отправка изображения: 140300m2vzvztx71.jpg
+2022-01-12 at 18:16:18|SUCCESS|В БД отправлен id сообщения: 961
+2022-01-12 at 18:16:21|DEBUG|id Сообщения на публикацию: 961
+2022-01-12 at 18:16:21|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 18:16:22|DEBUG|Получены данные из БД:[('Сестры Дибаба выросли в грязной хижине в Эфиопии без электричества, и между ними они единственные братья и сестры, которые одновременно владеют мировыми рекордами, а также четырьмя золотыми олимпийскими медалями, двумя серебряными, тремя бронзовыми медалями и пятнадцатью чемпионатами мира.', 'https://i.redd.it/cuunzpsla5y71.jpg', 120, 168)]
+2022-01-12 at 18:16:23|DEBUG|Файл на загрузку: 168cuunzpsla5y71.jpg
+2022-01-12 at 18:16:23|DEBUG|Отправка изображения: 168cuunzpsla5y71.jpg
+2022-01-12 at 18:16:23|SUCCESS|В БД отправлен id сообщения: 964
+2022-01-12 at 18:16:25|DEBUG|id Сообщения на публикацию: 964
+2022-01-12 at 18:16:25|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 18:16:26|DEBUG|Получены данные из БД:[('Плотность населения в городах Массачусетса, кроме шестиугольников [OC]', 'https://i.redd.it/irvxbleotnx71.png', 119, 118)]
+2022-01-12 at 18:16:26|DEBUG|Файл на загрузку: 118irvxbleotnx71.png
+2022-01-12 at 18:16:26|DEBUG|Отправка изображения: 118irvxbleotnx71.png
+2022-01-12 at 18:16:27|SUCCESS|В БД отправлен id сообщения: 967
+2022-01-12 at 18:16:34|DEBUG|id Сообщения на публикацию: 967
+2022-01-12 at 18:16:34|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 18:16:37|SUCCESS|Получены кол-во постов на публикацию
+2022-01-12 at 18:16:38|DEBUG|Получены данные из БД:[('Дом в Италии превращается в поисках солнца. Механизм позволяет варьировать ландшафт и наводить солнечные батареи.', 'https://i.redd.it/a23djxz415y71.jpg', 115, 165)]
+2022-01-12 at 18:16:39|DEBUG|Файл на загрузку: 165a23djxz415y71.jpg
+2022-01-12 at 18:16:39|DEBUG|Отправка изображения: 165a23djxz415y71.jpg
+2022-01-12 at 18:16:39|SUCCESS|В БД отправлен id сообщения: 972
+2022-01-12 at 18:16:40|DEBUG|id Сообщения на публикацию: 972
+2022-01-12 at 18:16:40|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 18:16:46|DEBUG|Получены данные из БД:[('Кладбище танков, Сибирь', 'https://i.redd.it/a2mxy52irtx71.jpg', 114, 141)]
+2022-01-12 at 18:16:46|DEBUG|Файл на загрузку: 141a2mxy52irtx71.jpg
+2022-01-12 at 18:16:46|DEBUG|Отправка изображения: 141a2mxy52irtx71.jpg
+2022-01-12 at 18:16:46|SUCCESS|В БД отправлен id сообщения: 975
+2022-01-12 at 18:16:47|DEBUG|id Сообщения на публикацию: 975
+2022-01-12 at 18:16:47|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 18:16:56|DEBUG|Получены данные из БД:[('Что за черт', 'https://v.redd.it/gm0wigk37tx71/DASH_360.mp4', 113, 106)]
+2022-01-12 at 18:16:57|DEBUG|Файл на загрузку: 106DASH_360.mp4
+2022-01-12 at 18:16:57|DEBUG|Отправка видео 106DASH_360.mp4
+2022-01-12 at 18:16:57|SUCCESS|В БД отправлен id сообщения: 978
+2022-01-12 at 18:16:59|DEBUG|id Сообщения на публикацию: 978
+2022-01-12 at 18:16:59|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 18:17:04|DEBUG|Получены данные из БД:[('Облако слов индийского морально-философского текста 2000-летней давности, Тирукурал [OC]', 'https://i.redd.it/vx5uhzv2yjx71.png', 107, 133)]
+2022-01-12 at 18:17:04|DEBUG|Файл на загрузку: 133vx5uhzv2yjx71.png
+2022-01-12 at 18:17:04|DEBUG|Отправка изображения: 133vx5uhzv2yjx71.png
+2022-01-12 at 18:17:04|SUCCESS|В БД отправлен id сообщения: 981
+2022-01-12 at 18:17:12|DEBUG|id Сообщения на публикацию: 981
+2022-01-12 at 18:17:12|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 18:17:13|DEBUG|Получены данные из БД:[('[OC] Лесные пожары в Калифорнии, 2020 г.', 'https://v.redd.it/om0zjtbk4qx71/DASH_1080.mp4', 101, 114)]
+2022-01-12 at 18:17:14|DEBUG|Файл на загрузку: 114DASH_1080.mp4
+2022-01-12 at 18:17:14|DEBUG|Отправка видео 114DASH_1080.mp4
+2022-01-12 at 18:17:14|SUCCESS|В БД отправлен id сообщения: 984
+2022-01-12 at 18:17:23|DEBUG|id Сообщения на публикацию: 984
+2022-01-12 at 18:17:23|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 18:17:26|SUCCESS|Получены кол-во постов на публикацию
+2022-01-12 at 18:17:29|DEBUG|Получены данные из БД:[('Когда в 2005 году умерла Роза Паркс, передние сиденья в автобусах в Монтгомери и Детройте были забронированы черными лентами в ее честь.', 'https://i.redd.it/un8fn1zybtx71.jpg', 96, 78)]
+2022-01-12 at 18:17:29|DEBUG|Файл на загрузку: 78un8fn1zybtx71.jpg
+2022-01-12 at 18:17:29|DEBUG|Отправка изображения: 78un8fn1zybtx71.jpg
+2022-01-12 at 18:17:29|SUCCESS|В БД отправлен id сообщения: 989
+2022-01-12 at 18:17:33|DEBUG|id Сообщения на публикацию: 989
+2022-01-12 at 18:17:33|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 18:17:43|DEBUG|Получены данные из БД:[('[OC] Самые популярные видео на YouTube в 2021 году по странам, месяцам и категориям', 'https://v.redd.it/2gak0k7wnkx71/DASH_1080.mp4', 92, 128)]
+2022-01-12 at 18:17:44|DEBUG|Файл на загрузку: 128DASH_1080.mp4
+2022-01-12 at 18:17:44|DEBUG|Отправка видео 128DASH_1080.mp4
+2022-01-12 at 18:17:45|SUCCESS|В БД отправлен id сообщения: 992
+2022-01-12 at 18:18:06|DEBUG|id Сообщения на публикацию: 992
+2022-01-12 at 18:18:06|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 18:18:10|DEBUG|Получены данные из БД:[('Самая четкая фотография Меркурия из когда-либо сделанных', 'https://i.redd.it/tu9my3lc5ux71.jpg', 75, 142)]
+2022-01-12 at 18:18:10|DEBUG|Файл на загрузку: 142tu9my3lc5ux71.jpg
+2022-01-12 at 18:18:10|DEBUG|Отправка изображения: 142tu9my3lc5ux71.jpg
+2022-01-12 at 18:18:10|SUCCESS|В БД отправлен id сообщения: 995
+2022-01-12 at 18:18:18|DEBUG|id Сообщения на публикацию: 995
+2022-01-12 at 18:18:18|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 18:18:23|DEBUG|Получены данные из БД:[('Региональная цена Skyrim в Steam конвертирована в местную цену на яйца [OC]', 'https://i.redd.it/w6wq10g36lx71.jpg', 70, 130)]
+2022-01-12 at 18:18:23|DEBUG|Файл на загрузку: 130w6wq10g36lx71.jpg
+2022-01-12 at 18:18:23|DEBUG|Отправка изображения: 130w6wq10g36lx71.jpg
+2022-01-12 at 18:18:23|SUCCESS|В БД отправлен id сообщения: 998
+2022-01-12 at 18:18:44|DEBUG|Пост помечен на удаление: 998
+2022-01-12 at 18:18:44|SUCCESS|Сработала кнопка "Удалить"
+2022-01-12 at 18:18:45|DEBUG|Получены данные из БД:[('Картирование мировых линий электропередачи. На этой карте показаны силовые кабели по всему миру, полученные из открытой карты улиц. [OC]', 'https://i.redd.it/vqnt0egbtsx71.png', 40, 112)]
+2022-01-12 at 18:18:46|DEBUG|Файл на загрузку: 112vqnt0egbtsx71.png
+2022-01-12 at 18:18:46|DEBUG|Отправка изображения: 112vqnt0egbtsx71.png
+2022-01-12 at 18:18:47|SUCCESS|В БД отправлен id сообщения: 1001
+2022-01-12 at 18:18:58|DEBUG|id Сообщения на публикацию: 1001
+2022-01-12 at 18:18:58|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 18:19:03|DEBUG|Получены данные из БД:[('Быстрое изменение', 'https://v.redd.it/f5ka3a7uysx71/DASH_720.mp4', 17, 107)]
+2022-01-12 at 18:19:04|DEBUG|Файл на загрузку: 107DASH_720.mp4
+2022-01-12 at 18:19:04|DEBUG|Отправка видео 107DASH_720.mp4
+2022-01-12 at 18:19:04|SUCCESS|В БД отправлен id сообщения: 1004
+2022-01-12 at 18:19:13|DEBUG|id Сообщения на публикацию: 1004
+2022-01-12 at 18:19:13|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 18:19:17|DEBUG|Получены данные из БД:[('Район штатов Мексика [OC]', 'https://v.redd.it/k2f503mkwsx71/DASH_1080.mp4', 17, 115)]
+2022-01-12 at 18:19:19|DEBUG|Файл на загрузку: 115DASH_1080.mp4
+2022-01-12 at 18:19:19|DEBUG|Отправка видео 115DASH_1080.mp4
+2022-01-12 at 18:19:19|SUCCESS|В БД отправлен id сообщения: 1007
+2022-01-12 at 18:19:28|DEBUG|id Сообщения на публикацию: 1007
+2022-01-12 at 18:19:28|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 18:19:34|DEBUG|Получены данные из БД:[('Сравнение цен и веса велосипедных колес [OC]', 'https://i.redd.it/id1xp6ss0nx71.png', 17, 132)]
+2022-01-12 at 18:19:34|DEBUG|Файл на загрузку: 132id1xp6ss0nx71.png
+2022-01-12 at 18:19:34|DEBUG|Отправка изображения: 132id1xp6ss0nx71.png
+2022-01-12 at 18:19:35|SUCCESS|В БД отправлен id сообщения: 1010
+2022-01-12 at 18:19:39|DEBUG|id Сообщения на публикацию: 1010
+2022-01-12 at 18:19:39|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 18:19:40|SUCCESS|Получены кол-во постов на публикацию
+2022-01-12 at 18:19:42|DEBUG|Получены данные из БД:[('В пол Флорентийского собора встроена какая-то изумительная оптическая иллюзия.', 'https://i.redd.it/4wqxhwxcjtx71.jpg', 12, 91)]
+2022-01-12 at 18:19:42|DEBUG|Файл на загрузку: 914wqxhwxcjtx71.jpg
+2022-01-12 at 18:19:42|DEBUG|Отправка изображения: 914wqxhwxcjtx71.jpg
+2022-01-12 at 18:19:42|SUCCESS|В БД отправлен id сообщения: 1015
+2022-01-12 at 18:19:43|DEBUG|id Сообщения на публикацию: 1015
+2022-01-12 at 18:19:43|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 18:19:45|DEBUG|Получены данные из БД:[('Показатель ИЧР по Восточной Азии, Южной Азии и Юго-Восточной Азии [OC]', 'https://i.redd.it/bimhjg6qpox71.png', 9, 127)]
+2022-01-12 at 18:19:45|DEBUG|Файл на загрузку: 127bimhjg6qpox71.png
+2022-01-12 at 18:19:45|DEBUG|Отправка изображения: 127bimhjg6qpox71.png
+2022-01-12 at 18:19:45|SUCCESS|В БД отправлен id сообщения: 1018
+2022-01-12 at 18:19:47|DEBUG|id Сообщения на публикацию: 1018
+2022-01-12 at 18:19:47|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 18:19:52|DEBUG|Получены данные из БД:[('[OC] Атланта преодолевает посещаемость болельщиков в 2021 году по доходам: регулярный сезон и плей-офф. Любезно предоставлено SafeGraph.', 'https://i.redd.it/t9gid1xrftx71.jpg', 8, 116)]
+2022-01-12 at 18:19:52|DEBUG|Файл на загрузку: 116t9gid1xrftx71.jpg
+2022-01-12 at 18:19:52|DEBUG|Отправка изображения: 116t9gid1xrftx71.jpg
+2022-01-12 at 18:19:52|SUCCESS|В БД отправлен id сообщения: 1021
+2022-01-12 at 18:19:54|DEBUG|id Сообщения на публикацию: 1021
+2022-01-12 at 18:19:54|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 18:23:18|DEBUG|Получены данные из БД:[('Каким-то образом столовое серебро моего жениха было магнетическим, вероятно, колдовским.', 'https://v.redd.it/d0cujrkzzsx71/DASH_1080.mp4', 5, 108)]
+2022-01-12 at 18:23:20|DEBUG|Файл на загрузку: 108DASH_1080.mp4
+2022-01-12 at 18:23:20|DEBUG|Отправка видео 108DASH_1080.mp4
+2022-01-12 at 18:23:21|SUCCESS|В БД отправлен id сообщения: 1024
+2022-01-12 at 18:23:38|DEBUG|id Сообщения на публикацию: 1024
+2022-01-12 at 18:23:38|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-12 at 18:23:40|SUCCESS|Получены кол-во постов на публикацию
+2022-01-12 at 18:23:42|DEBUG|Получены данные из БД:[('Глобальное распределение коммерческих запасов каменного фосфата, важнейшего несинтезируемого компонента всего сельского хозяйства.', 'https://en.wikipedia.org/wiki/File:Global_distribution_of_commercial_reserves_of_rock_phosphate_USGS_2016;_GTK_2015.jpg', 5, 119)]
+2022-01-12 at 18:23:42|DEBUG|Файл на загрузку: 119File:Global_distribution_of_commercial_reserves_of_rock_phosphate_USGS_2016;_GTK_2015.jpg
+2022-01-12 at 18:23:42|DEBUG|Отправка изображения: 119File:Global_distribution_of_commercial_reserves_of_rock_phosphate_USGS_2016;_GTK_2015.jpg
+2022-01-12 at 18:23:43|ERROR|Ошибка с картинкой для DEV119File:Global_distribution_of_commercial_reserves_of_rock_phosphate_USGS_2016;_GTK_2015.jpg
+Traceback (most recent call last):
+
+  File "testdef.py", line 189, in <module>
+    executor.start_polling(dp, skip_updates=True)
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f31c5c5e7f0>
+    │        └ <function start_polling at 0x7f31c6ffbae8>
+    └ <module 'aiogram.utils.executor' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py'>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py", line 50, in start_polling
+    allowed_updates=allowed_updates
+                    └ None
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7f31c8cfa950>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 539, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7f31c8cfe378>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 1775, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7f31c8d516a8>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7f31c5ca8a08>(<Future finished result=None>)>
+  File "/usr/lib/python3.7/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskWakeupMethWrapper object at 0x7f31c5ca8a08>(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskWakeupMethWrapper object at 0x7f31c5ca8a08>(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7f31c5ca8a08>(<Future finished result=None>)>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 51957466, "message": {"message_id": 1028, "from": {"id": 467601941, "is_bot": false, "first_name": "Ил...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f31c5c5e7f0>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7...
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x7f31c7218cc0>
+                 │    │                │      └ <Update {"update_id": 51957466, "message": {"message_id": 1028, "from": {"id": 467601941, "is_bot": false, "first_name": "Иль...
+                 │    │                └ <function Handler.notify at 0x7f31c7198598>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x7f31c5c5e780>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f31c5c5e7f0>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 1028, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья", "username": "ripozis", "langu...
+                     │           └ <function test_message at 0x7f31c5c6db70>
+                     └ Handler.HandlerObj(handler=<function test_message at 0x7f31c5c6db70>, spec=FullArgSpec(args=['message'], varargs=None, varkw=...
+
+> File "testdef.py", line 77, in test_message
+    await bot.send_photo(chat_id=message.from_user.id, photo=file, reply_markup=lnkb, caption=title)
+          │   │                  │       │                   │                  │             └ 'Глобальное распределение коммерческих запасов каменного фосфата, важнейшего несинтезируемого компонента всего сельского хозя...
+          │   │                  │       │                   │                  └ <InlineKeyboardMarkup {"inline_keyboard": [[{"text": "Опубликовать", "callback_data": "pudlik"}, {"text": "Удалить", "callbac...
+          │   │                  │       │                   └ <_io.BufferedReader name='119File:Global_distribution_of_commercial_reserves_of_rock_phosphate_USGS_2016;_GTK_2015.jpg'>
+          │   │                  │       └ <aiogram.types.fields.Field object at 0x7f31c72c3ba8>
+          │   │                  └ <Message {"message_id": 1028, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья", "username": "ripozis", "langua...
+          │   └ <function Bot.send_photo at 0x7f31c7167d08>
+          └ <aiogram.bot.bot.Bot object at 0x7f31c5c5e668>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/bot.py", line 527, in send_photo
+    result = await self.request(api.Methods.SEND_PHOTO, payload, files)
+                   │    │       │   │       │           │        └ {'photo': <_io.BufferedReader name='119File:Global_distribution_of_commercial_reserves_of_rock_phosphate_USGS_2016;_GTK_2015....
+                   │    │       │   │       │           └ {'chat_id': 467601941, 'caption': 'Глобальное распределение коммерческих запасов каменного фосфата, важнейшего несинтезируемо...
+                   │    │       │   │       └ <aiogram.utils.helper.Item object at 0x7f31c71a0b00>
+                   │    │       │   └ <class 'aiogram.bot.api.Methods'>
+                   │    │       └ <module 'aiogram.bot.api' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py'>
+                   │    └ <function BaseBot.request at 0x7f31c71626a8>
+                   └ <aiogram.bot.bot.Bot object at 0x7f31c5c5e668>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/base.py", line 232, in request
+    proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+          │    │                 │    │                   │    │          └ {}
+          │    │                 │    │                   │    └ <property object at 0x7f31c71ce408>
+          │    │                 │    │                   └ <aiogram.bot.bot.Bot object at 0x7f31c5c5e668>
+          │    │                 │    └ None
+          │    │                 └ <aiogram.bot.bot.Bot object at 0x7f31c5c5e668>
+          │    └ None
+          └ <aiogram.bot.bot.Bot object at 0x7f31c5c5e668>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           │            │       │        │             │        │             │        └ <function ClientResponse.text at 0x7f31c79ff6a8>
+           │            │       │        │             │        │             └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendPhoto) [400 Bad Request]>
+           │            │       │        │             │        │               <CIM...
+           │            │       │        │             │        └ 400
+           │            │       │        │             └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendPhoto) [400 Bad Request]>
+           │            │       │        │               <CIM...
+           │            │       │        └ <property object at 0x7f31c83efdb8>
+           │            │       └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendPhoto) [400 Bad Request]>
+           │            │         <CIM...
+           │            └ 'sendPhoto'
+           └ <function check_result at 0x7f31c71a2d90>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+    │          │          │      └ 'Bad Request: IMAGE_PROCESS_FAILED'
+    │          │          └ <classmethod object at 0x7f31c71aad30>
+    │          └ <class 'aiogram.utils.exceptions.BadRequest'>
+    └ <module 'aiogram.utils.exceptions' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/exceptions.py'>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/exceptions.py", line 141, in detect
+    raise cls(description)
+          │   └ 'bad request: image_process_failed'
+          └ <class 'aiogram.utils.exceptions.BadRequest'>
+
+aiogram.utils.exceptions.BadRequest: Image_process_failed
+2022-01-12 at 18:24:18|DEBUG|Получены данные из БД:[(None, None, None, None)]
+2022-01-12 at 18:24:48|DEBUG|Получены данные из БД:[(None, None, None, None)]
+2022-01-12 at 18:25:58|DEBUG|Получены данные из БД:[(None, None, None, None)]
+2022-01-12 at 18:28:57|SUCCESS|Получены кол-во постов на публикацию
+2022-01-12 at 18:29:56|SUCCESS|Получены кол-во постов на публикацию
+2022-01-12 at 18:34:13|SUCCESS|Получены кол-во постов на публикацию
+2022-01-12 at 18:37:42|DEBUG|Получены данные из БД:[(None, None, None, None)]
+2022-01-12 at 18:37:45|SUCCESS|Получены кол-во постов на публикацию
+2022-01-12 at 18:37:46|SUCCESS|Получены кол-во постов на публикацию
+2022-01-12 at 18:39:11|SUCCESS|Получены кол-во постов на публикацию

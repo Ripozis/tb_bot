@@ -14,7 +14,7 @@ import os
 from deep_translator import (GoogleTranslator)
 from loguru import logger
 
-logger.add("logger/parser_log.log", format="{time:YYYY-MM-DD at HH:mm:ss}|{level}|{message}", rotation="2 MB")
+logger.add("logger/parser_log.log", format="{time:YYYY-MM-DD at HH:mm:ss}|{level}|{message}", rotation="100 MB", compression="zip")
 
 
 
@@ -74,12 +74,12 @@ def search_reddit():
                 # time.sleep(10)
                 # Получает источник текущей страницы html на странице и записываем в переменную
                     html = browser.page_source
-                # time.sleep(10)
-                # # сохраняем страницу в файл
-                    with open('data.html', 'w', encoding='utf=8') as file:
-                        file.write(html)
                     browser.close()
                     browser.quit()
+                # time.sleep(10)
+                # # сохраняем страницу в файл
+                    with open('logger/data.html', 'w', encoding='utf=8') as file:
+                        file.write(html)
                     logger.success("Завершили скачивание из канала " + str(redit))
                 except Exception as ex:
                     logger.exception("Ошибка при формировани файла data.html")
@@ -93,26 +93,26 @@ def search_reddit():
                 browser.close()
                 browser.quit()
 
-            logger.info("Выниваем данне json из html")
-            with open("data.html") as file:
+            logger.info("Вынимаем данне json из html")
+            with open("logger/data.html") as file:
                 src = file.read()
             soup = BeautifulSoup(src, "lxml")
             js = soup.get_text()# выниваем данне json из html
 
             #####_Создаем data.json по данным из html
-            with open("data.json", "w") as file:
+            with open("logger/data.json", "w") as file:
                 file.write(js)
                 dictData = json.loads(js)
 
             # #####_Вынимаем необходмые данне из data.json 
-            with open("data.json") as file:
+            with open("logger/data.json") as file:
                 datJs = file.read()
             data = json.loads(datJs)
             dictChildren = data['data']
             dist = dictChildren['children']
             logger.success("Завершили формирование Json")
             # #####_Создаем БД SQL
-            create_tbl()
+            #create_tbl()
             # print("Начинаем писать в БД из паблика " + redit)
             logger.info("Начинаем писать в БД из паблика " + str(redit))
             #Читаем данные из переменой dist и пишем их в таблицу
