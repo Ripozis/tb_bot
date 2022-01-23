@@ -403,3 +403,2320 @@ Traceback (most recent call last):
 
 selenium.common.exceptions.WebDriverException: Message: 'chromedriver' executable may have wrong permissions. Please see https://chromedriver.chromium.org/home
 
+2022-01-06 at 15:05:39|INFO|Получен список каналов
+2022-01-06 at 15:05:39|ERROR|An error has been caught in function '<module>', process 'MainProcess' (2176), thread 'MainThread' (140610750998336):
+Traceback (most recent call last):
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/common/service.py", line 76, in start
+    creationflags=self.creationflags)
+                  │    └ 0
+                  └ <selenium.webdriver.chrome.service.Service object at 0x7fe27bde5240>
+  File "/usr/lib/python3.7/subprocess.py", line 775, in __init__
+    restore_signals, start_new_session)
+    │                └ False
+    └ True
+  File "/usr/lib/python3.7/subprocess.py", line 1522, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+          │                    │          │        └ '/home/ripo/tb_bot/webdriver/chromedriver'
+          │                    │          └ 'Permission denied'
+          │                    └ 13
+          └ <class 'OSError'>
+
+PermissionError: [Errno 13] Permission denied: '/home/ripo/tb_bot/webdriver/chromedriver'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+> File "parser_reddit.py", line 169, in <module>
+    search_reddit()
+    └ <function search_reddit at 0x7fe27cd68d90>
+
+  File "parser_reddit.py", line 168, in search_reddit
+    redit_login(username, password, redit)
+    │           │         │         └ ('interestingasfuck', 'gifsthatkeepongiving', 'oddlysatisfying')
+    │           │         └ 'UOgyiog8374fgboa8fgdOU6e93ced923c%^CvV'
+    │           └ 'Ripozi'
+    └ <function search_reddit.<locals>.redit_login at 0x7fe27bdd4bf8>
+
+  File "parser_reddit.py", line 45, in redit_login
+    browser = webdriver.Chrome(service=s, options=options)
+              │         │              │          └ <selenium.webdriver.chrome.options.Options object at 0x7fe27bde5278>
+              │         │              └ <selenium.webdriver.chrome.service.Service object at 0x7fe27bde5240>
+              │         └ <class 'selenium.webdriver.chrome.webdriver.WebDriver'>
+              └ <module 'selenium.webdriver' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/__init__.py'>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 73, in __init__
+    service_log_path, service, keep_alive)
+    │                 │        └ True
+    │                 └ <selenium.webdriver.chrome.service.Service object at 0x7fe27bde5240>
+    └ None
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/chromium/webdriver.py", line 90, in __init__
+    self.service.start()
+    │    │       └ <function Service.start at 0x7fe27d0cd048>
+    │    └ <selenium.webdriver.chrome.service.Service object at 0x7fe27bde5240>
+    └ <unprintable WebDriver object>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/common/service.py", line 88, in start
+    os.path.basename(self.path), self.start_error_message)
+    │  │    │        │    │      │    └ 'Please see https://chromedriver.chromium.org/home'
+    │  │    │        │    │      └ <selenium.webdriver.chrome.service.Service object at 0x7fe27bde5240>
+    │  │    │        │    └ '/home/ripo/tb_bot/webdriver/chromedriver'
+    │  │    │        └ <selenium.webdriver.chrome.service.Service object at 0x7fe27bde5240>
+    │  │    └ <function basename at 0x7fe27db65f28>
+    │  └ <module 'posixpath' from '/usr/lib/python3.7/posixpath.py'>
+    └ <module 'os' from '/usr/lib/python3.7/os.py'>
+
+selenium.common.exceptions.WebDriverException: Message: 'chromedriver' executable may have wrong permissions. Please see https://chromedriver.chromium.org/home
+
+2022-01-06 at 15:27:06|INFO|Получен список каналов
+2022-01-06 at 15:30:52|INFO|Получен список каналов
+2022-01-06 at 15:33:57|INFO|Получен список каналов
+2022-01-06 at 15:37:33|INFO|Получен список каналов
+2022-01-06 at 15:48:10|INFO|Получен список каналов
+2022-01-06 at 15:49:53|INFO|Получен список каналов
+2022-01-06 at 16:06:10|INFO|Получен список каналов
+2022-01-06 at 16:06:10|ERROR|An error has been caught in function '<module>', process 'MainProcess' (4688), thread 'MainThread' (140458374063936):
+Traceback (most recent call last):
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/common/service.py", line 76, in start
+    creationflags=self.creationflags)
+                  │    └ 0
+                  └ <selenium.webdriver.chrome.service.Service object at 0x7fbf00916358>
+  File "/usr/lib/python3.7/subprocess.py", line 775, in __init__
+    restore_signals, start_new_session)
+    │                └ False
+    └ True
+  File "/usr/lib/python3.7/subprocess.py", line 1522, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+          │                    │          │        └ '/home/ripo/tb_bot/webdriver/chromedriver'
+          │                    │          └ 'Permission denied'
+          │                    └ 13
+          └ <class 'OSError'>
+
+PermissionError: [Errno 13] Permission denied: '/home/ripo/tb_bot/webdriver/chromedriver'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "main.py", line 14, in <module>
+    from parser_reddit import search_reddit
+
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+
+> File "/home/ripo/tb_bot/parser_reddit.py", line 169, in <module>
+    search_reddit()
+    └ <function search_reddit at 0x7fbf0178cea0>
+
+  File "/home/ripo/tb_bot/parser_reddit.py", line 168, in search_reddit
+    redit_login(username, password, redit)
+    │           │         │         └ ('interestingasfuck', 'gifsthatkeepongiving', 'oddlysatisfying')
+    │           │         └ 'UOgyiog8374fgboa8fgdOU6e93ced923c%^CvV'
+    │           └ 'Ripozi'
+    └ <function search_reddit.<locals>.redit_login at 0x7fbf00908c80>
+
+  File "/home/ripo/tb_bot/parser_reddit.py", line 45, in redit_login
+    browser = webdriver.Chrome(service=s, options=options)
+              │         │              │          └ <selenium.webdriver.chrome.options.Options object at 0x7fbf00916390>
+              │         │              └ <selenium.webdriver.chrome.service.Service object at 0x7fbf00916358>
+              │         └ <class 'selenium.webdriver.chrome.webdriver.WebDriver'>
+              └ <module 'selenium.webdriver' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/__init__.py'>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 73, in __init__
+    service_log_path, service, keep_alive)
+    │                 │        └ True
+    │                 └ <selenium.webdriver.chrome.service.Service object at 0x7fbf00916358>
+    └ None
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/chromium/webdriver.py", line 90, in __init__
+    self.service.start()
+    │    │       └ <function Service.start at 0x7fbf01940b70>
+    │    └ <selenium.webdriver.chrome.service.Service object at 0x7fbf00916358>
+    └ <unprintable WebDriver object>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/common/service.py", line 88, in start
+    os.path.basename(self.path), self.start_error_message)
+    │  │    │        │    │      │    └ 'Please see https://chromedriver.chromium.org/home'
+    │  │    │        │    │      └ <selenium.webdriver.chrome.service.Service object at 0x7fbf00916358>
+    │  │    │        │    └ '/home/ripo/tb_bot/webdriver/chromedriver'
+    │  │    │        └ <selenium.webdriver.chrome.service.Service object at 0x7fbf00916358>
+    │  │    └ <function basename at 0x7fbf0356df28>
+    │  └ <module 'posixpath' from '/usr/lib/python3.7/posixpath.py'>
+    └ <module 'os' from '/usr/lib/python3.7/os.py'>
+
+selenium.common.exceptions.WebDriverException: Message: 'chromedriver' executable may have wrong permissions. Please see https://chromedriver.chromium.org/home
+
+2022-01-06 at 16:09:21|INFO|Получен список каналов
+2022-01-06 at 16:13:27|INFO|Получен список каналов
+2022-01-06 at 16:18:54|INFO|Получен список каналов
+2022-01-06 at 16:38:37|DEBUG|Логинимся на reddit
+2022-01-06 at 16:38:39|DEBUG|Зашли на reddit
+2022-01-06 at 16:40:50|INFO|Получен список каналов
+2022-01-06 at 16:40:51|SUCCESS|Определены настройки веб драйвера
+2022-01-06 at 16:40:51|DEBUG|Логинимся на reddit
+2022-01-06 at 16:41:10|SUCCESS|Учпешно залогинились
+2022-01-06 at 16:41:10|DEBUG|Переходим в канал interestingasfuck
+2022-01-06 at 16:41:12|SUCCESS|Зашли в канал interestingasfuck и сформировали json
+2022-01-06 at 16:41:12|SUCCESS|Завершили скачивание из канала interestingasfuck
+2022-01-06 at 16:41:12|INFO|Выниваем данне json из html
+2022-01-06 at 16:41:12|SUCCESS|Завершили формирование Json
+2022-01-06 at 16:41:12|INFO|Начинаем писать в БД из паблика interestingasfuck
+2022-01-06 at 16:41:35|SUCCESS|Закончили писать в БД из паблика interestingasfuck
+2022-01-06 at 16:41:35|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-06 at 16:41:35|INFO|Получен список каналов
+2022-01-06 at 16:41:35|SUCCESS|Определены настройки веб драйвера
+2022-01-06 at 16:41:35|DEBUG|Логинимся на reddit
+2022-01-06 at 16:41:55|SUCCESS|Учпешно залогинились
+2022-01-06 at 16:41:55|DEBUG|Переходим в канал gifsthatkeepongiving
+2022-01-06 at 16:41:56|SUCCESS|Зашли в канал gifsthatkeepongiving и сформировали json
+2022-01-06 at 16:41:56|SUCCESS|Завершили скачивание из канала gifsthatkeepongiving
+2022-01-06 at 16:41:56|INFO|Выниваем данне json из html
+2022-01-06 at 16:41:56|SUCCESS|Завершили формирование Json
+2022-01-06 at 16:41:56|INFO|Начинаем писать в БД из паблика gifsthatkeepongiving
+2022-01-06 at 16:42:22|SUCCESS|Закончили писать в БД из паблика gifsthatkeepongiving
+2022-01-06 at 16:42:22|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-06 at 16:42:22|INFO|Получен список каналов
+2022-01-06 at 16:42:23|SUCCESS|Определены настройки веб драйвера
+2022-01-06 at 16:42:23|DEBUG|Логинимся на reddit
+2022-01-06 at 16:42:41|SUCCESS|Учпешно залогинились
+2022-01-06 at 16:42:41|DEBUG|Переходим в канал oddlysatisfying
+2022-01-06 at 16:42:41|SUCCESS|Зашли в канал oddlysatisfying и сформировали json
+2022-01-06 at 16:42:42|SUCCESS|Завершили скачивание из канала oddlysatisfying
+2022-01-06 at 16:42:42|INFO|Выниваем данне json из html
+2022-01-06 at 16:42:42|SUCCESS|Завершили формирование Json
+2022-01-06 at 16:42:42|INFO|Начинаем писать в БД из паблика oddlysatisfying
+2022-01-06 at 16:43:02|SUCCESS|Закончили писать в БД из паблика oddlysatisfying
+2022-01-06 at 16:43:02|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-06 at 16:50:44|INFO|Получен список каналов
+2022-01-06 at 16:50:45|SUCCESS|Определены настройки веб драйвера
+2022-01-06 at 16:50:45|DEBUG|Логинимся на reddit
+2022-01-06 at 16:51:04|SUCCESS|Учпешно залогинились
+2022-01-06 at 16:51:04|DEBUG|Переходим в канал interestingasfuck
+2022-01-06 at 16:51:04|SUCCESS|Зашли в канал interestingasfuck и сформировали json
+2022-01-06 at 16:51:05|SUCCESS|Завершили скачивание из канала interestingasfuck
+2022-01-06 at 16:51:05|INFO|Выниваем данне json из html
+2022-01-06 at 16:51:05|SUCCESS|Завершили формирование Json
+2022-01-06 at 16:51:05|INFO|Начинаем писать в БД из паблика interestingasfuck
+2022-01-06 at 16:51:08|SUCCESS|Закончили писать в БД из паблика interestingasfuck
+2022-01-06 at 16:51:08|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-06 at 16:51:08|INFO|Получен список каналов
+2022-01-06 at 16:51:08|SUCCESS|Определены настройки веб драйвера
+2022-01-06 at 16:51:08|DEBUG|Логинимся на reddit
+2022-01-06 at 16:51:27|SUCCESS|Учпешно залогинились
+2022-01-06 at 16:51:27|DEBUG|Переходим в канал gifsthatkeepongiving
+2022-01-06 at 16:51:28|SUCCESS|Зашли в канал gifsthatkeepongiving и сформировали json
+2022-01-06 at 16:51:28|SUCCESS|Завершили скачивание из канала gifsthatkeepongiving
+2022-01-06 at 16:51:28|INFO|Выниваем данне json из html
+2022-01-06 at 16:51:28|SUCCESS|Завершили формирование Json
+2022-01-06 at 16:51:28|INFO|Начинаем писать в БД из паблика gifsthatkeepongiving
+2022-01-06 at 16:51:30|SUCCESS|Закончили писать в БД из паблика gifsthatkeepongiving
+2022-01-06 at 16:51:30|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-06 at 16:51:30|INFO|Получен список каналов
+2022-01-06 at 16:51:31|SUCCESS|Определены настройки веб драйвера
+2022-01-06 at 16:51:31|DEBUG|Логинимся на reddit
+2022-01-06 at 16:51:50|SUCCESS|Учпешно залогинились
+2022-01-06 at 16:51:50|DEBUG|Переходим в канал oddlysatisfying
+2022-01-06 at 16:51:51|SUCCESS|Зашли в канал oddlysatisfying и сформировали json
+2022-01-06 at 16:51:51|SUCCESS|Завершили скачивание из канала oddlysatisfying
+2022-01-06 at 16:51:51|INFO|Выниваем данне json из html
+2022-01-06 at 16:51:51|SUCCESS|Завершили формирование Json
+2022-01-06 at 16:51:51|INFO|Начинаем писать в БД из паблика oddlysatisfying
+2022-01-06 at 16:51:53|SUCCESS|Закончили писать в БД из паблика oddlysatisfying
+2022-01-06 at 16:51:53|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-06 at 16:56:32|INFO|Получен список каналов
+2022-01-06 at 16:56:33|SUCCESS|Определены настройки веб драйвера
+2022-01-06 at 16:56:33|DEBUG|Логинимся на reddit
+2022-01-06 at 16:56:51|SUCCESS|Учпешно залогинились
+2022-01-06 at 16:56:51|DEBUG|Переходим в канал interestingasfuck
+2022-01-06 at 16:56:52|SUCCESS|Зашли в канал interestingasfuck и сформировали json
+2022-01-06 at 16:56:52|SUCCESS|Завершили скачивание из канала interestingasfuck
+2022-01-06 at 16:56:52|INFO|Выниваем данне json из html
+2022-01-06 at 16:56:52|SUCCESS|Завершили формирование Json
+2022-01-06 at 16:56:52|INFO|Начинаем писать в БД из паблика interestingasfuck
+2022-01-06 at 16:56:54|SUCCESS|Закончили писать в БД из паблика interestingasfuck
+2022-01-06 at 16:56:54|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-06 at 16:56:54|INFO|Получен список каналов
+2022-01-06 at 16:56:55|SUCCESS|Определены настройки веб драйвера
+2022-01-06 at 16:56:55|DEBUG|Логинимся на reddit
+2022-01-06 at 16:57:14|SUCCESS|Учпешно залогинились
+2022-01-06 at 16:57:14|DEBUG|Переходим в канал gifsthatkeepongiving
+2022-01-06 at 16:57:15|SUCCESS|Зашли в канал gifsthatkeepongiving и сформировали json
+2022-01-06 at 16:57:15|SUCCESS|Завершили скачивание из канала gifsthatkeepongiving
+2022-01-06 at 16:57:15|INFO|Выниваем данне json из html
+2022-01-06 at 16:57:15|SUCCESS|Завершили формирование Json
+2022-01-06 at 16:57:15|INFO|Начинаем писать в БД из паблика gifsthatkeepongiving
+2022-01-06 at 16:57:17|SUCCESS|Закончили писать в БД из паблика gifsthatkeepongiving
+2022-01-06 at 16:57:17|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-06 at 16:57:17|INFO|Получен список каналов
+2022-01-06 at 16:57:17|SUCCESS|Определены настройки веб драйвера
+2022-01-06 at 16:57:17|DEBUG|Логинимся на reddit
+2022-01-06 at 16:57:37|SUCCESS|Учпешно залогинились
+2022-01-06 at 16:57:37|DEBUG|Переходим в канал oddlysatisfying
+2022-01-06 at 16:57:38|SUCCESS|Зашли в канал oddlysatisfying и сформировали json
+2022-01-06 at 16:57:38|SUCCESS|Завершили скачивание из канала oddlysatisfying
+2022-01-06 at 16:57:38|INFO|Выниваем данне json из html
+2022-01-06 at 16:57:38|SUCCESS|Завершили формирование Json
+2022-01-06 at 16:57:38|INFO|Начинаем писать в БД из паблика oddlysatisfying
+2022-01-06 at 16:57:40|SUCCESS|Закончили писать в БД из паблика oddlysatisfying
+2022-01-06 at 16:57:40|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-06 at 18:42:57|ERROR|An error has been caught in function 'run', process 'MainProcess' (571), thread 'Thread-1' (140670580815616):
+Traceback (most recent call last):
+
+  File "/usr/lib/python3.7/threading.py", line 885, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x7ff073061ae8>
+    └ <Thread(Thread-1, started 140670580815616)>
+  File "/usr/lib/python3.7/threading.py", line 917, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x7ff0730618c8>
+    └ <Thread(Thread-1, started 140670580815616)>
+> File "/usr/lib/python3.7/threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1, started 140670580815616)>
+    │    │        │    └ (<pyrogram.client.Client object at 0x7ff070b29048>,)
+    │    │        └ <Thread(Thread-1, started 140670580815616)>
+    │    └ <function send_post_dev at 0x7ff070a110d0>
+    └ <Thread(Thread-1, started 140670580815616)>
+
+  File "main.py", line 37, in send_post_dev
+    post_on_pub = post_on_publik()
+                  └ <function post_on_publik at 0x7ff071ab9e18>
+
+  File "/home/ripo/tb_bot/sql.py", line 88, in post_on_publik
+    cur.execute(con)
+    │   │       └ 'SELECT title_ru, path_file,id_post,url from parser where likes in(SELECT max(likes) from parser where path_file is not null ...
+    │   └ <method 'execute' of 'sqlite3.Cursor' objects>
+    └ <sqlite3.Cursor object at 0x7ff071b17650>
+
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 140670708647744 and this is thread id 140670580815616.
+2022-01-07 at 10:53:24|INFO|Получаем посты для публикации
+2022-01-07 at 10:53:24|SUCCESS|Будем отправлять видео145DASH_480.mp4
+2022-01-07 at 10:53:24|DEBUG|Формируем собщение поста с id: 145
+2022-01-07 at 10:58:24|INFO|Получен список каналов
+2022-01-07 at 10:58:24|INFO|Получаем посты для публикации
+2022-01-07 at 10:58:24|SUCCESS|Будем отправлять анимацию158w3uctv6p8zx71.gif
+2022-01-07 at 10:58:24|DEBUG|Формируем собщение поста с id: 158
+2022-01-07 at 10:58:26|SUCCESS|Определены настройки веб драйвера
+2022-01-07 at 10:58:26|DEBUG|Логинимся на reddit
+2022-01-07 at 10:58:44|SUCCESS|Учпешно залогинились
+2022-01-07 at 10:58:44|DEBUG|Переходим в канал interestingasfuck
+2022-01-07 at 10:58:45|SUCCESS|Зашли в канал interestingasfuck и сформировали json
+2022-01-07 at 10:58:45|SUCCESS|Завершили скачивание из канала interestingasfuck
+2022-01-07 at 10:58:45|INFO|Выниваем данне json из html
+2022-01-07 at 10:58:45|SUCCESS|Завершили формирование Json
+2022-01-07 at 10:58:45|INFO|Начинаем писать в БД из паблика interestingasfuck
+2022-01-07 at 10:59:10|SUCCESS|Закончили писать в БД из паблика interestingasfuck
+2022-01-07 at 10:59:10|DEBUG|Запуск удаления файлов из БД помеченных на удаление[('111DASH_720.mp4', 111)]
+2022-01-07 at 10:59:10|INFO|Получен список каналов
+2022-01-07 at 10:59:11|SUCCESS|Определены настройки веб драйвера
+2022-01-07 at 10:59:11|DEBUG|Логинимся на reddit
+2022-01-07 at 10:59:30|SUCCESS|Учпешно залогинились
+2022-01-07 at 10:59:30|DEBUG|Переходим в канал gifsthatkeepongiving
+2022-01-07 at 10:59:30|SUCCESS|Зашли в канал gifsthatkeepongiving и сформировали json
+2022-01-07 at 10:59:30|SUCCESS|Завершили скачивание из канала gifsthatkeepongiving
+2022-01-07 at 10:59:30|INFO|Выниваем данне json из html
+2022-01-07 at 10:59:30|SUCCESS|Завершили формирование Json
+2022-01-07 at 10:59:30|INFO|Начинаем писать в БД из паблика gifsthatkeepongiving
+2022-01-07 at 10:59:53|SUCCESS|Закончили писать в БД из паблика gifsthatkeepongiving
+2022-01-07 at 10:59:53|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-07 at 10:59:53|INFO|Получен список каналов
+2022-01-07 at 10:59:53|SUCCESS|Определены настройки веб драйвера
+2022-01-07 at 10:59:53|DEBUG|Логинимся на reddit
+2022-01-07 at 11:00:11|SUCCESS|Учпешно залогинились
+2022-01-07 at 11:00:11|DEBUG|Переходим в канал oddlysatisfying
+2022-01-07 at 11:00:12|SUCCESS|Зашли в канал oddlysatisfying и сформировали json
+2022-01-07 at 11:00:12|SUCCESS|Завершили скачивание из канала oddlysatisfying
+2022-01-07 at 11:00:12|INFO|Выниваем данне json из html
+2022-01-07 at 11:00:12|SUCCESS|Завершили формирование Json
+2022-01-07 at 11:00:12|INFO|Начинаем писать в БД из паблика oddlysatisfying
+2022-01-07 at 11:00:33|SUCCESS|Закончили писать в БД из паблика oddlysatisfying
+2022-01-07 at 11:00:33|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-07 at 11:03:25|INFO|Получаем посты для публикации
+2022-01-07 at 11:03:25|SUCCESS|Будем отправлять видео143DASH_720.mp4
+2022-01-07 at 11:03:25|DEBUG|Формируем собщение поста с id: 143
+2022-01-07 at 11:27:22|INFO|Получаем посты для публикации
+2022-01-07 at 11:27:22|SUCCESS|Будем отправлять анимацию/home/ripo/tb_bot/imagesu4tral8yqex71.gif
+2022-01-07 at 11:27:22|DEBUG|Формируем собщение поста с id: 95
+2022-01-07 at 11:27:22|ERROR|Ошибка с анимацией для DEV/home/ripo/tb_bot/imagesu4tral8yqex71.gif id: 95
+ValueError: 2015763198 is not a valid FileType
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/file_id.py", line 225, in decode
+    file_type = FileType(file_type)
+                │        └ 2015763198
+                └ <enum 'FileType'>
+  File "/usr/lib/python3.7/enum.py", line 310, in __call__
+    return cls.__new__(cls, value)
+           │   │       │    └ 2015763198
+           │   │       └ <enum 'FileType'>
+           │   └ <function Enum.__new__ at 0x7f8c27eddd08>
+           └ <enum 'FileType'>
+  File "/usr/lib/python3.7/enum.py", line 564, in __new__
+    raise exc
+          └ ValueError('2015763198 is not a valid FileType')
+  File "/usr/lib/python3.7/enum.py", line 548, in __new__
+    result = cls._missing_(value)
+             │   │         └ 2015763198
+             │   └ <classmethod object at 0x7f8c27ed75f8>
+             └ <enum 'FileType'>
+  File "/usr/lib/python3.7/enum.py", line 577, in _missing_
+    raise ValueError("%r is not a valid %s" % (value, cls.__name__))
+                                               │      │   └ <attribute '__name__' of 'type' objects>
+                                               │      └ <enum 'FileType'>
+                                               └ 2015763198
+
+ValueError: 2015763198 is not a valid FileType
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/utils.py", line 47, in get_input_media_from_file_id
+    decoded = FileId.decode(file_id)
+              │      │      └ '/home/ripo/tb_bot/imagesu4tral8yqex71.gif'
+              │      └ <staticmethod object at 0x7f8c26bbd550>
+              └ <class 'pyrogram.file_id.FileId'>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/file_id.py", line 227, in decode
+    raise ValueError(f"Unknown file_type {file_type} of file_id {file_id}")
+
+ValueError: Unknown file_type 2015763198 of file_id /home/ripo/tb_bot/imagesu4tral8yqex71.gif
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/usr/lib/python3.7/threading.py", line 885, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x7f8c27873ae8>
+    └ <Thread(Thread-1, started 140239886644992)>
+  File "/usr/lib/python3.7/threading.py", line 917, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x7f8c278738c8>
+    └ <Thread(Thread-1, started 140239886644992)>
+  File "/usr/lib/python3.7/threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1, started 140239886644992)>
+    │    │        │    └ (<pyrogram.client.Client object at 0x7f8c25339128>,)
+    │    │        └ <Thread(Thread-1, started 140239886644992)>
+    │    └ <function send_post_dev at 0x7f8c252220d0>
+    └ <Thread(Thread-1, started 140239886644992)>
+
+  File "main.py", line 99, in send_post_dev
+    on_publik (app, row, post_on_pub)
+    │          │    │    └ [('Что это за чёрная магия?', 'u4tral8yqex71.gif', 95, 'https://i.redd.it/u4tral8yqex71.gif')]
+    │          │    └ 1
+    │          └ <pyrogram.client.Client object at 0x7f8c25339128>
+    └ <function send_post_dev.<locals>.on_publik at 0x7f8c25222510>
+
+> File "main.py", line 55, in on_publik
+    app.send_animation("Testyfakt", path_file, title)
+    │   │                           │          └ 'Что это за чёрная магия?'
+    │   │                           └ '/home/ripo/tb_bot/imagesu4tral8yqex71.gif'
+    │   └ <function SendAnimation.send_animation at 0x7f8c2668d620>
+    └ <pyrogram.client.Client object at 0x7f8c25339128>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/sync.py", line 56, in async_to_sync_wrap
+    return loop.run_until_complete(coroutine)
+           │    │                  └ <coroutine object SendAnimation.send_animation at 0x7f8c2568a848>
+           │    └ <function BaseEventLoop.run_until_complete at 0x7f8c276c1730>
+           └ <_UnixSelectorEventLoop running=False closed=False debug=False>
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 584, in run_until_complete
+    return future.result()
+           │      └ <method 'result' of '_asyncio.Task' objects>
+           └ <Task finished coro=<SendAnimation.send_animation() done, defined at /home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages...
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/methods/messages/send_animation.py", line 195, in send_animation
+    media = utils.get_input_media_from_file_id(animation, FileType.ANIMATION)
+            │     │                            │          │        └ <FileType.ANIMATION: 10>
+            │     │                            │          └ <enum 'FileType'>
+            │     │                            └ '/home/ripo/tb_bot/imagesu4tral8yqex71.gif'
+            │     └ <function get_input_media_from_file_id at 0x7f8c275b0ea0>
+            └ <module 'pyrogram.utils' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/utils.py'>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/utils.py", line 49, in get_input_media_from_file_id
+    raise ValueError(f'Failed to decode "{file_id}". The value does not represent an existing local file, '
+
+ValueError: Failed to decode "/home/ripo/tb_bot/imagesu4tral8yqex71.gif". The value does not represent an existing local file, HTTP URL, or valid file id.
+2022-01-07 at 11:34:24|INFO|Получаем посты для публикации
+2022-01-07 at 11:34:24|SUCCESS|Будем отправлять изображение/home/ripo/tb_bot/images/135m61dwhwu4tx71.jpg
+2022-01-07 at 11:34:24|DEBUG|Формируем собщение поста с id: 135
+2022-01-07 at 11:39:25|INFO|Получен список каналов
+2022-01-07 at 11:39:25|INFO|Получаем посты для публикации
+2022-01-07 at 11:39:25|SUCCESS|Будем отправлять изображение/home/ripo/tb_bot/images/135m61dwhwu4tx71.jpg
+2022-01-07 at 11:39:25|DEBUG|Формируем собщение поста с id: 135
+2022-01-07 at 11:39:26|SUCCESS|Определены настройки веб драйвера
+2022-01-07 at 11:39:26|DEBUG|Логинимся на reddit
+2022-01-07 at 11:39:45|SUCCESS|Учпешно залогинились
+2022-01-07 at 11:39:45|DEBUG|Переходим в канал interestingasfuck
+2022-01-07 at 11:39:45|SUCCESS|Зашли в канал interestingasfuck и сформировали json
+2022-01-07 at 11:39:45|SUCCESS|Завершили скачивание из канала interestingasfuck
+2022-01-07 at 11:39:45|INFO|Выниваем данне json из html
+2022-01-07 at 11:39:46|SUCCESS|Завершили формирование Json
+2022-01-07 at 11:39:46|INFO|Начинаем писать в БД из паблика interestingasfuck
+2022-01-07 at 11:39:47|SUCCESS|Закончили писать в БД из паблика interestingasfuck
+2022-01-07 at 11:39:47|DEBUG|Запуск удаления файлов из БД помеченных на удаление[('124DASH_1080.mp4', 124)]
+2022-01-07 at 11:39:47|INFO|Получен список каналов
+2022-01-07 at 11:39:48|SUCCESS|Определены настройки веб драйвера
+2022-01-07 at 11:39:48|DEBUG|Логинимся на reddit
+2022-01-07 at 11:40:08|SUCCESS|Учпешно залогинились
+2022-01-07 at 11:40:08|DEBUG|Переходим в канал gifsthatkeepongiving
+2022-01-07 at 11:40:09|SUCCESS|Зашли в канал gifsthatkeepongiving и сформировали json
+2022-01-07 at 11:40:09|SUCCESS|Завершили скачивание из канала gifsthatkeepongiving
+2022-01-07 at 11:40:09|INFO|Выниваем данне json из html
+2022-01-07 at 11:40:09|SUCCESS|Завершили формирование Json
+2022-01-07 at 11:40:09|INFO|Начинаем писать в БД из паблика gifsthatkeepongiving
+2022-01-07 at 11:40:13|SUCCESS|Закончили писать в БД из паблика gifsthatkeepongiving
+2022-01-07 at 11:40:13|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-07 at 11:40:13|INFO|Получен список каналов
+2022-01-07 at 11:40:14|SUCCESS|Определены настройки веб драйвера
+2022-01-07 at 11:40:14|DEBUG|Логинимся на reddit
+2022-01-07 at 11:40:33|SUCCESS|Учпешно залогинились
+2022-01-07 at 11:40:33|DEBUG|Переходим в канал oddlysatisfying
+2022-01-07 at 11:40:34|SUCCESS|Зашли в канал oddlysatisfying и сформировали json
+2022-01-07 at 11:40:35|SUCCESS|Завершили скачивание из канала oddlysatisfying
+2022-01-07 at 11:40:35|INFO|Выниваем данне json из html
+2022-01-07 at 11:40:35|SUCCESS|Завершили формирование Json
+2022-01-07 at 11:40:35|INFO|Начинаем писать в БД из паблика oddlysatisfying
+2022-01-07 at 11:40:36|SUCCESS|Закончили писать в БД из паблика oddlysatisfying
+2022-01-07 at 11:40:36|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-07 at 11:50:12|INFO|Получаем посты для публикации
+2022-01-07 at 11:50:12|SUCCESS|Будем отправлять изображение/home/ripo/tb_bot/images/135m61dwhwu4tx71.jpg
+2022-01-07 at 11:50:12|DEBUG|Формируем собщение поста с id: 135
+2022-01-07 at 11:52:12|INFO|Получаем посты для публикации
+2022-01-07 at 11:52:12|SUCCESS|Будем отправлять изображение/home/ripo/tb_bot/images/135m61dwhwu4tx71.jpg
+2022-01-07 at 11:52:12|DEBUG|Формируем собщение поста с id: 135
+2022-01-07 at 11:58:10|INFO|Получаем посты для публикации
+2022-01-07 at 11:58:10|SUCCESS|Будем отправлять изображение135m61dwhwu4tx71.jpg
+2022-01-07 at 11:58:10|DEBUG|Формируем собщение поста с id: 135
+2022-01-07 at 12:00:10|INFO|Получаем посты для публикации
+2022-01-07 at 12:00:10|SUCCESS|Будем отправлять изображение135m61dwhwu4tx71.jpg
+2022-01-07 at 12:00:10|DEBUG|Формируем собщение поста с id: 135
+2022-01-07 at 12:08:50|INFO|Получаем посты для публикации
+2022-01-07 at 12:08:50|SUCCESS|Будем отправлять изображение135m61dwhwu4tx71.jpg
+2022-01-07 at 12:08:50|DEBUG|Формируем собщение поста с id: 135
+2022-01-07 at 15:31:40|INFO|Получаем посты для публикации
+2022-01-07 at 15:31:40|SUCCESS|Будем отправлять изображение/home/ripo/tb_bot/images/135m61dwhwu4tx71.jpg
+2022-01-07 at 15:31:40|DEBUG|Формируем собщение поста с id: 135
+2022-01-07 at 15:33:40|INFO|Получаем посты для публикации
+2022-01-07 at 15:33:40|SUCCESS|Будем отправлять изображение/home/ripo/tb_bot/images/135m61dwhwu4tx71.jpg
+2022-01-07 at 15:33:40|DEBUG|Формируем собщение поста с id: 135
+2022-01-07 at 15:41:18|INFO|Получаем посты для публикации
+2022-01-07 at 15:41:18|SUCCESS|Будем отправлять изображение/home/ripo/tb_bot/images/135m61dwhwu4tx71.jpg
+2022-01-07 at 15:41:18|DEBUG|Формируем собщение поста с id: 135
+2022-01-07 at 15:43:18|INFO|Получаем посты для публикации
+2022-01-07 at 15:43:18|SUCCESS|Будем отправлять изображение/home/ripo/tb_bot/images/135m61dwhwu4tx71.jpg
+2022-01-07 at 15:43:18|DEBUG|Формируем собщение поста с id: 135
+2022-01-07 at 15:51:33|INFO|Получаем посты для публикации
+2022-01-07 at 15:51:33|SUCCESS|Будем отправлять изображение /home/ripo/tb_bot/images/135m61dwhwu4tx71.jpg
+2022-01-07 at 15:51:33|DEBUG|Формируем собщение поста с id: 135
+2022-01-07 at 15:53:56|INFO|Получаем посты для публикации
+2022-01-07 at 15:53:56|SUCCESS|Будем отправлять изображение /home/ripo/tb_bot/images/135m61dwhwu4tx71.jpg
+2022-01-07 at 15:53:56|DEBUG|Формируем собщение поста с id: 135
+2022-01-07 at 15:59:06|INFO|Получаем посты для публикации
+2022-01-07 at 15:59:06|SUCCESS|Будем отправлять изображение 135m61dwhwu4tx71.jpg
+2022-01-07 at 15:59:06|DEBUG|Формируем собщение поста с id: 135
+2022-01-07 at 16:00:10|INFO|Получаем посты для публикации
+2022-01-07 at 16:00:10|SUCCESS|Будем отправлять изображение 135m61dwhwu4tx71.jpg
+2022-01-07 at 16:00:10|DEBUG|Формируем собщение поста с id: 135
+2022-01-07 at 16:00:11|SUCCESS|Собщение сформировано
+2022-01-07 at 16:00:11|SUCCESS|Файл 135m61dwhwu4tx71.jpg удален с диска
+2022-01-07 at 16:12:30|INFO|Получаем посты для публикации
+2022-01-07 at 16:12:30|SUCCESS|Будем отправлять видео152DASH_240.mp4
+2022-01-07 at 16:12:30|DEBUG|Формируем собщение поста с id: 152
+2022-01-07 at 16:12:30|ERROR|Ошибка с видео для DEV152DASH_240.mp4 id: 152
+ValueError: 2015763198 is not a valid FileType
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/file_id.py", line 225, in decode
+    file_type = FileType(file_type)
+                │        └ 2015763198
+                └ <enum 'FileType'>
+  File "/usr/lib/python3.7/enum.py", line 310, in __call__
+    return cls.__new__(cls, value)
+           │   │       │    └ 2015763198
+           │   │       └ <enum 'FileType'>
+           │   └ <function Enum.__new__ at 0x7f8b97fded08>
+           └ <enum 'FileType'>
+  File "/usr/lib/python3.7/enum.py", line 564, in __new__
+    raise exc
+          └ ValueError('2015763198 is not a valid FileType')
+  File "/usr/lib/python3.7/enum.py", line 548, in __new__
+    result = cls._missing_(value)
+             │   │         └ 2015763198
+             │   └ <classmethod object at 0x7f8b97fd8630>
+             └ <enum 'FileType'>
+  File "/usr/lib/python3.7/enum.py", line 577, in _missing_
+    raise ValueError("%r is not a valid %s" % (value, cls.__name__))
+                                               │      │   └ <attribute '__name__' of 'type' objects>
+                                               │      └ <enum 'FileType'>
+                                               └ 2015763198
+
+ValueError: 2015763198 is not a valid FileType
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/utils.py", line 47, in get_input_media_from_file_id
+    decoded = FileId.decode(file_id)
+              │      │      └ '/home/ripo/tb_bot/images/135m61dwhwu4tx71.jpg'
+              │      └ <staticmethod object at 0x7f8b97b14940>
+              └ <class 'pyrogram.file_id.FileId'>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/file_id.py", line 227, in decode
+    raise ValueError(f"Unknown file_type {file_type} of file_id {file_id}")
+
+ValueError: Unknown file_type 2015763198 of file_id /home/ripo/tb_bot/images/135m61dwhwu4tx71.jpg
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/usr/lib/python3.7/threading.py", line 885, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x7f8b97974ae8>
+    └ <Thread(Thread-1, started 140237469648640)>
+  File "/usr/lib/python3.7/threading.py", line 917, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x7f8b979748c8>
+    └ <Thread(Thread-1, started 140237469648640)>
+  File "/usr/lib/python3.7/threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1, started 140237469648640)>
+    │    │        │    └ (<pyrogram.client.Client object at 0x7f8b952093c8>,)
+    │    │        └ <Thread(Thread-1, started 140237469648640)>
+    │    └ <function send_post_dev at 0x7f8b95162268>
+    └ <Thread(Thread-1, started 140237469648640)>
+
+  File "main.py", line 99, in send_post_dev
+    on_publik (app, row, post_on_pub)
+    │          │    │    └ [('Вот как бы выглядела планета, если бы она находилась на таком же расстоянии, как луна', '152DASH_240.mp4', 152, 'https://v...
+    │          │    └ 1
+    │          └ <pyrogram.client.Client object at 0x7f8b952093c8>
+    └ <function send_post_dev.<locals>.on_publik at 0x7f8b951626a8>
+
+> File "main.py", line 88, in on_publik
+    app.send_video("Testyfakt", video='/home/ripo/tb_bot/images/135m61dwhwu4tx71.jpg', caption=title)
+    │   │                                                                                      └ 'Вот как бы выглядела планета, если бы она находилась на таком же расстоянии, как луна'
+    │   └ <function SendVideo.send_video at 0x7f8b965df620>
+    └ <pyrogram.client.Client object at 0x7f8b952093c8>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/sync.py", line 56, in async_to_sync_wrap
+    return loop.run_until_complete(coroutine)
+           │    │                  └ <coroutine object SendVideo.send_video at 0x7f8b95596548>
+           │    └ <function BaseEventLoop.run_until_complete at 0x7f8b977c2730>
+           └ <_UnixSelectorEventLoop running=False closed=False debug=False>
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 584, in run_until_complete
+    return future.result()
+           │      └ <method 'result' of '_asyncio.Task' objects>
+           └ <Task finished coro=<SendVideo.send_video() done, defined at /home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogra...
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/methods/messages/send_video.py", line 201, in send_video
+    media = utils.get_input_media_from_file_id(video, FileType.VIDEO)
+            │     │                            │      │        └ <FileType.VIDEO: 4>
+            │     │                            │      └ <enum 'FileType'>
+            │     │                            └ '/home/ripo/tb_bot/images/135m61dwhwu4tx71.jpg'
+            │     └ <function get_input_media_from_file_id at 0x7f8b9772aea0>
+            └ <module 'pyrogram.utils' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/utils.py'>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/utils.py", line 49, in get_input_media_from_file_id
+    raise ValueError(f'Failed to decode "{file_id}". The value does not represent an existing local file, '
+
+ValueError: Failed to decode "/home/ripo/tb_bot/images/135m61dwhwu4tx71.jpg". The value does not represent an existing local file, HTTP URL, or valid file id.
+2022-01-07 at 16:13:30|INFO|Получаем посты для публикации
+2022-01-07 at 16:13:30|SUCCESS|Будем отправлять видео147DASH_240.mp4
+2022-01-07 at 16:13:30|DEBUG|Формируем собщение поста с id: 147
+2022-01-07 at 16:13:30|ERROR|Ошибка с видео для DEV147DASH_240.mp4 id: 147
+ValueError: 2015763198 is not a valid FileType
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/file_id.py", line 225, in decode
+    file_type = FileType(file_type)
+                │        └ 2015763198
+                └ <enum 'FileType'>
+  File "/usr/lib/python3.7/enum.py", line 310, in __call__
+    return cls.__new__(cls, value)
+           │   │       │    └ 2015763198
+           │   │       └ <enum 'FileType'>
+           │   └ <function Enum.__new__ at 0x7f8b97fded08>
+           └ <enum 'FileType'>
+  File "/usr/lib/python3.7/enum.py", line 564, in __new__
+    raise exc
+          └ ValueError('2015763198 is not a valid FileType')
+  File "/usr/lib/python3.7/enum.py", line 548, in __new__
+    result = cls._missing_(value)
+             │   │         └ 2015763198
+             │   └ <classmethod object at 0x7f8b97fd8630>
+             └ <enum 'FileType'>
+  File "/usr/lib/python3.7/enum.py", line 577, in _missing_
+    raise ValueError("%r is not a valid %s" % (value, cls.__name__))
+                                               │      │   └ <attribute '__name__' of 'type' objects>
+                                               │      └ <enum 'FileType'>
+                                               └ 2015763198
+
+ValueError: 2015763198 is not a valid FileType
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/utils.py", line 47, in get_input_media_from_file_id
+    decoded = FileId.decode(file_id)
+              │      │      └ '/home/ripo/tb_bot/images/135m61dwhwu4tx71.jpg'
+              │      └ <staticmethod object at 0x7f8b97b14940>
+              └ <class 'pyrogram.file_id.FileId'>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/file_id.py", line 227, in decode
+    raise ValueError(f"Unknown file_type {file_type} of file_id {file_id}")
+
+ValueError: Unknown file_type 2015763198 of file_id /home/ripo/tb_bot/images/135m61dwhwu4tx71.jpg
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/usr/lib/python3.7/threading.py", line 885, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x7f8b97974ae8>
+    └ <Thread(Thread-2, started 140237469648640)>
+  File "/usr/lib/python3.7/threading.py", line 917, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x7f8b979748c8>
+    └ <Thread(Thread-2, started 140237469648640)>
+  File "/usr/lib/python3.7/threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-2, started 140237469648640)>
+    │    │        │    └ (<pyrogram.client.Client object at 0x7f8b952093c8>,)
+    │    │        └ <Thread(Thread-2, started 140237469648640)>
+    │    └ <function send_post_dev at 0x7f8b95162268>
+    └ <Thread(Thread-2, started 140237469648640)>
+
+  File "main.py", line 99, in send_post_dev
+    on_publik (app, row, post_on_pub)
+    │          │    │    └ [('Кадры, показывающие, как большие толпы людей ведут себя как жидкость.', '147DASH_240.mp4', 147, 'https://v.redd.it/g1jg7yf...
+    │          │    └ 1
+    │          └ <pyrogram.client.Client object at 0x7f8b952093c8>
+    └ <function send_post_dev.<locals>.on_publik at 0x7f8b951627b8>
+
+> File "main.py", line 88, in on_publik
+    app.send_video("Testyfakt", video='/home/ripo/tb_bot/images/135m61dwhwu4tx71.jpg', caption=title)
+    │   │                                                                                      └ 'Кадры, показывающие, как большие толпы людей ведут себя как жидкость.'
+    │   └ <function SendVideo.send_video at 0x7f8b965df620>
+    └ <pyrogram.client.Client object at 0x7f8b952093c8>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/sync.py", line 56, in async_to_sync_wrap
+    return loop.run_until_complete(coroutine)
+           │    │                  └ <coroutine object SendVideo.send_video at 0x7f8b940d7548>
+           │    └ <function BaseEventLoop.run_until_complete at 0x7f8b977c2730>
+           └ <_UnixSelectorEventLoop running=False closed=False debug=False>
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 584, in run_until_complete
+    return future.result()
+           │      └ <method 'result' of '_asyncio.Task' objects>
+           └ <Task finished coro=<SendVideo.send_video() done, defined at /home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogra...
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/methods/messages/send_video.py", line 201, in send_video
+    media = utils.get_input_media_from_file_id(video, FileType.VIDEO)
+            │     │                            │      │        └ <FileType.VIDEO: 4>
+            │     │                            │      └ <enum 'FileType'>
+            │     │                            └ '/home/ripo/tb_bot/images/135m61dwhwu4tx71.jpg'
+            │     └ <function get_input_media_from_file_id at 0x7f8b9772aea0>
+            └ <module 'pyrogram.utils' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/utils.py'>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/utils.py", line 49, in get_input_media_from_file_id
+    raise ValueError(f'Failed to decode "{file_id}". The value does not represent an existing local file, '
+
+ValueError: Failed to decode "/home/ripo/tb_bot/images/135m61dwhwu4tx71.jpg". The value does not represent an existing local file, HTTP URL, or valid file id.
+2022-01-07 at 16:15:34|INFO|Получаем посты для публикации
+2022-01-07 at 16:15:34|SUCCESS|Будем отправлять изображение 1660gudztqaqyx71.jpg
+2022-01-07 at 16:15:34|DEBUG|Формируем собщение поста с id: 166
+2022-01-07 at 16:17:51|ERROR|An error has been caught in function 'run', process 'MainProcess' (1533), thread 'MainThread' (139778110912320):
+Traceback (most recent call last):
+
+  File "main.py", line 144, in <module>
+    schedule.run_pending()
+    │        └ <function run_pending at 0x7f209e97e598>
+    └ <module 'schedule' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py'>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 780, in run_pending
+    default_scheduler.run_pending()
+    │                 └ <function Scheduler.run_pending at 0x7f209e965f28>
+    └ <schedule.Scheduler object at 0x7f209f472588>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 100, in run_pending
+    self._run_job(job)
+    │    │        └ Every 1 minute do send_post_dev() (last run: [never], next run: 2022-01-07 16:17:51)
+    │    └ <function Scheduler._run_job at 0x7f209e97a2f0>
+    └ <schedule.Scheduler object at 0x7f209f472588>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 172, in _run_job
+    ret = job.run()
+          │   └ <function Job.run at 0x7f209e97e378>
+          └ Every 1 minute do send_post_dev() (last run: [never], next run: 2022-01-07 16:17:51)
+> File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 661, in run
+    ret = self.job_func()
+          │    └ functools.partial(<function send_post_dev at 0x7f209d8c82f0>)
+          └ Every 1 minute do send_post_dev() (last run: [never], next run: 2022-01-07 16:17:51)
+
+TypeError: send_post_dev() missing 1 required positional argument: 'app'
+2022-01-07 at 16:18:51|ERROR|An error has been caught in function 'run', process 'MainProcess' (1533), thread 'MainThread' (139778110912320):
+Traceback (most recent call last):
+
+  File "main.py", line 144, in <module>
+    schedule.run_pending()
+    │        └ <function run_pending at 0x7f209e97e598>
+    └ <module 'schedule' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py'>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 780, in run_pending
+    default_scheduler.run_pending()
+    │                 └ <function Scheduler.run_pending at 0x7f209e965f28>
+    └ <schedule.Scheduler object at 0x7f209f472588>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 100, in run_pending
+    self._run_job(job)
+    │    │        └ Every 1 minute do send_post_dev() (last run: 2022-01-07 16:17:51, next run: 2022-01-07 16:18:51)
+    │    └ <function Scheduler._run_job at 0x7f209e97a2f0>
+    └ <schedule.Scheduler object at 0x7f209f472588>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 172, in _run_job
+    ret = job.run()
+          │   └ <function Job.run at 0x7f209e97e378>
+          └ Every 1 minute do send_post_dev() (last run: 2022-01-07 16:17:51, next run: 2022-01-07 16:18:51)
+> File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 661, in run
+    ret = self.job_func()
+          │    └ functools.partial(<function send_post_dev at 0x7f209d8c82f0>)
+          └ Every 1 minute do send_post_dev() (last run: 2022-01-07 16:17:51, next run: 2022-01-07 16:18:51)
+
+TypeError: send_post_dev() missing 1 required positional argument: 'app'
+2022-01-07 at 16:21:37|INFO|Получаем посты для публикации
+2022-01-07 at 16:21:37|SUCCESS|Будем отправлять изображение 1660gudztqaqyx71.jpg
+2022-01-07 at 16:21:37|DEBUG|Формируем собщение поста с id: 166
+2022-01-07 at 16:21:38|SUCCESS|Собщение сформировано
+2022-01-07 at 16:21:38|SUCCESS|Файл 1660gudztqaqyx71.jpg удален с диска
+2022-01-07 at 16:22:38|INFO|Получаем посты для публикации
+2022-01-07 at 16:22:38|SUCCESS|Будем отправлять изображение 1674g17qestryx71.jpg
+2022-01-07 at 16:22:38|DEBUG|Формируем собщение поста с id: 167
+2022-01-07 at 16:22:38|SUCCESS|Собщение сформировано
+2022-01-07 at 16:22:38|SUCCESS|Файл 1674g17qestryx71.jpg удален с диска
+2022-01-07 at 16:23:38|INFO|Получаем посты для публикации
+2022-01-07 at 16:23:38|SUCCESS|Будем отправлять изображение 153bzsbp02sg0y71.jpg
+2022-01-07 at 16:23:38|DEBUG|Формируем собщение поста с id: 153
+2022-01-07 at 16:23:39|SUCCESS|Собщение сформировано
+2022-01-07 at 16:23:39|SUCCESS|Файл 153bzsbp02sg0y71.jpg удален с диска
+2022-01-07 at 16:24:39|INFO|Получаем посты для публикации
+2022-01-07 at 16:24:39|SUCCESS|Будем отправлять видеоDASH_1080.mp4
+2022-01-07 at 16:24:39|DEBUG|Формируем собщение поста с id: 110
+2022-01-07 at 16:24:39|ERROR|Ошибка с видео для DEVDASH_1080.mp4 id: 110
+Traceback (most recent call last):
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/utils.py", line 47, in get_input_media_from_file_id
+    decoded = FileId.decode(file_id)
+              │      │      └ 'DASH_1080.mp4'
+              │      └ <staticmethod object at 0x7f80ff1a56d8>
+              └ <class 'pyrogram.file_id.FileId'>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/file_id.py", line 212, in decode
+    file_type, dc_id = struct.unpack("<ii", buffer.read(8))
+                       │      │             │      └ <method 'read' of '_io.BytesIO' objects>
+                       │      │             └ <_io.BytesIO object at 0x7f80fcbf5728>
+                       │      └ <built-in function unpack>
+                       └ <module 'struct' from '/usr/lib/python3.7/struct.py'>
+
+struct.error: unpack requires a buffer of 8 bytes
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "main.py", line 144, in <module>
+    schedule.run_pending()
+    │        └ <function run_pending at 0x7f80fdcab598>
+    └ <module 'schedule' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py'>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 780, in run_pending
+    default_scheduler.run_pending()
+    │                 └ <function Scheduler.run_pending at 0x7f80fdc95f28>
+    └ <schedule.Scheduler object at 0x7f80fe7a04e0>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 100, in run_pending
+    self._run_job(job)
+    │    │        └ Every 1 minute do send_post_dev(<pyrogram.client.Client object at 0x7f80fcc9b358>) (last run: 2022-01-07 16:23:39, next run: ...
+    │    └ <function Scheduler._run_job at 0x7f80fdca82f0>
+    └ <schedule.Scheduler object at 0x7f80fe7a04e0>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 172, in _run_job
+    ret = job.run()
+          │   └ <function Job.run at 0x7f80fdcab378>
+          └ Every 1 minute do send_post_dev(<pyrogram.client.Client object at 0x7f80fcc9b358>) (last run: 2022-01-07 16:23:39, next run: ...
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 661, in run
+    ret = self.job_func()
+          │    └ functools.partial(<function send_post_dev at 0x7f80fcbf42f0>, <pyrogram.client.Client object at 0x7f80fcc9b358>)
+          └ Every 1 minute do send_post_dev(<pyrogram.client.Client object at 0x7f80fcc9b358>) (last run: 2022-01-07 16:23:39, next run: ...
+
+  File "main.py", line 99, in send_post_dev
+    on_publik (app, row, post_on_pub)
+    │          │    │    └ [('[OC] Выбросы CO2 на душу населения с 1800 г.', 'DASH_1080.mp4', 110, 'https://v.redd.it/lyweuljq1rx71/DASH_1080.mp4')]
+    │          │    └ 1
+    │          └ <pyrogram.client.Client object at 0x7f80fcc9b358>
+    └ <function send_post_dev.<locals>.on_publik at 0x7f80fcbf4730>
+
+> File "main.py", line 88, in on_publik
+    app.send_video("Testyfakt", video=path_file, caption=title)
+    │   │                             │                  └ '[OC] Выбросы CO2 на душу населения с 1800 г.'
+    │   │                             └ 'DASH_1080.mp4'
+    │   └ <function SendVideo.send_video at 0x7f80fe070620>
+    └ <pyrogram.client.Client object at 0x7f80fcc9b358>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/sync.py", line 56, in async_to_sync_wrap
+    return loop.run_until_complete(coroutine)
+           │    │                  └ <coroutine object SendVideo.send_video at 0x7f80fd027548>
+           │    └ <function BaseEventLoop.run_until_complete at 0x7f80ff255730>
+           └ <_UnixSelectorEventLoop running=False closed=False debug=False>
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 584, in run_until_complete
+    return future.result()
+           │      └ <method 'result' of '_asyncio.Task' objects>
+           └ <Task finished coro=<SendVideo.send_video() done, defined at /home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogra...
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/methods/messages/send_video.py", line 201, in send_video
+    media = utils.get_input_media_from_file_id(video, FileType.VIDEO)
+            │     │                            │      │        └ <FileType.VIDEO: 4>
+            │     │                            │      └ <enum 'FileType'>
+            │     │                            └ 'DASH_1080.mp4'
+            │     └ <function get_input_media_from_file_id at 0x7f80ff140ea0>
+            └ <module 'pyrogram.utils' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/utils.py'>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/utils.py", line 49, in get_input_media_from_file_id
+    raise ValueError(f'Failed to decode "{file_id}". The value does not represent an existing local file, '
+
+ValueError: Failed to decode "DASH_1080.mp4". The value does not represent an existing local file, HTTP URL, or valid file id.
+2022-01-07 at 16:25:39|INFO|Получаем посты для публикации
+2022-01-07 at 16:25:39|SUCCESS|Будем отправлять изображение uv5k0xmr9dx71.jpg
+2022-01-07 at 16:25:39|DEBUG|Формируем собщение поста с id: 96
+2022-01-07 at 16:25:39|ERROR|Ошибка с картинкой для DEVuv5k0xmr9dx71.jpg id: 96
+ValueError: -798687558 is not a valid FileType
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/file_id.py", line 225, in decode
+    file_type = FileType(file_type)
+                │        └ -798687558
+                └ <enum 'FileType'>
+  File "/usr/lib/python3.7/enum.py", line 310, in __call__
+    return cls.__new__(cls, value)
+           │   │       │    └ -798687558
+           │   │       └ <enum 'FileType'>
+           │   └ <function Enum.__new__ at 0x7f80ffa70d08>
+           └ <enum 'FileType'>
+  File "/usr/lib/python3.7/enum.py", line 564, in __new__
+    raise exc
+          └ ValueError('-798687558 is not a valid FileType')
+  File "/usr/lib/python3.7/enum.py", line 548, in __new__
+    result = cls._missing_(value)
+             │   │         └ -798687558
+             │   └ <classmethod object at 0x7f80ffa6a630>
+             └ <enum 'FileType'>
+  File "/usr/lib/python3.7/enum.py", line 577, in _missing_
+    raise ValueError("%r is not a valid %s" % (value, cls.__name__))
+                                               │      │   └ <attribute '__name__' of 'type' objects>
+                                               │      └ <enum 'FileType'>
+                                               └ -798687558
+
+ValueError: -798687558 is not a valid FileType
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/utils.py", line 47, in get_input_media_from_file_id
+    decoded = FileId.decode(file_id)
+              │      │      └ 'uv5k0xmr9dx71.jpg'
+              │      └ <staticmethod object at 0x7f80ff1a56d8>
+              └ <class 'pyrogram.file_id.FileId'>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/file_id.py", line 227, in decode
+    raise ValueError(f"Unknown file_type {file_type} of file_id {file_id}")
+
+ValueError: Unknown file_type -798687558 of file_id uv5k0xmr9dx71.jpg
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "main.py", line 144, in <module>
+    schedule.run_pending()
+    │        └ <function run_pending at 0x7f80fdcab598>
+    └ <module 'schedule' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py'>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 780, in run_pending
+    default_scheduler.run_pending()
+    │                 └ <function Scheduler.run_pending at 0x7f80fdc95f28>
+    └ <schedule.Scheduler object at 0x7f80fe7a04e0>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 100, in run_pending
+    self._run_job(job)
+    │    │        └ Every 1 minute do send_post_dev(<pyrogram.client.Client object at 0x7f80fcc9b358>) (last run: 2022-01-07 16:24:39, next run: ...
+    │    └ <function Scheduler._run_job at 0x7f80fdca82f0>
+    └ <schedule.Scheduler object at 0x7f80fe7a04e0>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 172, in _run_job
+    ret = job.run()
+          │   └ <function Job.run at 0x7f80fdcab378>
+          └ Every 1 minute do send_post_dev(<pyrogram.client.Client object at 0x7f80fcc9b358>) (last run: 2022-01-07 16:24:39, next run: ...
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 661, in run
+    ret = self.job_func()
+          │    └ functools.partial(<function send_post_dev at 0x7f80fcbf42f0>, <pyrogram.client.Client object at 0x7f80fcc9b358>)
+          └ Every 1 minute do send_post_dev(<pyrogram.client.Client object at 0x7f80fcc9b358>) (last run: 2022-01-07 16:24:39, next run: ...
+
+  File "main.py", line 99, in send_post_dev
+    on_publik (app, row, post_on_pub)
+    │          │    │    └ [('Это не спираль: вы видите серию концентрических кругов, и причина кроется в так называемой иллюзии спирали Фрейзера.', 'uv...
+    │          │    └ 1
+    │          └ <pyrogram.client.Client object at 0x7f80fcc9b358>
+    └ <function send_post_dev.<locals>.on_publik at 0x7f80fcbf47b8>
+
+> File "main.py", line 71, in on_publik
+    app.send_photo("Testyfakt", path_file, title)
+    │   │                       │          └ 'Это не спираль: вы видите серию концентрических кругов, и причина кроется в так называемой иллюзии спирали Фрейзера.'
+    │   │                       └ 'uv5k0xmr9dx71.jpg'
+    │   └ <function SendPhoto.send_photo at 0x7f80fe0700d0>
+    └ <pyrogram.client.Client object at 0x7f80fcc9b358>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/sync.py", line 56, in async_to_sync_wrap
+    return loop.run_until_complete(coroutine)
+           │    │                  └ <coroutine object SendPhoto.send_photo at 0x7f80fc38bcc8>
+           │    └ <function BaseEventLoop.run_until_complete at 0x7f80ff255730>
+           └ <_UnixSelectorEventLoop running=False closed=False debug=False>
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 584, in run_until_complete
+    return future.result()
+           │      └ <method 'result' of '_asyncio.Task' objects>
+           └ <Task finished coro=<SendPhoto.send_photo() done, defined at /home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogra...
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/methods/messages/send_photo.py", line 157, in send_photo
+    media = utils.get_input_media_from_file_id(photo, FileType.PHOTO)
+            │     │                            │      │        └ <FileType.PHOTO: 2>
+            │     │                            │      └ <enum 'FileType'>
+            │     │                            └ 'uv5k0xmr9dx71.jpg'
+            │     └ <function get_input_media_from_file_id at 0x7f80ff140ea0>
+            └ <module 'pyrogram.utils' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/utils.py'>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/utils.py", line 49, in get_input_media_from_file_id
+    raise ValueError(f'Failed to decode "{file_id}". The value does not represent an existing local file, '
+
+ValueError: Failed to decode "uv5k0xmr9dx71.jpg". The value does not represent an existing local file, HTTP URL, or valid file id.
+2022-01-07 at 16:26:39|INFO|Получаем посты для публикации
+2022-01-07 at 16:26:39|SUCCESS|Будем отправлять изображение vt189y2vjox71.jpg
+2022-01-07 at 16:26:39|DEBUG|Формируем собщение поста с id: 85
+2022-01-07 at 16:26:39|ERROR|Ошибка с картинкой для DEVvt189y2vjox71.jpg id: 85
+ValueError: -193143362 is not a valid FileType
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/file_id.py", line 225, in decode
+    file_type = FileType(file_type)
+                │        └ -193143362
+                └ <enum 'FileType'>
+  File "/usr/lib/python3.7/enum.py", line 310, in __call__
+    return cls.__new__(cls, value)
+           │   │       │    └ -193143362
+           │   │       └ <enum 'FileType'>
+           │   └ <function Enum.__new__ at 0x7f80ffa70d08>
+           └ <enum 'FileType'>
+  File "/usr/lib/python3.7/enum.py", line 564, in __new__
+    raise exc
+          └ ValueError('-193143362 is not a valid FileType')
+  File "/usr/lib/python3.7/enum.py", line 548, in __new__
+    result = cls._missing_(value)
+             │   │         └ -193143362
+             │   └ <classmethod object at 0x7f80ffa6a630>
+             └ <enum 'FileType'>
+  File "/usr/lib/python3.7/enum.py", line 577, in _missing_
+    raise ValueError("%r is not a valid %s" % (value, cls.__name__))
+                                               │      │   └ <attribute '__name__' of 'type' objects>
+                                               │      └ <enum 'FileType'>
+                                               └ -193143362
+
+ValueError: -193143362 is not a valid FileType
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/utils.py", line 47, in get_input_media_from_file_id
+    decoded = FileId.decode(file_id)
+              │      │      └ 'vt189y2vjox71.jpg'
+              │      └ <staticmethod object at 0x7f80ff1a56d8>
+              └ <class 'pyrogram.file_id.FileId'>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/file_id.py", line 227, in decode
+    raise ValueError(f"Unknown file_type {file_type} of file_id {file_id}")
+
+ValueError: Unknown file_type -193143362 of file_id vt189y2vjox71.jpg
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "main.py", line 144, in <module>
+    schedule.run_pending()
+    │        └ <function run_pending at 0x7f80fdcab598>
+    └ <module 'schedule' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py'>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 780, in run_pending
+    default_scheduler.run_pending()
+    │                 └ <function Scheduler.run_pending at 0x7f80fdc95f28>
+    └ <schedule.Scheduler object at 0x7f80fe7a04e0>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 100, in run_pending
+    self._run_job(job)
+    │    │        └ Every 1 minute do send_post_dev(<pyrogram.client.Client object at 0x7f80fcc9b358>) (last run: 2022-01-07 16:25:39, next run: ...
+    │    └ <function Scheduler._run_job at 0x7f80fdca82f0>
+    └ <schedule.Scheduler object at 0x7f80fe7a04e0>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 172, in _run_job
+    ret = job.run()
+          │   └ <function Job.run at 0x7f80fdcab378>
+          └ Every 1 minute do send_post_dev(<pyrogram.client.Client object at 0x7f80fcc9b358>) (last run: 2022-01-07 16:25:39, next run: ...
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 661, in run
+    ret = self.job_func()
+          │    └ functools.partial(<function send_post_dev at 0x7f80fcbf42f0>, <pyrogram.client.Client object at 0x7f80fcc9b358>)
+          └ Every 1 minute do send_post_dev(<pyrogram.client.Client object at 0x7f80fcc9b358>) (last run: 2022-01-07 16:25:39, next run: ...
+
+  File "main.py", line 99, in send_post_dev
+    on_publik (app, row, post_on_pub)
+    │          │    │    └ [('Краны подъемные прочие.', 'vt189y2vjox71.jpg', 85, 'https://i.redd.it/vt189y2vjox71.jpg')]
+    │          │    └ 1
+    │          └ <pyrogram.client.Client object at 0x7f80fcc9b358>
+    └ <function send_post_dev.<locals>.on_publik at 0x7f80fc374598>
+
+> File "main.py", line 71, in on_publik
+    app.send_photo("Testyfakt", path_file, title)
+    │   │                       │          └ 'Краны подъемные прочие.'
+    │   │                       └ 'vt189y2vjox71.jpg'
+    │   └ <function SendPhoto.send_photo at 0x7f80fe0700d0>
+    └ <pyrogram.client.Client object at 0x7f80fcc9b358>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/sync.py", line 56, in async_to_sync_wrap
+    return loop.run_until_complete(coroutine)
+           │    │                  └ <coroutine object SendPhoto.send_photo at 0x7f80fc34eb48>
+           │    └ <function BaseEventLoop.run_until_complete at 0x7f80ff255730>
+           └ <_UnixSelectorEventLoop running=False closed=False debug=False>
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 584, in run_until_complete
+    return future.result()
+           │      └ <method 'result' of '_asyncio.Task' objects>
+           └ <Task finished coro=<SendPhoto.send_photo() done, defined at /home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogra...
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/methods/messages/send_photo.py", line 157, in send_photo
+    media = utils.get_input_media_from_file_id(photo, FileType.PHOTO)
+            │     │                            │      │        └ <FileType.PHOTO: 2>
+            │     │                            │      └ <enum 'FileType'>
+            │     │                            └ 'vt189y2vjox71.jpg'
+            │     └ <function get_input_media_from_file_id at 0x7f80ff140ea0>
+            └ <module 'pyrogram.utils' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/utils.py'>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/pyrogram/utils.py", line 49, in get_input_media_from_file_id
+    raise ValueError(f'Failed to decode "{file_id}". The value does not represent an existing local file, '
+
+ValueError: Failed to decode "vt189y2vjox71.jpg". The value does not represent an existing local file, HTTP URL, or valid file id.
+2022-01-12 at 17:35:18|INFO|Получаем посты для публикации
+2022-01-12 at 17:35:18|SUCCESS|Будем отправлять видео238DASH_720.mp4
+2022-01-12 at 17:35:18|DEBUG|Формируем собщение поста с id: 238
+2022-01-12 at 17:35:20|SUCCESS|Собщение сформировано
+2022-01-12 at 17:35:20|SUCCESS|Файл 238DASH_720.mp4 удален с диска
+2022-01-12 at 17:36:20|INFO|Получаем посты для публикации
+2022-01-12 at 17:36:20|SUCCESS|Будем отправлять видео145DASH_480.mp4
+2022-01-12 at 17:36:20|DEBUG|Формируем собщение поста с id: 145
+2022-01-12 at 17:36:22|SUCCESS|Собщение сформировано
+2022-01-12 at 17:36:22|SUCCESS|Файл 145DASH_480.mp4 удален с диска
+2022-01-12 at 17:37:22|INFO|Получаем посты для публикации
+2022-01-12 at 17:37:22|SUCCESS|Будем отправлять видео273DASH_480.mp4
+2022-01-12 at 17:37:22|DEBUG|Формируем собщение поста с id: 273
+2022-01-12 at 17:37:24|SUCCESS|Собщение сформировано
+2022-01-12 at 17:37:24|SUCCESS|Файл 273DASH_480.mp4 удален с диска
+2022-01-12 at 17:38:24|INFO|Получаем посты для публикации
+2022-01-12 at 17:38:24|SUCCESS|Будем отправлять анимацию 158w3uctv6p8zx71.gif
+2022-01-12 at 17:38:24|DEBUG|Формируем собщение поста с id: 158
+2022-01-12 at 17:38:25|SUCCESS|Собщение сформировано
+2022-01-12 at 17:38:25|SUCCESS|Файл 158w3uctv6p8zx71.gif удален с диска
+2022-01-12 at 17:39:21|INFO|Получен список каналов
+2022-01-12 at 17:39:23|SUCCESS|Определены настройки веб драйвера
+2022-01-12 at 17:39:23|DEBUG|Логинимся на reddit
+2022-01-12 at 17:39:40|SUCCESS|Учпешно залогинились
+2022-01-12 at 17:39:40|DEBUG|Переходим в канал interestingasfuck
+2022-01-12 at 17:39:40|SUCCESS|Зашли в канал interestingasfuck и сформировали json
+2022-01-12 at 17:39:41|SUCCESS|Завершили скачивание из канала interestingasfuck
+2022-01-12 at 17:39:41|INFO|Выниваем данне json из html
+2022-01-12 at 17:39:41|SUCCESS|Завершили формирование Json
+2022-01-12 at 17:39:41|INFO|Начинаем писать в БД из паблика interestingasfuck
+2022-01-12 at 17:40:04|SUCCESS|Закончили писать в БД из паблика interestingasfuck
+2022-01-12 at 17:40:04|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-12 at 17:40:04|INFO|Получен список каналов
+2022-01-12 at 17:40:05|SUCCESS|Определены настройки веб драйвера
+2022-01-12 at 17:40:05|DEBUG|Логинимся на reddit
+2022-01-12 at 17:40:24|SUCCESS|Учпешно залогинились
+2022-01-12 at 17:40:24|DEBUG|Переходим в канал gifsthatkeepongiving
+2022-01-12 at 17:40:25|SUCCESS|Зашли в канал gifsthatkeepongiving и сформировали json
+2022-01-12 at 17:40:25|SUCCESS|Завершили скачивание из канала gifsthatkeepongiving
+2022-01-12 at 17:40:25|INFO|Выниваем данне json из html
+2022-01-12 at 17:40:25|SUCCESS|Завершили формирование Json
+2022-01-12 at 17:40:25|INFO|Начинаем писать в БД из паблика gifsthatkeepongiving
+2022-01-12 at 17:40:46|SUCCESS|Закончили писать в БД из паблика gifsthatkeepongiving
+2022-01-12 at 17:40:46|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-12 at 17:40:46|INFO|Получен список каналов
+2022-01-12 at 17:40:47|SUCCESS|Определены настройки веб драйвера
+2022-01-12 at 17:40:47|DEBUG|Логинимся на reddit
+2022-01-12 at 17:41:01|SUCCESS|Учпешно залогинились
+2022-01-12 at 17:41:01|DEBUG|Переходим в канал oddlysatisfying
+2022-01-12 at 17:41:02|SUCCESS|Зашли в канал oddlysatisfying и сформировали json
+2022-01-12 at 17:41:02|SUCCESS|Завершили скачивание из канала oddlysatisfying
+2022-01-12 at 17:41:02|INFO|Выниваем данне json из html
+2022-01-12 at 17:41:02|SUCCESS|Завершили формирование Json
+2022-01-12 at 17:41:02|INFO|Начинаем писать в БД из паблика oddlysatisfying
+2022-01-12 at 17:41:26|SUCCESS|Закончили писать в БД из паблика oddlysatisfying
+2022-01-12 at 17:41:26|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-12 at 17:41:30|INFO|Получаем посты для публикации
+2022-01-12 at 17:41:30|SUCCESS|Будем отправлять видео143DASH_720.mp4
+2022-01-12 at 17:41:30|DEBUG|Формируем собщение поста с id: 143
+2022-01-12 at 17:41:32|SUCCESS|Собщение сформировано
+2022-01-12 at 17:41:32|SUCCESS|Файл 143DASH_720.mp4 удален с диска
+2022-01-12 at 17:42:32|INFO|Получаем посты для публикации
+2022-01-12 at 17:42:32|SUCCESS|Будем отправлять анимацию 95u4tral8yqex71.gif
+2022-01-12 at 17:42:32|DEBUG|Формируем собщение поста с id: 95
+2022-01-12 at 17:42:33|SUCCESS|Собщение сформировано
+2022-01-12 at 17:42:33|SUCCESS|Файл 95u4tral8yqex71.gif удален с диска
+2022-01-12 at 17:43:33|INFO|Получаем посты для публикации
+2022-01-12 at 17:43:33|SUCCESS|Будем отправлять изображение 135m61dwhwu4tx71.jpg
+2022-01-12 at 17:43:33|DEBUG|Формируем собщение поста с id: 135
+2022-01-12 at 17:43:34|SUCCESS|Собщение сформировано
+2022-01-12 at 17:43:34|SUCCESS|Файл 135m61dwhwu4tx71.jpg удален с диска
+2022-01-12 at 17:44:34|INFO|Получаем посты для публикации
+2022-01-12 at 17:44:34|SUCCESS|Будем отправлять видео152DASH_240.mp4
+2022-01-12 at 17:44:34|DEBUG|Формируем собщение поста с id: 152
+2022-01-12 at 17:44:35|SUCCESS|Собщение сформировано
+2022-01-12 at 17:44:35|SUCCESS|Файл 152DASH_240.mp4 удален с диска
+2022-01-12 at 17:45:35|INFO|Получаем посты для публикации
+2022-01-12 at 17:45:35|SUCCESS|Будем отправлять видео147DASH_240.mp4
+2022-01-12 at 17:45:35|DEBUG|Формируем собщение поста с id: 147
+2022-01-12 at 17:45:46|SUCCESS|Собщение сформировано
+2022-01-12 at 17:45:46|SUCCESS|Файл 147DASH_240.mp4 удален с диска
+2022-01-12 at 17:46:26|INFO|Получен список каналов
+2022-01-12 at 17:46:27|SUCCESS|Определены настройки веб драйвера
+2022-01-12 at 17:46:27|DEBUG|Логинимся на reddit
+2022-01-12 at 17:46:42|SUCCESS|Учпешно залогинились
+2022-01-12 at 17:46:42|DEBUG|Переходим в канал interestingasfuck
+2022-01-12 at 17:46:44|SUCCESS|Зашли в канал interestingasfuck и сформировали json
+2022-01-12 at 17:46:44|SUCCESS|Завершили скачивание из канала interestingasfuck
+2022-01-12 at 17:46:44|INFO|Выниваем данне json из html
+2022-01-12 at 17:46:44|SUCCESS|Завершили формирование Json
+2022-01-12 at 17:46:44|INFO|Начинаем писать в БД из паблика interestingasfuck
+2022-01-12 at 17:46:47|SUCCESS|Закончили писать в БД из паблика interestingasfuck
+2022-01-12 at 17:46:47|DEBUG|Запуск удаления файлов из БД помеченных на удаление[('124DASH_1080.mp4', 124)]
+2022-01-12 at 17:46:47|INFO|Получен список каналов
+2022-01-12 at 17:46:47|SUCCESS|Определены настройки веб драйвера
+2022-01-12 at 17:46:47|DEBUG|Логинимся на reddit
+2022-01-12 at 17:47:05|SUCCESS|Учпешно залогинились
+2022-01-12 at 17:47:05|DEBUG|Переходим в канал gifsthatkeepongiving
+2022-01-12 at 17:47:06|SUCCESS|Зашли в канал gifsthatkeepongiving и сформировали json
+2022-01-12 at 17:47:06|SUCCESS|Завершили скачивание из канала gifsthatkeepongiving
+2022-01-12 at 17:47:06|INFO|Выниваем данне json из html
+2022-01-12 at 17:47:06|SUCCESS|Завершили формирование Json
+2022-01-12 at 17:47:06|INFO|Начинаем писать в БД из паблика gifsthatkeepongiving
+2022-01-12 at 17:47:09|SUCCESS|Закончили писать в БД из паблика gifsthatkeepongiving
+2022-01-12 at 17:47:09|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-12 at 17:47:09|INFO|Получен список каналов
+2022-01-12 at 17:47:10|SUCCESS|Определены настройки веб драйвера
+2022-01-12 at 17:47:10|DEBUG|Логинимся на reddit
+2022-01-12 at 17:47:24|SUCCESS|Учпешно залогинились
+2022-01-12 at 17:47:24|DEBUG|Переходим в канал oddlysatisfying
+2022-01-12 at 17:47:27|SUCCESS|Зашли в канал oddlysatisfying и сформировали json
+2022-01-12 at 17:47:27|SUCCESS|Завершили скачивание из канала oddlysatisfying
+2022-01-12 at 17:47:27|INFO|Выниваем данне json из html
+2022-01-12 at 17:47:27|SUCCESS|Завершили формирование Json
+2022-01-12 at 17:47:27|INFO|Начинаем писать в БД из паблика oddlysatisfying
+2022-01-12 at 17:47:29|SUCCESS|Закончили писать в БД из паблика oddlysatisfying
+2022-01-12 at 17:47:29|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-12 at 17:47:33|INFO|Получаем посты для публикации
+2022-01-12 at 17:47:33|SUCCESS|Будем отправлять изображение 1660gudztqaqyx71.jpg
+2022-01-12 at 17:47:33|DEBUG|Формируем собщение поста с id: 166
+2022-01-12 at 17:47:33|SUCCESS|Собщение сформировано
+2022-01-12 at 17:47:33|SUCCESS|Файл 1660gudztqaqyx71.jpg удален с диска
+2022-01-12 at 17:48:33|INFO|Получаем посты для публикации
+2022-01-12 at 17:49:33|INFO|Получаем посты для публикации
+2022-01-12 at 17:50:33|INFO|Получаем посты для публикации
+2022-01-12 at 17:50:33|SUCCESS|Будем отправлять изображение 1674g17qestryx71.jpg
+2022-01-12 at 17:50:33|DEBUG|Формируем собщение поста с id: 167
+2022-01-12 at 17:50:34|SUCCESS|Собщение сформировано
+2022-01-12 at 17:50:34|SUCCESS|Файл 1674g17qestryx71.jpg удален с диска
+2022-01-12 at 17:51:34|INFO|Получаем посты для публикации
+2022-01-12 at 17:51:34|SUCCESS|Будем отправлять изображение 153bzsbp02sg0y71.jpg
+2022-01-12 at 17:51:34|DEBUG|Формируем собщение поста с id: 153
+2022-01-12 at 17:51:35|SUCCESS|Собщение сформировано
+2022-01-12 at 17:51:35|SUCCESS|Файл 153bzsbp02sg0y71.jpg удален с диска
+2022-01-12 at 17:52:31|INFO|Получен список каналов
+2022-01-12 at 17:52:31|SUCCESS|Определены настройки веб драйвера
+2022-01-12 at 17:52:31|DEBUG|Логинимся на reddit
+2022-01-12 at 17:52:48|SUCCESS|Учпешно залогинились
+2022-01-12 at 17:52:48|DEBUG|Переходим в канал interestingasfuck
+2022-01-12 at 17:52:50|SUCCESS|Зашли в канал interestingasfuck и сформировали json
+2022-01-12 at 17:52:50|SUCCESS|Завершили скачивание из канала interestingasfuck
+2022-01-12 at 17:52:50|INFO|Выниваем данне json из html
+2022-01-12 at 17:52:50|SUCCESS|Завершили формирование Json
+2022-01-12 at 17:52:50|INFO|Начинаем писать в БД из паблика interestingasfuck
+2022-01-12 at 17:52:52|SUCCESS|Закончили писать в БД из паблика interestingasfuck
+2022-01-12 at 17:52:52|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-12 at 17:52:52|INFO|Получен список каналов
+2022-01-12 at 17:52:53|SUCCESS|Определены настройки веб драйвера
+2022-01-12 at 17:52:53|DEBUG|Логинимся на reddit
+2022-01-12 at 17:53:11|SUCCESS|Учпешно залогинились
+2022-01-12 at 17:53:11|DEBUG|Переходим в канал gifsthatkeepongiving
+2022-01-12 at 17:53:11|SUCCESS|Зашли в канал gifsthatkeepongiving и сформировали json
+2022-01-12 at 17:53:11|SUCCESS|Завершили скачивание из канала gifsthatkeepongiving
+2022-01-12 at 17:53:11|INFO|Выниваем данне json из html
+2022-01-12 at 17:53:11|SUCCESS|Завершили формирование Json
+2022-01-12 at 17:53:11|INFO|Начинаем писать в БД из паблика gifsthatkeepongiving
+2022-01-12 at 17:53:14|SUCCESS|Закончили писать в БД из паблика gifsthatkeepongiving
+2022-01-12 at 17:53:14|DEBUG|Запуск удаления файлов из БД помеченных на удаление[('1469jbkziw082y71.jpg', 146)]
+2022-01-12 at 17:53:14|INFO|Получен список каналов
+2022-01-12 at 17:53:14|SUCCESS|Определены настройки веб драйвера
+2022-01-12 at 17:53:14|DEBUG|Логинимся на reddit
+2022-01-12 at 17:53:30|SUCCESS|Учпешно залогинились
+2022-01-12 at 17:53:30|DEBUG|Переходим в канал oddlysatisfying
+2022-01-12 at 17:53:32|SUCCESS|Зашли в канал oddlysatisfying и сформировали json
+2022-01-12 at 17:53:32|SUCCESS|Завершили скачивание из канала oddlysatisfying
+2022-01-12 at 17:53:32|INFO|Выниваем данне json из html
+2022-01-12 at 17:53:32|SUCCESS|Завершили формирование Json
+2022-01-12 at 17:53:32|INFO|Начинаем писать в БД из паблика oddlysatisfying
+2022-01-12 at 17:53:34|SUCCESS|Закончили писать в БД из паблика oddlysatisfying
+2022-01-12 at 17:53:34|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-12 at 17:53:38|INFO|Получаем посты для публикации
+2022-01-12 at 17:53:38|SUCCESS|Будем отправлять видео110DASH_1080.mp4
+2022-01-12 at 17:53:38|DEBUG|Формируем собщение поста с id: 110
+2022-01-12 at 17:53:40|SUCCESS|Собщение сформировано
+2022-01-12 at 17:53:40|SUCCESS|Файл 110DASH_1080.mp4 удален с диска
+2022-01-12 at 17:54:40|INFO|Получаем посты для публикации
+2022-01-12 at 17:54:40|SUCCESS|Будем отправлять изображение 96uv5k0xmr9dx71.jpg
+2022-01-12 at 17:54:40|DEBUG|Формируем собщение поста с id: 96
+2022-01-12 at 17:54:40|SUCCESS|Собщение сформировано
+2022-01-12 at 17:54:40|SUCCESS|Файл 96uv5k0xmr9dx71.jpg удален с диска
+2022-01-12 at 17:55:40|INFO|Получаем посты для публикации
+2022-01-12 at 17:55:40|SUCCESS|Будем отправлять видео144DASH_480.mp4
+2022-01-12 at 17:55:40|DEBUG|Формируем собщение поста с id: 144
+2022-01-12 at 17:55:41|SUCCESS|Собщение сформировано
+2022-01-12 at 17:55:41|SUCCESS|Файл 144DASH_480.mp4 удален с диска
+2022-01-12 at 17:56:42|INFO|Получаем посты для публикации
+2022-01-12 at 17:56:42|SUCCESS|Будем отправлять изображение 151elhur2ifl1y71.jpg
+2022-01-12 at 17:56:42|DEBUG|Формируем собщение поста с id: 151
+2022-01-12 at 17:56:42|SUCCESS|Собщение сформировано
+2022-01-12 at 17:56:42|SUCCESS|Файл 151elhur2ifl1y71.jpg удален с диска
+2022-01-12 at 17:57:42|INFO|Получаем посты для публикации
+2022-01-12 at 17:57:42|SUCCESS|Будем отправлять изображение 85vt189y2vjox71.jpg
+2022-01-12 at 17:57:42|DEBUG|Формируем собщение поста с id: 85
+2022-01-12 at 17:57:43|SUCCESS|Собщение сформировано
+2022-01-12 at 17:57:43|SUCCESS|Файл 85vt189y2vjox71.jpg удален с диска
+2022-01-12 at 17:58:35|INFO|Получен список каналов
+2022-01-12 at 17:58:36|SUCCESS|Определены настройки веб драйвера
+2022-01-12 at 17:58:36|DEBUG|Логинимся на reddit
+2022-01-12 at 17:58:51|SUCCESS|Учпешно залогинились
+2022-01-12 at 17:58:51|DEBUG|Переходим в канал interestingasfuck
+2022-01-12 at 17:58:52|SUCCESS|Зашли в канал interestingasfuck и сформировали json
+2022-01-12 at 17:58:52|SUCCESS|Завершили скачивание из канала interestingasfuck
+2022-01-12 at 17:58:52|INFO|Выниваем данне json из html
+2022-01-12 at 17:58:52|SUCCESS|Завершили формирование Json
+2022-01-12 at 17:58:52|INFO|Начинаем писать в БД из паблика interestingasfuck
+2022-01-12 at 17:58:54|SUCCESS|Закончили писать в БД из паблика interestingasfuck
+2022-01-12 at 17:58:54|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-12 at 17:58:54|INFO|Получен список каналов
+2022-01-12 at 17:58:55|SUCCESS|Определены настройки веб драйвера
+2022-01-12 at 17:58:55|DEBUG|Логинимся на reddit
+2022-01-12 at 17:59:09|SUCCESS|Учпешно залогинились
+2022-01-12 at 17:59:09|DEBUG|Переходим в канал gifsthatkeepongiving
+2022-01-12 at 17:59:10|SUCCESS|Зашли в канал gifsthatkeepongiving и сформировали json
+2022-01-12 at 17:59:11|SUCCESS|Завершили скачивание из канала gifsthatkeepongiving
+2022-01-12 at 17:59:11|INFO|Выниваем данне json из html
+2022-01-12 at 17:59:11|SUCCESS|Завершили формирование Json
+2022-01-12 at 17:59:11|INFO|Начинаем писать в БД из паблика gifsthatkeepongiving
+2022-01-12 at 17:59:13|SUCCESS|Закончили писать в БД из паблика gifsthatkeepongiving
+2022-01-12 at 17:59:13|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-12 at 17:59:13|INFO|Получен список каналов
+2022-01-12 at 17:59:14|SUCCESS|Определены настройки веб драйвера
+2022-01-12 at 17:59:14|DEBUG|Логинимся на reddit
+2022-01-12 at 17:59:30|SUCCESS|Учпешно залогинились
+2022-01-12 at 17:59:30|DEBUG|Переходим в канал oddlysatisfying
+2022-01-12 at 17:59:30|SUCCESS|Зашли в канал oddlysatisfying и сформировали json
+2022-01-12 at 17:59:31|SUCCESS|Завершили скачивание из канала oddlysatisfying
+2022-01-12 at 17:59:31|INFO|Выниваем данне json из html
+2022-01-12 at 17:59:31|SUCCESS|Завершили формирование Json
+2022-01-12 at 17:59:31|INFO|Начинаем писать в БД из паблика oddlysatisfying
+2022-01-12 at 17:59:35|SUCCESS|Закончили писать в БД из паблика oddlysatisfying
+2022-01-12 at 17:59:35|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-12 at 17:59:39|INFO|Получаем посты для публикации
+2022-01-12 at 17:59:39|SUCCESS|Будем отправлять изображение 149lpcep1mno2y71.jpg
+2022-01-12 at 17:59:39|DEBUG|Формируем собщение поста с id: 149
+2022-01-12 at 17:59:41|SUCCESS|Собщение сформировано
+2022-01-12 at 17:59:41|SUCCESS|Файл 149lpcep1mno2y71.jpg удален с диска
+2022-01-12 at 18:00:41|INFO|Получаем посты для публикации
+2022-01-12 at 18:00:41|SUCCESS|Будем отправлять видео154DASH_240.mp4
+2022-01-12 at 18:00:41|DEBUG|Формируем собщение поста с id: 154
+2022-01-12 at 18:00:42|SUCCESS|Собщение сформировано
+2022-01-12 at 18:00:42|SUCCESS|Файл 154DASH_240.mp4 удален с диска
+2022-01-12 at 18:01:42|INFO|Получаем посты для публикации
+2022-01-12 at 18:01:42|SUCCESS|Будем отправлять изображение 163w341f3n2z0y71.jpg
+2022-01-12 at 18:01:42|DEBUG|Формируем собщение поста с id: 163
+2022-01-12 at 18:01:43|SUCCESS|Собщение сформировано
+2022-01-12 at 18:01:43|SUCCESS|Файл 163w341f3n2z0y71.jpg удален с диска
+2022-01-12 at 18:02:43|INFO|Получаем посты для публикации
+2022-01-12 at 18:02:43|SUCCESS|Будем отправлять изображение 155zza3re1rt1y71.jpg
+2022-01-12 at 18:02:43|DEBUG|Формируем собщение поста с id: 155
+2022-01-12 at 18:02:44|SUCCESS|Собщение сформировано
+2022-01-12 at 18:02:44|SUCCESS|Файл 155zza3re1rt1y71.jpg удален с диска
+2022-01-12 at 18:03:44|INFO|Получаем посты для публикации
+2022-01-12 at 18:03:44|SUCCESS|Будем отправлять анимацию 1484h1ojk6zh3y71.gif
+2022-01-12 at 18:03:44|DEBUG|Формируем собщение поста с id: 148
+2022-01-12 at 18:03:47|SUCCESS|Собщение сформировано
+2022-01-12 at 18:03:47|SUCCESS|Файл 1484h1ojk6zh3y71.gif удален с диска
+2022-01-12 at 18:04:35|INFO|Получен список каналов
+2022-01-12 at 18:04:36|SUCCESS|Определены настройки веб драйвера
+2022-01-12 at 18:04:36|DEBUG|Логинимся на reddit
+2022-01-12 at 18:04:52|SUCCESS|Учпешно залогинились
+2022-01-12 at 18:04:52|DEBUG|Переходим в канал interestingasfuck
+2022-01-12 at 18:04:53|SUCCESS|Зашли в канал interestingasfuck и сформировали json
+2022-01-12 at 18:04:53|SUCCESS|Завершили скачивание из канала interestingasfuck
+2022-01-12 at 18:04:53|INFO|Выниваем данне json из html
+2022-01-12 at 18:04:53|SUCCESS|Завершили формирование Json
+2022-01-12 at 18:04:53|INFO|Начинаем писать в БД из паблика interestingasfuck
+2022-01-12 at 18:04:55|SUCCESS|Закончили писать в БД из паблика interestingasfuck
+2022-01-12 at 18:04:55|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-12 at 18:04:55|INFO|Получен список каналов
+2022-01-12 at 18:04:56|SUCCESS|Определены настройки веб драйвера
+2022-01-12 at 18:04:56|DEBUG|Логинимся на reddit
+2022-01-12 at 18:05:11|SUCCESS|Учпешно залогинились
+2022-01-12 at 18:05:11|DEBUG|Переходим в канал gifsthatkeepongiving
+2022-01-12 at 18:05:11|SUCCESS|Зашли в канал gifsthatkeepongiving и сформировали json
+2022-01-12 at 18:05:12|SUCCESS|Завершили скачивание из канала gifsthatkeepongiving
+2022-01-12 at 18:05:12|INFO|Выниваем данне json из html
+2022-01-12 at 18:05:12|SUCCESS|Завершили формирование Json
+2022-01-12 at 18:05:12|INFO|Начинаем писать в БД из паблика gifsthatkeepongiving
+2022-01-12 at 18:05:15|SUCCESS|Закончили писать в БД из паблика gifsthatkeepongiving
+2022-01-12 at 18:05:15|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-12 at 18:05:15|INFO|Получен список каналов
+2022-01-12 at 18:05:15|SUCCESS|Определены настройки веб драйвера
+2022-01-12 at 18:05:15|DEBUG|Логинимся на reddit
+2022-01-12 at 18:05:32|SUCCESS|Учпешно залогинились
+2022-01-12 at 18:05:32|DEBUG|Переходим в канал oddlysatisfying
+2022-01-12 at 18:05:33|SUCCESS|Зашли в канал oddlysatisfying и сформировали json
+2022-01-12 at 18:05:33|SUCCESS|Завершили скачивание из канала oddlysatisfying
+2022-01-12 at 18:05:33|INFO|Выниваем данне json из html
+2022-01-12 at 18:05:33|SUCCESS|Завершили формирование Json
+2022-01-12 at 18:05:33|INFO|Начинаем писать в БД из паблика oddlysatisfying
+2022-01-12 at 18:05:35|SUCCESS|Закончили писать в БД из паблика oddlysatisfying
+2022-01-12 at 18:05:35|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-12 at 18:05:39|INFO|Получаем посты для публикации
+2022-01-12 at 18:05:39|SUCCESS|Будем отправлять изображение 150kx4srsifg3y71.jpg
+2022-01-12 at 18:05:39|DEBUG|Формируем собщение поста с id: 150
+2022-01-12 at 18:05:40|SUCCESS|Собщение сформировано
+2022-01-12 at 18:05:40|SUCCESS|Файл 150kx4srsifg3y71.jpg удален с диска
+2022-01-12 at 18:06:40|INFO|Получаем посты для публикации
+2022-01-12 at 18:06:40|SUCCESS|Будем отправлять изображение 159t6osf24jm2y71.jpg
+2022-01-12 at 18:06:40|DEBUG|Формируем собщение поста с id: 159
+2022-01-12 at 18:06:40|SUCCESS|Собщение сформировано
+2022-01-12 at 18:06:40|SUCCESS|Файл 159t6osf24jm2y71.jpg удален с диска
+2022-01-12 at 18:07:41|INFO|Получаем посты для публикации
+2022-01-12 at 18:07:41|SUCCESS|Будем отправлять изображение 1136prwhua2qnx71.png
+2022-01-12 at 18:07:41|DEBUG|Формируем собщение поста с id: 113
+2022-01-12 at 18:07:42|SUCCESS|Собщение сформировано
+2022-01-12 at 18:07:42|SUCCESS|Файл 1136prwhua2qnx71.png удален с диска
+2022-01-12 at 18:08:42|INFO|Получаем посты для публикации
+2022-01-12 at 18:08:42|SUCCESS|Будем отправлять изображение 1367hyvgcfihtx71.png
+2022-01-12 at 18:08:42|DEBUG|Формируем собщение поста с id: 136
+2022-01-12 at 18:08:42|SUCCESS|Собщение сформировано
+2022-01-12 at 18:08:42|SUCCESS|Файл 1367hyvgcfihtx71.png удален с диска
+2022-01-12 at 18:09:42|INFO|Получаем посты для публикации
+2022-01-12 at 18:09:42|SUCCESS|Будем отправлять видео160DASH_720.mp4
+2022-01-12 at 18:09:42|DEBUG|Формируем собщение поста с id: 160
+2022-01-12 at 18:09:45|SUCCESS|Собщение сформировано
+2022-01-12 at 18:09:45|SUCCESS|Файл 160DASH_720.mp4 удален с диска
+2022-01-12 at 18:10:37|INFO|Получен список каналов
+2022-01-12 at 18:10:38|SUCCESS|Определены настройки веб драйвера
+2022-01-12 at 18:10:38|DEBUG|Логинимся на reddit
+2022-01-12 at 18:10:54|SUCCESS|Учпешно залогинились
+2022-01-12 at 18:10:54|DEBUG|Переходим в канал interestingasfuck
+2022-01-12 at 18:10:56|SUCCESS|Зашли в канал interestingasfuck и сформировали json
+2022-01-12 at 18:10:56|SUCCESS|Завершили скачивание из канала interestingasfuck
+2022-01-12 at 18:10:56|INFO|Выниваем данне json из html
+2022-01-12 at 18:10:56|SUCCESS|Завершили формирование Json
+2022-01-12 at 18:10:56|INFO|Начинаем писать в БД из паблика interestingasfuck
+2022-01-12 at 18:10:59|SUCCESS|Закончили писать в БД из паблика interestingasfuck
+2022-01-12 at 18:10:59|DEBUG|Запуск удаления файлов из БД помеченных на удаление[('86i79j3qww3rx71.jpg', 86)]
+2022-01-12 at 18:10:59|INFO|Получен список каналов
+2022-01-12 at 18:11:00|SUCCESS|Определены настройки веб драйвера
+2022-01-12 at 18:11:00|DEBUG|Логинимся на reddit
+2022-01-12 at 18:11:15|SUCCESS|Учпешно залогинились
+2022-01-12 at 18:11:15|DEBUG|Переходим в канал gifsthatkeepongiving
+2022-01-12 at 18:11:16|SUCCESS|Зашли в канал gifsthatkeepongiving и сформировали json
+2022-01-12 at 18:11:16|SUCCESS|Завершили скачивание из канала gifsthatkeepongiving
+2022-01-12 at 18:11:16|INFO|Выниваем данне json из html
+2022-01-12 at 18:11:16|SUCCESS|Завершили формирование Json
+2022-01-12 at 18:11:16|INFO|Начинаем писать в БД из паблика gifsthatkeepongiving
+2022-01-12 at 18:11:18|SUCCESS|Закончили писать в БД из паблика gifsthatkeepongiving
+2022-01-12 at 18:11:18|DEBUG|Запуск удаления файлов из БД помеченных на удаление[('164txv5t3ium3y71.jpg', 164)]
+2022-01-12 at 18:11:18|INFO|Получен список каналов
+2022-01-12 at 18:11:19|SUCCESS|Определены настройки веб драйвера
+2022-01-12 at 18:11:19|DEBUG|Логинимся на reddit
+2022-01-12 at 18:11:35|SUCCESS|Учпешно залогинились
+2022-01-12 at 18:11:35|DEBUG|Переходим в канал oddlysatisfying
+2022-01-12 at 18:11:36|SUCCESS|Зашли в канал oddlysatisfying и сформировали json
+2022-01-12 at 18:11:36|SUCCESS|Завершили скачивание из канала oddlysatisfying
+2022-01-12 at 18:11:36|INFO|Выниваем данне json из html
+2022-01-12 at 18:11:36|SUCCESS|Завершили формирование Json
+2022-01-12 at 18:11:36|INFO|Начинаем писать в БД из паблика oddlysatisfying
+2022-01-12 at 18:11:38|SUCCESS|Закончили писать в БД из паблика oddlysatisfying
+2022-01-12 at 18:11:38|DEBUG|Запуск удаления файлов из БД помеченных на удаление[('1202q2yxi8aylx71.png', 120)]
+2022-01-12 at 18:11:42|INFO|Получаем посты для публикации
+2022-01-12 at 18:11:42|SUCCESS|Будем отправлять изображение 157jd4dugpe84y71.jpg
+2022-01-12 at 18:11:42|DEBUG|Формируем собщение поста с id: 157
+2022-01-12 at 18:11:43|SUCCESS|Собщение сформировано
+2022-01-12 at 18:11:43|SUCCESS|Файл 157jd4dugpe84y71.jpg удален с диска
+2022-01-12 at 18:12:43|INFO|Получаем посты для публикации
+2022-01-12 at 18:12:43|SUCCESS|Будем отправлять видео156DASH_1080.mp4
+2022-01-12 at 18:12:43|DEBUG|Формируем собщение поста с id: 156
+2022-01-12 at 18:12:44|SUCCESS|Собщение сформировано
+2022-01-12 at 18:12:44|SUCCESS|Файл 156DASH_1080.mp4 удален с диска
+2022-01-12 at 18:13:44|INFO|Получаем посты для публикации
+2022-01-12 at 18:14:45|INFO|Получаем посты для публикации
+2022-01-12 at 18:15:45|INFO|Получаем посты для публикации
+2022-01-12 at 18:15:45|SUCCESS|Будем отправлять видео139DASH_1080.mp4
+2022-01-12 at 18:15:45|DEBUG|Формируем собщение поста с id: 139
+2022-01-12 at 18:15:47|SUCCESS|Собщение сформировано
+2022-01-12 at 18:15:47|SUCCESS|Файл 139DASH_1080.mp4 удален с диска
+2022-01-12 at 18:16:39|INFO|Получен список каналов
+2022-01-12 at 18:16:40|SUCCESS|Определены настройки веб драйвера
+2022-01-12 at 18:16:40|DEBUG|Логинимся на reddit
+2022-01-12 at 18:16:55|SUCCESS|Учпешно залогинились
+2022-01-12 at 18:16:55|DEBUG|Переходим в канал interestingasfuck
+2022-01-12 at 18:16:57|SUCCESS|Зашли в канал interestingasfuck и сформировали json
+2022-01-12 at 18:16:57|SUCCESS|Завершили скачивание из канала interestingasfuck
+2022-01-12 at 18:16:57|INFO|Выниваем данне json из html
+2022-01-12 at 18:16:57|SUCCESS|Завершили формирование Json
+2022-01-12 at 18:16:57|INFO|Начинаем писать в БД из паблика interestingasfuck
+2022-01-12 at 18:16:59|SUCCESS|Закончили писать в БД из паблика interestingasfuck
+2022-01-12 at 18:16:59|DEBUG|Запуск удаления файлов из БД помеченных на удаление[('121DASH_480.mp4', 121), ('123DASH_720.mp4', 123), ('137ayhbkwn0otx71.jpg', 137), ('169joxptctsj4y71.jpg', 169)]
+2022-01-12 at 18:16:59|INFO|Получен список каналов
+2022-01-12 at 18:17:00|SUCCESS|Определены настройки веб драйвера
+2022-01-12 at 18:17:00|DEBUG|Логинимся на reddit
+2022-01-12 at 18:17:18|SUCCESS|Учпешно залогинились
+2022-01-12 at 18:17:18|DEBUG|Переходим в канал gifsthatkeepongiving
+2022-01-12 at 18:17:18|SUCCESS|Зашли в канал gifsthatkeepongiving и сформировали json
+2022-01-12 at 18:17:18|SUCCESS|Завершили скачивание из канала gifsthatkeepongiving
+2022-01-12 at 18:17:18|INFO|Выниваем данне json из html
+2022-01-12 at 18:17:18|SUCCESS|Завершили формирование Json
+2022-01-12 at 18:17:18|INFO|Начинаем писать в БД из паблика gifsthatkeepongiving
+2022-01-12 at 18:17:22|SUCCESS|Закончили писать в БД из паблика gifsthatkeepongiving
+2022-01-12 at 18:17:22|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-12 at 18:17:22|INFO|Получен список каналов
+2022-01-12 at 18:17:23|SUCCESS|Определены настройки веб драйвера
+2022-01-12 at 18:17:23|DEBUG|Логинимся на reddit
+2022-01-12 at 18:17:38|SUCCESS|Учпешно залогинились
+2022-01-12 at 18:17:38|DEBUG|Переходим в канал oddlysatisfying
+2022-01-12 at 18:17:40|SUCCESS|Зашли в канал oddlysatisfying и сформировали json
+2022-01-12 at 18:17:40|SUCCESS|Завершили скачивание из канала oddlysatisfying
+2022-01-12 at 18:17:40|INFO|Выниваем данне json из html
+2022-01-12 at 18:17:40|SUCCESS|Завершили формирование Json
+2022-01-12 at 18:17:40|INFO|Начинаем писать в БД из паблика oddlysatisfying
+2022-01-12 at 18:17:42|SUCCESS|Закончили писать в БД из паблика oddlysatisfying
+2022-01-12 at 18:17:42|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-12 at 18:17:46|INFO|Получаем посты для публикации
+2022-01-12 at 18:17:46|SUCCESS|Будем отправлять изображение 140300m2vzvztx71.jpg
+2022-01-12 at 18:17:46|DEBUG|Формируем собщение поста с id: 140
+2022-01-12 at 18:17:47|SUCCESS|Собщение сформировано
+2022-01-12 at 18:17:47|SUCCESS|Файл 140300m2vzvztx71.jpg удален с диска
+2022-01-12 at 18:18:47|INFO|Получаем посты для публикации
+2022-01-12 at 18:18:47|SUCCESS|Будем отправлять изображение 168cuunzpsla5y71.jpg
+2022-01-12 at 18:18:47|DEBUG|Формируем собщение поста с id: 168
+2022-01-12 at 18:18:48|SUCCESS|Собщение сформировано
+2022-01-12 at 18:18:48|SUCCESS|Файл 168cuunzpsla5y71.jpg удален с диска
+2022-01-12 at 18:19:48|INFO|Получаем посты для публикации
+2022-01-12 at 18:19:48|SUCCESS|Будем отправлять изображение 118irvxbleotnx71.png
+2022-01-12 at 18:19:48|DEBUG|Формируем собщение поста с id: 118
+2022-01-12 at 18:19:49|SUCCESS|Собщение сформировано
+2022-01-12 at 18:19:49|SUCCESS|Файл 118irvxbleotnx71.png удален с диска
+2022-01-12 at 18:20:49|INFO|Получаем посты для публикации
+2022-01-12 at 18:20:49|SUCCESS|Будем отправлять изображение 165a23djxz415y71.jpg
+2022-01-12 at 18:20:49|DEBUG|Формируем собщение поста с id: 165
+2022-01-12 at 18:20:49|SUCCESS|Собщение сформировано
+2022-01-12 at 18:20:49|SUCCESS|Файл 165a23djxz415y71.jpg удален с диска
+2022-01-12 at 18:21:50|INFO|Получаем посты для публикации
+2022-01-12 at 18:21:50|SUCCESS|Будем отправлять изображение 141a2mxy52irtx71.jpg
+2022-01-12 at 18:21:50|DEBUG|Формируем собщение поста с id: 141
+2022-01-12 at 18:21:50|SUCCESS|Собщение сформировано
+2022-01-12 at 18:21:50|SUCCESS|Файл 141a2mxy52irtx71.jpg удален с диска
+2022-01-12 at 18:22:46|INFO|Получен список каналов
+2022-01-12 at 18:22:47|SUCCESS|Определены настройки веб драйвера
+2022-01-12 at 18:22:47|DEBUG|Логинимся на reddit
+2022-01-12 at 18:23:06|SUCCESS|Учпешно залогинились
+2022-01-12 at 18:23:06|DEBUG|Переходим в канал interestingasfuck
+2022-01-12 at 18:23:07|SUCCESS|Зашли в канал interestingasfuck и сформировали json
+2022-01-12 at 18:23:07|SUCCESS|Завершили скачивание из канала interestingasfuck
+2022-01-12 at 18:23:07|INFO|Выниваем данне json из html
+2022-01-12 at 18:23:07|SUCCESS|Завершили формирование Json
+2022-01-12 at 18:23:07|INFO|Начинаем писать в БД из паблика interestingasfuck
+2022-01-12 at 18:23:13|SUCCESS|Закончили писать в БД из паблика interestingasfuck
+2022-01-12 at 18:23:13|DEBUG|Запуск удаления файлов из БД помеченных на удаление[('130w6wq10g36lx71.jpg', 130)]
+2022-01-12 at 18:23:13|INFO|Получен список каналов
+2022-01-12 at 18:23:13|SUCCESS|Определены настройки веб драйвера
+2022-01-12 at 18:23:13|DEBUG|Логинимся на reddit
+2022-01-12 at 18:23:25|SUCCESS|Учпешно залогинились
+2022-01-12 at 18:23:25|DEBUG|Переходим в канал gifsthatkeepongiving
+2022-01-12 at 18:23:28|SUCCESS|Зашли в канал gifsthatkeepongiving и сформировали json
+2022-01-12 at 18:23:28|SUCCESS|Завершили скачивание из канала gifsthatkeepongiving
+2022-01-12 at 18:23:28|INFO|Выниваем данне json из html
+2022-01-12 at 18:23:28|SUCCESS|Завершили формирование Json
+2022-01-12 at 18:23:28|INFO|Начинаем писать в БД из паблика gifsthatkeepongiving
+2022-01-12 at 18:23:33|SUCCESS|Закончили писать в БД из паблика gifsthatkeepongiving
+2022-01-12 at 18:23:33|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-12 at 18:23:33|INFO|Получен список каналов
+2022-01-12 at 18:23:34|SUCCESS|Определены настройки веб драйвера
+2022-01-12 at 18:23:34|DEBUG|Логинимся на reddit
+2022-01-12 at 18:23:47|SUCCESS|Учпешно залогинились
+2022-01-12 at 18:23:47|DEBUG|Переходим в канал oddlysatisfying
+2022-01-12 at 18:23:50|SUCCESS|Зашли в канал oddlysatisfying и сформировали json
+2022-01-12 at 18:23:50|SUCCESS|Завершили скачивание из канала oddlysatisfying
+2022-01-12 at 18:23:50|INFO|Выниваем данне json из html
+2022-01-12 at 18:23:50|SUCCESS|Завершили формирование Json
+2022-01-12 at 18:23:50|INFO|Начинаем писать в БД из паблика oddlysatisfying
+2022-01-12 at 18:23:52|SUCCESS|Закончили писать в БД из паблика oddlysatisfying
+2022-01-12 at 18:23:52|DEBUG|Запуск удаления файлов из БД помеченных на удаление[]
+2022-01-12 at 18:23:56|INFO|Получаем посты для публикации
+2022-01-12 at 18:23:56|SUCCESS|Будем отправлять видео106DASH_360.mp4
+2022-01-12 at 18:23:56|DEBUG|Формируем собщение поста с id: 106
+2022-01-12 at 18:23:57|SUCCESS|Собщение сформировано
+2022-01-12 at 18:23:57|SUCCESS|Файл 106DASH_360.mp4 удален с диска
+2022-01-12 at 18:24:57|INFO|Получаем посты для публикации
+2022-01-12 at 18:24:57|SUCCESS|Будем отправлять изображение 133vx5uhzv2yjx71.png
+2022-01-12 at 18:24:57|DEBUG|Формируем собщение поста с id: 133
+2022-01-12 at 18:24:57|SUCCESS|Собщение сформировано
+2022-01-12 at 18:24:57|SUCCESS|Файл 133vx5uhzv2yjx71.png удален с диска
+2022-01-12 at 18:25:58|INFO|Получаем посты для публикации
+2022-01-12 at 18:25:58|SUCCESS|Будем отправлять видео114DASH_1080.mp4
+2022-01-12 at 18:25:58|DEBUG|Формируем собщение поста с id: 114
+2022-01-12 at 18:25:58|SUCCESS|Собщение сформировано
+2022-01-12 at 18:25:58|SUCCESS|Файл 114DASH_1080.mp4 удален с диска
+2022-01-23 at 13:18:01|INFO|Получаем посты для публикации
+2022-01-23 at 13:18:01|SUCCESS|Будем отправлять изображение 78un8fn1zybtx71.jpg
+2022-01-23 at 13:18:01|DEBUG|Формируем собщение поста с id: 78
+2022-01-23 at 13:18:01|SUCCESS|Собщение сформировано
+2022-01-23 at 13:18:01|SUCCESS|Файл 78un8fn1zybtx71.jpg удален с диска
+2022-01-23 at 13:19:01|INFO|Получаем посты для публикации
+2022-01-23 at 13:19:01|SUCCESS|Будем отправлять видео128DASH_1080.mp4
+2022-01-23 at 13:19:01|DEBUG|Формируем собщение поста с id: 128
+2022-01-23 at 13:19:03|SUCCESS|Собщение сформировано
+2022-01-23 at 13:19:03|SUCCESS|Файл 128DASH_1080.mp4 удален с диска
+2022-01-23 at 13:20:03|INFO|Получаем посты для публикации
+2022-01-23 at 13:20:03|SUCCESS|Будем отправлять изображение 142tu9my3lc5ux71.jpg
+2022-01-23 at 13:20:03|DEBUG|Формируем собщение поста с id: 142
+2022-01-23 at 13:20:03|SUCCESS|Собщение сформировано
+2022-01-23 at 13:20:03|SUCCESS|Файл 142tu9my3lc5ux71.jpg удален с диска
+2022-01-23 at 13:21:03|INFO|Получаем посты для публикации
+2022-01-23 at 13:21:03|SUCCESS|Будем отправлять изображение 112vqnt0egbtsx71.png
+2022-01-23 at 13:21:03|DEBUG|Формируем собщение поста с id: 112
+2022-01-23 at 13:21:04|SUCCESS|Собщение сформировано
+2022-01-23 at 13:21:04|SUCCESS|Файл 112vqnt0egbtsx71.png удален с диска
+2022-01-23 at 13:22:04|INFO|Получен список каналов
+2022-01-23 at 13:22:06|SUCCESS|Определены настройки веб драйвера
+2022-01-23 at 13:22:06|DEBUG|Логинимся на reddit
+2022-01-23 at 13:22:20|SUCCESS|Учпешно залогинились
+2022-01-23 at 13:22:20|DEBUG|Переходим в канал interestingasfuck
+2022-01-23 at 13:22:26|SUCCESS|Зашли в канал interestingasfuck и сформировали json
+2022-01-23 at 13:22:26|ERROR|Ошибка при формировани файла data.html
+Traceback (most recent call last):
+
+  File "main.py", line 148, in <module>
+    schedule.run_pending()
+    │        └ <function run_pending at 0x7fb90879a598>
+    └ <module 'schedule' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py'>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 780, in run_pending
+    default_scheduler.run_pending()
+    │                 └ <function Scheduler.run_pending at 0x7fb908783f28>
+    └ <schedule.Scheduler object at 0x7fb90928f518>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 100, in run_pending
+    self._run_job(job)
+    │    │        └ Every 5 minutes do search_reddit() (last run: [never], next run: 2022-01-23 13:22:01)
+    │    └ <function Scheduler._run_job at 0x7fb9087972f0>
+    └ <schedule.Scheduler object at 0x7fb90928f518>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 172, in _run_job
+    ret = job.run()
+          │   └ <function Job.run at 0x7fb90879a378>
+          └ Every 5 minutes do search_reddit() (last run: [never], next run: 2022-01-23 13:22:01)
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 661, in run
+    ret = self.job_func()
+          │    └ functools.partial(<function search_reddit at 0x7fb9086a9158>)
+          └ Every 5 minutes do search_reddit() (last run: [never], next run: 2022-01-23 13:22:01)
+
+  File "/home/ripo/tb_bot/parser_reddit.py", line 170, in search_reddit
+    redit_login(username, password, redit)
+    │           │         │         └ ('interestingasfuck', 'gifsthatkeepongiving', 'oddlysatisfying')
+    │           │         └ 'UOgyiog8374fgboa8fgdOU6e93ced923c%^CvV'
+    │           └ 'Ripozi'
+    └ <function search_reddit.<locals>.redit_login at 0x7fb9076e86a8>
+
+> File "/home/ripo/tb_bot/parser_reddit.py", line 81, in redit_login
+    with open('logger/data.html', 'w', encoding='utf=8') as file:
+
+FileNotFoundError: [Errno 2] No such file or directory: 'logger/data.html'
+2022-01-23 at 13:22:26|ERROR|Ошибка при авторизации
+Traceback (most recent call last):
+
+  File "/home/ripo/tb_bot/parser_reddit.py", line 81, in redit_login
+    with open('logger/data.html', 'w', encoding='utf=8') as file:
+
+FileNotFoundError: [Errno 2] No such file or directory: 'logger/data.html'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connection.py", line 175, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+     │    │          │    │      │    │          └ {'socket_options': [(6, 1, 1)]}
+     │    │          │    │      │    └ <object object at 0x7fb90a669220>
+     │    │          │    │      └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+     │    │          │    └ 51843
+     │    │          └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+     │    └ 'localhost'
+     └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/util/connection.py", line 96, in create_connection
+    raise err
+          └ ConnectionRefusedError(111, 'Connection refused')
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/util/connection.py", line 86, in create_connection
+    sock.connect(sa)
+    │            └ ('127.0.0.1', 51843)
+    └ None
+
+ConnectionRefusedError: [Errno 111] Connection refused
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connectionpool.py", line 706, in urlopen
+    chunked=chunked,
+            └ False
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connectionpool.py", line 394, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+    │    │       │       │      └ {'body': None, 'headers': {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'sel...
+    │    │       │       └ '/session/29e60827828e0a53d689ccb461554a65/window'
+    │    │       └ 'DELETE'
+    │    └ <function HTTPConnection.request at 0x7fb9088da840>
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+          │               │             │       │         │             └ {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/4.1.0 (python linux)...
+          │               │             │       │         └ None
+          │               │             │       └ '/session/29e60827828e0a53d689ccb461554a65/window'
+          │               │             └ 'DELETE'
+          │               └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+          └ <class 'urllib3.connection.HTTPConnection'>
+  File "/usr/lib/python3.7/http/client.py", line 1260, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+    │    │             │       │    │     │        └ False
+    │    │             │       │    │     └ {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/4.1.0 (python linux)...
+    │    │             │       │    └ None
+    │    │             │       └ '/session/29e60827828e0a53d689ccb461554a65/window'
+    │    │             └ 'DELETE'
+    │    └ <function HTTPConnection._send_request at 0x7fb9098bbbf8>
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+  File "/usr/lib/python3.7/http/client.py", line 1306, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+    │    │          │                    └ False
+    │    │          └ None
+    │    └ <function HTTPConnection.endheaders at 0x7fb9098bbae8>
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+  File "/usr/lib/python3.7/http/client.py", line 1255, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    │    │            │                            └ False
+    │    │            └ None
+    │    └ <function HTTPConnection._send_output at 0x7fb9098bb8c8>
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+  File "/usr/lib/python3.7/http/client.py", line 1030, in _send_output
+    self.send(msg)
+    │    │    └ b'DELETE /session/29e60827828e0a53d689ccb461554a65/window HTTP/1.1\r\nHost: localhost:51843\r\nAccept-Encoding: identity\r\nA...
+    │    └ <function HTTPConnection.send at 0x7fb9098bb730>
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+  File "/usr/lib/python3.7/http/client.py", line 970, in send
+    self.connect()
+    │    └ <function HTTPConnection.connect at 0x7fb9088da6a8>
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+           │    └ <function HTTPConnection._new_conn at 0x7fb9088da510>
+           └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connection.py", line 187, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fb906e37240>: Failed to establish a new connection: [Errno 111] Connection refused
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "main.py", line 148, in <module>
+    schedule.run_pending()
+    │        └ <function run_pending at 0x7fb90879a598>
+    └ <module 'schedule' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py'>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 780, in run_pending
+    default_scheduler.run_pending()
+    │                 └ <function Scheduler.run_pending at 0x7fb908783f28>
+    └ <schedule.Scheduler object at 0x7fb90928f518>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 100, in run_pending
+    self._run_job(job)
+    │    │        └ Every 5 minutes do search_reddit() (last run: [never], next run: 2022-01-23 13:22:01)
+    │    └ <function Scheduler._run_job at 0x7fb9087972f0>
+    └ <schedule.Scheduler object at 0x7fb90928f518>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 172, in _run_job
+    ret = job.run()
+          │   └ <function Job.run at 0x7fb90879a378>
+          └ Every 5 minutes do search_reddit() (last run: [never], next run: 2022-01-23 13:22:01)
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 661, in run
+    ret = self.job_func()
+          │    └ functools.partial(<function search_reddit at 0x7fb9086a9158>)
+          └ Every 5 minutes do search_reddit() (last run: [never], next run: 2022-01-23 13:22:01)
+
+  File "/home/ripo/tb_bot/parser_reddit.py", line 170, in search_reddit
+    redit_login(username, password, redit)
+    │           │         │         └ ('interestingasfuck', 'gifsthatkeepongiving', 'oddlysatisfying')
+    │           │         └ 'UOgyiog8374fgboa8fgdOU6e93ced923c%^CvV'
+    │           └ 'Ripozi'
+    └ <function search_reddit.<locals>.redit_login at 0x7fb9076e86a8>
+
+> File "/home/ripo/tb_bot/parser_reddit.py", line 87, in redit_login
+    browser.close()
+    │       └ <function WebDriver.close at 0x7fb90884cd08>
+    └ <selenium.webdriver.chrome.webdriver.WebDriver (session="29e60827828e0a53d689ccb461554a65")>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 937, in close
+    self.execute(Command.CLOSE)
+    │    │       │       └ 'close'
+    │    │       └ <class 'selenium.webdriver.remote.command.Command'>
+    │    └ <function WebDriver.execute at 0x7fb908844ea0>
+    └ <selenium.webdriver.chrome.webdriver.WebDriver (session="29e60827828e0a53d689ccb461554a65")>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 422, in execute
+    response = self.command_executor.execute(driver_command, params)
+               │    │                │       │               └ {}
+               │    │                │       └ 'close'
+               │    │                └ <function RemoteConnection.execute at 0x7fb9088f29d8>
+               │    └ <selenium.webdriver.chromium.remote_connection.ChromiumRemoteConnection object at 0x7fb906e30198>
+               └ <selenium.webdriver.chrome.webdriver.WebDriver (session="29e60827828e0a53d689ccb461554a65")>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 421, in execute
+    return self._request(command_info[0], url, body=data)
+           │    │        │                │         └ '{}'
+           │    │        │                └ 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'
+           │    │        └ ('DELETE', '/session/$sessionId/window')
+           │    └ <function RemoteConnection._request at 0x7fb9088f2a60>
+           └ <selenium.webdriver.chromium.remote_connection.ChromiumRemoteConnection object at 0x7fb906e30198>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 443, in _request
+    resp = self._conn.request(method, url, body=body, headers=headers)
+           │    │     │       │       │         │             └ {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/4.1.0 (python linux)...
+           │    │     │       │       │         └ None
+           │    │     │       │       └ 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'
+           │    │     │       └ 'DELETE'
+           │    │     └ <function RequestMethods.request at 0x7fb9088df6a8>
+           │    └ <urllib3.poolmanager.PoolManager object at 0x7fb906e30da0>
+           └ <selenium.webdriver.chromium.remote_connection.ChromiumRemoteConnection object at 0x7fb906e30198>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/request.py", line 75, in request
+    method, url, fields=fields, headers=headers, **urlopen_kw
+    │       │           │               │          └ {'body': None, 'request_url': 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'}
+    │       │           │               └ {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/4.1.0 (python linux)...
+    │       │           └ None
+    │       └ 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'
+    └ 'DELETE'
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/request.py", line 96, in request_encode_url
+    return self.urlopen(method, url, **extra_kw)
+           │    │       │       │      └ {'headers': {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/4.1.0 (p...
+           │    │       │       └ 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'
+           │    │       └ 'DELETE'
+           │    └ <function PoolManager.urlopen at 0x7fb9088f2048>
+           └ <urllib3.poolmanager.PoolManager object at 0x7fb906e30da0>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/poolmanager.py", line 375, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+               │    │       │       │ │              └ {'headers': {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/4.1.0 (p...
+               │    │       │       │ └ <property object at 0x7fb9088ca1d8>
+               │    │       │       └ Url(scheme='http', auth=None, host='localhost', port=51843, path='/session/29e60827828e0a53d689ccb461554a65/window', query=No...
+               │    │       └ 'DELETE'
+               │    └ <function HTTPConnectionPool.urlopen at 0x7fb9088ebbf8>
+               └ <urllib3.connectionpool.HTTPConnectionPool object at 0x7fb906e37208>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connectionpool.py", line 796, in urlopen
+    **response_kw
+      └ {'request_url': 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'}
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connectionpool.py", line 796, in urlopen
+    **response_kw
+      └ {'request_url': 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'}
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connectionpool.py", line 796, in urlopen
+    **response_kw
+      └ {'request_url': 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'}
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connectionpool.py", line 756, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+    │       │                   │                 │   └ <built-in function exc_info>
+    │       │                   │                 └ <module 'sys' (built-in)>
+    │       │                   └ <urllib3.connectionpool.HTTPConnectionPool object at 0x7fb906e37208>
+    │       └ '/session/29e60827828e0a53d689ccb461554a65/window'
+    └ 'DELETE'
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/util/retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+          │             │      │    │        │             └ 'unknown'
+          │             │      │    │        └ <class 'urllib3.exceptions.ResponseError'>
+          │             │      │    └ NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fb906e37240>: Failed to establish a new connection: [Errn...
+          │             │      └ '/session/29e60827828e0a53d689ccb461554a65/window'
+          │             └ <urllib3.connectionpool.HTTPConnectionPool object at 0x7fb906e37208>
+          └ <class 'urllib3.exceptions.MaxRetryError'>
+
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=51843): Max retries exceeded with url: /session/29e60827828e0a53d689ccb461554a65/window (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fb906e37240>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2022-01-23 at 13:22:26|ERROR|An error has been caught in function 'run', process 'MainProcess' (1456), thread 'MainThread' (140432722347840):
+Traceback (most recent call last):
+
+  File "/home/ripo/tb_bot/parser_reddit.py", line 81, in redit_login
+    with open('logger/data.html', 'w', encoding='utf=8') as file:
+
+FileNotFoundError: [Errno 2] No such file or directory: 'logger/data.html'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connection.py", line 175, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+     │    │          │    │      │    │          └ {'socket_options': [(6, 1, 1)]}
+     │    │          │    │      │    └ <object object at 0x7fb90a669220>
+     │    │          │    │      └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+     │    │          │    └ 51843
+     │    │          └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+     │    └ 'localhost'
+     └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/util/connection.py", line 96, in create_connection
+    raise err
+          └ ConnectionRefusedError(111, 'Connection refused')
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/util/connection.py", line 86, in create_connection
+    sock.connect(sa)
+    │            └ ('127.0.0.1', 51843)
+    └ None
+
+ConnectionRefusedError: [Errno 111] Connection refused
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connectionpool.py", line 706, in urlopen
+    chunked=chunked,
+            └ False
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connectionpool.py", line 394, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+    │    │       │       │      └ {'body': None, 'headers': {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'sel...
+    │    │       │       └ '/session/29e60827828e0a53d689ccb461554a65/window'
+    │    │       └ 'DELETE'
+    │    └ <function HTTPConnection.request at 0x7fb9088da840>
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+          │               │             │       │         │             └ {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/4.1.0 (python linux)...
+          │               │             │       │         └ None
+          │               │             │       └ '/session/29e60827828e0a53d689ccb461554a65/window'
+          │               │             └ 'DELETE'
+          │               └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+          └ <class 'urllib3.connection.HTTPConnection'>
+  File "/usr/lib/python3.7/http/client.py", line 1260, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+    │    │             │       │    │     │        └ False
+    │    │             │       │    │     └ {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/4.1.0 (python linux)...
+    │    │             │       │    └ None
+    │    │             │       └ '/session/29e60827828e0a53d689ccb461554a65/window'
+    │    │             └ 'DELETE'
+    │    └ <function HTTPConnection._send_request at 0x7fb9098bbbf8>
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+  File "/usr/lib/python3.7/http/client.py", line 1306, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+    │    │          │                    └ False
+    │    │          └ None
+    │    └ <function HTTPConnection.endheaders at 0x7fb9098bbae8>
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+  File "/usr/lib/python3.7/http/client.py", line 1255, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    │    │            │                            └ False
+    │    │            └ None
+    │    └ <function HTTPConnection._send_output at 0x7fb9098bb8c8>
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+  File "/usr/lib/python3.7/http/client.py", line 1030, in _send_output
+    self.send(msg)
+    │    │    └ b'DELETE /session/29e60827828e0a53d689ccb461554a65/window HTTP/1.1\r\nHost: localhost:51843\r\nAccept-Encoding: identity\r\nA...
+    │    └ <function HTTPConnection.send at 0x7fb9098bb730>
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+  File "/usr/lib/python3.7/http/client.py", line 970, in send
+    self.connect()
+    │    └ <function HTTPConnection.connect at 0x7fb9088da6a8>
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+           │    └ <function HTTPConnection._new_conn at 0x7fb9088da510>
+           └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connection.py", line 187, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fb906e37240>: Failed to establish a new connection: [Errno 111] Connection refused
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/ripo/tb_bot/parser_reddit.py", line 87, in redit_login
+    browser.close()
+    │       └ <function WebDriver.close at 0x7fb90884cd08>
+    └ <selenium.webdriver.chrome.webdriver.WebDriver (session="29e60827828e0a53d689ccb461554a65")>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 937, in close
+    self.execute(Command.CLOSE)
+    │    │       │       └ 'close'
+    │    │       └ <class 'selenium.webdriver.remote.command.Command'>
+    │    └ <function WebDriver.execute at 0x7fb908844ea0>
+    └ <selenium.webdriver.chrome.webdriver.WebDriver (session="29e60827828e0a53d689ccb461554a65")>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 422, in execute
+    response = self.command_executor.execute(driver_command, params)
+               │    │                │       │               └ {}
+               │    │                │       └ 'close'
+               │    │                └ <function RemoteConnection.execute at 0x7fb9088f29d8>
+               │    └ <selenium.webdriver.chromium.remote_connection.ChromiumRemoteConnection object at 0x7fb906e30198>
+               └ <selenium.webdriver.chrome.webdriver.WebDriver (session="29e60827828e0a53d689ccb461554a65")>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 421, in execute
+    return self._request(command_info[0], url, body=data)
+           │    │        │                │         └ '{}'
+           │    │        │                └ 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'
+           │    │        └ ('DELETE', '/session/$sessionId/window')
+           │    └ <function RemoteConnection._request at 0x7fb9088f2a60>
+           └ <selenium.webdriver.chromium.remote_connection.ChromiumRemoteConnection object at 0x7fb906e30198>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 443, in _request
+    resp = self._conn.request(method, url, body=body, headers=headers)
+           │    │     │       │       │         │             └ {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/4.1.0 (python linux)...
+           │    │     │       │       │         └ None
+           │    │     │       │       └ 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'
+           │    │     │       └ 'DELETE'
+           │    │     └ <function RequestMethods.request at 0x7fb9088df6a8>
+           │    └ <urllib3.poolmanager.PoolManager object at 0x7fb906e30da0>
+           └ <selenium.webdriver.chromium.remote_connection.ChromiumRemoteConnection object at 0x7fb906e30198>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/request.py", line 75, in request
+    method, url, fields=fields, headers=headers, **urlopen_kw
+    │       │           │               │          └ {'body': None, 'request_url': 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'}
+    │       │           │               └ {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/4.1.0 (python linux)...
+    │       │           └ None
+    │       └ 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'
+    └ 'DELETE'
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/request.py", line 96, in request_encode_url
+    return self.urlopen(method, url, **extra_kw)
+           │    │       │       │      └ {'headers': {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/4.1.0 (p...
+           │    │       │       └ 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'
+           │    │       └ 'DELETE'
+           │    └ <function PoolManager.urlopen at 0x7fb9088f2048>
+           └ <urllib3.poolmanager.PoolManager object at 0x7fb906e30da0>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/poolmanager.py", line 375, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+               │    │       │       │ │              └ {'headers': {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/4.1.0 (p...
+               │    │       │       │ └ <property object at 0x7fb9088ca1d8>
+               │    │       │       └ Url(scheme='http', auth=None, host='localhost', port=51843, path='/session/29e60827828e0a53d689ccb461554a65/window', query=No...
+               │    │       └ 'DELETE'
+               │    └ <function HTTPConnectionPool.urlopen at 0x7fb9088ebbf8>
+               └ <urllib3.connectionpool.HTTPConnectionPool object at 0x7fb906e37208>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connectionpool.py", line 796, in urlopen
+    **response_kw
+      └ {'request_url': 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'}
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connectionpool.py", line 796, in urlopen
+    **response_kw
+      └ {'request_url': 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'}
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connectionpool.py", line 796, in urlopen
+    **response_kw
+      └ {'request_url': 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'}
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connectionpool.py", line 756, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+    │       │                   │                 │   └ <built-in function exc_info>
+    │       │                   │                 └ <module 'sys' (built-in)>
+    │       │                   └ <urllib3.connectionpool.HTTPConnectionPool object at 0x7fb906e37208>
+    │       └ '/session/29e60827828e0a53d689ccb461554a65/window'
+    └ 'DELETE'
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/util/retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+          │             │      │    │        │             └ 'unknown'
+          │             │      │    │        └ <class 'urllib3.exceptions.ResponseError'>
+          │             │      │    └ NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fb906e37240>: Failed to establish a new connection: [Errn...
+          │             │      └ '/session/29e60827828e0a53d689ccb461554a65/window'
+          │             └ <urllib3.connectionpool.HTTPConnectionPool object at 0x7fb906e37208>
+          └ <class 'urllib3.exceptions.MaxRetryError'>
+
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=51843): Max retries exceeded with url: /session/29e60827828e0a53d689ccb461554a65/window (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fb906e37240>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connection.py", line 175, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+     │    │          │    │      │    │          └ {'socket_options': [(6, 1, 1)]}
+     │    │          │    │      │    └ <object object at 0x7fb90a669220>
+     │    │          │    │      └ <urllib3.connection.HTTPConnection object at 0x7fb906e0c240>
+     │    │          │    └ 51843
+     │    │          └ <urllib3.connection.HTTPConnection object at 0x7fb906e0c240>
+     │    └ 'localhost'
+     └ <urllib3.connection.HTTPConnection object at 0x7fb906e0c240>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/util/connection.py", line 96, in create_connection
+    raise err
+          └ ConnectionRefusedError(111, 'Connection refused')
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/util/connection.py", line 86, in create_connection
+    sock.connect(sa)
+    │            └ ('127.0.0.1', 51843)
+    └ None
+
+ConnectionRefusedError: [Errno 111] Connection refused
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connectionpool.py", line 706, in urlopen
+    chunked=chunked,
+            └ False
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connectionpool.py", line 394, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+    │    │       │       │      └ {'body': None, 'headers': {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'sel...
+    │    │       │       └ '/session/29e60827828e0a53d689ccb461554a65/window'
+    │    │       └ 'DELETE'
+    │    └ <function HTTPConnection.request at 0x7fb9088da840>
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e0c240>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+          │               │             │       │         │             └ {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/4.1.0 (python linux)...
+          │               │             │       │         └ None
+          │               │             │       └ '/session/29e60827828e0a53d689ccb461554a65/window'
+          │               │             └ 'DELETE'
+          │               └ <urllib3.connection.HTTPConnection object at 0x7fb906e0c240>
+          └ <class 'urllib3.connection.HTTPConnection'>
+  File "/usr/lib/python3.7/http/client.py", line 1260, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+    │    │             │       │    │     │        └ False
+    │    │             │       │    │     └ {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/4.1.0 (python linux)...
+    │    │             │       │    └ None
+    │    │             │       └ '/session/29e60827828e0a53d689ccb461554a65/window'
+    │    │             └ 'DELETE'
+    │    └ <function HTTPConnection._send_request at 0x7fb9098bbbf8>
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e0c240>
+  File "/usr/lib/python3.7/http/client.py", line 1306, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+    │    │          │                    └ False
+    │    │          └ None
+    │    └ <function HTTPConnection.endheaders at 0x7fb9098bbae8>
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e0c240>
+  File "/usr/lib/python3.7/http/client.py", line 1255, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    │    │            │                            └ False
+    │    │            └ None
+    │    └ <function HTTPConnection._send_output at 0x7fb9098bb8c8>
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e0c240>
+  File "/usr/lib/python3.7/http/client.py", line 1030, in _send_output
+    self.send(msg)
+    │    │    └ b'DELETE /session/29e60827828e0a53d689ccb461554a65/window HTTP/1.1\r\nHost: localhost:51843\r\nAccept-Encoding: identity\r\nA...
+    │    └ <function HTTPConnection.send at 0x7fb9098bb730>
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e0c240>
+  File "/usr/lib/python3.7/http/client.py", line 970, in send
+    self.connect()
+    │    └ <function HTTPConnection.connect at 0x7fb9088da6a8>
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e0c240>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+           │    └ <function HTTPConnection._new_conn at 0x7fb9088da510>
+           └ <urllib3.connection.HTTPConnection object at 0x7fb906e0c240>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connection.py", line 187, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e0c240>
+
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fb906e0c240>: Failed to establish a new connection: [Errno 111] Connection refused
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "main.py", line 148, in <module>
+    schedule.run_pending()
+    │        └ <function run_pending at 0x7fb90879a598>
+    └ <module 'schedule' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py'>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 780, in run_pending
+    default_scheduler.run_pending()
+    │                 └ <function Scheduler.run_pending at 0x7fb908783f28>
+    └ <schedule.Scheduler object at 0x7fb90928f518>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 100, in run_pending
+    self._run_job(job)
+    │    │        └ Every 5 minutes do search_reddit() (last run: [never], next run: 2022-01-23 13:22:01)
+    │    └ <function Scheduler._run_job at 0x7fb9087972f0>
+    └ <schedule.Scheduler object at 0x7fb90928f518>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 172, in _run_job
+    ret = job.run()
+          │   └ <function Job.run at 0x7fb90879a378>
+          └ Every 5 minutes do search_reddit() (last run: [never], next run: 2022-01-23 13:22:01)
+> File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 661, in run
+    ret = self.job_func()
+          │    └ functools.partial(<function search_reddit at 0x7fb9086a9158>)
+          └ Every 5 minutes do search_reddit() (last run: [never], next run: 2022-01-23 13:22:01)
+
+  File "/home/ripo/tb_bot/parser_reddit.py", line 170, in search_reddit
+    redit_login(username, password, redit)
+    │           │         │         └ ('interestingasfuck', 'gifsthatkeepongiving', 'oddlysatisfying')
+    │           │         └ 'UOgyiog8374fgboa8fgdOU6e93ced923c%^CvV'
+    │           └ 'Ripozi'
+    └ <function search_reddit.<locals>.redit_login at 0x7fb9076e86a8>
+
+  File "/home/ripo/tb_bot/parser_reddit.py", line 93, in redit_login
+    browser.close()
+    │       └ <function WebDriver.close at 0x7fb90884cd08>
+    └ <selenium.webdriver.chrome.webdriver.WebDriver (session="29e60827828e0a53d689ccb461554a65")>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 937, in close
+    self.execute(Command.CLOSE)
+    │    │       │       └ 'close'
+    │    │       └ <class 'selenium.webdriver.remote.command.Command'>
+    │    └ <function WebDriver.execute at 0x7fb908844ea0>
+    └ <selenium.webdriver.chrome.webdriver.WebDriver (session="29e60827828e0a53d689ccb461554a65")>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 422, in execute
+    response = self.command_executor.execute(driver_command, params)
+               │    │                │       │               └ {}
+               │    │                │       └ 'close'
+               │    │                └ <function RemoteConnection.execute at 0x7fb9088f29d8>
+               │    └ <selenium.webdriver.chromium.remote_connection.ChromiumRemoteConnection object at 0x7fb906e30198>
+               └ <selenium.webdriver.chrome.webdriver.WebDriver (session="29e60827828e0a53d689ccb461554a65")>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 421, in execute
+    return self._request(command_info[0], url, body=data)
+           │    │        │                │         └ '{}'
+           │    │        │                └ 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'
+           │    │        └ ('DELETE', '/session/$sessionId/window')
+           │    └ <function RemoteConnection._request at 0x7fb9088f2a60>
+           └ <selenium.webdriver.chromium.remote_connection.ChromiumRemoteConnection object at 0x7fb906e30198>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 443, in _request
+    resp = self._conn.request(method, url, body=body, headers=headers)
+           │    │     │       │       │         │             └ {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/4.1.0 (python linux)...
+           │    │     │       │       │         └ None
+           │    │     │       │       └ 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'
+           │    │     │       └ 'DELETE'
+           │    │     └ <function RequestMethods.request at 0x7fb9088df6a8>
+           │    └ <urllib3.poolmanager.PoolManager object at 0x7fb906e30da0>
+           └ <selenium.webdriver.chromium.remote_connection.ChromiumRemoteConnection object at 0x7fb906e30198>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/request.py", line 75, in request
+    method, url, fields=fields, headers=headers, **urlopen_kw
+    │       │           │               │          └ {'body': None, 'request_url': 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'}
+    │       │           │               └ {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/4.1.0 (python linux)...
+    │       │           └ None
+    │       └ 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'
+    └ 'DELETE'
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/request.py", line 96, in request_encode_url
+    return self.urlopen(method, url, **extra_kw)
+           │    │       │       │      └ {'headers': {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/4.1.0 (p...
+           │    │       │       └ 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'
+           │    │       └ 'DELETE'
+           │    └ <function PoolManager.urlopen at 0x7fb9088f2048>
+           └ <urllib3.poolmanager.PoolManager object at 0x7fb906e30da0>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/poolmanager.py", line 375, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+               │    │       │       │ │              └ {'headers': {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/4.1.0 (p...
+               │    │       │       │ └ <property object at 0x7fb9088ca1d8>
+               │    │       │       └ Url(scheme='http', auth=None, host='localhost', port=51843, path='/session/29e60827828e0a53d689ccb461554a65/window', query=No...
+               │    │       └ 'DELETE'
+               │    └ <function HTTPConnectionPool.urlopen at 0x7fb9088ebbf8>
+               └ <urllib3.connectionpool.HTTPConnectionPool object at 0x7fb906e37208>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connectionpool.py", line 796, in urlopen
+    **response_kw
+      └ {'request_url': 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'}
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connectionpool.py", line 796, in urlopen
+    **response_kw
+      └ {'request_url': 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'}
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connectionpool.py", line 796, in urlopen
+    **response_kw
+      └ {'request_url': 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'}
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connectionpool.py", line 756, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+    │       │                   │                 │   └ <built-in function exc_info>
+    │       │                   │                 └ <module 'sys' (built-in)>
+    │       │                   └ <urllib3.connectionpool.HTTPConnectionPool object at 0x7fb906e37208>
+    │       └ '/session/29e60827828e0a53d689ccb461554a65/window'
+    └ 'DELETE'
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/util/retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+          │             │      │    │        │             └ 'unknown'
+          │             │      │    │        └ <class 'urllib3.exceptions.ResponseError'>
+          │             │      │    └ NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fb906e0c240>: Failed to establish a new connection: [Errn...
+          │             │      └ '/session/29e60827828e0a53d689ccb461554a65/window'
+          │             └ <urllib3.connectionpool.HTTPConnectionPool object at 0x7fb906e37208>
+          └ <class 'urllib3.exceptions.MaxRetryError'>
+
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=51843): Max retries exceeded with url: /session/29e60827828e0a53d689ccb461554a65/window (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fb906e0c240>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2022-01-23 at 13:22:26|INFO|Получаем посты для публикации
+2022-01-23 at 13:22:26|SUCCESS|Будем отправлять видео107DASH_720.mp4
+2022-01-23 at 13:22:26|DEBUG|Формируем собщение поста с id: 107
+2022-01-23 at 13:22:27|SUCCESS|Собщение сформировано
+2022-01-23 at 13:22:27|SUCCESS|Файл 107DASH_720.mp4 удален с диска
+2022-01-23 at 13:22:27|SUCCESS|Будем отправлять видео115DASH_1080.mp4
+2022-01-23 at 13:22:27|DEBUG|Формируем собщение поста с id: 115
+2022-01-23 at 13:22:28|SUCCESS|Собщение сформировано
+2022-01-23 at 13:22:28|SUCCESS|Файл 115DASH_1080.mp4 удален с диска
+2022-01-23 at 13:22:28|SUCCESS|Будем отправлять изображение 132id1xp6ss0nx71.png
+2022-01-23 at 13:22:28|DEBUG|Формируем собщение поста с id: 132
+2022-01-23 at 13:22:29|SUCCESS|Собщение сформировано
+2022-01-23 at 13:22:29|SUCCESS|Файл 132id1xp6ss0nx71.png удален с диска
+2022-01-23 at 13:23:29|INFO|Получаем посты для публикации
+2022-01-23 at 13:23:29|SUCCESS|Будем отправлять изображение 914wqxhwxcjtx71.jpg
+2022-01-23 at 13:23:29|DEBUG|Формируем собщение поста с id: 91
+2022-01-23 at 13:23:29|SUCCESS|Собщение сформировано
+2022-01-23 at 13:23:29|SUCCESS|Файл 914wqxhwxcjtx71.jpg удален с диска
+2022-01-23 at 13:24:29|INFO|Получаем посты для публикации
+2022-01-23 at 13:24:29|SUCCESS|Будем отправлять изображение 127bimhjg6qpox71.png
+2022-01-23 at 13:24:29|DEBUG|Формируем собщение поста с id: 127
+2022-01-23 at 13:24:30|SUCCESS|Собщение сформировано
+2022-01-23 at 13:24:30|SUCCESS|Файл 127bimhjg6qpox71.png удален с диска

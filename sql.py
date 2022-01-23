@@ -37,7 +37,7 @@ def recordingDateJson(title, url,creadat, title_ru, format_cont, likes):
 
 # Получение всех строк из таблицы
 def read_tbl():
-        con = """SELECT * from (SELECT title_ru, url, max(likes) as likes, id_post from parser where path_file is not null and title_ru is not null and publication_attribute =0 and public_attr_dev is NULL) LIMIT 1"""
+        con = """SELECT * from (SELECT title_ru, url, max(likes) as likes, id_post from parser where title_ru is not null and publication_attribute =0 and public_attr_dev is NULL and content_error is NULL) LIMIT 1"""
         cur.execute(con)
         records = cur.fetchall()
         return (records)

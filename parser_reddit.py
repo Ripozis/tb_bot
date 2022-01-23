@@ -78,7 +78,7 @@ def search_reddit():
                     browser.quit()
                 # time.sleep(10)
                 # # сохраняем страницу в файл
-                    with open('logger/data.html', 'w', encoding='utf=8') as file:
+                    with open('/home/ripo/tb_bot/logger/data.html', 'w', encoding='utf=8') as file:
                         file.write(html)
                     logger.success("Завершили скачивание из канала " + str(redit))
                 except Exception as ex:
@@ -94,18 +94,18 @@ def search_reddit():
                 browser.quit()
 
             logger.info("Вынимаем данне json из html")
-            with open("logger/data.html") as file:
+            with open("/home/ripo/tb_bot/logger/data.html") as file:
                 src = file.read()
             soup = BeautifulSoup(src, "lxml")
             js = soup.get_text()# выниваем данне json из html
 
             #####_Создаем data.json по данным из html
-            with open("logger/data.json", "w") as file:
+            with open("/home/ripo/tb_bot/logger/data.json", "w") as file:
                 file.write(js)
                 dictData = json.loads(js)
 
             # #####_Вынимаем необходмые данне из data.json 
-            with open("logger/data.json") as file:
+            with open("/home/ripo/tb_bot/logger/data.json") as file:
                 datJs = file.read()
             data = json.loads(datJs)
             dictChildren = data['data']

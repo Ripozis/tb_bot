@@ -1,30 +1,42 @@
-2022-01-02T20:53:41.637512+0300 INFO Пишем пременую f
-2022-01-02T20:53:41.639512+0300 INFO Пишем пременую g
-2022-01-02T20:53:41.641513+0300 ERROR An error has been caught in function '<module>', process 'MainProcess' (8032), thread 'MainThread' (3944):
+2022-01-03 at 15:20:12|DEBUG|Запуск удаления файлов из БДпомеченных на удаление[(None, 4), (None, 7), ('184517f8rmi8m081.gif', 184), ('199lp7g7lt4cu081.jpg', 199)]
+2022-01-03 at 15:20:13|ERROR|Ошибка при удалении файла: 
 Traceback (most recent call last):
 
-> File "c:/Users/Илья/Desktop/tb_bot/tb_bot/test_11.py", line 21, in <module>
-    log()
-    └ <function log at 0x00000000025035E8>
+> File "/home/ily/tb_bot/test_11.py", line 34, in <module>
+    os.remove(r'/home/ily/tb_bot/images' + path_file) # удаление файла
+    │  │                                   └ '184517f8rmi8m081.gif'
+    │  └ <built-in function remove>
+    └ <module 'os' from '/usr/lib/python3.8/os.py'>
 
-  File "c:/Users/Илья/Desktop/tb_bot/tb_bot/test_11.py", line 19, in log
-    t= f+g
-       │ └ 1
-       └ 'по русски'
-
-TypeError: can only concatenate str (not "int") to str
-2022-01-02T20:54:13.210141+0300 | INFO | Пишем пременую f
-2022-01-02T20:54:13.211141+0300 | INFO | Пишем пременую g
-2022-01-02T20:54:13.212141+0300 | ERROR | An error has been caught in function '<module>', process 'MainProcess' (4884), thread 'MainThread' (8980):
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ily/tb_bot/images184517f8rmi8m081.gif'
+2022-01-03 at 15:20:13|ERROR|Ошибка при удалении файла: 
 Traceback (most recent call last):
 
-> File "c:/Users/Илья/Desktop/tb_bot/tb_bot/test_11.py", line 21, in <module>
-    log()
-    └ <function log at 0x00000000024045E8>
+> File "/home/ily/tb_bot/test_11.py", line 34, in <module>
+    os.remove(r'/home/ily/tb_bot/images' + path_file) # удаление файла
+    │  │                                   └ '199lp7g7lt4cu081.jpg'
+    │  └ <built-in function remove>
+    └ <module 'os' from '/usr/lib/python3.8/os.py'>
 
-  File "c:/Users/Илья/Desktop/tb_bot/tb_bot/test_11.py", line 19, in log
-    t= f+g
-       │ └ 1
-       └ 'по русски'
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ily/tb_bot/images199lp7g7lt4cu081.jpg'
+2022-01-03 at 15:21:24|DEBUG|Запуск удаления файлов из БДпомеченных на удаление[(None, 4), (None, 7), ('184517f8rmi8m081.gif', 184), ('199lp7g7lt4cu081.jpg', 199)]
+2022-01-03 at 15:21:24|ERROR|Ошибка при удалении файла: 
+Traceback (most recent call last):
 
-TypeError: can only concatenate str (not "int") to str
+> File "/home/ily/tb_bot/test_11.py", line 34, in <module>
+    os.remove(r'/home/ily/tb_bot/images' + path_file) # удаление файла
+    │  │                                   └ '184517f8rmi8m081.gif'
+    │  └ <built-in function remove>
+    └ <module 'os' from '/usr/lib/python3.8/os.py'>
+
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ily/tb_bot/images184517f8rmi8m081.gif'
+2022-01-03 at 15:21:24|ERROR|Ошибка при удалении файла: 
+Traceback (most recent call last):
+
+> File "/home/ily/tb_bot/test_11.py", line 34, in <module>
+    os.remove(r'/home/ily/tb_bot/images' + path_file) # удаление файла
+    │  │                                   └ '199lp7g7lt4cu081.jpg'
+    │  └ <built-in function remove>
+    └ <module 'os' from '/usr/lib/python3.8/os.py'>
+
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ily/tb_bot/images199lp7g7lt4cu081.jpg'

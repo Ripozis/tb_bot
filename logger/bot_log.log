@@ -1337,3 +1337,771 @@ aiogram.utils.exceptions.BadRequest: Image_process_failed
 2022-01-12 at 18:37:45|SUCCESS|Получены кол-во постов на публикацию
 2022-01-12 at 18:37:46|SUCCESS|Получены кол-во постов на публикацию
 2022-01-12 at 18:39:11|SUCCESS|Получены кол-во постов на публикацию
+2022-01-23 at 13:28:45|DEBUG|Получены данные из БД:[('Молодая самка леопарда привязывается к детенышу бабуина; иногда плотоядные животные сбиваются с толку своими материнскими инстинктами.', 'https://v.redd.it/d0s87ejfi3a81/DASH_720.mp4', 83879, 306)]
+2022-01-23 at 13:28:48|DEBUG|Файл на загрузку: 306DASH_720.mp4
+2022-01-23 at 13:28:48|DEBUG|Отправка видео 306DASH_720.mp4
+2022-01-23 at 13:28:48|ERROR|Ошибка с видео для DEV306DASH_720.mp4
+Traceback (most recent call last):
+
+  File "bot.py", line 190, in <module>
+    executor.start_polling(dp, skip_updates=True)
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f75202ee908>
+    │        └ <function start_polling at 0x7f752168cb70>
+    └ <module 'aiogram.utils.executor' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py'>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py", line 50, in start_polling
+    allowed_updates=allowed_updates
+                    └ None
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7f752338b9d8>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 539, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7f752338f400>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 1775, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7f75233e3730>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7f752033af48>(<Future finished result=None>)>
+  File "/usr/lib/python3.7/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskWakeupMethWrapper object at 0x7f752033af48>(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskWakeupMethWrapper object at 0x7f752033af48>(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7f752033af48>(<Future finished result=None>)>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 51957479, "message": {"message_id": 1047, "from": {"id": 467601941, "is_bot": false, "first_name": "Ил...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f75202ee908>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7...
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x7f75218a1ef0>
+                 │    │                │      └ <Update {"update_id": 51957479, "message": {"message_id": 1047, "from": {"id": 467601941, "is_bot": false, "first_name": "Иль...
+                 │    │                └ <function Handler.notify at 0x7f7521829620>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x7f75202ee898>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f75202ee908>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 1047, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья", "username": "ripozis", "langu...
+                     │           └ <function test_message at 0x7f75202fcbf8>
+                     └ Handler.HandlerObj(handler=<function test_message at 0x7f75202fcbf8>, spec=FullArgSpec(args=['message'], varargs=None, varkw=...
+
+> File "bot.py", line 92, in test_message
+    await bot.send_video(chat_id=message.from_user.id, video=path_file, reply_markup=lnkb, caption=title)
+          │   │                  │       │                   │                       │             └ 'Молодая самка леопарда привязывается к детенышу бабуина; иногда плотоядные животные сбиваются с толку своими материнскими ин...
+          │   │                  │       │                   │                       └ <InlineKeyboardMarkup {"inline_keyboard": [[{"text": "Опубликовать", "callback_data": "pudlik"}, {"text": "Удалить", "callbac...
+          │   │                  │       │                   └ '306DASH_720.mp4'
+          │   │                  │       └ <aiogram.types.fields.Field object at 0x7f7521955dd8>
+          │   │                  └ <Message {"message_id": 1047, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья", "username": "ripozis", "langua...
+          │   └ <function Bot.send_video at 0x7f75217f8f28>
+          └ <aiogram.bot.bot.Bot object at 0x7f75202ee748>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/bot.py", line 800, in send_video
+    result = await self.request(api.Methods.SEND_VIDEO, payload, files)
+                   │    │       │   │       │           │        └ {}
+                   │    │       │   │       │           └ {'chat_id': 467601941, 'caption': 'Молодая самка леопарда привязывается к детенышу бабуина; иногда плотоядные животные сбиваю...
+                   │    │       │   │       └ <aiogram.utils.helper.Item object at 0x7f75218afe10>
+                   │    │       │   └ <class 'aiogram.bot.api.Methods'>
+                   │    │       └ <module 'aiogram.bot.api' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py'>
+                   │    └ <function BaseBot.request at 0x7f75217f3730>
+                   └ <aiogram.bot.bot.Bot object at 0x7f75202ee748>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/base.py", line 232, in request
+    proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+          │    │                 │    │                   │    │          └ {}
+          │    │                 │    │                   │    └ <property object at 0x7f752184d5e8>
+          │    │                 │    │                   └ <aiogram.bot.bot.Bot object at 0x7f75202ee748>
+          │    │                 │    └ None
+          │    │                 └ <aiogram.bot.bot.Bot object at 0x7f75202ee748>
+          │    └ None
+          └ <aiogram.bot.bot.Bot object at 0x7f75202ee748>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           │            │       │        │             │        │             │        └ <function ClientResponse.text at 0x7f7522091730>
+           │            │       │        │             │        │             └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           │            │       │        │             │        │               <CIM...
+           │            │       │        │             │        └ 400
+           │            │       │        │             └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           │            │       │        │               <CIM...
+           │            │       │        └ <property object at 0x7f7522a86ef8>
+           │            │       └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           │            │         <CIM...
+           │            └ 'sendVideo'
+           └ <function check_result at 0x7f7521833e18>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+    │          │          │      └ 'Bad Request: wrong HTTP URL specified'
+    │          │          └ <classmethod object at 0x7f752183af60>
+    │          └ <class 'aiogram.utils.exceptions.BadRequest'>
+    └ <module 'aiogram.utils.exceptions' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/exceptions.py'>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/exceptions.py", line 141, in detect
+    raise cls(description)
+          │   └ 'bad request: wrong http url specified'
+          └ <class 'aiogram.utils.exceptions.BadRequest'>
+
+aiogram.utils.exceptions.BadRequest: Wrong http url specified
+2022-01-23 at 13:29:18|DEBUG|Получены данные из БД:[('Молодая самка леопарда привязывается к детенышу бабуина; иногда плотоядные животные сбиваются с толку своими материнскими инстинктами.', 'https://v.redd.it/d0s87ejfi3a81/DASH_720.mp4', 83879, 306)]
+2022-01-23 at 13:29:20|DEBUG|Файл на загрузку: 306DASH_720.mp4
+2022-01-23 at 13:29:20|DEBUG|Отправка видео 306DASH_720.mp4
+2022-01-23 at 13:29:20|ERROR|Ошибка с видео для DEV306DASH_720.mp4
+Traceback (most recent call last):
+
+  File "bot.py", line 190, in <module>
+    executor.start_polling(dp, skip_updates=True)
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f75202ee908>
+    │        └ <function start_polling at 0x7f752168cb70>
+    └ <module 'aiogram.utils.executor' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py'>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py", line 50, in start_polling
+    allowed_updates=allowed_updates
+                    └ None
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7f752338b9d8>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 539, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7f752338f400>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 1775, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7f75233e3730>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7f752033af18>(<Future finished result=None>)>
+  File "/usr/lib/python3.7/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskWakeupMethWrapper object at 0x7f752033af18>(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskWakeupMethWrapper object at 0x7f752033af18>(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7f752033af18>(<Future finished result=None>)>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 51957480, "message": {"message_id": 1048, "from": {"id": 467601941, "is_bot": false, "first_name": "Ил...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f75202ee908>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7...
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x7f75218a1ef0>
+                 │    │                │      └ <Update {"update_id": 51957480, "message": {"message_id": 1048, "from": {"id": 467601941, "is_bot": false, "first_name": "Иль...
+                 │    │                └ <function Handler.notify at 0x7f7521829620>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x7f75202ee898>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f75202ee908>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 1048, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья", "username": "ripozis", "langu...
+                     │           └ <function test_message at 0x7f75202fcbf8>
+                     └ Handler.HandlerObj(handler=<function test_message at 0x7f75202fcbf8>, spec=FullArgSpec(args=['message'], varargs=None, varkw=...
+
+> File "bot.py", line 92, in test_message
+    await bot.send_video(chat_id=message.from_user.id, video=path_file, reply_markup=lnkb, caption=title)
+          │   │                  │       │                   │                       │             └ 'Молодая самка леопарда привязывается к детенышу бабуина; иногда плотоядные животные сбиваются с толку своими материнскими ин...
+          │   │                  │       │                   │                       └ <InlineKeyboardMarkup {"inline_keyboard": [[{"text": "Опубликовать", "callback_data": "pudlik"}, {"text": "Удалить", "callbac...
+          │   │                  │       │                   └ '306DASH_720.mp4'
+          │   │                  │       └ <aiogram.types.fields.Field object at 0x7f7521955dd8>
+          │   │                  └ <Message {"message_id": 1048, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья", "username": "ripozis", "langua...
+          │   └ <function Bot.send_video at 0x7f75217f8f28>
+          └ <aiogram.bot.bot.Bot object at 0x7f75202ee748>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/bot.py", line 800, in send_video
+    result = await self.request(api.Methods.SEND_VIDEO, payload, files)
+                   │    │       │   │       │           │        └ {}
+                   │    │       │   │       │           └ {'chat_id': 467601941, 'caption': 'Молодая самка леопарда привязывается к детенышу бабуина; иногда плотоядные животные сбиваю...
+                   │    │       │   │       └ <aiogram.utils.helper.Item object at 0x7f75218afe10>
+                   │    │       │   └ <class 'aiogram.bot.api.Methods'>
+                   │    │       └ <module 'aiogram.bot.api' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py'>
+                   │    └ <function BaseBot.request at 0x7f75217f3730>
+                   └ <aiogram.bot.bot.Bot object at 0x7f75202ee748>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/base.py", line 232, in request
+    proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+          │    │                 │    │                   │    │          └ {}
+          │    │                 │    │                   │    └ <property object at 0x7f752184d5e8>
+          │    │                 │    │                   └ <aiogram.bot.bot.Bot object at 0x7f75202ee748>
+          │    │                 │    └ None
+          │    │                 └ <aiogram.bot.bot.Bot object at 0x7f75202ee748>
+          │    └ None
+          └ <aiogram.bot.bot.Bot object at 0x7f75202ee748>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           │            │       │        │             │        │             │        └ <function ClientResponse.text at 0x7f7522091730>
+           │            │       │        │             │        │             └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           │            │       │        │             │        │               <CIM...
+           │            │       │        │             │        └ 400
+           │            │       │        │             └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           │            │       │        │               <CIM...
+           │            │       │        └ <property object at 0x7f7522a86ef8>
+           │            │       └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           │            │         <CIM...
+           │            └ 'sendVideo'
+           └ <function check_result at 0x7f7521833e18>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+    │          │          │      └ 'Bad Request: wrong HTTP URL specified'
+    │          │          └ <classmethod object at 0x7f752183af60>
+    │          └ <class 'aiogram.utils.exceptions.BadRequest'>
+    └ <module 'aiogram.utils.exceptions' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/exceptions.py'>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/exceptions.py", line 141, in detect
+    raise cls(description)
+          │   └ 'bad request: wrong http url specified'
+          └ <class 'aiogram.utils.exceptions.BadRequest'>
+
+aiogram.utils.exceptions.BadRequest: Wrong http url specified
+2022-01-23 at 13:29:33|SUCCESS|Получены кол-во постов на публикацию
+2022-01-23 at 13:29:44|DEBUG|Получены данные из БД:[('Молодая самка леопарда привязывается к детенышу бабуина; иногда плотоядные животные сбиваются с толку своими материнскими инстинктами.', 'https://v.redd.it/d0s87ejfi3a81/DASH_720.mp4', 83879, 306)]
+2022-01-23 at 13:29:45|DEBUG|Файл на загрузку: 306DASH_720.mp4
+2022-01-23 at 13:29:45|DEBUG|Отправка видео 306DASH_720.mp4
+2022-01-23 at 13:29:45|ERROR|Ошибка с видео для DEV306DASH_720.mp4
+Traceback (most recent call last):
+
+  File "bot.py", line 190, in <module>
+    executor.start_polling(dp, skip_updates=True)
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f75202ee908>
+    │        └ <function start_polling at 0x7f752168cb70>
+    └ <module 'aiogram.utils.executor' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py'>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py", line 50, in start_polling
+    allowed_updates=allowed_updates
+                    └ None
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7f752338b9d8>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 539, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7f752338f400>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 1775, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7f75233e3730>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7f752033aa68>(<Future finished result=None>)>
+  File "/usr/lib/python3.7/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskWakeupMethWrapper object at 0x7f752033aa68>(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskWakeupMethWrapper object at 0x7f752033aa68>(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7f752033aa68>(<Future finished result=None>)>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 51957482, "message": {"message_id": 1051, "from": {"id": 467601941, "is_bot": false, "first_name": "Ил...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f75202ee908>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7...
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x7f75218a1ef0>
+                 │    │                │      └ <Update {"update_id": 51957482, "message": {"message_id": 1051, "from": {"id": 467601941, "is_bot": false, "first_name": "Иль...
+                 │    │                └ <function Handler.notify at 0x7f7521829620>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x7f75202ee898>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f75202ee908>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 1051, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья", "username": "ripozis", "langu...
+                     │           └ <function test_message at 0x7f75202fcbf8>
+                     └ Handler.HandlerObj(handler=<function test_message at 0x7f75202fcbf8>, spec=FullArgSpec(args=['message'], varargs=None, varkw=...
+
+> File "bot.py", line 92, in test_message
+    await bot.send_video(chat_id=message.from_user.id, video=path_file, reply_markup=lnkb, caption=title)
+          │   │                  │       │                   │                       │             └ 'Молодая самка леопарда привязывается к детенышу бабуина; иногда плотоядные животные сбиваются с толку своими материнскими ин...
+          │   │                  │       │                   │                       └ <InlineKeyboardMarkup {"inline_keyboard": [[{"text": "Опубликовать", "callback_data": "pudlik"}, {"text": "Удалить", "callbac...
+          │   │                  │       │                   └ '306DASH_720.mp4'
+          │   │                  │       └ <aiogram.types.fields.Field object at 0x7f7521955dd8>
+          │   │                  └ <Message {"message_id": 1051, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья", "username": "ripozis", "langua...
+          │   └ <function Bot.send_video at 0x7f75217f8f28>
+          └ <aiogram.bot.bot.Bot object at 0x7f75202ee748>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/bot.py", line 800, in send_video
+    result = await self.request(api.Methods.SEND_VIDEO, payload, files)
+                   │    │       │   │       │           │        └ {}
+                   │    │       │   │       │           └ {'chat_id': 467601941, 'caption': 'Молодая самка леопарда привязывается к детенышу бабуина; иногда плотоядные животные сбиваю...
+                   │    │       │   │       └ <aiogram.utils.helper.Item object at 0x7f75218afe10>
+                   │    │       │   └ <class 'aiogram.bot.api.Methods'>
+                   │    │       └ <module 'aiogram.bot.api' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py'>
+                   │    └ <function BaseBot.request at 0x7f75217f3730>
+                   └ <aiogram.bot.bot.Bot object at 0x7f75202ee748>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/base.py", line 232, in request
+    proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+          │    │                 │    │                   │    │          └ {}
+          │    │                 │    │                   │    └ <property object at 0x7f752184d5e8>
+          │    │                 │    │                   └ <aiogram.bot.bot.Bot object at 0x7f75202ee748>
+          │    │                 │    └ None
+          │    │                 └ <aiogram.bot.bot.Bot object at 0x7f75202ee748>
+          │    └ None
+          └ <aiogram.bot.bot.Bot object at 0x7f75202ee748>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           │            │       │        │             │        │             │        └ <function ClientResponse.text at 0x7f7522091730>
+           │            │       │        │             │        │             └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           │            │       │        │             │        │               <CIM...
+           │            │       │        │             │        └ 400
+           │            │       │        │             └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           │            │       │        │               <CIM...
+           │            │       │        └ <property object at 0x7f7522a86ef8>
+           │            │       └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           │            │         <CIM...
+           │            └ 'sendVideo'
+           └ <function check_result at 0x7f7521833e18>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+    │          │          │      └ 'Bad Request: wrong HTTP URL specified'
+    │          │          └ <classmethod object at 0x7f752183af60>
+    │          └ <class 'aiogram.utils.exceptions.BadRequest'>
+    └ <module 'aiogram.utils.exceptions' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/exceptions.py'>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/exceptions.py", line 141, in detect
+    raise cls(description)
+          │   └ 'bad request: wrong http url specified'
+          └ <class 'aiogram.utils.exceptions.BadRequest'>
+
+aiogram.utils.exceptions.BadRequest: Wrong http url specified
+2022-01-23 at 13:31:19|DEBUG|Получены данные из БД:[('Молодая самка леопарда привязывается к детенышу бабуина; иногда плотоядные животные сбиваются с толку своими материнскими инстинктами.', 'https://v.redd.it/d0s87ejfi3a81/DASH_720.mp4', 83879, 306)]
+2022-01-23 at 13:31:21|DEBUG|Файл на загрузку: 306DASH_720.mp4
+2022-01-23 at 13:31:21|DEBUG|Отправка видео 306DASH_720.mp4
+2022-01-23 at 13:31:21|ERROR|Ошибка с видео для DEV306DASH_720.mp4
+Traceback (most recent call last):
+
+  File "bot.py", line 190, in <module>
+    executor.start_polling(dp, skip_updates=True)
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f75202ee908>
+    │        └ <function start_polling at 0x7f752168cb70>
+    └ <module 'aiogram.utils.executor' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py'>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py", line 50, in start_polling
+    allowed_updates=allowed_updates
+                    └ None
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7f752338b9d8>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 539, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7f752338f400>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 1775, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7f75233e3730>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7f752033a978>(<Future finished result=None>)>
+  File "/usr/lib/python3.7/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskWakeupMethWrapper object at 0x7f752033a978>(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskWakeupMethWrapper object at 0x7f752033a978>(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7f752033a978>(<Future finished result=None>)>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 51957483, "message": {"message_id": 1052, "from": {"id": 467601941, "is_bot": false, "first_name": "Ил...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f75202ee908>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7...
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x7f75218a1ef0>
+                 │    │                │      └ <Update {"update_id": 51957483, "message": {"message_id": 1052, "from": {"id": 467601941, "is_bot": false, "first_name": "Иль...
+                 │    │                └ <function Handler.notify at 0x7f7521829620>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x7f75202ee898>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7f75202ee908>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 1052, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья", "username": "ripozis", "langu...
+                     │           └ <function test_message at 0x7f75202fcbf8>
+                     └ Handler.HandlerObj(handler=<function test_message at 0x7f75202fcbf8>, spec=FullArgSpec(args=['message'], varargs=None, varkw=...
+
+> File "bot.py", line 92, in test_message
+    await bot.send_video(chat_id=message.from_user.id, video=path_file, reply_markup=lnkb, caption=title)
+          │   │                  │       │                   │                       │             └ 'Молодая самка леопарда привязывается к детенышу бабуина; иногда плотоядные животные сбиваются с толку своими материнскими ин...
+          │   │                  │       │                   │                       └ <InlineKeyboardMarkup {"inline_keyboard": [[{"text": "Опубликовать", "callback_data": "pudlik"}, {"text": "Удалить", "callbac...
+          │   │                  │       │                   └ '306DASH_720.mp4'
+          │   │                  │       └ <aiogram.types.fields.Field object at 0x7f7521955dd8>
+          │   │                  └ <Message {"message_id": 1052, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья", "username": "ripozis", "langua...
+          │   └ <function Bot.send_video at 0x7f75217f8f28>
+          └ <aiogram.bot.bot.Bot object at 0x7f75202ee748>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/bot.py", line 800, in send_video
+    result = await self.request(api.Methods.SEND_VIDEO, payload, files)
+                   │    │       │   │       │           │        └ {}
+                   │    │       │   │       │           └ {'chat_id': 467601941, 'caption': 'Молодая самка леопарда привязывается к детенышу бабуина; иногда плотоядные животные сбиваю...
+                   │    │       │   │       └ <aiogram.utils.helper.Item object at 0x7f75218afe10>
+                   │    │       │   └ <class 'aiogram.bot.api.Methods'>
+                   │    │       └ <module 'aiogram.bot.api' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py'>
+                   │    └ <function BaseBot.request at 0x7f75217f3730>
+                   └ <aiogram.bot.bot.Bot object at 0x7f75202ee748>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/base.py", line 232, in request
+    proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+          │    │                 │    │                   │    │          └ {}
+          │    │                 │    │                   │    └ <property object at 0x7f752184d5e8>
+          │    │                 │    │                   └ <aiogram.bot.bot.Bot object at 0x7f75202ee748>
+          │    │                 │    └ None
+          │    │                 └ <aiogram.bot.bot.Bot object at 0x7f75202ee748>
+          │    └ None
+          └ <aiogram.bot.bot.Bot object at 0x7f75202ee748>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           │            │       │        │             │        │             │        └ <function ClientResponse.text at 0x7f7522091730>
+           │            │       │        │             │        │             └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           │            │       │        │             │        │               <CIM...
+           │            │       │        │             │        └ 400
+           │            │       │        │             └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           │            │       │        │               <CIM...
+           │            │       │        └ <property object at 0x7f7522a86ef8>
+           │            │       └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           │            │         <CIM...
+           │            └ 'sendVideo'
+           └ <function check_result at 0x7f7521833e18>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+    │          │          │      └ 'Bad Request: wrong HTTP URL specified'
+    │          │          └ <classmethod object at 0x7f752183af60>
+    │          └ <class 'aiogram.utils.exceptions.BadRequest'>
+    └ <module 'aiogram.utils.exceptions' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/exceptions.py'>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/exceptions.py", line 141, in detect
+    raise cls(description)
+          │   └ 'bad request: wrong http url specified'
+          └ <class 'aiogram.utils.exceptions.BadRequest'>
+
+aiogram.utils.exceptions.BadRequest: Wrong http url specified
+2022-01-23 at 13:55:39|SUCCESS|Получены кол-во постов на публикацию
+2022-01-23 at 13:55:41|DEBUG|Получены данные из БД:[(None, None, None, None)]
+2022-01-23 at 14:00:03|DEBUG|Получены данные из БД:[(None, None, None, None)]
+2022-01-23 at 14:07:41|SUCCESS|Получены кол-во постов на публикацию
+2022-01-23 at 14:07:43|DEBUG|Получены данные из БД:[('Плененная косатка Тиликум смотрит на своих дрессировщиков. По состоянию на 2019 год от косаток погибло всего 4 человека, и Тиликум несет ответственность за 3 из них.', 'https://i.redd.it/fs5fyszbscd81.jpg', 121012, 496)]
+2022-01-23 at 14:07:43|DEBUG|Файл на загрузку: 496fs5fyszbscd81.jpg
+2022-01-23 at 14:07:43|DEBUG|Отправка изображения: 496fs5fyszbscd81.jpg
+2022-01-23 at 14:07:43|ERROR|Ошибка с картинкой для DEV 496fs5fyszbscd81.jpg
+Traceback (most recent call last):
+
+  File "bot.py", line 190, in <module>
+    executor.start_polling(dp, skip_updates=True)
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7fbcab812908>
+    │        └ <function start_polling at 0x7fbcacbafb70>
+    └ <module 'aiogram.utils.executor' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py'>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py", line 50, in start_polling
+    allowed_updates=allowed_updates
+                    └ None
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7fbcae8af9d8>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 539, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7fbcae8b3400>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 1775, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7fbcae907730>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7fbcab85ef78>(<Future finished result=None>)>
+  File "/usr/lib/python3.7/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskWakeupMethWrapper object at 0x7fbcab85ef78>(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskWakeupMethWrapper object at 0x7fbcab85ef78>(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7fbcab85ef78>(<Future finished result=None>)>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 51957488, "message": {"message_id": 1059, "from": {"id": 467601941, "is_bot": false, "first_name": "Ил...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7fbcab812908>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7...
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x7fbcacdccf60>
+                 │    │                │      └ <Update {"update_id": 51957488, "message": {"message_id": 1059, "from": {"id": 467601941, "is_bot": false, "first_name": "Иль...
+                 │    │                └ <function Handler.notify at 0x7fbcacd4d620>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x7fbcab812898>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7fbcab812908>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 1059, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья", "username": "ripozis", "langu...
+                     │           └ <function test_message at 0x7fbcab821bf8>
+                     └ Handler.HandlerObj(handler=<function test_message at 0x7fbcab821bf8>, spec=FullArgSpec(args=['message'], varargs=None, varkw=...
+
+> File "bot.py", line 78, in test_message
+    await bot.send_photo(chat_id=message.from_user.id, photo=path_file, reply_markup=lnkb, caption=title)
+          │   │                  │       │                   │                       │             └ 'Плененная косатка Тиликум смотрит на своих дрессировщиков. По состоянию на 2019 год от косаток погибло всего 4 человека, и Т...
+          │   │                  │       │                   │                       └ <InlineKeyboardMarkup {"inline_keyboard": [[{"text": "Опубликовать", "callback_data": "pudlik"}, {"text": "Удалить", "callbac...
+          │   │                  │       │                   └ '496fs5fyszbscd81.jpg'
+          │   │                  │       └ <aiogram.types.fields.Field object at 0x7fbcace79e48>
+          │   │                  └ <Message {"message_id": 1059, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья", "username": "ripozis", "langua...
+          │   └ <function Bot.send_photo at 0x7fbcacd1cd90>
+          └ <aiogram.bot.bot.Bot object at 0x7fbcab812780>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/bot.py", line 527, in send_photo
+    result = await self.request(api.Methods.SEND_PHOTO, payload, files)
+                   │    │       │   │       │           │        └ {}
+                   │    │       │   │       │           └ {'chat_id': 467601941, 'caption': 'Плененная косатка Тиликум смотрит на своих дрессировщиков. По состоянию на 2019 год от кос...
+                   │    │       │   │       └ <aiogram.utils.helper.Item object at 0x7fbcacdd3dd8>
+                   │    │       │   └ <class 'aiogram.bot.api.Methods'>
+                   │    │       └ <module 'aiogram.bot.api' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py'>
+                   │    └ <function BaseBot.request at 0x7fbcacd18730>
+                   └ <aiogram.bot.bot.Bot object at 0x7fbcab812780>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/base.py", line 232, in request
+    proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+          │    │                 │    │                   │    │          └ {}
+          │    │                 │    │                   │    └ <property object at 0x7fbcacd6c098>
+          │    │                 │    │                   └ <aiogram.bot.bot.Bot object at 0x7fbcab812780>
+          │    │                 │    └ None
+          │    │                 └ <aiogram.bot.bot.Bot object at 0x7fbcab812780>
+          │    └ None
+          └ <aiogram.bot.bot.Bot object at 0x7fbcab812780>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           │            │       │        │             │        │             │        └ <function ClientResponse.text at 0x7fbcad5b5730>
+           │            │       │        │             │        │             └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendPhoto) [400 Bad Request]>
+           │            │       │        │             │        │               <CIM...
+           │            │       │        │             │        └ 400
+           │            │       │        │             └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendPhoto) [400 Bad Request]>
+           │            │       │        │               <CIM...
+           │            │       │        └ <property object at 0x7fbcadfa6db8>
+           │            │       └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendPhoto) [400 Bad Request]>
+           │            │         <CIM...
+           │            └ 'sendPhoto'
+           └ <function check_result at 0x7fbcacd57e18>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+    │          │          │      └ 'Bad Request: failed to get HTTP URL content'
+    │          │          └ <classmethod object at 0x7fbcacd5efd0>
+    │          └ <class 'aiogram.utils.exceptions.BadRequest'>
+    └ <module 'aiogram.utils.exceptions' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/exceptions.py'>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+          │   │   │       └ 'bad request: failed to get http url content'
+          │   │   └ None
+          │   └ <class 'aiogram.utils.exceptions.BadRequest'>
+          └ <class 'aiogram.utils.exceptions.InvalidHTTPUrlContent'>
+
+aiogram.utils.exceptions.InvalidHTTPUrlContent: Failed to get http url content
+2022-01-23 at 14:08:28|DEBUG|Получены данные из БД:[('Плененная косатка Тиликум смотрит на своих дрессировщиков. По состоянию на 2019 год от косаток погибло всего 4 человека, и Тиликум несет ответственность за 3 из них.', 'https://i.redd.it/fs5fyszbscd81.jpg', 121012, 496)]
+2022-01-23 at 14:08:29|DEBUG|Файл на загрузку: 496fs5fyszbscd81.jpg
+2022-01-23 at 14:08:29|DEBUG|Отправка изображения: 496fs5fyszbscd81.jpg
+2022-01-23 at 14:08:29|ERROR|Ошибка с картинкой для DEV 496fs5fyszbscd81.jpg
+Traceback (most recent call last):
+
+  File "bot.py", line 190, in <module>
+    executor.start_polling(dp, skip_updates=True)
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7fbcab812908>
+    │        └ <function start_polling at 0x7fbcacbafb70>
+    └ <module 'aiogram.utils.executor' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py'>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py", line 50, in start_polling
+    allowed_updates=allowed_updates
+                    └ None
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7fbcae8af9d8>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 539, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7fbcae8b3400>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 1775, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7fbcae907730>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7fbcab85ef78>(<Future finished result=None>)>
+  File "/usr/lib/python3.7/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskWakeupMethWrapper object at 0x7fbcab85ef78>(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskWakeupMethWrapper object at 0x7fbcab85ef78>(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7fbcab85ef78>(<Future finished result=None>)>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 51957489, "message": {"message_id": 1060, "from": {"id": 467601941, "is_bot": false, "first_name": "Ил...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7fbcab812908>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7...
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x7fbcacdccf60>
+                 │    │                │      └ <Update {"update_id": 51957489, "message": {"message_id": 1060, "from": {"id": 467601941, "is_bot": false, "first_name": "Иль...
+                 │    │                └ <function Handler.notify at 0x7fbcacd4d620>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x7fbcab812898>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7fbcab812908>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 1060, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья", "username": "ripozis", "langu...
+                     │           └ <function test_message at 0x7fbcab821bf8>
+                     └ Handler.HandlerObj(handler=<function test_message at 0x7fbcab821bf8>, spec=FullArgSpec(args=['message'], varargs=None, varkw=...
+
+> File "bot.py", line 78, in test_message
+    await bot.send_photo(chat_id=message.from_user.id, photo=path_file, reply_markup=lnkb, caption=title)
+          │   │                  │       │                   │                       │             └ 'Плененная косатка Тиликум смотрит на своих дрессировщиков. По состоянию на 2019 год от косаток погибло всего 4 человека, и Т...
+          │   │                  │       │                   │                       └ <InlineKeyboardMarkup {"inline_keyboard": [[{"text": "Опубликовать", "callback_data": "pudlik"}, {"text": "Удалить", "callbac...
+          │   │                  │       │                   └ '496fs5fyszbscd81.jpg'
+          │   │                  │       └ <aiogram.types.fields.Field object at 0x7fbcace79e48>
+          │   │                  └ <Message {"message_id": 1060, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья", "username": "ripozis", "langua...
+          │   └ <function Bot.send_photo at 0x7fbcacd1cd90>
+          └ <aiogram.bot.bot.Bot object at 0x7fbcab812780>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/bot.py", line 527, in send_photo
+    result = await self.request(api.Methods.SEND_PHOTO, payload, files)
+                   │    │       │   │       │           │        └ {}
+                   │    │       │   │       │           └ {'chat_id': 467601941, 'caption': 'Плененная косатка Тиликум смотрит на своих дрессировщиков. По состоянию на 2019 год от кос...
+                   │    │       │   │       └ <aiogram.utils.helper.Item object at 0x7fbcacdd3dd8>
+                   │    │       │   └ <class 'aiogram.bot.api.Methods'>
+                   │    │       └ <module 'aiogram.bot.api' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py'>
+                   │    └ <function BaseBot.request at 0x7fbcacd18730>
+                   └ <aiogram.bot.bot.Bot object at 0x7fbcab812780>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/base.py", line 232, in request
+    proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+          │    │                 │    │                   │    │          └ {}
+          │    │                 │    │                   │    └ <property object at 0x7fbcacd6c098>
+          │    │                 │    │                   └ <aiogram.bot.bot.Bot object at 0x7fbcab812780>
+          │    │                 │    └ None
+          │    │                 └ <aiogram.bot.bot.Bot object at 0x7fbcab812780>
+          │    └ None
+          └ <aiogram.bot.bot.Bot object at 0x7fbcab812780>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           │            │       │        │             │        │             │        └ <function ClientResponse.text at 0x7fbcad5b5730>
+           │            │       │        │             │        │             └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendPhoto) [400 Bad Request]>
+           │            │       │        │             │        │               <CIM...
+           │            │       │        │             │        └ 400
+           │            │       │        │             └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendPhoto) [400 Bad Request]>
+           │            │       │        │               <CIM...
+           │            │       │        └ <property object at 0x7fbcadfa6db8>
+           │            │       └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendPhoto) [400 Bad Request]>
+           │            │         <CIM...
+           │            └ 'sendPhoto'
+           └ <function check_result at 0x7fbcacd57e18>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+    │          │          │      └ 'Bad Request: wrong file identifier/HTTP URL specified'
+    │          │          └ <classmethod object at 0x7fbcacd5efd0>
+    │          └ <class 'aiogram.utils.exceptions.BadRequest'>
+    └ <module 'aiogram.utils.exceptions' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/exceptions.py'>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+          │   │   │       └ 'bad request: wrong file identifier/http url specified'
+          │   │   └ None
+          │   └ <class 'aiogram.utils.exceptions.BadRequest'>
+          └ <class 'aiogram.utils.exceptions.WrongFileIdentifier'>
+
+aiogram.utils.exceptions.WrongFileIdentifier: Wrong file identifier/http url specified
+2022-01-23 at 14:08:47|SUCCESS|Получены кол-во постов на публикацию
+2022-01-23 at 14:08:50|DEBUG|Получены данные из БД:[('Плененная косатка Тиликум смотрит на своих дрессировщиков. По состоянию на 2019 год от косаток погибло всего 4 человека, и Тиликум несет ответственность за 3 из них.', 'https://i.redd.it/fs5fyszbscd81.jpg', 121012, 496)]
+2022-01-23 at 14:08:50|DEBUG|Файл на загрузку: 496fs5fyszbscd81.jpg
+2022-01-23 at 14:08:50|DEBUG|Отправка изображения: 496fs5fyszbscd81.jpg
+2022-01-23 at 14:08:50|ERROR|Ошибка с картинкой для DEV 496fs5fyszbscd81.jpg
+Traceback (most recent call last):
+
+  File "bot.py", line 190, in <module>
+    executor.start_polling(dp, skip_updates=True)
+    │        │             └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7fbcab812908>
+    │        └ <function start_polling at 0x7fbcacbafb70>
+    └ <module 'aiogram.utils.executor' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py'>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py", line 50, in start_polling
+    allowed_updates=allowed_updates
+                    └ None
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/executor.py", line 323, in start_polling
+    loop.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7fbcae8af9d8>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 539, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7fbcae8b3400>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 1775, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7fbcae907730>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7fbcab85e9a8>(<Future finished result=None>)>
+  File "/usr/lib/python3.7/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskWakeupMethWrapper object at 0x7fbcab85e9a8>(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskWakeupMethWrapper object at 0x7fbcab85e9a8>(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7fbcab85e9a8>(<Future finished result=None>)>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Update {"update_id": 51957491, "message": {"message_id": 1063, "from": {"id": 467601941, "is_bot": false, "first_name": "Ил...
+                     │           └ <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7fbcab812908>>
+                     └ Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7...
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 │    │                │      │      └ <aiogram.types.fields.Field object at 0x7fbcacdccf60>
+                 │    │                │      └ <Update {"update_id": 51957491, "message": {"message_id": 1063, "from": {"id": 467601941, "is_bot": false, "first_name": "Иль...
+                 │    │                └ <function Handler.notify at 0x7fbcacd4d620>
+                 │    └ <aiogram.dispatcher.handler.Handler object at 0x7fbcab812898>
+                 └ <aiogram.dispatcher.dispatcher.Dispatcher object at 0x7fbcab812908>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     │           │        │       └ {}
+                     │           │        └ (<Message {"message_id": 1063, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья", "username": "ripozis", "langu...
+                     │           └ <function test_message at 0x7fbcab821bf8>
+                     └ Handler.HandlerObj(handler=<function test_message at 0x7fbcab821bf8>, spec=FullArgSpec(args=['message'], varargs=None, varkw=...
+
+> File "bot.py", line 78, in test_message
+    await bot.send_photo(chat_id=message.from_user.id, photo=path_file, reply_markup=lnkb, caption=title)
+          │   │                  │       │                   │                       │             └ 'Плененная косатка Тиликум смотрит на своих дрессировщиков. По состоянию на 2019 год от косаток погибло всего 4 человека, и Т...
+          │   │                  │       │                   │                       └ <InlineKeyboardMarkup {"inline_keyboard": [[{"text": "Опубликовать", "callback_data": "pudlik"}, {"text": "Удалить", "callbac...
+          │   │                  │       │                   └ '496fs5fyszbscd81.jpg'
+          │   │                  │       └ <aiogram.types.fields.Field object at 0x7fbcace79e48>
+          │   │                  └ <Message {"message_id": 1063, "from": {"id": 467601941, "is_bot": false, "first_name": "Илья", "username": "ripozis", "langua...
+          │   └ <function Bot.send_photo at 0x7fbcacd1cd90>
+          └ <aiogram.bot.bot.Bot object at 0x7fbcab812780>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/bot.py", line 527, in send_photo
+    result = await self.request(api.Methods.SEND_PHOTO, payload, files)
+                   │    │       │   │       │           │        └ {}
+                   │    │       │   │       │           └ {'chat_id': 467601941, 'caption': 'Плененная косатка Тиликум смотрит на своих дрессировщиков. По состоянию на 2019 год от кос...
+                   │    │       │   │       └ <aiogram.utils.helper.Item object at 0x7fbcacdd3dd8>
+                   │    │       │   └ <class 'aiogram.bot.api.Methods'>
+                   │    │       └ <module 'aiogram.bot.api' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py'>
+                   │    └ <function BaseBot.request at 0x7fbcacd18730>
+                   └ <aiogram.bot.bot.Bot object at 0x7fbcab812780>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/base.py", line 232, in request
+    proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+          │    │                 │    │                   │    │          └ {}
+          │    │                 │    │                   │    └ <property object at 0x7fbcacd6c098>
+          │    │                 │    │                   └ <aiogram.bot.bot.Bot object at 0x7fbcab812780>
+          │    │                 │    └ None
+          │    │                 └ <aiogram.bot.bot.Bot object at 0x7fbcab812780>
+          │    └ None
+          └ <aiogram.bot.bot.Bot object at 0x7fbcab812780>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           │            │       │        │             │        │             │        └ <function ClientResponse.text at 0x7fbcad5b5730>
+           │            │       │        │             │        │             └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendPhoto) [400 Bad Request]>
+           │            │       │        │             │        │               <CIM...
+           │            │       │        │             │        └ 400
+           │            │       │        │             └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendPhoto) [400 Bad Request]>
+           │            │       │        │               <CIM...
+           │            │       │        └ <property object at 0x7fbcadfa6db8>
+           │            │       └ <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendPhoto) [400 Bad Request]>
+           │            │         <CIM...
+           │            └ 'sendPhoto'
+           └ <function check_result at 0x7fbcacd57e18>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+    │          │          │      └ 'Bad Request: wrong file identifier/HTTP URL specified'
+    │          │          └ <classmethod object at 0x7fbcacd5efd0>
+    │          └ <class 'aiogram.utils.exceptions.BadRequest'>
+    └ <module 'aiogram.utils.exceptions' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/exceptions.py'>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+          │   │   │       └ 'bad request: wrong file identifier/http url specified'
+          │   │   └ None
+          │   └ <class 'aiogram.utils.exceptions.BadRequest'>
+          └ <class 'aiogram.utils.exceptions.WrongFileIdentifier'>
+
+aiogram.utils.exceptions.WrongFileIdentifier: Wrong file identifier/http url specified

@@ -1359,3 +1359,697 @@ ValueError: Failed to decode "vt189y2vjox71.jpg". The value does not represent a
 2022-01-12 at 18:25:58|DEBUG|Формируем собщение поста с id: 114
 2022-01-12 at 18:25:58|SUCCESS|Собщение сформировано
 2022-01-12 at 18:25:58|SUCCESS|Файл 114DASH_1080.mp4 удален с диска
+2022-01-23 at 13:18:01|INFO|Получаем посты для публикации
+2022-01-23 at 13:18:01|SUCCESS|Будем отправлять изображение 78un8fn1zybtx71.jpg
+2022-01-23 at 13:18:01|DEBUG|Формируем собщение поста с id: 78
+2022-01-23 at 13:18:01|SUCCESS|Собщение сформировано
+2022-01-23 at 13:18:01|SUCCESS|Файл 78un8fn1zybtx71.jpg удален с диска
+2022-01-23 at 13:19:01|INFO|Получаем посты для публикации
+2022-01-23 at 13:19:01|SUCCESS|Будем отправлять видео128DASH_1080.mp4
+2022-01-23 at 13:19:01|DEBUG|Формируем собщение поста с id: 128
+2022-01-23 at 13:19:03|SUCCESS|Собщение сформировано
+2022-01-23 at 13:19:03|SUCCESS|Файл 128DASH_1080.mp4 удален с диска
+2022-01-23 at 13:20:03|INFO|Получаем посты для публикации
+2022-01-23 at 13:20:03|SUCCESS|Будем отправлять изображение 142tu9my3lc5ux71.jpg
+2022-01-23 at 13:20:03|DEBUG|Формируем собщение поста с id: 142
+2022-01-23 at 13:20:03|SUCCESS|Собщение сформировано
+2022-01-23 at 13:20:03|SUCCESS|Файл 142tu9my3lc5ux71.jpg удален с диска
+2022-01-23 at 13:21:03|INFO|Получаем посты для публикации
+2022-01-23 at 13:21:03|SUCCESS|Будем отправлять изображение 112vqnt0egbtsx71.png
+2022-01-23 at 13:21:03|DEBUG|Формируем собщение поста с id: 112
+2022-01-23 at 13:21:04|SUCCESS|Собщение сформировано
+2022-01-23 at 13:21:04|SUCCESS|Файл 112vqnt0egbtsx71.png удален с диска
+2022-01-23 at 13:22:04|INFO|Получен список каналов
+2022-01-23 at 13:22:06|SUCCESS|Определены настройки веб драйвера
+2022-01-23 at 13:22:06|DEBUG|Логинимся на reddit
+2022-01-23 at 13:22:20|SUCCESS|Учпешно залогинились
+2022-01-23 at 13:22:20|DEBUG|Переходим в канал interestingasfuck
+2022-01-23 at 13:22:26|SUCCESS|Зашли в канал interestingasfuck и сформировали json
+2022-01-23 at 13:22:26|ERROR|Ошибка при формировани файла data.html
+Traceback (most recent call last):
+
+  File "main.py", line 148, in <module>
+    schedule.run_pending()
+    │        └ <function run_pending at 0x7fb90879a598>
+    └ <module 'schedule' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py'>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 780, in run_pending
+    default_scheduler.run_pending()
+    │                 └ <function Scheduler.run_pending at 0x7fb908783f28>
+    └ <schedule.Scheduler object at 0x7fb90928f518>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 100, in run_pending
+    self._run_job(job)
+    │    │        └ Every 5 minutes do search_reddit() (last run: [never], next run: 2022-01-23 13:22:01)
+    │    └ <function Scheduler._run_job at 0x7fb9087972f0>
+    └ <schedule.Scheduler object at 0x7fb90928f518>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 172, in _run_job
+    ret = job.run()
+          │   └ <function Job.run at 0x7fb90879a378>
+          └ Every 5 minutes do search_reddit() (last run: [never], next run: 2022-01-23 13:22:01)
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 661, in run
+    ret = self.job_func()
+          │    └ functools.partial(<function search_reddit at 0x7fb9086a9158>)
+          └ Every 5 minutes do search_reddit() (last run: [never], next run: 2022-01-23 13:22:01)
+
+  File "/home/ripo/tb_bot/parser_reddit.py", line 170, in search_reddit
+    redit_login(username, password, redit)
+    │           │         │         └ ('interestingasfuck', 'gifsthatkeepongiving', 'oddlysatisfying')
+    │           │         └ 'UOgyiog8374fgboa8fgdOU6e93ced923c%^CvV'
+    │           └ 'Ripozi'
+    └ <function search_reddit.<locals>.redit_login at 0x7fb9076e86a8>
+
+> File "/home/ripo/tb_bot/parser_reddit.py", line 81, in redit_login
+    with open('logger/data.html', 'w', encoding='utf=8') as file:
+
+FileNotFoundError: [Errno 2] No such file or directory: 'logger/data.html'
+2022-01-23 at 13:22:26|ERROR|Ошибка при авторизации
+Traceback (most recent call last):
+
+  File "/home/ripo/tb_bot/parser_reddit.py", line 81, in redit_login
+    with open('logger/data.html', 'w', encoding='utf=8') as file:
+
+FileNotFoundError: [Errno 2] No such file or directory: 'logger/data.html'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connection.py", line 175, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+     │    │          │    │      │    │          └ {'socket_options': [(6, 1, 1)]}
+     │    │          │    │      │    └ <object object at 0x7fb90a669220>
+     │    │          │    │      └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+     │    │          │    └ 51843
+     │    │          └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+     │    └ 'localhost'
+     └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/util/connection.py", line 96, in create_connection
+    raise err
+          └ ConnectionRefusedError(111, 'Connection refused')
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/util/connection.py", line 86, in create_connection
+    sock.connect(sa)
+    │            └ ('127.0.0.1', 51843)
+    └ None
+
+ConnectionRefusedError: [Errno 111] Connection refused
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connectionpool.py", line 706, in urlopen
+    chunked=chunked,
+            └ False
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connectionpool.py", line 394, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+    │    │       │       │      └ {'body': None, 'headers': {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'sel...
+    │    │       │       └ '/session/29e60827828e0a53d689ccb461554a65/window'
+    │    │       └ 'DELETE'
+    │    └ <function HTTPConnection.request at 0x7fb9088da840>
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+          │               │             │       │         │             └ {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/4.1.0 (python linux)...
+          │               │             │       │         └ None
+          │               │             │       └ '/session/29e60827828e0a53d689ccb461554a65/window'
+          │               │             └ 'DELETE'
+          │               └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+          └ <class 'urllib3.connection.HTTPConnection'>
+  File "/usr/lib/python3.7/http/client.py", line 1260, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+    │    │             │       │    │     │        └ False
+    │    │             │       │    │     └ {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/4.1.0 (python linux)...
+    │    │             │       │    └ None
+    │    │             │       └ '/session/29e60827828e0a53d689ccb461554a65/window'
+    │    │             └ 'DELETE'
+    │    └ <function HTTPConnection._send_request at 0x7fb9098bbbf8>
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+  File "/usr/lib/python3.7/http/client.py", line 1306, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+    │    │          │                    └ False
+    │    │          └ None
+    │    └ <function HTTPConnection.endheaders at 0x7fb9098bbae8>
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+  File "/usr/lib/python3.7/http/client.py", line 1255, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    │    │            │                            └ False
+    │    │            └ None
+    │    └ <function HTTPConnection._send_output at 0x7fb9098bb8c8>
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+  File "/usr/lib/python3.7/http/client.py", line 1030, in _send_output
+    self.send(msg)
+    │    │    └ b'DELETE /session/29e60827828e0a53d689ccb461554a65/window HTTP/1.1\r\nHost: localhost:51843\r\nAccept-Encoding: identity\r\nA...
+    │    └ <function HTTPConnection.send at 0x7fb9098bb730>
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+  File "/usr/lib/python3.7/http/client.py", line 970, in send
+    self.connect()
+    │    └ <function HTTPConnection.connect at 0x7fb9088da6a8>
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+           │    └ <function HTTPConnection._new_conn at 0x7fb9088da510>
+           └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connection.py", line 187, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fb906e37240>: Failed to establish a new connection: [Errno 111] Connection refused
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "main.py", line 148, in <module>
+    schedule.run_pending()
+    │        └ <function run_pending at 0x7fb90879a598>
+    └ <module 'schedule' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py'>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 780, in run_pending
+    default_scheduler.run_pending()
+    │                 └ <function Scheduler.run_pending at 0x7fb908783f28>
+    └ <schedule.Scheduler object at 0x7fb90928f518>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 100, in run_pending
+    self._run_job(job)
+    │    │        └ Every 5 minutes do search_reddit() (last run: [never], next run: 2022-01-23 13:22:01)
+    │    └ <function Scheduler._run_job at 0x7fb9087972f0>
+    └ <schedule.Scheduler object at 0x7fb90928f518>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 172, in _run_job
+    ret = job.run()
+          │   └ <function Job.run at 0x7fb90879a378>
+          └ Every 5 minutes do search_reddit() (last run: [never], next run: 2022-01-23 13:22:01)
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 661, in run
+    ret = self.job_func()
+          │    └ functools.partial(<function search_reddit at 0x7fb9086a9158>)
+          └ Every 5 minutes do search_reddit() (last run: [never], next run: 2022-01-23 13:22:01)
+
+  File "/home/ripo/tb_bot/parser_reddit.py", line 170, in search_reddit
+    redit_login(username, password, redit)
+    │           │         │         └ ('interestingasfuck', 'gifsthatkeepongiving', 'oddlysatisfying')
+    │           │         └ 'UOgyiog8374fgboa8fgdOU6e93ced923c%^CvV'
+    │           └ 'Ripozi'
+    └ <function search_reddit.<locals>.redit_login at 0x7fb9076e86a8>
+
+> File "/home/ripo/tb_bot/parser_reddit.py", line 87, in redit_login
+    browser.close()
+    │       └ <function WebDriver.close at 0x7fb90884cd08>
+    └ <selenium.webdriver.chrome.webdriver.WebDriver (session="29e60827828e0a53d689ccb461554a65")>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 937, in close
+    self.execute(Command.CLOSE)
+    │    │       │       └ 'close'
+    │    │       └ <class 'selenium.webdriver.remote.command.Command'>
+    │    └ <function WebDriver.execute at 0x7fb908844ea0>
+    └ <selenium.webdriver.chrome.webdriver.WebDriver (session="29e60827828e0a53d689ccb461554a65")>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 422, in execute
+    response = self.command_executor.execute(driver_command, params)
+               │    │                │       │               └ {}
+               │    │                │       └ 'close'
+               │    │                └ <function RemoteConnection.execute at 0x7fb9088f29d8>
+               │    └ <selenium.webdriver.chromium.remote_connection.ChromiumRemoteConnection object at 0x7fb906e30198>
+               └ <selenium.webdriver.chrome.webdriver.WebDriver (session="29e60827828e0a53d689ccb461554a65")>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 421, in execute
+    return self._request(command_info[0], url, body=data)
+           │    │        │                │         └ '{}'
+           │    │        │                └ 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'
+           │    │        └ ('DELETE', '/session/$sessionId/window')
+           │    └ <function RemoteConnection._request at 0x7fb9088f2a60>
+           └ <selenium.webdriver.chromium.remote_connection.ChromiumRemoteConnection object at 0x7fb906e30198>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 443, in _request
+    resp = self._conn.request(method, url, body=body, headers=headers)
+           │    │     │       │       │         │             └ {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/4.1.0 (python linux)...
+           │    │     │       │       │         └ None
+           │    │     │       │       └ 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'
+           │    │     │       └ 'DELETE'
+           │    │     └ <function RequestMethods.request at 0x7fb9088df6a8>
+           │    └ <urllib3.poolmanager.PoolManager object at 0x7fb906e30da0>
+           └ <selenium.webdriver.chromium.remote_connection.ChromiumRemoteConnection object at 0x7fb906e30198>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/request.py", line 75, in request
+    method, url, fields=fields, headers=headers, **urlopen_kw
+    │       │           │               │          └ {'body': None, 'request_url': 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'}
+    │       │           │               └ {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/4.1.0 (python linux)...
+    │       │           └ None
+    │       └ 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'
+    └ 'DELETE'
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/request.py", line 96, in request_encode_url
+    return self.urlopen(method, url, **extra_kw)
+           │    │       │       │      └ {'headers': {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/4.1.0 (p...
+           │    │       │       └ 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'
+           │    │       └ 'DELETE'
+           │    └ <function PoolManager.urlopen at 0x7fb9088f2048>
+           └ <urllib3.poolmanager.PoolManager object at 0x7fb906e30da0>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/poolmanager.py", line 375, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+               │    │       │       │ │              └ {'headers': {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/4.1.0 (p...
+               │    │       │       │ └ <property object at 0x7fb9088ca1d8>
+               │    │       │       └ Url(scheme='http', auth=None, host='localhost', port=51843, path='/session/29e60827828e0a53d689ccb461554a65/window', query=No...
+               │    │       └ 'DELETE'
+               │    └ <function HTTPConnectionPool.urlopen at 0x7fb9088ebbf8>
+               └ <urllib3.connectionpool.HTTPConnectionPool object at 0x7fb906e37208>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connectionpool.py", line 796, in urlopen
+    **response_kw
+      └ {'request_url': 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'}
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connectionpool.py", line 796, in urlopen
+    **response_kw
+      └ {'request_url': 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'}
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connectionpool.py", line 796, in urlopen
+    **response_kw
+      └ {'request_url': 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'}
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connectionpool.py", line 756, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+    │       │                   │                 │   └ <built-in function exc_info>
+    │       │                   │                 └ <module 'sys' (built-in)>
+    │       │                   └ <urllib3.connectionpool.HTTPConnectionPool object at 0x7fb906e37208>
+    │       └ '/session/29e60827828e0a53d689ccb461554a65/window'
+    └ 'DELETE'
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/util/retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+          │             │      │    │        │             └ 'unknown'
+          │             │      │    │        └ <class 'urllib3.exceptions.ResponseError'>
+          │             │      │    └ NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fb906e37240>: Failed to establish a new connection: [Errn...
+          │             │      └ '/session/29e60827828e0a53d689ccb461554a65/window'
+          │             └ <urllib3.connectionpool.HTTPConnectionPool object at 0x7fb906e37208>
+          └ <class 'urllib3.exceptions.MaxRetryError'>
+
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=51843): Max retries exceeded with url: /session/29e60827828e0a53d689ccb461554a65/window (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fb906e37240>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2022-01-23 at 13:22:26|ERROR|An error has been caught in function 'run', process 'MainProcess' (1456), thread 'MainThread' (140432722347840):
+Traceback (most recent call last):
+
+  File "/home/ripo/tb_bot/parser_reddit.py", line 81, in redit_login
+    with open('logger/data.html', 'w', encoding='utf=8') as file:
+
+FileNotFoundError: [Errno 2] No such file or directory: 'logger/data.html'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connection.py", line 175, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+     │    │          │    │      │    │          └ {'socket_options': [(6, 1, 1)]}
+     │    │          │    │      │    └ <object object at 0x7fb90a669220>
+     │    │          │    │      └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+     │    │          │    └ 51843
+     │    │          └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+     │    └ 'localhost'
+     └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/util/connection.py", line 96, in create_connection
+    raise err
+          └ ConnectionRefusedError(111, 'Connection refused')
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/util/connection.py", line 86, in create_connection
+    sock.connect(sa)
+    │            └ ('127.0.0.1', 51843)
+    └ None
+
+ConnectionRefusedError: [Errno 111] Connection refused
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connectionpool.py", line 706, in urlopen
+    chunked=chunked,
+            └ False
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connectionpool.py", line 394, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+    │    │       │       │      └ {'body': None, 'headers': {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'sel...
+    │    │       │       └ '/session/29e60827828e0a53d689ccb461554a65/window'
+    │    │       └ 'DELETE'
+    │    └ <function HTTPConnection.request at 0x7fb9088da840>
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+          │               │             │       │         │             └ {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/4.1.0 (python linux)...
+          │               │             │       │         └ None
+          │               │             │       └ '/session/29e60827828e0a53d689ccb461554a65/window'
+          │               │             └ 'DELETE'
+          │               └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+          └ <class 'urllib3.connection.HTTPConnection'>
+  File "/usr/lib/python3.7/http/client.py", line 1260, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+    │    │             │       │    │     │        └ False
+    │    │             │       │    │     └ {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/4.1.0 (python linux)...
+    │    │             │       │    └ None
+    │    │             │       └ '/session/29e60827828e0a53d689ccb461554a65/window'
+    │    │             └ 'DELETE'
+    │    └ <function HTTPConnection._send_request at 0x7fb9098bbbf8>
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+  File "/usr/lib/python3.7/http/client.py", line 1306, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+    │    │          │                    └ False
+    │    │          └ None
+    │    └ <function HTTPConnection.endheaders at 0x7fb9098bbae8>
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+  File "/usr/lib/python3.7/http/client.py", line 1255, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    │    │            │                            └ False
+    │    │            └ None
+    │    └ <function HTTPConnection._send_output at 0x7fb9098bb8c8>
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+  File "/usr/lib/python3.7/http/client.py", line 1030, in _send_output
+    self.send(msg)
+    │    │    └ b'DELETE /session/29e60827828e0a53d689ccb461554a65/window HTTP/1.1\r\nHost: localhost:51843\r\nAccept-Encoding: identity\r\nA...
+    │    └ <function HTTPConnection.send at 0x7fb9098bb730>
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+  File "/usr/lib/python3.7/http/client.py", line 970, in send
+    self.connect()
+    │    └ <function HTTPConnection.connect at 0x7fb9088da6a8>
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+           │    └ <function HTTPConnection._new_conn at 0x7fb9088da510>
+           └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connection.py", line 187, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e37240>
+
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fb906e37240>: Failed to establish a new connection: [Errno 111] Connection refused
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/ripo/tb_bot/parser_reddit.py", line 87, in redit_login
+    browser.close()
+    │       └ <function WebDriver.close at 0x7fb90884cd08>
+    └ <selenium.webdriver.chrome.webdriver.WebDriver (session="29e60827828e0a53d689ccb461554a65")>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 937, in close
+    self.execute(Command.CLOSE)
+    │    │       │       └ 'close'
+    │    │       └ <class 'selenium.webdriver.remote.command.Command'>
+    │    └ <function WebDriver.execute at 0x7fb908844ea0>
+    └ <selenium.webdriver.chrome.webdriver.WebDriver (session="29e60827828e0a53d689ccb461554a65")>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 422, in execute
+    response = self.command_executor.execute(driver_command, params)
+               │    │                │       │               └ {}
+               │    │                │       └ 'close'
+               │    │                └ <function RemoteConnection.execute at 0x7fb9088f29d8>
+               │    └ <selenium.webdriver.chromium.remote_connection.ChromiumRemoteConnection object at 0x7fb906e30198>
+               └ <selenium.webdriver.chrome.webdriver.WebDriver (session="29e60827828e0a53d689ccb461554a65")>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 421, in execute
+    return self._request(command_info[0], url, body=data)
+           │    │        │                │         └ '{}'
+           │    │        │                └ 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'
+           │    │        └ ('DELETE', '/session/$sessionId/window')
+           │    └ <function RemoteConnection._request at 0x7fb9088f2a60>
+           └ <selenium.webdriver.chromium.remote_connection.ChromiumRemoteConnection object at 0x7fb906e30198>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 443, in _request
+    resp = self._conn.request(method, url, body=body, headers=headers)
+           │    │     │       │       │         │             └ {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/4.1.0 (python linux)...
+           │    │     │       │       │         └ None
+           │    │     │       │       └ 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'
+           │    │     │       └ 'DELETE'
+           │    │     └ <function RequestMethods.request at 0x7fb9088df6a8>
+           │    └ <urllib3.poolmanager.PoolManager object at 0x7fb906e30da0>
+           └ <selenium.webdriver.chromium.remote_connection.ChromiumRemoteConnection object at 0x7fb906e30198>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/request.py", line 75, in request
+    method, url, fields=fields, headers=headers, **urlopen_kw
+    │       │           │               │          └ {'body': None, 'request_url': 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'}
+    │       │           │               └ {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/4.1.0 (python linux)...
+    │       │           └ None
+    │       └ 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'
+    └ 'DELETE'
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/request.py", line 96, in request_encode_url
+    return self.urlopen(method, url, **extra_kw)
+           │    │       │       │      └ {'headers': {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/4.1.0 (p...
+           │    │       │       └ 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'
+           │    │       └ 'DELETE'
+           │    └ <function PoolManager.urlopen at 0x7fb9088f2048>
+           └ <urllib3.poolmanager.PoolManager object at 0x7fb906e30da0>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/poolmanager.py", line 375, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+               │    │       │       │ │              └ {'headers': {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/4.1.0 (p...
+               │    │       │       │ └ <property object at 0x7fb9088ca1d8>
+               │    │       │       └ Url(scheme='http', auth=None, host='localhost', port=51843, path='/session/29e60827828e0a53d689ccb461554a65/window', query=No...
+               │    │       └ 'DELETE'
+               │    └ <function HTTPConnectionPool.urlopen at 0x7fb9088ebbf8>
+               └ <urllib3.connectionpool.HTTPConnectionPool object at 0x7fb906e37208>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connectionpool.py", line 796, in urlopen
+    **response_kw
+      └ {'request_url': 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'}
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connectionpool.py", line 796, in urlopen
+    **response_kw
+      └ {'request_url': 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'}
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connectionpool.py", line 796, in urlopen
+    **response_kw
+      └ {'request_url': 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'}
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connectionpool.py", line 756, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+    │       │                   │                 │   └ <built-in function exc_info>
+    │       │                   │                 └ <module 'sys' (built-in)>
+    │       │                   └ <urllib3.connectionpool.HTTPConnectionPool object at 0x7fb906e37208>
+    │       └ '/session/29e60827828e0a53d689ccb461554a65/window'
+    └ 'DELETE'
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/util/retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+          │             │      │    │        │             └ 'unknown'
+          │             │      │    │        └ <class 'urllib3.exceptions.ResponseError'>
+          │             │      │    └ NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fb906e37240>: Failed to establish a new connection: [Errn...
+          │             │      └ '/session/29e60827828e0a53d689ccb461554a65/window'
+          │             └ <urllib3.connectionpool.HTTPConnectionPool object at 0x7fb906e37208>
+          └ <class 'urllib3.exceptions.MaxRetryError'>
+
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=51843): Max retries exceeded with url: /session/29e60827828e0a53d689ccb461554a65/window (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fb906e37240>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connection.py", line 175, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+     │    │          │    │      │    │          └ {'socket_options': [(6, 1, 1)]}
+     │    │          │    │      │    └ <object object at 0x7fb90a669220>
+     │    │          │    │      └ <urllib3.connection.HTTPConnection object at 0x7fb906e0c240>
+     │    │          │    └ 51843
+     │    │          └ <urllib3.connection.HTTPConnection object at 0x7fb906e0c240>
+     │    └ 'localhost'
+     └ <urllib3.connection.HTTPConnection object at 0x7fb906e0c240>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/util/connection.py", line 96, in create_connection
+    raise err
+          └ ConnectionRefusedError(111, 'Connection refused')
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/util/connection.py", line 86, in create_connection
+    sock.connect(sa)
+    │            └ ('127.0.0.1', 51843)
+    └ None
+
+ConnectionRefusedError: [Errno 111] Connection refused
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connectionpool.py", line 706, in urlopen
+    chunked=chunked,
+            └ False
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connectionpool.py", line 394, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+    │    │       │       │      └ {'body': None, 'headers': {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'sel...
+    │    │       │       └ '/session/29e60827828e0a53d689ccb461554a65/window'
+    │    │       └ 'DELETE'
+    │    └ <function HTTPConnection.request at 0x7fb9088da840>
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e0c240>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+          │               │             │       │         │             └ {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/4.1.0 (python linux)...
+          │               │             │       │         └ None
+          │               │             │       └ '/session/29e60827828e0a53d689ccb461554a65/window'
+          │               │             └ 'DELETE'
+          │               └ <urllib3.connection.HTTPConnection object at 0x7fb906e0c240>
+          └ <class 'urllib3.connection.HTTPConnection'>
+  File "/usr/lib/python3.7/http/client.py", line 1260, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+    │    │             │       │    │     │        └ False
+    │    │             │       │    │     └ {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/4.1.0 (python linux)...
+    │    │             │       │    └ None
+    │    │             │       └ '/session/29e60827828e0a53d689ccb461554a65/window'
+    │    │             └ 'DELETE'
+    │    └ <function HTTPConnection._send_request at 0x7fb9098bbbf8>
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e0c240>
+  File "/usr/lib/python3.7/http/client.py", line 1306, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+    │    │          │                    └ False
+    │    │          └ None
+    │    └ <function HTTPConnection.endheaders at 0x7fb9098bbae8>
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e0c240>
+  File "/usr/lib/python3.7/http/client.py", line 1255, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    │    │            │                            └ False
+    │    │            └ None
+    │    └ <function HTTPConnection._send_output at 0x7fb9098bb8c8>
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e0c240>
+  File "/usr/lib/python3.7/http/client.py", line 1030, in _send_output
+    self.send(msg)
+    │    │    └ b'DELETE /session/29e60827828e0a53d689ccb461554a65/window HTTP/1.1\r\nHost: localhost:51843\r\nAccept-Encoding: identity\r\nA...
+    │    └ <function HTTPConnection.send at 0x7fb9098bb730>
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e0c240>
+  File "/usr/lib/python3.7/http/client.py", line 970, in send
+    self.connect()
+    │    └ <function HTTPConnection.connect at 0x7fb9088da6a8>
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e0c240>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+           │    └ <function HTTPConnection._new_conn at 0x7fb9088da510>
+           └ <urllib3.connection.HTTPConnection object at 0x7fb906e0c240>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connection.py", line 187, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+    └ <urllib3.connection.HTTPConnection object at 0x7fb906e0c240>
+
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fb906e0c240>: Failed to establish a new connection: [Errno 111] Connection refused
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "main.py", line 148, in <module>
+    schedule.run_pending()
+    │        └ <function run_pending at 0x7fb90879a598>
+    └ <module 'schedule' from '/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py'>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 780, in run_pending
+    default_scheduler.run_pending()
+    │                 └ <function Scheduler.run_pending at 0x7fb908783f28>
+    └ <schedule.Scheduler object at 0x7fb90928f518>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 100, in run_pending
+    self._run_job(job)
+    │    │        └ Every 5 minutes do search_reddit() (last run: [never], next run: 2022-01-23 13:22:01)
+    │    └ <function Scheduler._run_job at 0x7fb9087972f0>
+    └ <schedule.Scheduler object at 0x7fb90928f518>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 172, in _run_job
+    ret = job.run()
+          │   └ <function Job.run at 0x7fb90879a378>
+          └ Every 5 minutes do search_reddit() (last run: [never], next run: 2022-01-23 13:22:01)
+> File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/schedule/__init__.py", line 661, in run
+    ret = self.job_func()
+          │    └ functools.partial(<function search_reddit at 0x7fb9086a9158>)
+          └ Every 5 minutes do search_reddit() (last run: [never], next run: 2022-01-23 13:22:01)
+
+  File "/home/ripo/tb_bot/parser_reddit.py", line 170, in search_reddit
+    redit_login(username, password, redit)
+    │           │         │         └ ('interestingasfuck', 'gifsthatkeepongiving', 'oddlysatisfying')
+    │           │         └ 'UOgyiog8374fgboa8fgdOU6e93ced923c%^CvV'
+    │           └ 'Ripozi'
+    └ <function search_reddit.<locals>.redit_login at 0x7fb9076e86a8>
+
+  File "/home/ripo/tb_bot/parser_reddit.py", line 93, in redit_login
+    browser.close()
+    │       └ <function WebDriver.close at 0x7fb90884cd08>
+    └ <selenium.webdriver.chrome.webdriver.WebDriver (session="29e60827828e0a53d689ccb461554a65")>
+
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 937, in close
+    self.execute(Command.CLOSE)
+    │    │       │       └ 'close'
+    │    │       └ <class 'selenium.webdriver.remote.command.Command'>
+    │    └ <function WebDriver.execute at 0x7fb908844ea0>
+    └ <selenium.webdriver.chrome.webdriver.WebDriver (session="29e60827828e0a53d689ccb461554a65")>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 422, in execute
+    response = self.command_executor.execute(driver_command, params)
+               │    │                │       │               └ {}
+               │    │                │       └ 'close'
+               │    │                └ <function RemoteConnection.execute at 0x7fb9088f29d8>
+               │    └ <selenium.webdriver.chromium.remote_connection.ChromiumRemoteConnection object at 0x7fb906e30198>
+               └ <selenium.webdriver.chrome.webdriver.WebDriver (session="29e60827828e0a53d689ccb461554a65")>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 421, in execute
+    return self._request(command_info[0], url, body=data)
+           │    │        │                │         └ '{}'
+           │    │        │                └ 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'
+           │    │        └ ('DELETE', '/session/$sessionId/window')
+           │    └ <function RemoteConnection._request at 0x7fb9088f2a60>
+           └ <selenium.webdriver.chromium.remote_connection.ChromiumRemoteConnection object at 0x7fb906e30198>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 443, in _request
+    resp = self._conn.request(method, url, body=body, headers=headers)
+           │    │     │       │       │         │             └ {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/4.1.0 (python linux)...
+           │    │     │       │       │         └ None
+           │    │     │       │       └ 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'
+           │    │     │       └ 'DELETE'
+           │    │     └ <function RequestMethods.request at 0x7fb9088df6a8>
+           │    └ <urllib3.poolmanager.PoolManager object at 0x7fb906e30da0>
+           └ <selenium.webdriver.chromium.remote_connection.ChromiumRemoteConnection object at 0x7fb906e30198>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/request.py", line 75, in request
+    method, url, fields=fields, headers=headers, **urlopen_kw
+    │       │           │               │          └ {'body': None, 'request_url': 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'}
+    │       │           │               └ {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/4.1.0 (python linux)...
+    │       │           └ None
+    │       └ 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'
+    └ 'DELETE'
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/request.py", line 96, in request_encode_url
+    return self.urlopen(method, url, **extra_kw)
+           │    │       │       │      └ {'headers': {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/4.1.0 (p...
+           │    │       │       └ 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'
+           │    │       └ 'DELETE'
+           │    └ <function PoolManager.urlopen at 0x7fb9088f2048>
+           └ <urllib3.poolmanager.PoolManager object at 0x7fb906e30da0>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/poolmanager.py", line 375, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+               │    │       │       │ │              └ {'headers': {'Accept': 'application/json', 'Content-Type': 'application/json;charset=UTF-8', 'User-Agent': 'selenium/4.1.0 (p...
+               │    │       │       │ └ <property object at 0x7fb9088ca1d8>
+               │    │       │       └ Url(scheme='http', auth=None, host='localhost', port=51843, path='/session/29e60827828e0a53d689ccb461554a65/window', query=No...
+               │    │       └ 'DELETE'
+               │    └ <function HTTPConnectionPool.urlopen at 0x7fb9088ebbf8>
+               └ <urllib3.connectionpool.HTTPConnectionPool object at 0x7fb906e37208>
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connectionpool.py", line 796, in urlopen
+    **response_kw
+      └ {'request_url': 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'}
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connectionpool.py", line 796, in urlopen
+    **response_kw
+      └ {'request_url': 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'}
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connectionpool.py", line 796, in urlopen
+    **response_kw
+      └ {'request_url': 'http://localhost:51843/session/29e60827828e0a53d689ccb461554a65/window'}
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/connectionpool.py", line 756, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+    │       │                   │                 │   └ <built-in function exc_info>
+    │       │                   │                 └ <module 'sys' (built-in)>
+    │       │                   └ <urllib3.connectionpool.HTTPConnectionPool object at 0x7fb906e37208>
+    │       └ '/session/29e60827828e0a53d689ccb461554a65/window'
+    └ 'DELETE'
+  File "/home/ripo/tb_bot/venvTb_bot/lib/python3.7/site-packages/urllib3/util/retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+          │             │      │    │        │             └ 'unknown'
+          │             │      │    │        └ <class 'urllib3.exceptions.ResponseError'>
+          │             │      │    └ NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fb906e0c240>: Failed to establish a new connection: [Errn...
+          │             │      └ '/session/29e60827828e0a53d689ccb461554a65/window'
+          │             └ <urllib3.connectionpool.HTTPConnectionPool object at 0x7fb906e37208>
+          └ <class 'urllib3.exceptions.MaxRetryError'>
+
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=51843): Max retries exceeded with url: /session/29e60827828e0a53d689ccb461554a65/window (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fb906e0c240>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2022-01-23 at 13:22:26|INFO|Получаем посты для публикации
+2022-01-23 at 13:22:26|SUCCESS|Будем отправлять видео107DASH_720.mp4
+2022-01-23 at 13:22:26|DEBUG|Формируем собщение поста с id: 107
+2022-01-23 at 13:22:27|SUCCESS|Собщение сформировано
+2022-01-23 at 13:22:27|SUCCESS|Файл 107DASH_720.mp4 удален с диска
+2022-01-23 at 13:22:27|SUCCESS|Будем отправлять видео115DASH_1080.mp4
+2022-01-23 at 13:22:27|DEBUG|Формируем собщение поста с id: 115
+2022-01-23 at 13:22:28|SUCCESS|Собщение сформировано
+2022-01-23 at 13:22:28|SUCCESS|Файл 115DASH_1080.mp4 удален с диска
+2022-01-23 at 13:22:28|SUCCESS|Будем отправлять изображение 132id1xp6ss0nx71.png
+2022-01-23 at 13:22:28|DEBUG|Формируем собщение поста с id: 132
+2022-01-23 at 13:22:29|SUCCESS|Собщение сформировано
+2022-01-23 at 13:22:29|SUCCESS|Файл 132id1xp6ss0nx71.png удален с диска
+2022-01-23 at 13:23:29|INFO|Получаем посты для публикации
+2022-01-23 at 13:23:29|SUCCESS|Будем отправлять изображение 914wqxhwxcjtx71.jpg
+2022-01-23 at 13:23:29|DEBUG|Формируем собщение поста с id: 91
+2022-01-23 at 13:23:29|SUCCESS|Собщение сформировано
+2022-01-23 at 13:23:29|SUCCESS|Файл 914wqxhwxcjtx71.jpg удален с диска
+2022-01-23 at 13:24:29|INFO|Получаем посты для публикации
+2022-01-23 at 13:24:29|SUCCESS|Будем отправлять изображение 127bimhjg6qpox71.png
+2022-01-23 at 13:24:29|DEBUG|Формируем собщение поста с id: 127
+2022-01-23 at 13:24:30|SUCCESS|Собщение сформировано
+2022-01-23 at 13:24:30|SUCCESS|Файл 127bimhjg6qpox71.png удален с диска
