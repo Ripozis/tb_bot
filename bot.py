@@ -53,7 +53,8 @@ async def test_message(message: types.Message):
         lin = str(id_post) + lin # добавляем id в название файла
         path_file = str(lin)
         r = requests.get(url_link, allow_redirects=True)
-        os.chdir(r'/home/ripo/tb_bot/images')
+        os.chdir(r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images') # для винды
+        #os.chdir(r'/home/ripo/tb_bot/images') # для сервера
         open(lin, 'wb').write(r.content)
         sql_update(url_link, path_file)
         logger.debug("Файл на загрузку: " + str(path_file))
@@ -158,33 +159,6 @@ async def editing(calback : types.CallbackQuery,):
     # print('Сработала кнопка "Удалить"')
     await calback.answer("Пост помечен на редактирование")
     await calback.message.answer('Пост помечен на редактирование')
-
-# def kb_likes():
-#     likes = num["likes"]
-#     dislikes = num["dislikes"]
-#     kb = types.InlineKeyboardMarkup()
-#     kb.add(types.InlineKeyboardButton(text=f"👍 {likes}", callback_data="like"),
-#            types.InlineKeyboardButton(text=f"👎 {dislikes}", callback_data="dislike"))
-#     return kb
-
-# #срабатывает при появлении нового поста
-# @dp.channel_post_handler()
-# async def add_like(mes):
-#     cid = mes.chat.id
-#     mid = mes.message_id
-#     await bot.edit_message_reply_markup(chat_id=cid, message_id=mid, reply_markup=kb_likes(mid))
-
-# #срабатывает при нажатии на кнопку
-# @dp.callback_query_handler()
-# async def callback(call):
-#     cid = call.message.chat.id
-#     uid = call.from_user.id
-#     mid = call.message.message_id
-#     cdata = call.data
-#     try:
-#         await bot.edit_message_reply_markup(chat_id=cid, message_id=mid, reply_markup=kb_likes())
-#     except:
-#         pass
 
 #----------------
 if __name__ == '__main__':
