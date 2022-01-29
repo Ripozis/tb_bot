@@ -72,17 +72,18 @@ async def test_message(message: types.Message):
 
         # r = requests.get(url_link, allow_redirects=True)
         # os.chdir(r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images') # для винды
+        path_fi = open('C:/Users/Илья/Desktop/tb_bot/tb_bot/images/' + path_file, 'rb')
         # #os.chdir(r'/home/ripo/tb_bot/images') # для сервера
         # open(lin, 'wb').write(r.content)
         # sql_update(url_link, path_file)
         
-        print(type(path_file))
-        #path_file = open(path_file, 'rb')
+        print(path_file)
+        #path_fi = open(path_file, 'rb')
         
         if '.gif' in path_file:
             logger.debug("Отправка анимации: " + str(path_file))
             try: 
-                await bot.send_animation(chat_id=message.from_user.id, animation=url_link, reply_markup=lnkb, caption=title)
+                await bot.send_animation(chat_id=message.from_user.id, animation=path_fi, reply_markup=lnkb, caption=title)
                 moder_id = message.message_id + 1
                 moder_msgid(moder_id, id_post)
                 logger.success("В БД отправлен id сообщения: " + str(moder_id))
@@ -95,7 +96,7 @@ async def test_message(message: types.Message):
         elif '.jpg' in path_file or '.png' in path_file or '.jpeg' in url_link:
             logger.debug("Отправка изображения: " + str(path_file))
             try:
-                await bot.send_photo(chat_id=message.from_user.id, photo=path_file, reply_markup=lnkb, caption=title)
+                await bot.send_photo(chat_id=message.from_user.id, photo=path_fi, reply_markup=lnkb, caption=title)
                 moder_id = message.message_id + 1
                 moder_msgid(moder_id, id_post)
                 logger.success("В БД отправлен id сообщения: " + str(moder_id))
@@ -109,7 +110,7 @@ async def test_message(message: types.Message):
             logger.debug("Отправка видео " + str(path_file))
             # print("Отправка видео")
             try:
-                await bot.send_video(chat_id=message.from_user.id, video=url_link, reply_markup=lnkb, caption=title)
+                await bot.send_video(chat_id=message.from_user.id, video=path_fi, reply_markup=lnkb, caption=title)
                 moder_id = message.message_id + 1
                 moder_msgid(moder_id, id_post)
                 logger.success("В БД отправлен id сообщения: " + str(moder_id))
