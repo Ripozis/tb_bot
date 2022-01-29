@@ -52,19 +52,37 @@ async def test_message(message: types.Message):
         lin = url_link.split('/')[-1] #выявляет по слешу название файла
         lin = str(id_post) + lin # добавляем id в название файла
         path_file = str(lin)
-        r = requests.get(url_link, allow_redirects=True)
-        os.chdir(r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images') # для винды
-        #os.chdir(r'/home/ripo/tb_bot/images') # для сервера
-        open(lin, 'wb').write(r.content)
-        sql_update(url_link, path_file)
         logger.debug("Файл на загрузку: " + str(path_file))
-        # print(path_file)
-        #file = open(path_file, 'rb')
+        
+        def content_upload(url_link,lin,path_file):
+            """Функция загрузки контента"""
+            r = requests.get(url_link, allow_redirects=True)
+            os.chdir(r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images') # для винды
+            #os.chdir(r'/home/ripo/tb_bot/images') # для сервера
+            open(lin, 'wb').write(r.content)
+            sql_update(url_link, path_file)
+        
+        #Проверка контента перед скачиванием 
+        if '.jpg' in path_file or '.png' in path_file or '.jpeg' in path_file or '. gif' in path_file or '.mp4' in path_file:
+            logger.debug("Подходящий файл для скачивания " + str(path_file))
+            content_upload(url_link,lin,path_file)
+        else:
+            logger.debug("Неподходящий файл для скачивания " + str(path_file) + str (id_post))
+            content_error_update(id_post)
+
+        # r = requests.get(url_link, allow_redirects=True)
+        # os.chdir(r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images') # для винды
+        # #os.chdir(r'/home/ripo/tb_bot/images') # для сервера
+        # open(lin, 'wb').write(r.content)
+        # sql_update(url_link, path_file)
+        
+        print(type(path_file))
+        #path_file = open(path_file, 'rb')
         
         if '.gif' in path_file:
             logger.debug("Отправка анимации: " + str(path_file))
             try: 
-                await bot.send_animation(chat_id=message.from_user.id, animation=path_file, reply_markup=lnkb, caption=title)
+                await bot.send_animation(chat_id=message.from_user.id, animation=url_link, reply_markup=lnkb, caption=title)
                 moder_id = message.message_id + 1
                 moder_msgid(moder_id, id_post)
                 logger.success("В БД отправлен id сообщения: " + str(moder_id))
@@ -74,7 +92,7 @@ async def test_message(message: types.Message):
                 # print(ex)
                 content_error_update(id_post) #Помечаем пост с ошибкой в контенте
 
-        elif '.jpg' in path_file or '.png' in path_file or '.jpeg' in path_file:
+        elif '.jpg' in path_file or '.png' in path_file or '.jpeg' in url_link:
             logger.debug("Отправка изображения: " + str(path_file))
             try:
                 await bot.send_photo(chat_id=message.from_user.id, photo=path_file, reply_markup=lnkb, caption=title)
@@ -91,7 +109,7 @@ async def test_message(message: types.Message):
             logger.debug("Отправка видео " + str(path_file))
             # print("Отправка видео")
             try:
-                await bot.send_video(chat_id=message.from_user.id, video=path_file, reply_markup=lnkb, caption=title)
+                await bot.send_video(chat_id=message.from_user.id, video=url_link, reply_markup=lnkb, caption=title)
                 moder_id = message.message_id + 1
                 moder_msgid(moder_id, id_post)
                 logger.success("В БД отправлен id сообщения: " + str(moder_id))

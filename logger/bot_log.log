@@ -2105,3 +2105,2280 @@ Traceback (most recent call last):
           в”” <class 'aiogram.utils.exceptions.WrongFileIdentifier'>
 
 aiogram.utils.exceptions.WrongFileIdentifier: Wrong file identifier/http url specified
+2022-01-29 at 14:37:49|DEBUG|Получены данные из БД:[('BMW представляет технологию, позволяющую менять цвет кузова на выставке CES 2022', 'https://v.redd.it/32ixrtzavw981/DASH_720.mp4', 123963, 238)]
+2022-01-29 at 14:37:49|DEBUG|Файл на загрузку: 238DASH_720.mp4
+2022-01-29 at 14:37:49|DEBUG|Подходящий файл для скачивания 238DASH_720.mp4
+2022-01-29 at 14:38:44|DEBUG|Получены данные из БД:[('BMW представляет технологию, позволяющую менять цвет кузова на выставке CES 2022', 'https://v.redd.it/32ixrtzavw981/DASH_720.mp4', 123963, 238)]
+2022-01-29 at 14:38:44|DEBUG|Файл на загрузку: 238DASH_720.mp4
+2022-01-29 at 14:38:44|DEBUG|Подходящий файл для скачивания 238DASH_720.mp4
+2022-01-29 at 14:38:48|DEBUG|Отправка видео 238DASH_720.mp4
+2022-01-29 at 14:38:48|ERROR|Ошибка с видео для DEV238DASH_720.mp4
+Traceback (most recent call last):
+
+  File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 183, in <module>
+    executor.start_polling(dp, skip_updates=True)
+    |        |             -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x000000000430FCC8>
+    |        -> <function start_polling at 0x00000000042484C8>
+    -> <module 'aiogram.utils.executor' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogr...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 50, in start_polling
+    allowed_updates=allowed_updates
+                    -> None
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 323, in start_polling
+    loop.run_forever()
+    |    -> <function BaseEventLoop.run_forever at 0x000000000305E288>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 534, in run_forever
+    self._run_once()
+    |    -> <function BaseEventLoop._run_once at 0x000000000305FD38>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 1771, in _run_once
+    handle._run()
+    |      -> <function Handle._run at 0x0000000003020558>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F3BF78>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    |    |            |    |           |    -> <member '_args' of 'Handle' objects>
+    |    |            |    |           -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F3BF78>(<Future finished result=None>)>
+    |    |            |    -> <member '_callback' of 'Handle' objects>
+    |    |            -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F3BF78>(<Future finished result=None>)>
+    |    -> <member '_context' of 'Handle' objects>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F3BF78>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.update.Update object at 0x0000000004312748>,)
+                     |           -> <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x000000000430FCC8>>
+                     -> Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 |    |                |      |      -> <aiogram.types.fields.Field object at 0x00000000040BE948>
+                 |    |                |      -> <aiogram.types.update.Update object at 0x0000000004312748>
+                 |    |                -> <function Handler.notify at 0x0000000004140C18>
+                 |    -> <aiogram.dispatcher.handler.Handler object at 0x00000000043120C8>
+                 -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x000000000430FCC8>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.message.Message object at 0x000000000430FC08>,)
+                     |           -> <function test_message at 0x0000000006F290D8>
+                     -> Handler.HandlerObj(handler=<function test_message at 0x0000000006F290D8>, spec=FullArgSpec(args=['message'], varargs=None, va...
+
+> File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 112, in test_message
+    await bot.send_video(chat_id=message.from_user.id, video=path_file, reply_markup=lnkb, caption=title)
+          |   |                  |       |                   |                       |             -> 'BMW представляет технологию, позволяющую менять цвет кузова на выставке CES 2022'
+          |   |                  |       |                   |                       -> <aiogram.types.inline_keyboard.InlineKeyboardMarkup object at 0x0000000006F339C8>
+          |   |                  |       |                   -> '238DASH_720.mp4'
+          |   |                  |       -> <aiogram.types.fields.Field object at 0x0000000003FE2A08>
+          |   |                  -> <aiogram.types.message.Message object at 0x000000000430FC08>
+          |   -> <function Bot.send_video at 0x000000000411D798>
+          -> <aiogram.bot.bot.Bot object at 0x0000000005671808>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\bot.py", line 752, in send_video
+    result = await self.request(api.Methods.SEND_VIDEO, payload, files)
+                   |    |       |   |       |           |        -> {}
+                   |    |       |   |       |           -> {'chat_id': 467601941, 'caption': 'BMW представляет технологию, позволяющую менять цвет кузова на выставке CES 2022', 'reply_...
+                   |    |       |   |       -> <aiogram.utils.helper.Item object at 0x00000000040C7448>
+                   |    |       |   -> <class 'aiogram.bot.api.Methods'>
+                   |    |       -> <module 'aiogram.bot.api' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogram\\bot...
+                   |    -> <function BaseBot.request at 0x0000000004109828>
+                   -> <aiogram.bot.bot.Bot object at 0x0000000005671808>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\base.py", line 227, in request
+    proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+          |    |                 |    |                   |    |          -> {}
+          |    |                 |    |                   |    -> <property object at 0x0000000004106958>
+          |    |                 |    |                   -> <aiogram.bot.bot.Bot object at 0x0000000005671808>
+          |    |                 |    -> None
+          |    |                 -> <aiogram.bot.bot.Bot object at 0x0000000005671808>
+          |    -> None
+          -> <aiogram.bot.bot.Bot object at 0x0000000005671808>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           |            |       |        |             |        |             |        -> <function ClientResponse.text at 0x0000000003B764C8>
+           |            |       |        |             |        |             -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |       |        |             |        |                <CIM...
+           |            |       |        |             |        -> 400
+           |            |       |        |             -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |       |        |                <CIM...
+           |            |       |        -> <property object at 0x0000000003A0FDB8>
+           |            |       -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |          <CIM...
+           |            -> 'sendVideo'
+           -> <function check_result at 0x00000000040C5B88>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+    |          |          |      -> 'Bad Request: wrong HTTP URL specified'
+    |          |          -> <classmethod object at 0x00000000040D3108>
+    |          -> <class 'aiogram.utils.exceptions.BadRequest'>
+    -> <module 'aiogram.utils.exceptions' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aio...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
+    raise cls(description)
+          |   -> 'bad request: wrong http url specified'
+          -> <class 'aiogram.utils.exceptions.BadRequest'>
+
+aiogram.utils.exceptions.BadRequest: Wrong http url specified
+2022-01-29 at 14:48:30|DEBUG|Получены данные из БД:[('Плененная косатка Тиликум смотрит на своих дрессировщиков. По состоянию на 2019 год от косаток погибло всего 4 человека, и Тиликум несет ответственность за 3 из них.', 'https://i.redd.it/test', 121012, 496)]
+2022-01-29 at 14:48:30|DEBUG|Файл на загрузку: 496test
+2022-01-29 at 14:48:30|DEBUG|Неподходящий файл для скачивания 496test496
+2022-01-29 at 14:48:35|DEBUG|Получены данные из БД:[('Durex обновила свою игру по предотвращению нежелательной беременности', 'https://v.redd.it/l6am26gpa6b81/DASH_720.mp4', 117967, 418)]
+2022-01-29 at 14:48:35|DEBUG|Файл на загрузку: 418DASH_720.mp4
+2022-01-29 at 14:48:35|DEBUG|Подходящий файл для скачивания 418DASH_720.mp4
+2022-01-29 at 14:48:44|DEBUG|Отправка видео 418DASH_720.mp4
+2022-01-29 at 14:48:44|ERROR|Ошибка с видео для DEV418DASH_720.mp4
+Traceback (most recent call last):
+
+  File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 183, in <module>
+    executor.start_polling(dp, skip_updates=True)
+    |        |             -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x000000000430FCC8>
+    |        -> <function start_polling at 0x00000000042484C8>
+    -> <module 'aiogram.utils.executor' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogr...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 50, in start_polling
+    allowed_updates=allowed_updates
+                    -> None
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 323, in start_polling
+    loop.run_forever()
+    |    -> <function BaseEventLoop.run_forever at 0x000000000305E288>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 534, in run_forever
+    self._run_once()
+    |    -> <function BaseEventLoop._run_once at 0x000000000305FD38>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 1771, in _run_once
+    handle._run()
+    |      -> <function Handle._run at 0x0000000003020558>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F3B828>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    |    |            |    |           |    -> <member '_args' of 'Handle' objects>
+    |    |            |    |           -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F3B828>(<Future finished result=None>)>
+    |    |            |    -> <member '_callback' of 'Handle' objects>
+    |    |            -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F3B828>(<Future finished result=None>)>
+    |    -> <member '_context' of 'Handle' objects>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F3B828>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.update.Update object at 0x0000000006F59888>,)
+                     |           -> <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x000000000430FCC8>>
+                     -> Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 |    |                |      |      -> <aiogram.types.fields.Field object at 0x00000000040BE948>
+                 |    |                |      -> <aiogram.types.update.Update object at 0x0000000006F59888>
+                 |    |                -> <function Handler.notify at 0x0000000004140C18>
+                 |    -> <aiogram.dispatcher.handler.Handler object at 0x00000000043120C8>
+                 -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x000000000430FCC8>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.message.Message object at 0x0000000006F59388>,)
+                     |           -> <function test_message at 0x0000000006F290D8>
+                     -> Handler.HandlerObj(handler=<function test_message at 0x0000000006F290D8>, spec=FullArgSpec(args=['message'], varargs=None, va...
+
+> File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 112, in test_message
+    await bot.send_video(chat_id=message.from_user.id, video=path_file, reply_markup=lnkb, caption=title)
+          |   |                  |       |                   |                       |             -> 'Durex обновила свою игру по предотвращению нежелательной беременности'
+          |   |                  |       |                   |                       -> <aiogram.types.inline_keyboard.InlineKeyboardMarkup object at 0x0000000006F339C8>
+          |   |                  |       |                   -> '418DASH_720.mp4'
+          |   |                  |       -> <aiogram.types.fields.Field object at 0x0000000003FE2A08>
+          |   |                  -> <aiogram.types.message.Message object at 0x0000000006F59388>
+          |   -> <function Bot.send_video at 0x000000000411D798>
+          -> <aiogram.bot.bot.Bot object at 0x0000000005671808>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\bot.py", line 752, in send_video
+    result = await self.request(api.Methods.SEND_VIDEO, payload, files)
+                   |    |       |   |       |           |        -> {}
+                   |    |       |   |       |           -> {'chat_id': 467601941, 'caption': 'Durex обновила свою игру по предотвращению нежелательной беременности', 'reply_markup': '{...
+                   |    |       |   |       -> <aiogram.utils.helper.Item object at 0x00000000040C7448>
+                   |    |       |   -> <class 'aiogram.bot.api.Methods'>
+                   |    |       -> <module 'aiogram.bot.api' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogram\\bot...
+                   |    -> <function BaseBot.request at 0x0000000004109828>
+                   -> <aiogram.bot.bot.Bot object at 0x0000000005671808>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\base.py", line 227, in request
+    proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+          |    |                 |    |                   |    |          -> {}
+          |    |                 |    |                   |    -> <property object at 0x0000000004106958>
+          |    |                 |    |                   -> <aiogram.bot.bot.Bot object at 0x0000000005671808>
+          |    |                 |    -> None
+          |    |                 -> <aiogram.bot.bot.Bot object at 0x0000000005671808>
+          |    -> None
+          -> <aiogram.bot.bot.Bot object at 0x0000000005671808>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           |            |       |        |             |        |             |        -> <function ClientResponse.text at 0x0000000003B764C8>
+           |            |       |        |             |        |             -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |       |        |             |        |                <CIM...
+           |            |       |        |             |        -> 400
+           |            |       |        |             -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |       |        |                <CIM...
+           |            |       |        -> <property object at 0x0000000003A0FDB8>
+           |            |       -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |          <CIM...
+           |            -> 'sendVideo'
+           -> <function check_result at 0x00000000040C5B88>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+    |          |          |      -> 'Bad Request: wrong HTTP URL specified'
+    |          |          -> <classmethod object at 0x00000000040D3108>
+    |          -> <class 'aiogram.utils.exceptions.BadRequest'>
+    -> <module 'aiogram.utils.exceptions' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aio...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
+    raise cls(description)
+          |   -> 'bad request: wrong http url specified'
+          -> <class 'aiogram.utils.exceptions.BadRequest'>
+
+aiogram.utils.exceptions.BadRequest: Wrong http url specified
+2022-01-29 at 14:53:57|DEBUG|Получены данные из БД:[('BMW представляет технологию, позволяющую менять цвет кузова на выставке CES 2022', 'https://v.redd.it/32ixrtzavw981/DASH_720.mp4', 123963, 238)]
+2022-01-29 at 14:53:57|DEBUG|Файл на загрузку: 238DASH_720.mp4
+2022-01-29 at 14:53:57|DEBUG|Подходящий файл для скачивания 238DASH_720.mp4
+2022-01-29 at 14:54:01|DEBUG|Отправка видео 238DASH_720.mp4
+2022-01-29 at 14:54:01|ERROR|Ошибка с видео для DEV238DASH_720.mp4
+Traceback (most recent call last):
+
+  File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 183, in <module>
+    executor.start_polling(dp, skip_updates=True)
+    |        |             -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000006F16848>
+    |        -> <function start_polling at 0x00000000042484C8>
+    -> <module 'aiogram.utils.executor' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogr...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 50, in start_polling
+    allowed_updates=allowed_updates
+                    -> None
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 323, in start_polling
+    loop.run_forever()
+    |    -> <function BaseEventLoop.run_forever at 0x000000000304E288>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 534, in run_forever
+    self._run_once()
+    |    -> <function BaseEventLoop._run_once at 0x000000000304FD38>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 1771, in _run_once
+    handle._run()
+    |      -> <function Handle._run at 0x0000000003011558>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2BFD8>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    |    |            |    |           |    -> <member '_args' of 'Handle' objects>
+    |    |            |    |           -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2BFD8>(<Future finished result=None>)>
+    |    |            |    -> <member '_callback' of 'Handle' objects>
+    |    |            -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2BFD8>(<Future finished result=None>)>
+    |    -> <member '_context' of 'Handle' objects>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2BFD8>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.update.Update object at 0x0000000004308348>,)
+                     |           -> <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000006F16848>>
+                     -> Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 |    |                |      |      -> <aiogram.types.fields.Field object at 0x00000000040BF988>
+                 |    |                |      -> <aiogram.types.update.Update object at 0x0000000004308348>
+                 |    |                -> <function Handler.notify at 0x0000000004141C18>
+                 |    -> <aiogram.dispatcher.handler.Handler object at 0x0000000006F16A48>
+                 -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000006F16848>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.message.Message object at 0x0000000006F30C88>,)
+                     |           -> <function test_message at 0x0000000006F190D8>
+                     -> Handler.HandlerObj(handler=<function test_message at 0x0000000006F190D8>, spec=FullArgSpec(args=['message'], varargs=None, va...
+
+> File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 112, in test_message
+    await bot.send_video(chat_id=message.from_user.id, video=path_file, reply_markup=lnkb, caption=title)
+          |   |                  |       |                   |                       |             -> 'BMW представляет технологию, позволяющую менять цвет кузова на выставке CES 2022'
+          |   |                  |       |                   |                       -> <aiogram.types.inline_keyboard.InlineKeyboardMarkup object at 0x0000000006F24908>
+          |   |                  |       |                   -> '238DASH_720.mp4'
+          |   |                  |       -> <aiogram.types.fields.Field object at 0x0000000003FE3A08>
+          |   |                  -> <aiogram.types.message.Message object at 0x0000000006F30C88>
+          |   -> <function Bot.send_video at 0x000000000411D798>
+          -> <aiogram.bot.bot.Bot object at 0x0000000006F16508>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\bot.py", line 752, in send_video
+    result = await self.request(api.Methods.SEND_VIDEO, payload, files)
+                   |    |       |   |       |           |        -> {}
+                   |    |       |   |       |           -> {'chat_id': 467601941, 'caption': 'BMW представляет технологию, позволяющую менять цвет кузова на выставке CES 2022', 'reply_...
+                   |    |       |   |       -> <aiogram.utils.helper.Item object at 0x00000000040C8488>
+                   |    |       |   -> <class 'aiogram.bot.api.Methods'>
+                   |    |       -> <module 'aiogram.bot.api' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogram\\bot...
+                   |    -> <function BaseBot.request at 0x0000000004109828>
+                   -> <aiogram.bot.bot.Bot object at 0x0000000006F16508>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\base.py", line 227, in request
+    proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+          |    |                 |    |                   |    |          -> {}
+          |    |                 |    |                   |    -> <property object at 0x0000000004106908>
+          |    |                 |    |                   -> <aiogram.bot.bot.Bot object at 0x0000000006F16508>
+          |    |                 |    -> None
+          |    |                 -> <aiogram.bot.bot.Bot object at 0x0000000006F16508>
+          |    -> None
+          -> <aiogram.bot.bot.Bot object at 0x0000000006F16508>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           |            |       |        |             |        |             |        -> <function ClientResponse.text at 0x0000000003B764C8>
+           |            |       |        |             |        |             -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |       |        |             |        |                <CIM...
+           |            |       |        |             |        -> 400
+           |            |       |        |             -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |       |        |                <CIM...
+           |            |       |        -> <property object at 0x0000000003A0FE58>
+           |            |       -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |          <CIM...
+           |            -> 'sendVideo'
+           -> <function check_result at 0x00000000040C6B88>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+    |          |          |      -> 'Bad Request: wrong HTTP URL specified'
+    |          |          -> <classmethod object at 0x00000000040D4148>
+    |          -> <class 'aiogram.utils.exceptions.BadRequest'>
+    -> <module 'aiogram.utils.exceptions' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aio...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
+    raise cls(description)
+          |   -> 'bad request: wrong http url specified'
+          -> <class 'aiogram.utils.exceptions.BadRequest'>
+
+aiogram.utils.exceptions.BadRequest: Wrong http url specified
+2022-01-29 at 14:54:07|DEBUG|Получены данные из БД:[('Плененная косатка Тиликум смотрит на своих дрессировщиков. По состоянию на 2019 год от косаток погибло всего 4 человека, и Тиликум несет ответственность за 3 из них.', 'https://i.redd.it/test', 121012, 496)]
+2022-01-29 at 14:54:07|DEBUG|Файл на загрузку: 496test
+2022-01-29 at 14:54:07|DEBUG|Неподходящий файл для скачивания 496test496
+2022-01-29 at 14:54:12|DEBUG|Получены данные из БД:[('Durex обновила свою игру по предотвращению нежелательной беременности', 'https://v.redd.it/l6am26gpa6b81/DASH_720.mp4', 117967, 418)]
+2022-01-29 at 14:54:12|DEBUG|Файл на загрузку: 418DASH_720.mp4
+2022-01-29 at 14:54:12|DEBUG|Подходящий файл для скачивания 418DASH_720.mp4
+2022-01-29 at 14:54:20|DEBUG|Отправка видео 418DASH_720.mp4
+2022-01-29 at 14:54:20|ERROR|Ошибка с видео для DEV418DASH_720.mp4
+Traceback (most recent call last):
+
+  File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 183, in <module>
+    executor.start_polling(dp, skip_updates=True)
+    |        |             -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000006F16848>
+    |        -> <function start_polling at 0x00000000042484C8>
+    -> <module 'aiogram.utils.executor' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogr...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 50, in start_polling
+    allowed_updates=allowed_updates
+                    -> None
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 323, in start_polling
+    loop.run_forever()
+    |    -> <function BaseEventLoop.run_forever at 0x000000000304E288>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 534, in run_forever
+    self._run_once()
+    |    -> <function BaseEventLoop._run_once at 0x000000000304FD38>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 1771, in _run_once
+    handle._run()
+    |      -> <function Handle._run at 0x0000000003011558>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F48438>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    |    |            |    |           |    -> <member '_args' of 'Handle' objects>
+    |    |            |    |           -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F48438>(<Future finished result=None>)>
+    |    |            |    -> <member '_callback' of 'Handle' objects>
+    |    |            -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F48438>(<Future finished result=None>)>
+    |    -> <member '_context' of 'Handle' objects>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F48438>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.update.Update object at 0x0000000006F30708>,)
+                     |           -> <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000006F16848>>
+                     -> Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 |    |                |      |      -> <aiogram.types.fields.Field object at 0x00000000040BF988>
+                 |    |                |      -> <aiogram.types.update.Update object at 0x0000000006F30708>
+                 |    |                -> <function Handler.notify at 0x0000000004141C18>
+                 |    -> <aiogram.dispatcher.handler.Handler object at 0x0000000006F16A48>
+                 -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000006F16848>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.message.Message object at 0x0000000006F670C8>,)
+                     |           -> <function test_message at 0x0000000006F190D8>
+                     -> Handler.HandlerObj(handler=<function test_message at 0x0000000006F190D8>, spec=FullArgSpec(args=['message'], varargs=None, va...
+
+> File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 112, in test_message
+    await bot.send_video(chat_id=message.from_user.id, video=path_file, reply_markup=lnkb, caption=title)
+          |   |                  |       |                   |                       |             -> 'Durex обновила свою игру по предотвращению нежелательной беременности'
+          |   |                  |       |                   |                       -> <aiogram.types.inline_keyboard.InlineKeyboardMarkup object at 0x0000000006F24908>
+          |   |                  |       |                   -> '418DASH_720.mp4'
+          |   |                  |       -> <aiogram.types.fields.Field object at 0x0000000003FE3A08>
+          |   |                  -> <aiogram.types.message.Message object at 0x0000000006F670C8>
+          |   -> <function Bot.send_video at 0x000000000411D798>
+          -> <aiogram.bot.bot.Bot object at 0x0000000006F16508>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\bot.py", line 752, in send_video
+    result = await self.request(api.Methods.SEND_VIDEO, payload, files)
+                   |    |       |   |       |           |        -> {}
+                   |    |       |   |       |           -> {'chat_id': 467601941, 'caption': 'Durex обновила свою игру по предотвращению нежелательной беременности', 'reply_markup': '{...
+                   |    |       |   |       -> <aiogram.utils.helper.Item object at 0x00000000040C8488>
+                   |    |       |   -> <class 'aiogram.bot.api.Methods'>
+                   |    |       -> <module 'aiogram.bot.api' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogram\\bot...
+                   |    -> <function BaseBot.request at 0x0000000004109828>
+                   -> <aiogram.bot.bot.Bot object at 0x0000000006F16508>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\base.py", line 227, in request
+    proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+          |    |                 |    |                   |    |          -> {}
+          |    |                 |    |                   |    -> <property object at 0x0000000004106908>
+          |    |                 |    |                   -> <aiogram.bot.bot.Bot object at 0x0000000006F16508>
+          |    |                 |    -> None
+          |    |                 -> <aiogram.bot.bot.Bot object at 0x0000000006F16508>
+          |    -> None
+          -> <aiogram.bot.bot.Bot object at 0x0000000006F16508>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           |            |       |        |             |        |             |        -> <function ClientResponse.text at 0x0000000003B764C8>
+           |            |       |        |             |        |             -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |       |        |             |        |                <CIM...
+           |            |       |        |             |        -> 400
+           |            |       |        |             -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |       |        |                <CIM...
+           |            |       |        -> <property object at 0x0000000003A0FE58>
+           |            |       -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |          <CIM...
+           |            -> 'sendVideo'
+           -> <function check_result at 0x00000000040C6B88>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+    |          |          |      -> 'Bad Request: wrong HTTP URL specified'
+    |          |          -> <classmethod object at 0x00000000040D4148>
+    |          -> <class 'aiogram.utils.exceptions.BadRequest'>
+    -> <module 'aiogram.utils.exceptions' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aio...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
+    raise cls(description)
+          |   -> 'bad request: wrong http url specified'
+          -> <class 'aiogram.utils.exceptions.BadRequest'>
+
+aiogram.utils.exceptions.BadRequest: Wrong http url specified
+2022-01-29 at 14:58:40|DEBUG|Получены данные из БД:[('BMW представляет технологию, позволяющую менять цвет кузова на выставке CES 2022', 'https://i.redd.it/m6t65ft6k4a81.jpg', 123963, 238)]
+2022-01-29 at 14:58:40|DEBUG|Файл на загрузку: 238m6t65ft6k4a81.jpg
+2022-01-29 at 14:58:40|DEBUG|Подходящий файл для скачивания 238m6t65ft6k4a81.jpg
+2022-01-29 at 14:58:40|DEBUG|Отправка изображения: 238m6t65ft6k4a81.jpg
+2022-01-29 at 14:58:40|ERROR|Ошибка с картинкой для DEV 238m6t65ft6k4a81.jpg
+Traceback (most recent call last):
+
+  File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 183, in <module>
+    executor.start_polling(dp, skip_updates=True)
+    |        |             -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000005672588>
+    |        -> <function start_polling at 0x00000000042484C8>
+    -> <module 'aiogram.utils.executor' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogr...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 50, in start_polling
+    allowed_updates=allowed_updates
+                    -> None
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 323, in start_polling
+    loop.run_forever()
+    |    -> <function BaseEventLoop.run_forever at 0x000000000305E288>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 534, in run_forever
+    self._run_once()
+    |    -> <function BaseEventLoop._run_once at 0x000000000305FD38>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 1771, in _run_once
+    handle._run()
+    |      -> <function Handle._run at 0x0000000003021558>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F3BFA8>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    |    |            |    |           |    -> <member '_args' of 'Handle' objects>
+    |    |            |    |           -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F3BFA8>(<Future finished result=None>)>
+    |    |            |    -> <member '_callback' of 'Handle' objects>
+    |    |            -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F3BFA8>(<Future finished result=None>)>
+    |    -> <member '_context' of 'Handle' objects>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F3BFA8>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.update.Update object at 0x0000000006F3AF48>,)
+                     |           -> <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000005672588>>
+                     -> Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 |    |                |      |      -> <aiogram.types.fields.Field object at 0x00000000040BF988>
+                 |    |                |      -> <aiogram.types.update.Update object at 0x0000000006F3AF48>
+                 |    |                -> <function Handler.notify at 0x0000000004141C18>
+                 |    -> <aiogram.dispatcher.handler.Handler object at 0x0000000005672B48>
+                 -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000005672588>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.message.Message object at 0x0000000006F45488>,)
+                     |           -> <function test_message at 0x0000000006F290D8>
+                     -> Handler.HandlerObj(handler=<function test_message at 0x0000000006F290D8>, spec=FullArgSpec(args=['message'], varargs=None, va...
+
+> File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 98, in test_message
+    await bot.send_photo(chat_id=message.from_user.id, photo=path_file, reply_markup=lnkb, caption=title)
+          |   |                  |       |                   |                       |             -> 'BMW представляет технологию, позволяющую менять цвет кузова на выставке CES 2022'
+          |   |                  |       |                   |                       -> <aiogram.types.inline_keyboard.InlineKeyboardMarkup object at 0x0000000006F3A2C8>
+          |   |                  |       |                   -> '238m6t65ft6k4a81.jpg'
+          |   |                  |       -> <aiogram.types.fields.Field object at 0x0000000003FE3A48>
+          |   |                  -> <aiogram.types.message.Message object at 0x0000000006F45488>
+          |   -> <function Bot.send_photo at 0x000000000411D5E8>
+          -> <aiogram.bot.bot.Bot object at 0x0000000006F27388>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\bot.py", line 495, in send_photo
+    result = await self.request(api.Methods.SEND_PHOTO, payload, files)
+                   |    |       |   |       |           |        -> {}
+                   |    |       |   |       |           -> {'chat_id': 467601941, 'caption': 'BMW представляет технологию, позволяющую менять цвет кузова на выставке CES 2022', 'reply_...
+                   |    |       |   |       -> <aiogram.utils.helper.Item object at 0x00000000040C83C8>
+                   |    |       |   -> <class 'aiogram.bot.api.Methods'>
+                   |    |       -> <module 'aiogram.bot.api' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogram\\bot...
+                   |    -> <function BaseBot.request at 0x0000000004109828>
+                   -> <aiogram.bot.bot.Bot object at 0x0000000006F27388>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\base.py", line 227, in request
+    proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+          |    |                 |    |                   |    |          -> {}
+          |    |                 |    |                   |    -> <property object at 0x0000000004106778>
+          |    |                 |    |                   -> <aiogram.bot.bot.Bot object at 0x0000000006F27388>
+          |    |                 |    -> None
+          |    |                 -> <aiogram.bot.bot.Bot object at 0x0000000006F27388>
+          |    -> None
+          -> <aiogram.bot.bot.Bot object at 0x0000000006F27388>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           |            |       |        |             |        |             |        -> <function ClientResponse.text at 0x0000000003B764C8>
+           |            |       |        |             |        |             -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendPhoto) [400 Bad Request]>
+           |            |       |        |             |        |                <CIM...
+           |            |       |        |             |        -> 400
+           |            |       |        |             -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendPhoto) [400 Bad Request]>
+           |            |       |        |                <CIM...
+           |            |       |        -> <property object at 0x0000000003A0FC78>
+           |            |       -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendPhoto) [400 Bad Request]>
+           |            |          <CIM...
+           |            -> 'sendPhoto'
+           -> <function check_result at 0x00000000040C6B88>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+    |          |          |      -> 'Bad Request: failed to get HTTP URL content'
+    |          |          -> <classmethod object at 0x00000000040D4148>
+    |          -> <class 'aiogram.utils.exceptions.BadRequest'>
+    -> <module 'aiogram.utils.exceptions' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aio...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+          |   |   |       -> 'bad request: failed to get http url content'
+          |   |   -> None
+          |   -> <class 'aiogram.utils.exceptions.BadRequest'>
+          -> <class 'aiogram.utils.exceptions.InvalidHTTPUrlContent'>
+
+aiogram.utils.exceptions.InvalidHTTPUrlContent: Failed to get http url content
+2022-01-29 at 15:17:25|DEBUG|Запуск бота под админом
+2022-01-29 at 15:17:30|SUCCESS|Получены кол-во постов на публикацию
+2022-01-29 at 15:17:30|SUCCESS|Получены кол-во постов на публикацию
+2022-01-29 at 15:17:32|DEBUG|Получены данные из БД:[('Молодая самка леопарда привязывается к детенышу бабуина; иногда плотоядные животные сбиваются с толку своими материнскими инстинктами.', 'https://v.redd.it/d0s87ejfi3a81/DASH_720.mp4', 83879, 306)]
+2022-01-29 at 15:17:32|DEBUG|Файл на загрузку: 306DASH_720.mp4
+2022-01-29 at 15:17:32|DEBUG|Подходящий файл для скачивания 306DASH_720.mp4
+2022-01-29 at 15:17:32|DEBUG|Отправка видео 306DASH_720.mp4
+2022-01-29 at 15:17:32|ERROR|Ошибка с видео для DEV306DASH_720.mp4
+Traceback (most recent call last):
+
+  File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 184, in <module>
+    executor.start_polling(dp, skip_updates=True)
+    |        |             -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000004311688>
+    |        -> <function start_polling at 0x00000000042484C8>
+    -> <module 'aiogram.utils.executor' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogr...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 50, in start_polling
+    allowed_updates=allowed_updates
+                    -> None
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 323, in start_polling
+    loop.run_forever()
+    |    -> <function BaseEventLoop.run_forever at 0x000000000306E288>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 534, in run_forever
+    self._run_once()
+    |    -> <function BaseEventLoop._run_once at 0x000000000306FD38>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 1771, in _run_once
+    handle._run()
+    |      -> <function Handle._run at 0x0000000003031558>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2BF18>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    |    |            |    |           |    -> <member '_args' of 'Handle' objects>
+    |    |            |    |           -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2BF18>(<Future finished result=None>)>
+    |    |            |    -> <member '_callback' of 'Handle' objects>
+    |    |            -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2BF18>(<Future finished result=None>)>
+    |    -> <member '_context' of 'Handle' objects>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2BF18>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.update.Update object at 0x0000000006F77D88>,)
+                     |           -> <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000004311688>>
+                     -> Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 |    |                |      |      -> <aiogram.types.fields.Field object at 0x00000000040BEBC8>
+                 |    |                |      -> <aiogram.types.update.Update object at 0x0000000006F77D88>
+                 |    |                -> <function Handler.notify at 0x0000000004141C18>
+                 |    -> <aiogram.dispatcher.handler.Handler object at 0x0000000006F17AC8>
+                 -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000004311688>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.message.Message object at 0x0000000006F77F08>,)
+                     |           -> <function test_message at 0x0000000006F190D8>
+                     -> Handler.HandlerObj(handler=<function test_message at 0x0000000006F190D8>, spec=FullArgSpec(args=['message'], varargs=None, va...
+
+> File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 113, in test_message
+    await bot.send_video(chat_id=message.from_user.id, video=path_file, reply_markup=lnkb, caption=title)
+          |   |                  |       |                   |                       |             -> 'Молодая самка леопарда привязывается к детенышу бабуина; иногда плотоядные животные сбиваются с толку своими материнскими ин...
+          |   |                  |       |                   |                       -> <aiogram.types.inline_keyboard.InlineKeyboardMarkup object at 0x0000000006F24988>
+          |   |                  |       |                   -> '306DASH_720.mp4'
+          |   |                  |       -> <aiogram.types.fields.Field object at 0x0000000003FE3C88>
+          |   |                  -> <aiogram.types.message.Message object at 0x0000000006F77F08>
+          |   -> <function Bot.send_video at 0x000000000411D798>
+          -> <aiogram.bot.bot.Bot object at 0x0000000006F178C8>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\bot.py", line 752, in send_video
+    result = await self.request(api.Methods.SEND_VIDEO, payload, files)
+                   |    |       |   |       |           |        -> {}
+                   |    |       |   |       |           -> {'chat_id': 467601941, 'caption': 'Молодая самка леопарда привязывается к детенышу бабуина; иногда плотоядные животные сбиваю...
+                   |    |       |   |       -> <aiogram.utils.helper.Item object at 0x00000000040C86C8>
+                   |    |       |   -> <class 'aiogram.bot.api.Methods'>
+                   |    |       -> <module 'aiogram.bot.api' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogram\\bot...
+                   |    -> <function BaseBot.request at 0x0000000004109828>
+                   -> <aiogram.bot.bot.Bot object at 0x0000000006F178C8>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\base.py", line 227, in request
+    proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+          |    |                 |    |                   |    |          -> {}
+          |    |                 |    |                   |    -> <property object at 0x0000000004106778>
+          |    |                 |    |                   -> <aiogram.bot.bot.Bot object at 0x0000000006F178C8>
+          |    |                 |    -> None
+          |    |                 -> <aiogram.bot.bot.Bot object at 0x0000000006F178C8>
+          |    -> None
+          -> <aiogram.bot.bot.Bot object at 0x0000000006F178C8>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           |            |       |        |             |        |             |        -> <function ClientResponse.text at 0x0000000003B774C8>
+           |            |       |        |             |        |             -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |       |        |             |        |                <CIM...
+           |            |       |        |             |        -> 400
+           |            |       |        |             -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |       |        |                <CIM...
+           |            |       |        -> <property object at 0x0000000003A0FC78>
+           |            |       -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |          <CIM...
+           |            -> 'sendVideo'
+           -> <function check_result at 0x00000000040C6B88>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+    |          |          |      -> 'Bad Request: wrong HTTP URL specified'
+    |          |          -> <classmethod object at 0x00000000040D4388>
+    |          -> <class 'aiogram.utils.exceptions.BadRequest'>
+    -> <module 'aiogram.utils.exceptions' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aio...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
+    raise cls(description)
+          |   -> 'bad request: wrong http url specified'
+          -> <class 'aiogram.utils.exceptions.BadRequest'>
+
+aiogram.utils.exceptions.BadRequest: Wrong http url specified
+2022-01-29 at 15:20:58|DEBUG|Получены данные из БД:[('Катана рубит грелку при минусовой температуре', 'https://v.redd.it/mo3zexdsj9d81/DASH_1080.mp4', 75850, 548)]
+2022-01-29 at 15:20:58|DEBUG|Файл на загрузку: 548DASH_1080.mp4
+2022-01-29 at 15:20:58|DEBUG|Подходящий файл для скачивания 548DASH_1080.mp4
+2022-01-29 at 15:20:58|DEBUG|Отправка видео 548DASH_1080.mp4
+2022-01-29 at 15:20:58|ERROR|Ошибка с видео для DEV548DASH_1080.mp4
+Traceback (most recent call last):
+
+  File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 184, in <module>
+    executor.start_polling(dp, skip_updates=True)
+    |        |             -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000006F12D48>
+    |        -> <function start_polling at 0x00000000042484C8>
+    -> <module 'aiogram.utils.executor' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogr...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 50, in start_polling
+    allowed_updates=allowed_updates
+                    -> None
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 323, in start_polling
+    loop.run_forever()
+    |    -> <function BaseEventLoop.run_forever at 0x000000000304E288>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 534, in run_forever
+    self._run_once()
+    |    -> <function BaseEventLoop._run_once at 0x000000000304FD38>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 1771, in _run_once
+    handle._run()
+    |      -> <function Handle._run at 0x0000000003011558>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2BFA8>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    |    |            |    |           |    -> <member '_args' of 'Handle' objects>
+    |    |            |    |           -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2BFA8>(<Future finished result=None>)>
+    |    |            |    -> <member '_callback' of 'Handle' objects>
+    |    |            -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2BFA8>(<Future finished result=None>)>
+    |    -> <member '_context' of 'Handle' objects>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2BFA8>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.update.Update object at 0x0000000004307DC8>,)
+                     |           -> <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000006F12D48>>
+                     -> Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 |    |                |      |      -> <aiogram.types.fields.Field object at 0x00000000040BEB08>
+                 |    |                |      -> <aiogram.types.update.Update object at 0x0000000004307DC8>
+                 |    |                -> <function Handler.notify at 0x0000000004141C18>
+                 |    -> <aiogram.dispatcher.handler.Handler object at 0x0000000006F12F48>
+                 -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000006F12D48>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.message.Message object at 0x0000000004307908>,)
+                     |           -> <function test_message at 0x0000000006F190D8>
+                     -> Handler.HandlerObj(handler=<function test_message at 0x0000000006F190D8>, spec=FullArgSpec(args=['message'], varargs=None, va...
+
+> File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 113, in test_message
+    await bot.send_video(chat_id=message.from_user.id, video=path_file, reply_markup=lnkb, caption=title)
+          |   |                  |       |                   |                       |             -> 'Катана рубит грелку при минусовой температуре'
+          |   |                  |       |                   |                       -> <aiogram.types.inline_keyboard.InlineKeyboardMarkup object at 0x0000000006F24D88>
+          |   |                  |       |                   -> '548DASH_1080.mp4'
+          |   |                  |       -> <aiogram.types.fields.Field object at 0x0000000003FE3C48>
+          |   |                  -> <aiogram.types.message.Message object at 0x0000000004307908>
+          |   -> <function Bot.send_video at 0x000000000411D798>
+          -> <aiogram.bot.bot.Bot object at 0x0000000006F12A88>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\bot.py", line 752, in send_video
+    result = await self.request(api.Methods.SEND_VIDEO, payload, files)
+                   |    |       |   |       |           |        -> {}
+                   |    |       |   |       |           -> {'chat_id': 467601941, 'caption': 'Катана рубит грелку при минусовой температуре', 'reply_markup': '{"inline_keyboard": [[{"t...
+                   |    |       |   |       -> <aiogram.utils.helper.Item object at 0x00000000040C8608>
+                   |    |       |   -> <class 'aiogram.bot.api.Methods'>
+                   |    |       -> <module 'aiogram.bot.api' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogram\\bot...
+                   |    -> <function BaseBot.request at 0x0000000004109828>
+                   -> <aiogram.bot.bot.Bot object at 0x0000000006F12A88>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\base.py", line 227, in request
+    proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+          |    |                 |    |                   |    |          -> {}
+          |    |                 |    |                   |    -> <property object at 0x0000000004106728>
+          |    |                 |    |                   -> <aiogram.bot.bot.Bot object at 0x0000000006F12A88>
+          |    |                 |    -> None
+          |    |                 -> <aiogram.bot.bot.Bot object at 0x0000000006F12A88>
+          |    -> None
+          -> <aiogram.bot.bot.Bot object at 0x0000000006F12A88>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           |            |       |        |             |        |             |        -> <function ClientResponse.text at 0x0000000003B774C8>
+           |            |       |        |             |        |             -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |       |        |             |        |                <CIM...
+           |            |       |        |             |        -> 400
+           |            |       |        |             -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |       |        |                <CIM...
+           |            |       |        -> <property object at 0x0000000003A0FC78>
+           |            |       -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |          <CIM...
+           |            -> 'sendVideo'
+           -> <function check_result at 0x00000000040C6B88>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+    |          |          |      -> 'Bad Request: wrong HTTP URL specified'
+    |          |          -> <classmethod object at 0x00000000040D42C8>
+    |          -> <class 'aiogram.utils.exceptions.BadRequest'>
+    -> <module 'aiogram.utils.exceptions' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aio...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
+    raise cls(description)
+          |   -> 'bad request: wrong http url specified'
+          -> <class 'aiogram.utils.exceptions.BadRequest'>
+
+aiogram.utils.exceptions.BadRequest: Wrong http url specified
+2022-01-29 at 15:21:11|DEBUG|Получены данные из БД:[('Кэрри-Энн Мосс надела платье и накидку из шелкового шифона со складками на премьеру фильма «Матрица воскрешения». Вышивка Oscar de la Renta, созданная из последовательности ниток с зелеными и серебряными пайетками, перекликается с цифровым дождем этой серии.', 'https://www.reddit.com/gallery/rkbsl5', 73039, 175)]
+2022-01-29 at 15:21:11|DEBUG|Файл на загрузку: 175rkbsl5
+2022-01-29 at 15:21:11|DEBUG|Неподходящий файл для скачивания 175rkbsl5175
+2022-01-29 at 15:21:17|DEBUG|Получены данные из БД:[('Точка зрения человека ростом 7 футов 1 дюйм.', 'https://v.redd.it/5bbfr05lu5b81/DASH_720.mp4', 65264, 419)]
+2022-01-29 at 15:21:17|DEBUG|Файл на загрузку: 419DASH_720.mp4
+2022-01-29 at 15:21:17|DEBUG|Подходящий файл для скачивания 419DASH_720.mp4
+2022-01-29 at 15:21:17|DEBUG|Отправка видео 419DASH_720.mp4
+2022-01-29 at 15:21:17|ERROR|Ошибка с видео для DEV419DASH_720.mp4
+Traceback (most recent call last):
+
+  File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 184, in <module>
+    executor.start_polling(dp, skip_updates=True)
+    |        |             -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000006F12D48>
+    |        -> <function start_polling at 0x00000000042484C8>
+    -> <module 'aiogram.utils.executor' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogr...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 50, in start_polling
+    allowed_updates=allowed_updates
+                    -> None
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 323, in start_polling
+    loop.run_forever()
+    |    -> <function BaseEventLoop.run_forever at 0x000000000304E288>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 534, in run_forever
+    self._run_once()
+    |    -> <function BaseEventLoop._run_once at 0x000000000304FD38>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 1771, in _run_once
+    handle._run()
+    |      -> <function Handle._run at 0x0000000003011558>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F4A0D8>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    |    |            |    |           |    -> <member '_args' of 'Handle' objects>
+    |    |            |    |           -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F4A0D8>(<Future finished result=None>)>
+    |    |            |    -> <member '_callback' of 'Handle' objects>
+    |    |            -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F4A0D8>(<Future finished result=None>)>
+    |    -> <member '_context' of 'Handle' objects>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F4A0D8>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.update.Update object at 0x0000000006F5D648>,)
+                     |           -> <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000006F12D48>>
+                     -> Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 |    |                |      |      -> <aiogram.types.fields.Field object at 0x00000000040BEB08>
+                 |    |                |      -> <aiogram.types.update.Update object at 0x0000000006F5D648>
+                 |    |                -> <function Handler.notify at 0x0000000004141C18>
+                 |    -> <aiogram.dispatcher.handler.Handler object at 0x0000000006F12F48>
+                 -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000006F12D48>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.message.Message object at 0x0000000006F5D548>,)
+                     |           -> <function test_message at 0x0000000006F190D8>
+                     -> Handler.HandlerObj(handler=<function test_message at 0x0000000006F190D8>, spec=FullArgSpec(args=['message'], varargs=None, va...
+
+> File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 113, in test_message
+    await bot.send_video(chat_id=message.from_user.id, video=path_file, reply_markup=lnkb, caption=title)
+          |   |                  |       |                   |                       |             -> 'Точка зрения человека ростом 7 футов 1 дюйм.'
+          |   |                  |       |                   |                       -> <aiogram.types.inline_keyboard.InlineKeyboardMarkup object at 0x0000000006F24D88>
+          |   |                  |       |                   -> '419DASH_720.mp4'
+          |   |                  |       -> <aiogram.types.fields.Field object at 0x0000000003FE3C48>
+          |   |                  -> <aiogram.types.message.Message object at 0x0000000006F5D548>
+          |   -> <function Bot.send_video at 0x000000000411D798>
+          -> <aiogram.bot.bot.Bot object at 0x0000000006F12A88>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\bot.py", line 752, in send_video
+    result = await self.request(api.Methods.SEND_VIDEO, payload, files)
+                   |    |       |   |       |           |        -> {}
+                   |    |       |   |       |           -> {'chat_id': 467601941, 'caption': 'Точка зрения человека ростом 7 футов 1 дюйм.', 'reply_markup': '{"inline_keyboard": [[{"te...
+                   |    |       |   |       -> <aiogram.utils.helper.Item object at 0x00000000040C8608>
+                   |    |       |   -> <class 'aiogram.bot.api.Methods'>
+                   |    |       -> <module 'aiogram.bot.api' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogram\\bot...
+                   |    -> <function BaseBot.request at 0x0000000004109828>
+                   -> <aiogram.bot.bot.Bot object at 0x0000000006F12A88>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\base.py", line 227, in request
+    proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+          |    |                 |    |                   |    |          -> {}
+          |    |                 |    |                   |    -> <property object at 0x0000000004106728>
+          |    |                 |    |                   -> <aiogram.bot.bot.Bot object at 0x0000000006F12A88>
+          |    |                 |    -> None
+          |    |                 -> <aiogram.bot.bot.Bot object at 0x0000000006F12A88>
+          |    -> None
+          -> <aiogram.bot.bot.Bot object at 0x0000000006F12A88>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           |            |       |        |             |        |             |        -> <function ClientResponse.text at 0x0000000003B774C8>
+           |            |       |        |             |        |             -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |       |        |             |        |                <CIM...
+           |            |       |        |             |        -> 400
+           |            |       |        |             -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |       |        |                <CIM...
+           |            |       |        -> <property object at 0x0000000003A0FC78>
+           |            |       -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |          <CIM...
+           |            -> 'sendVideo'
+           -> <function check_result at 0x00000000040C6B88>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+    |          |          |      -> 'Bad Request: wrong HTTP URL specified'
+    |          |          -> <classmethod object at 0x00000000040D42C8>
+    |          -> <class 'aiogram.utils.exceptions.BadRequest'>
+    -> <module 'aiogram.utils.exceptions' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aio...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
+    raise cls(description)
+          |   -> 'bad request: wrong http url specified'
+          -> <class 'aiogram.utils.exceptions.BadRequest'>
+
+aiogram.utils.exceptions.BadRequest: Wrong http url specified
+2022-01-29 at 15:21:19|DEBUG|Получены данные из БД:[('Вода используется для проецирования знака «Стоп» в туннеле в Сиднее, Австралия', 'https://v.redd.it/z24tiiaz8aa81/DASH_720.mp4', 61514, 357)]
+2022-01-29 at 15:21:19|DEBUG|Файл на загрузку: 357DASH_720.mp4
+2022-01-29 at 15:21:19|DEBUG|Подходящий файл для скачивания 357DASH_720.mp4
+2022-01-29 at 15:21:19|DEBUG|Отправка видео 357DASH_720.mp4
+2022-01-29 at 15:21:20|ERROR|Ошибка с видео для DEV357DASH_720.mp4
+Traceback (most recent call last):
+
+  File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 184, in <module>
+    executor.start_polling(dp, skip_updates=True)
+    |        |             -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000006F12D48>
+    |        -> <function start_polling at 0x00000000042484C8>
+    -> <module 'aiogram.utils.executor' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogr...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 50, in start_polling
+    allowed_updates=allowed_updates
+                    -> None
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 323, in start_polling
+    loop.run_forever()
+    |    -> <function BaseEventLoop.run_forever at 0x000000000304E288>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 534, in run_forever
+    self._run_once()
+    |    -> <function BaseEventLoop._run_once at 0x000000000304FD38>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 1771, in _run_once
+    handle._run()
+    |      -> <function Handle._run at 0x0000000003011558>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2BEE8>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    |    |            |    |           |    -> <member '_args' of 'Handle' objects>
+    |    |            |    |           -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2BEE8>(<Future finished result=None>)>
+    |    |            |    -> <member '_callback' of 'Handle' objects>
+    |    |            -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2BEE8>(<Future finished result=None>)>
+    |    -> <member '_context' of 'Handle' objects>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2BEE8>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.update.Update object at 0x0000000006F5D148>,)
+                     |           -> <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000006F12D48>>
+                     -> Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 |    |                |      |      -> <aiogram.types.fields.Field object at 0x00000000040BEB08>
+                 |    |                |      -> <aiogram.types.update.Update object at 0x0000000006F5D148>
+                 |    |                -> <function Handler.notify at 0x0000000004141C18>
+                 |    -> <aiogram.dispatcher.handler.Handler object at 0x0000000006F12F48>
+                 -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000006F12D48>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.message.Message object at 0x0000000006F5D4C8>,)
+                     |           -> <function test_message at 0x0000000006F190D8>
+                     -> Handler.HandlerObj(handler=<function test_message at 0x0000000006F190D8>, spec=FullArgSpec(args=['message'], varargs=None, va...
+
+> File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 113, in test_message
+    await bot.send_video(chat_id=message.from_user.id, video=path_file, reply_markup=lnkb, caption=title)
+          |   |                  |       |                   |                       |             -> 'Вода используется для проецирования знака «Стоп» в туннеле в Сиднее, Австралия'
+          |   |                  |       |                   |                       -> <aiogram.types.inline_keyboard.InlineKeyboardMarkup object at 0x0000000006F24D88>
+          |   |                  |       |                   -> '357DASH_720.mp4'
+          |   |                  |       -> <aiogram.types.fields.Field object at 0x0000000003FE3C48>
+          |   |                  -> <aiogram.types.message.Message object at 0x0000000006F5D4C8>
+          |   -> <function Bot.send_video at 0x000000000411D798>
+          -> <aiogram.bot.bot.Bot object at 0x0000000006F12A88>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\bot.py", line 752, in send_video
+    result = await self.request(api.Methods.SEND_VIDEO, payload, files)
+                   |    |       |   |       |           |        -> {}
+                   |    |       |   |       |           -> {'chat_id': 467601941, 'caption': 'Вода используется для проецирования знака «Стоп» в туннеле в Сиднее, Австралия', 'reply_ma...
+                   |    |       |   |       -> <aiogram.utils.helper.Item object at 0x00000000040C8608>
+                   |    |       |   -> <class 'aiogram.bot.api.Methods'>
+                   |    |       -> <module 'aiogram.bot.api' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogram\\bot...
+                   |    -> <function BaseBot.request at 0x0000000004109828>
+                   -> <aiogram.bot.bot.Bot object at 0x0000000006F12A88>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\base.py", line 227, in request
+    proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+          |    |                 |    |                   |    |          -> {}
+          |    |                 |    |                   |    -> <property object at 0x0000000004106728>
+          |    |                 |    |                   -> <aiogram.bot.bot.Bot object at 0x0000000006F12A88>
+          |    |                 |    -> None
+          |    |                 -> <aiogram.bot.bot.Bot object at 0x0000000006F12A88>
+          |    -> None
+          -> <aiogram.bot.bot.Bot object at 0x0000000006F12A88>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           |            |       |        |             |        |             |        -> <function ClientResponse.text at 0x0000000003B774C8>
+           |            |       |        |             |        |             -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |       |        |             |        |                <CIM...
+           |            |       |        |             |        -> 400
+           |            |       |        |             -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |       |        |                <CIM...
+           |            |       |        -> <property object at 0x0000000003A0FC78>
+           |            |       -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |          <CIM...
+           |            -> 'sendVideo'
+           -> <function check_result at 0x00000000040C6B88>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+    |          |          |      -> 'Bad Request: wrong HTTP URL specified'
+    |          |          -> <classmethod object at 0x00000000040D42C8>
+    |          -> <class 'aiogram.utils.exceptions.BadRequest'>
+    -> <module 'aiogram.utils.exceptions' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aio...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
+    raise cls(description)
+          |   -> 'bad request: wrong http url specified'
+          -> <class 'aiogram.utils.exceptions.BadRequest'>
+
+aiogram.utils.exceptions.BadRequest: Wrong http url specified
+2022-01-29 at 15:21:21|DEBUG|Получены данные из БД:[('3D-искусство из глины…', 'https://v.redd.it/mrq9cx7jd5d81/DASH_480.mp4', 61341, 567)]
+2022-01-29 at 15:21:21|DEBUG|Файл на загрузку: 567DASH_480.mp4
+2022-01-29 at 15:21:21|DEBUG|Подходящий файл для скачивания 567DASH_480.mp4
+2022-01-29 at 15:21:21|DEBUG|Отправка видео 567DASH_480.mp4
+2022-01-29 at 15:21:21|ERROR|Ошибка с видео для DEV567DASH_480.mp4
+Traceback (most recent call last):
+
+  File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 184, in <module>
+    executor.start_polling(dp, skip_updates=True)
+    |        |             -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000006F12D48>
+    |        -> <function start_polling at 0x00000000042484C8>
+    -> <module 'aiogram.utils.executor' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogr...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 50, in start_polling
+    allowed_updates=allowed_updates
+                    -> None
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 323, in start_polling
+    loop.run_forever()
+    |    -> <function BaseEventLoop.run_forever at 0x000000000304E288>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 534, in run_forever
+    self._run_once()
+    |    -> <function BaseEventLoop._run_once at 0x000000000304FD38>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 1771, in _run_once
+    handle._run()
+    |      -> <function Handle._run at 0x0000000003011558>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000007172EE8>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    |    |            |    |           |    -> <member '_args' of 'Handle' objects>
+    |    |            |    |           -> <Handle <TaskWakeupMethWrapper object at 0x0000000007172EE8>(<Future finished result=None>)>
+    |    |            |    -> <member '_callback' of 'Handle' objects>
+    |    |            -> <Handle <TaskWakeupMethWrapper object at 0x0000000007172EE8>(<Future finished result=None>)>
+    |    -> <member '_context' of 'Handle' objects>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000007172EE8>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.update.Update object at 0x000000000732C348>,)
+                     |           -> <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000006F12D48>>
+                     -> Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 |    |                |      |      -> <aiogram.types.fields.Field object at 0x00000000040BEB08>
+                 |    |                |      -> <aiogram.types.update.Update object at 0x000000000732C348>
+                 |    |                -> <function Handler.notify at 0x0000000004141C18>
+                 |    -> <aiogram.dispatcher.handler.Handler object at 0x0000000006F12F48>
+                 -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000006F12D48>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.message.Message object at 0x000000000732C848>,)
+                     |           -> <function test_message at 0x0000000006F190D8>
+                     -> Handler.HandlerObj(handler=<function test_message at 0x0000000006F190D8>, spec=FullArgSpec(args=['message'], varargs=None, va...
+
+> File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 113, in test_message
+    await bot.send_video(chat_id=message.from_user.id, video=path_file, reply_markup=lnkb, caption=title)
+          |   |                  |       |                   |                       |             -> '3D-искусство из глины…'
+          |   |                  |       |                   |                       -> <aiogram.types.inline_keyboard.InlineKeyboardMarkup object at 0x0000000006F24D88>
+          |   |                  |       |                   -> '567DASH_480.mp4'
+          |   |                  |       -> <aiogram.types.fields.Field object at 0x0000000003FE3C48>
+          |   |                  -> <aiogram.types.message.Message object at 0x000000000732C848>
+          |   -> <function Bot.send_video at 0x000000000411D798>
+          -> <aiogram.bot.bot.Bot object at 0x0000000006F12A88>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\bot.py", line 752, in send_video
+    result = await self.request(api.Methods.SEND_VIDEO, payload, files)
+                   |    |       |   |       |           |        -> {}
+                   |    |       |   |       |           -> {'chat_id': 467601941, 'caption': '3D-искусство из глины…', 'reply_markup': '{"inline_keyboard": [[{"text": "Опубликовать", "...
+                   |    |       |   |       -> <aiogram.utils.helper.Item object at 0x00000000040C8608>
+                   |    |       |   -> <class 'aiogram.bot.api.Methods'>
+                   |    |       -> <module 'aiogram.bot.api' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogram\\bot...
+                   |    -> <function BaseBot.request at 0x0000000004109828>
+                   -> <aiogram.bot.bot.Bot object at 0x0000000006F12A88>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\base.py", line 227, in request
+    proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+          |    |                 |    |                   |    |          -> {}
+          |    |                 |    |                   |    -> <property object at 0x0000000004106728>
+          |    |                 |    |                   -> <aiogram.bot.bot.Bot object at 0x0000000006F12A88>
+          |    |                 |    -> None
+          |    |                 -> <aiogram.bot.bot.Bot object at 0x0000000006F12A88>
+          |    -> None
+          -> <aiogram.bot.bot.Bot object at 0x0000000006F12A88>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           |            |       |        |             |        |             |        -> <function ClientResponse.text at 0x0000000003B774C8>
+           |            |       |        |             |        |             -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |       |        |             |        |                <CIM...
+           |            |       |        |             |        -> 400
+           |            |       |        |             -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |       |        |                <CIM...
+           |            |       |        -> <property object at 0x0000000003A0FC78>
+           |            |       -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |          <CIM...
+           |            -> 'sendVideo'
+           -> <function check_result at 0x00000000040C6B88>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+    |          |          |      -> 'Bad Request: wrong HTTP URL specified'
+    |          |          -> <classmethod object at 0x00000000040D42C8>
+    |          -> <class 'aiogram.utils.exceptions.BadRequest'>
+    -> <module 'aiogram.utils.exceptions' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aio...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
+    raise cls(description)
+          |   -> 'bad request: wrong http url specified'
+          -> <class 'aiogram.utils.exceptions.BadRequest'>
+
+aiogram.utils.exceptions.BadRequest: Wrong http url specified
+2022-01-29 at 15:21:23|DEBUG|Получены данные из БД:[('Я женщина, и у меня борода из-за болезни (СПКЯ). Я живу с этим с 17 лет. На следующей неделе мне исполняется 34 года, и я наконец-то могу избавиться от бороды. Вот прогресс удаления волос за 56 часов электроэпиляции.', 'https://i.redd.it/oamodwpxjda81.jpg', 57408, 344)]
+2022-01-29 at 15:21:23|DEBUG|Файл на загрузку: 344oamodwpxjda81.jpg
+2022-01-29 at 15:21:23|DEBUG|Подходящий файл для скачивания 344oamodwpxjda81.jpg
+2022-01-29 at 15:21:23|DEBUG|Отправка изображения: 344oamodwpxjda81.jpg
+2022-01-29 at 15:21:23|ERROR|Ошибка с картинкой для DEV 344oamodwpxjda81.jpg
+Traceback (most recent call last):
+
+  File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 184, in <module>
+    executor.start_polling(dp, skip_updates=True)
+    |        |             -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000006F12D48>
+    |        -> <function start_polling at 0x00000000042484C8>
+    -> <module 'aiogram.utils.executor' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogr...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 50, in start_polling
+    allowed_updates=allowed_updates
+                    -> None
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 323, in start_polling
+    loop.run_forever()
+    |    -> <function BaseEventLoop.run_forever at 0x000000000304E288>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 534, in run_forever
+    self._run_once()
+    |    -> <function BaseEventLoop._run_once at 0x000000000304FD38>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 1771, in _run_once
+    handle._run()
+    |      -> <function Handle._run at 0x0000000003011558>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000007172C48>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    |    |            |    |           |    -> <member '_args' of 'Handle' objects>
+    |    |            |    |           -> <Handle <TaskWakeupMethWrapper object at 0x0000000007172C48>(<Future finished result=None>)>
+    |    |            |    -> <member '_callback' of 'Handle' objects>
+    |    |            -> <Handle <TaskWakeupMethWrapper object at 0x0000000007172C48>(<Future finished result=None>)>
+    |    -> <member '_context' of 'Handle' objects>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000007172C48>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.update.Update object at 0x0000000006F5D488>,)
+                     |           -> <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000006F12D48>>
+                     -> Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 |    |                |      |      -> <aiogram.types.fields.Field object at 0x00000000040BEB08>
+                 |    |                |      -> <aiogram.types.update.Update object at 0x0000000006F5D488>
+                 |    |                -> <function Handler.notify at 0x0000000004141C18>
+                 |    -> <aiogram.dispatcher.handler.Handler object at 0x0000000006F12F48>
+                 -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000006F12D48>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.message.Message object at 0x0000000007343708>,)
+                     |           -> <function test_message at 0x0000000006F190D8>
+                     -> Handler.HandlerObj(handler=<function test_message at 0x0000000006F190D8>, spec=FullArgSpec(args=['message'], varargs=None, va...
+
+> File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 99, in test_message
+    await bot.send_photo(chat_id=message.from_user.id, photo=path_file, reply_markup=lnkb, caption=title)
+          |   |                  |       |                   |                       |             -> 'Я женщина, и у меня борода из-за болезни (СПКЯ). Я живу с этим с 17 лет. На следующей неделе мне исполняется 34 года, и я на...
+          |   |                  |       |                   |                       -> <aiogram.types.inline_keyboard.InlineKeyboardMarkup object at 0x0000000006F24D88>
+          |   |                  |       |                   -> '344oamodwpxjda81.jpg'
+          |   |                  |       -> <aiogram.types.fields.Field object at 0x0000000003FE3C48>
+          |   |                  -> <aiogram.types.message.Message object at 0x0000000007343708>
+          |   -> <function Bot.send_photo at 0x000000000411D5E8>
+          -> <aiogram.bot.bot.Bot object at 0x0000000006F12A88>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\bot.py", line 495, in send_photo
+    result = await self.request(api.Methods.SEND_PHOTO, payload, files)
+                   |    |       |   |       |           |        -> {}
+                   |    |       |   |       |           -> {'chat_id': 467601941, 'caption': 'Я женщина, и у меня борода из-за болезни (СПКЯ). Я живу с этим с 17 лет. На следующей неде...
+                   |    |       |   |       -> <aiogram.utils.helper.Item object at 0x00000000040C8548>
+                   |    |       |   -> <class 'aiogram.bot.api.Methods'>
+                   |    |       -> <module 'aiogram.bot.api' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogram\\bot...
+                   |    -> <function BaseBot.request at 0x0000000004109828>
+                   -> <aiogram.bot.bot.Bot object at 0x0000000006F12A88>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\base.py", line 227, in request
+    proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+          |    |                 |    |                   |    |          -> {}
+          |    |                 |    |                   |    -> <property object at 0x0000000004106728>
+          |    |                 |    |                   -> <aiogram.bot.bot.Bot object at 0x0000000006F12A88>
+          |    |                 |    -> None
+          |    |                 -> <aiogram.bot.bot.Bot object at 0x0000000006F12A88>
+          |    -> None
+          -> <aiogram.bot.bot.Bot object at 0x0000000006F12A88>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           |            |       |        |             |        |             |        -> <function ClientResponse.text at 0x0000000003B774C8>
+           |            |       |        |             |        |             -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendPhoto) [400 Bad Request]>
+           |            |       |        |             |        |                <CIM...
+           |            |       |        |             |        -> 400
+           |            |       |        |             -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendPhoto) [400 Bad Request]>
+           |            |       |        |                <CIM...
+           |            |       |        -> <property object at 0x0000000003A0FC78>
+           |            |       -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendPhoto) [400 Bad Request]>
+           |            |          <CIM...
+           |            -> 'sendPhoto'
+           -> <function check_result at 0x00000000040C6B88>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+    |          |          |      -> 'Bad Request: failed to get HTTP URL content'
+    |          |          -> <classmethod object at 0x00000000040D42C8>
+    |          -> <class 'aiogram.utils.exceptions.BadRequest'>
+    -> <module 'aiogram.utils.exceptions' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aio...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+          |   |   |       -> 'bad request: failed to get http url content'
+          |   |   -> None
+          |   -> <class 'aiogram.utils.exceptions.BadRequest'>
+          -> <class 'aiogram.utils.exceptions.InvalidHTTPUrlContent'>
+
+aiogram.utils.exceptions.InvalidHTTPUrlContent: Failed to get http url content
+2022-01-29 at 15:23:35|SUCCESS|Получены кол-во постов на публикацию
+2022-01-29 at 15:23:37|DEBUG|Получены данные из БД:[('Невероятный контроль рук и кистей от Александра Тимченко', 'https://v.redd.it/uyhfooaca9a81/DASH_1080.mp4', 56215, 387)]
+2022-01-29 at 15:23:55|DEBUG|Файл на загрузку: 387DASH_1080.mp4
+2022-01-29 at 15:23:55|DEBUG|Отправка видео 387DASH_1080.mp4
+2022-01-29 at 15:23:55|ERROR|Ошибка с видео для DEV387DASH_1080.mp4
+Traceback (most recent call last):
+
+  File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 165, in <module>
+    executor.start_polling(dp, skip_updates=True)
+    |        |             -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000006F1B088>
+    |        -> <function start_polling at 0x0000000004248288>
+    -> <module 'aiogram.utils.executor' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogr...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 50, in start_polling
+    allowed_updates=allowed_updates
+                    -> None
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 323, in start_polling
+    loop.run_forever()
+    |    -> <function BaseEventLoop.run_forever at 0x000000000304E048>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 534, in run_forever
+    self._run_once()
+    |    -> <function BaseEventLoop._run_once at 0x000000000304FAF8>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 1771, in _run_once
+    handle._run()
+    |      -> <function Handle._run at 0x0000000003002318>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2A828>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    |    |            |    |           |    -> <member '_args' of 'Handle' objects>
+    |    |            |    |           -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2A828>(<Future finished result=None>)>
+    |    |            |    -> <member '_callback' of 'Handle' objects>
+    |    |            -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2A828>(<Future finished result=None>)>
+    |    -> <member '_context' of 'Handle' objects>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2A828>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.update.Update object at 0x00000000070031C8>,)
+                     |           -> <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000006F1B088>>
+                     -> Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 |    |                |      |      -> <aiogram.types.fields.Field object at 0x00000000040C0648>
+                 |    |                |      -> <aiogram.types.update.Update object at 0x00000000070031C8>
+                 |    |                -> <function Handler.notify at 0x00000000041409D8>
+                 |    -> <aiogram.dispatcher.handler.Handler object at 0x0000000006F1B288>
+                 -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000006F1B088>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.message.Message object at 0x0000000007003BC8>,)
+                     |           -> <function test_message at 0x0000000006E50E58>
+                     -> Handler.HandlerObj(handler=<function test_message at 0x0000000006E50E58>, spec=FullArgSpec(args=['message'], varargs=None, va...
+
+> File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 94, in test_message
+    await bot.send_video(chat_id=message.from_user.id, video=path_file, reply_markup=lnkb, caption=title)
+          |   |                  |       |                   |                       |             -> 'Невероятный контроль рук и кистей от Александра Тимченко'
+          |   |                  |       |                   |                       -> <aiogram.types.inline_keyboard.InlineKeyboardMarkup object at 0x0000000006F22D08>
+          |   |                  |       |                   -> '387DASH_1080.mp4'
+          |   |                  |       -> <aiogram.types.fields.Field object at 0x0000000003FE16C8>
+          |   |                  -> <aiogram.types.message.Message object at 0x0000000007003BC8>
+          |   -> <function Bot.send_video at 0x000000000411B558>
+          -> <aiogram.bot.bot.Bot object at 0x0000000006F1B048>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\bot.py", line 752, in send_video
+    result = await self.request(api.Methods.SEND_VIDEO, payload, files)
+                   |    |       |   |       |           |        -> {}
+                   |    |       |   |       |           -> {'chat_id': 467601941, 'caption': 'Невероятный контроль рук и кистей от Александра Тимченко', 'reply_markup': '{"inline_keybo...
+                   |    |       |   |       -> <aiogram.utils.helper.Item object at 0x00000000040C8148>
+                   |    |       |   -> <class 'aiogram.bot.api.Methods'>
+                   |    |       -> <module 'aiogram.bot.api' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogram\\bot...
+                   |    -> <function BaseBot.request at 0x00000000041045E8>
+                   -> <aiogram.bot.bot.Bot object at 0x0000000006F1B048>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\base.py", line 227, in request
+    proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+          |    |                 |    |                   |    |          -> {}
+          |    |                 |    |                   |    -> <property object at 0x00000000041066D8>
+          |    |                 |    |                   -> <aiogram.bot.bot.Bot object at 0x0000000006F1B048>
+          |    |                 |    -> None
+          |    |                 -> <aiogram.bot.bot.Bot object at 0x0000000006F1B048>
+          |    -> None
+          -> <aiogram.bot.bot.Bot object at 0x0000000006F1B048>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           |            |       |        |             |        |             |        -> <function ClientResponse.text at 0x0000000003B73288>
+           |            |       |        |             |        |             -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |       |        |             |        |                <CIM...
+           |            |       |        |             |        -> 400
+           |            |       |        |             -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |       |        |                <CIM...
+           |            |       |        -> <property object at 0x0000000003A0ECC8>
+           |            |       -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |          <CIM...
+           |            -> 'sendVideo'
+           -> <function check_result at 0x00000000040C6948>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+    |          |          |      -> 'Bad Request: wrong HTTP URL specified'
+    |          |          -> <classmethod object at 0x00000000040D0DC8>
+    |          -> <class 'aiogram.utils.exceptions.BadRequest'>
+    -> <module 'aiogram.utils.exceptions' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aio...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
+    raise cls(description)
+          |   -> 'bad request: wrong http url specified'
+          -> <class 'aiogram.utils.exceptions.BadRequest'>
+
+aiogram.utils.exceptions.BadRequest: Wrong http url specified
+2022-01-29 at 15:35:20|SUCCESS|Получены кол-во постов на публикацию
+2022-01-29 at 15:35:23|DEBUG|Получены данные из БД:[('Крупный план резки различных материалов в замедленной съемке', 'https://v.redd.it/rei8c6x7eu981/DASH_1080.mp4', 56075, 289)]
+2022-01-29 at 15:35:23|DEBUG|Файл на загрузку: 289DASH_1080.mp4
+2022-01-29 at 15:35:23|DEBUG|Подходящий файл для скачивания 289DASH_1080.mp4
+2022-01-29 at 15:35:23|DEBUG|Отправка видео 289DASH_1080.mp4
+2022-01-29 at 15:35:23|ERROR|Ошибка с видео для DEV289DASH_1080.mp4
+Traceback (most recent call last):
+
+  File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 184, in <module>
+    executor.start_polling(dp)
+    |        |             -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000005672F08>
+    |        -> <function start_polling at 0x00000000042484C8>
+    -> <module 'aiogram.utils.executor' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogr...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 50, in start_polling
+    allowed_updates=allowed_updates
+                    -> None
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 323, in start_polling
+    loop.run_forever()
+    |    -> <function BaseEventLoop.run_forever at 0x000000000309D288>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 534, in run_forever
+    self._run_once()
+    |    -> <function BaseEventLoop._run_once at 0x000000000309ED38>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 1771, in _run_once
+    handle._run()
+    |      -> <function Handle._run at 0x0000000003060558>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2BA98>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    |    |            |    |           |    -> <member '_args' of 'Handle' objects>
+    |    |            |    |           -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2BA98>(<Future finished result=None>)>
+    |    |            |    -> <member '_callback' of 'Handle' objects>
+    |    |            -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2BA98>(<Future finished result=None>)>
+    |    -> <member '_context' of 'Handle' objects>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2BA98>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.update.Update object at 0x0000000006F72948>,)
+                     |           -> <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000005672F08>>
+                     -> Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 |    |                |      |      -> <aiogram.types.fields.Field object at 0x00000000040BDB08>
+                 |    |                |      -> <aiogram.types.update.Update object at 0x0000000006F72948>
+                 |    |                -> <function Handler.notify at 0x0000000004141C18>
+                 |    -> <aiogram.dispatcher.handler.Handler object at 0x0000000006F17A88>
+                 -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000005672F08>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.message.Message object at 0x0000000006F72448>,)
+                     |           -> <function test_message at 0x0000000006F190D8>
+                     -> Handler.HandlerObj(handler=<function test_message at 0x0000000006F190D8>, spec=FullArgSpec(args=['message'], varargs=None, va...
+
+> File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 113, in test_message
+    await bot.send_video(chat_id=message.from_user.id, video=path_file, reply_markup=lnkb, caption=title)
+          |   |                  |       |                   |                       |             -> 'Крупный план резки различных материалов в замедленной съемке'
+          |   |                  |       |                   |                       -> <aiogram.types.inline_keyboard.InlineKeyboardMarkup object at 0x0000000006F24A88>
+          |   |                  |       |                   -> '289DASH_1080.mp4'
+          |   |                  |       -> <aiogram.types.fields.Field object at 0x0000000003FE3BC8>
+          |   |                  -> <aiogram.types.message.Message object at 0x0000000006F72448>
+          |   -> <function Bot.send_video at 0x000000000411D798>
+          -> <aiogram.bot.bot.Bot object at 0x0000000004311088>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\bot.py", line 752, in send_video
+    result = await self.request(api.Methods.SEND_VIDEO, payload, files)
+                   |    |       |   |       |           |        -> {}
+                   |    |       |   |       |           -> {'chat_id': 467601941, 'caption': 'Крупный план резки различных материалов в замедленной съемке', 'reply_markup': '{"inline_k...
+                   |    |       |   |       -> <aiogram.utils.helper.Item object at 0x00000000040C7608>
+                   |    |       |   -> <class 'aiogram.bot.api.Methods'>
+                   |    |       -> <module 'aiogram.bot.api' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogram\\bot...
+                   |    -> <function BaseBot.request at 0x0000000004108828>
+                   -> <aiogram.bot.bot.Bot object at 0x0000000004311088>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\base.py", line 227, in request
+    proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+          |    |                 |    |                   |    |          -> {}
+          |    |                 |    |                   |    -> <property object at 0x00000000041066D8>
+          |    |                 |    |                   -> <aiogram.bot.bot.Bot object at 0x0000000004311088>
+          |    |                 |    -> None
+          |    |                 -> <aiogram.bot.bot.Bot object at 0x0000000004311088>
+          |    -> None
+          -> <aiogram.bot.bot.Bot object at 0x0000000004311088>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           |            |       |        |             |        |             |        -> <function ClientResponse.text at 0x0000000003B754C8>
+           |            |       |        |             |        |             -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |       |        |             |        |                <CIM...
+           |            |       |        |             |        -> 400
+           |            |       |        |             -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |       |        |                <CIM...
+           |            |       |        -> <property object at 0x0000000003A1FB88>
+           |            |       -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |          <CIM...
+           |            -> 'sendVideo'
+           -> <function check_result at 0x00000000040C5B88>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+    |          |          |      -> 'Bad Request: wrong HTTP URL specified'
+    |          |          -> <classmethod object at 0x00000000040D32C8>
+    |          -> <class 'aiogram.utils.exceptions.BadRequest'>
+    -> <module 'aiogram.utils.exceptions' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aio...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
+    raise cls(description)
+          |   -> 'bad request: wrong http url specified'
+          -> <class 'aiogram.utils.exceptions.BadRequest'>
+
+aiogram.utils.exceptions.BadRequest: Wrong http url specified
+2022-01-29 at 16:45:22|DEBUG|Получены данные из БД:[('Любопытные императорские пингвины исследуют камеру дикой природы.', 'https://v.redd.it/oxpc8cvd90a81/DASH_1080.mp4', 55156, 225)]
+2022-01-29 at 16:45:22|DEBUG|Файл на загрузку: 225DASH_1080.mp4
+2022-01-29 at 16:45:22|DEBUG|Подходящий файл для скачивания 225DASH_1080.mp4
+2022-01-29 at 16:47:45|DEBUG|Получены данные из БД:[('Любопытные императорские пингвины исследуют камеру дикой природы.', 'https://v.redd.it/oxpc8cvd90a81/DASH_1080.mp4', 55156, 225)]
+2022-01-29 at 16:47:45|DEBUG|Файл на загрузку: 225DASH_1080.mp4
+2022-01-29 at 16:47:45|DEBUG|Подходящий файл для скачивания 225DASH_1080.mp4
+2022-01-29 at 16:47:45|DEBUG|Отправка видео 225DASH_1080.mp4
+2022-01-29 at 16:47:45|ERROR|Ошибка с видео для DEV225DASH_1080.mp4
+Traceback (most recent call last):
+
+  File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 184, in <module>
+    executor.start_polling(dp, skip_updates=True)
+    |        |             -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000006F26A08>
+    |        -> <function start_polling at 0x00000000042484C8>
+    -> <module 'aiogram.utils.executor' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogr...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 50, in start_polling
+    allowed_updates=allowed_updates
+                    -> None
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 323, in start_polling
+    loop.run_forever()
+    |    -> <function BaseEventLoop.run_forever at 0x000000000304E288>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 534, in run_forever
+    self._run_once()
+    |    -> <function BaseEventLoop._run_once at 0x000000000304FD38>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 1771, in _run_once
+    handle._run()
+    |      -> <function Handle._run at 0x0000000003001558>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F3AF78>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    |    |            |    |           |    -> <member '_args' of 'Handle' objects>
+    |    |            |    |           -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F3AF78>(<Future finished result=None>)>
+    |    |            |    -> <member '_callback' of 'Handle' objects>
+    |    |            -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F3AF78>(<Future finished result=None>)>
+    |    -> <member '_context' of 'Handle' objects>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F3AF78>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.update.Update object at 0x0000000006F3FA08>,)
+                     |           -> <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000006F26A08>>
+                     -> Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 |    |                |      |      -> <aiogram.types.fields.Field object at 0x00000000040BFA48>
+                 |    |                |      -> <aiogram.types.update.Update object at 0x0000000006F3FA08>
+                 |    |                -> <function Handler.notify at 0x0000000004141C18>
+                 |    -> <aiogram.dispatcher.handler.Handler object at 0x0000000006F26C08>
+                 -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000006F26A08>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.message.Message object at 0x0000000006F3FAC8>,)
+                     |           -> <function test_message at 0x0000000006F290D8>
+                     -> Handler.HandlerObj(handler=<function test_message at 0x0000000006F290D8>, spec=FullArgSpec(args=['message'], varargs=None, va...
+
+> File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 113, in test_message
+    await bot.send_video(chat_id=message.from_user.id, video=path_file, reply_markup=lnkb, caption=title)
+          |   |                  |       |                   |                       |             -> 'Любопытные императорские пингвины исследуют камеру дикой природы.'
+          |   |                  |       |                   |                       -> <aiogram.types.inline_keyboard.InlineKeyboardMarkup object at 0x0000000006F33B08>
+          |   |                  |       |                   -> '225DASH_1080.mp4'
+          |   |                  |       -> <aiogram.types.fields.Field object at 0x0000000003FE2BC8>
+          |   |                  -> <aiogram.types.message.Message object at 0x0000000006F3FAC8>
+          |   -> <function Bot.send_video at 0x000000000411D798>
+          -> <aiogram.bot.bot.Bot object at 0x0000000006F26788>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\bot.py", line 752, in send_video
+    result = await self.request(api.Methods.SEND_VIDEO, payload, files)
+                   |    |       |   |       |           |        -> {}
+                   |    |       |   |       |           -> {'chat_id': 467601941, 'caption': 'Любопытные императорские пингвины исследуют камеру дикой природы.', 'reply_markup': '{"inl...
+                   |    |       |   |       -> <aiogram.utils.helper.Item object at 0x00000000040C8548>
+                   |    |       |   -> <class 'aiogram.bot.api.Methods'>
+                   |    |       -> <module 'aiogram.bot.api' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogram\\bot...
+                   |    -> <function BaseBot.request at 0x0000000004109828>
+                   -> <aiogram.bot.bot.Bot object at 0x0000000006F26788>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\base.py", line 227, in request
+    proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+          |    |                 |    |                   |    |          -> {}
+          |    |                 |    |                   |    -> <property object at 0x00000000041067C8>
+          |    |                 |    |                   -> <aiogram.bot.bot.Bot object at 0x0000000006F26788>
+          |    |                 |    -> None
+          |    |                 -> <aiogram.bot.bot.Bot object at 0x0000000006F26788>
+          |    -> None
+          -> <aiogram.bot.bot.Bot object at 0x0000000006F26788>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           |            |       |        |             |        |             |        -> <function ClientResponse.text at 0x0000000003B774C8>
+           |            |       |        |             |        |             -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |       |        |             |        |                <CIM...
+           |            |       |        |             |        -> 400
+           |            |       |        |             -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |       |        |                <CIM...
+           |            |       |        -> <property object at 0x0000000003A0FC78>
+           |            |       -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |          <CIM...
+           |            -> 'sendVideo'
+           -> <function check_result at 0x00000000040C6B88>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+    |          |          |      -> 'Bad Request: wrong HTTP URL specified'
+    |          |          -> <classmethod object at 0x00000000040D4208>
+    |          -> <class 'aiogram.utils.exceptions.BadRequest'>
+    -> <module 'aiogram.utils.exceptions' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aio...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
+    raise cls(description)
+          |   -> 'bad request: wrong http url specified'
+          -> <class 'aiogram.utils.exceptions.BadRequest'>
+
+aiogram.utils.exceptions.BadRequest: Wrong http url specified
+2022-01-29 at 16:49:11|DEBUG|Получены данные из БД:[('Завораживающий лак', 'https://v.redd.it/av03wr2ue8d81/DASH_720.mp4', 55042, 553)]
+2022-01-29 at 16:49:11|DEBUG|Файл на загрузку: 553DASH_720.mp4
+2022-01-29 at 16:49:11|DEBUG|Подходящий файл для скачивания 553DASH_720.mp4
+2022-01-29 at 16:53:07|DEBUG|Получены данные из БД:[('Завораживающий лак', 'https://v.redd.it/av03wr2ue8d81/DASH_720.mp4', 55042, 553)]
+2022-01-29 at 16:53:07|DEBUG|Файл на загрузку: 553DASH_720.mp4
+2022-01-29 at 16:53:07|DEBUG|Подходящий файл для скачивания 553DASH_720.mp4
+2022-01-29 at 16:53:13|DEBUG|Получены данные из БД:[('Завораживающий лак', 'https://v.redd.it/av03wr2ue8d81/DASH_720.mp4', 55042, 553)]
+2022-01-29 at 16:53:13|DEBUG|Файл на загрузку: 553DASH_720.mp4
+2022-01-29 at 16:53:13|DEBUG|Подходящий файл для скачивания 553DASH_720.mp4
+2022-01-29 at 16:56:13|DEBUG|Получены данные из БД:[('Завораживающий лак', 'https://v.redd.it/av03wr2ue8d81/DASH_720.mp4', 55042, 553)]
+2022-01-29 at 16:56:13|DEBUG|Файл на загрузку: 553DASH_720.mp4
+2022-01-29 at 16:56:13|DEBUG|Подходящий файл для скачивания 553DASH_720.mp4
+2022-01-29 at 16:56:22|DEBUG|Отправка видео 553DASH_720.mp4
+2022-01-29 at 16:56:23|ERROR|Ошибка с видео для DEV553DASH_720.mp4
+Traceback (most recent call last):
+
+  File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 184, in <module>
+    executor.start_polling(dp, skip_updates=True)
+    |        |             -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000006ECFE88>
+    |        -> <function start_polling at 0x0000000004248558>
+    -> <module 'aiogram.utils.executor' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogr...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 50, in start_polling
+    allowed_updates=allowed_updates
+                    -> None
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 323, in start_polling
+    loop.run_forever()
+    |    -> <function BaseEventLoop.run_forever at 0x000000000304E318>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 534, in run_forever
+    self._run_once()
+    |    -> <function BaseEventLoop._run_once at 0x000000000304FDC8>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 1771, in _run_once
+    handle._run()
+    |      -> <function Handle._run at 0x00000000030015E8>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2B0A8>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    |    |            |    |           |    -> <member '_args' of 'Handle' objects>
+    |    |            |    |           -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2B0A8>(<Future finished result=None>)>
+    |    |            |    -> <member '_callback' of 'Handle' objects>
+    |    |            -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2B0A8>(<Future finished result=None>)>
+    |    -> <member '_context' of 'Handle' objects>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2B0A8>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.update.Update object at 0x0000000003BCBD48>,)
+                     |           -> <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000006ECFE88>>
+                     -> Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 |    |                |      |      -> <aiogram.types.fields.Field object at 0x00000000040BF988>
+                 |    |                |      -> <aiogram.types.update.Update object at 0x0000000003BCBD48>
+                 |    |                -> <function Handler.notify at 0x0000000004141CA8>
+                 |    -> <aiogram.dispatcher.handler.Handler object at 0x0000000006F18788>
+                 -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000006ECFE88>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.message.Message object at 0x0000000006F32448>,)
+                     |           -> <function test_message at 0x0000000006F19168>
+                     -> Handler.HandlerObj(handler=<function test_message at 0x0000000006F19168>, spec=FullArgSpec(args=['message'], varargs=None, va...
+
+> File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 113, in test_message
+    await bot.send_video(chat_id=message.from_user.id, video=path_file, reply_markup=lnkb, caption=title)
+          |   |                  |       |                   |                       |             -> 'Завораживающий лак'
+          |   |                  |       |                   |                       -> <aiogram.types.inline_keyboard.InlineKeyboardMarkup object at 0x0000000006F294C8>
+          |   |                  |       |                   -> '553DASH_720.mp4'
+          |   |                  |       -> <aiogram.types.fields.Field object at 0x0000000003FE3A48>
+          |   |                  -> <aiogram.types.message.Message object at 0x0000000006F32448>
+          |   -> <function Bot.send_video at 0x000000000411D828>
+          -> <aiogram.bot.bot.Bot object at 0x0000000006F18608>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\bot.py", line 752, in send_video
+    result = await self.request(api.Methods.SEND_VIDEO, payload, files)
+                   |    |       |   |       |           |        -> {}
+                   |    |       |   |       |           -> {'chat_id': 467601941, 'caption': 'Завораживающий лак', 'reply_markup': '{"inline_keyboard": [[{"text": "Опубликовать", "call...
+                   |    |       |   |       -> <aiogram.utils.helper.Item object at 0x00000000040C8488>
+                   |    |       |   -> <class 'aiogram.bot.api.Methods'>
+                   |    |       -> <module 'aiogram.bot.api' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogram\\bot...
+                   |    -> <function BaseBot.request at 0x00000000041098B8>
+                   -> <aiogram.bot.bot.Bot object at 0x0000000006F18608>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\base.py", line 227, in request
+    proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+          |    |                 |    |                   |    |          -> {}
+          |    |                 |    |                   |    -> <property object at 0x0000000004103638>
+          |    |                 |    |                   -> <aiogram.bot.bot.Bot object at 0x0000000006F18608>
+          |    |                 |    -> None
+          |    |                 -> <aiogram.bot.bot.Bot object at 0x0000000006F18608>
+          |    -> None
+          -> <aiogram.bot.bot.Bot object at 0x0000000006F18608>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           |            |       |        |             |        |             |        -> <function ClientResponse.text at 0x0000000003B77558>
+           |            |       |        |             |        |             -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |       |        |             |        |                <CIM...
+           |            |       |        |             |        -> 400
+           |            |       |        |             -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |       |        |                <CIM...
+           |            |       |        -> <property object at 0x0000000003A0FD18>
+           |            |       -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |          <CIM...
+           |            -> 'sendVideo'
+           -> <function check_result at 0x00000000040C6C18>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+    |          |          |      -> 'Bad Request: wrong HTTP URL specified'
+    |          |          -> <classmethod object at 0x00000000040D4148>
+    |          -> <class 'aiogram.utils.exceptions.BadRequest'>
+    -> <module 'aiogram.utils.exceptions' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aio...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
+    raise cls(description)
+          |   -> 'bad request: wrong http url specified'
+          -> <class 'aiogram.utils.exceptions.BadRequest'>
+
+aiogram.utils.exceptions.BadRequest: Wrong http url specified
+2022-01-29 at 16:57:52|DEBUG|Получены данные из БД:[('Мужчина лопатой рисует огромную лису на заснеженном замерзшем озере в Финляндии', 'https://v.redd.it/gq2fl76m0k681/DASH_360.mp4', 51724, 185)]
+2022-01-29 at 16:57:52|DEBUG|Файл на загрузку: 185DASH_360.mp4
+2022-01-29 at 16:57:52|DEBUG|Подходящий файл для скачивания 185DASH_360.mp4
+2022-01-29 at 16:58:02|DEBUG|Отправка видео 185DASH_360.mp4
+2022-01-29 at 16:58:02|ERROR|Ошибка с видео для DEV185DASH_360.mp4
+Traceback (most recent call last):
+
+  File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 184, in <module>
+    executor.start_polling(dp, skip_updates=True)
+    |        |             -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000006F19288>
+    |        -> <function start_polling at 0x0000000004248558>
+    -> <module 'aiogram.utils.executor' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogr...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 50, in start_polling
+    allowed_updates=allowed_updates
+                    -> None
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 323, in start_polling
+    loop.run_forever()
+    |    -> <function BaseEventLoop.run_forever at 0x000000000304E318>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 534, in run_forever
+    self._run_once()
+    |    -> <function BaseEventLoop._run_once at 0x000000000304FDC8>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 1771, in _run_once
+    handle._run()
+    |      -> <function Handle._run at 0x00000000030015E8>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2BFD8>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    |    |            |    |           |    -> <member '_args' of 'Handle' objects>
+    |    |            |    |           -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2BFD8>(<Future finished result=None>)>
+    |    |            |    -> <member '_callback' of 'Handle' objects>
+    |    |            -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2BFD8>(<Future finished result=None>)>
+    |    -> <member '_context' of 'Handle' objects>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2BFD8>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.update.Update object at 0x0000000005671D08>,)
+                     |           -> <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000006F19288>>
+                     -> Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 |    |                |      |      -> <aiogram.types.fields.Field object at 0x00000000040BFA08>
+                 |    |                |      -> <aiogram.types.update.Update object at 0x0000000005671D08>
+                 |    |                -> <function Handler.notify at 0x0000000004141CA8>
+                 |    -> <aiogram.dispatcher.handler.Handler object at 0x0000000006F194C8>
+                 -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000006F19288>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.message.Message object at 0x0000000004312348>,)
+                     |           -> <function test_message at 0x0000000006F18168>
+                     -> Handler.HandlerObj(handler=<function test_message at 0x0000000006F18168>, spec=FullArgSpec(args=['message'], varargs=None, va...
+
+> File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 113, in test_message
+    await bot.send_video(chat_id=message.from_user.id, video=path_file, reply_markup=lnkb, caption=title)
+          |   |                  |       |                   |                       |             -> 'Мужчина лопатой рисует огромную лису на заснеженном замерзшем озере в Финляндии'
+          |   |                  |       |                   |                       -> <aiogram.types.inline_keyboard.InlineKeyboardMarkup object at 0x0000000006F2A2C8>
+          |   |                  |       |                   -> '185DASH_360.mp4'
+          |   |                  |       -> <aiogram.types.fields.Field object at 0x0000000003FE2A88>
+          |   |                  -> <aiogram.types.message.Message object at 0x0000000004312348>
+          |   -> <function Bot.send_video at 0x000000000411D828>
+          -> <aiogram.bot.bot.Bot object at 0x0000000006F191C8>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\bot.py", line 752, in send_video
+    result = await self.request(api.Methods.SEND_VIDEO, payload, files)
+                   |    |       |   |       |           |        -> {}
+                   |    |       |   |       |           -> {'chat_id': 467601941, 'caption': 'Мужчина лопатой рисует огромную лису на заснеженном замерзшем озере в Финляндии', 'reply_m...
+                   |    |       |   |       -> <aiogram.utils.helper.Item object at 0x00000000040C84C8>
+                   |    |       |   -> <class 'aiogram.bot.api.Methods'>
+                   |    |       -> <module 'aiogram.bot.api' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogram\\bot...
+                   |    -> <function BaseBot.request at 0x00000000041098B8>
+                   -> <aiogram.bot.bot.Bot object at 0x0000000006F191C8>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\base.py", line 227, in request
+    proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+          |    |                 |    |                   |    |          -> {}
+          |    |                 |    |                   |    -> <property object at 0x0000000004106778>
+          |    |                 |    |                   -> <aiogram.bot.bot.Bot object at 0x0000000006F191C8>
+          |    |                 |    -> None
+          |    |                 -> <aiogram.bot.bot.Bot object at 0x0000000006F191C8>
+          |    -> None
+          -> <aiogram.bot.bot.Bot object at 0x0000000006F191C8>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           |            |       |        |             |        |             |        -> <function ClientResponse.text at 0x0000000003B76558>
+           |            |       |        |             |        |             -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |       |        |             |        |                <CIM...
+           |            |       |        |             |        -> 400
+           |            |       |        |             -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |       |        |                <CIM...
+           |            |       |        -> <property object at 0x0000000003A0FBD8>
+           |            |       -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |          <CIM...
+           |            -> 'sendVideo'
+           -> <function check_result at 0x00000000040C6C18>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+    |          |          |      -> 'Bad Request: wrong HTTP URL specified'
+    |          |          -> <classmethod object at 0x00000000040D41C8>
+    |          -> <class 'aiogram.utils.exceptions.BadRequest'>
+    -> <module 'aiogram.utils.exceptions' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aio...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
+    raise cls(description)
+          |   -> 'bad request: wrong http url specified'
+          -> <class 'aiogram.utils.exceptions.BadRequest'>
+
+aiogram.utils.exceptions.BadRequest: Wrong http url specified
+2022-01-29 at 17:08:23|DEBUG|Получены данные из БД:[('Этот парень идеально подошел бы для Астроса.', 'https://v.redd.it/zc04zpnlkkx71', 44872, 88)]
+2022-01-29 at 17:08:23|DEBUG|Файл на загрузку: 88zc04zpnlkkx71
+2022-01-29 at 17:08:23|DEBUG|Неподходящий файл для скачивания 88zc04zpnlkkx7188
+2022-01-29 at 17:08:35|DEBUG|Получены данные из БД:[('Печатная машина для чаши', 'https://v.redd.it/dom3wqki43b81/DASH_1080.mp4', 43851, 474)]
+2022-01-29 at 17:08:35|DEBUG|Файл на загрузку: 474DASH_1080.mp4
+2022-01-29 at 17:08:35|DEBUG|Подходящий файл для скачивания 474DASH_1080.mp4
+2022-01-29 at 17:08:52|DEBUG|Отправка видео 474DASH_1080.mp4
+2022-01-29 at 17:08:54|DEBUG|Получены данные из БД:[('Печатная машина для чаши', 'https://v.redd.it/dom3wqki43b81/DASH_1080.mp4', 43851, 474)]
+2022-01-29 at 17:08:54|DEBUG|Файл на загрузку: 474DASH_1080.mp4
+2022-01-29 at 17:08:54|DEBUG|Подходящий файл для скачивания 474DASH_1080.mp4
+2022-01-29 at 17:09:22|DEBUG|Отправка видео 474DASH_1080.mp4
+2022-01-29 at 17:09:22|SUCCESS|В БД отправлен id сообщения: 1107
+2022-01-29 at 17:09:22|SUCCESS|В БД отправлен id сообщения: 1108
+2022-01-29 at 17:09:46|DEBUG|Получены данные из БД:[('Печатная машина для чаши', 'https://v.redd.it/dom3wqki43b81/DASH_1080.mp4', 43851, 474)]
+2022-01-29 at 17:09:46|DEBUG|Файл на загрузку: 474DASH_1080.mp4
+2022-01-29 at 17:09:46|DEBUG|Подходящий файл для скачивания 474DASH_1080.mp4
+2022-01-29 at 17:10:02|DEBUG|Отправка видео 474DASH_1080.mp4
+2022-01-29 at 17:10:03|SUCCESS|В БД отправлен id сообщения: 1111
+2022-01-29 at 17:10:06|DEBUG|id Сообщения на публикацию: 1111
+2022-01-29 at 17:10:06|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-29 at 17:10:12|DEBUG|Получены данные из БД:[('Эта коза идеально рассчитала время удара по дрону', 'https://v.redd.it/9p120pbg19b81/DASH_1080.mp4', 42695, 463)]
+2022-01-29 at 17:10:12|DEBUG|Файл на загрузку: 463DASH_1080.mp4
+2022-01-29 at 17:10:12|DEBUG|Подходящий файл для скачивания 463DASH_1080.mp4
+2022-01-29 at 17:10:21|DEBUG|Отправка видео 463DASH_1080.mp4
+2022-01-29 at 17:10:23|SUCCESS|В БД отправлен id сообщения: 1114
+2022-01-29 at 17:10:32|DEBUG|id Сообщения на публикацию: 1114
+2022-01-29 at 17:10:32|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-29 at 17:10:42|DEBUG|Получены данные из БД:[('Настоящая черная магия, черт возьми', 'https://v.redd.it/4m69iz5ivnx71', 41269, 83)]
+2022-01-29 at 17:10:42|DEBUG|Файл на загрузку: 834m69iz5ivnx71
+2022-01-29 at 17:10:42|DEBUG|Неподходящий файл для скачивания 834m69iz5ivnx7183
+2022-01-29 at 17:11:06|DEBUG|Получены данные из БД:[('Уличная магия', 'https://v.redd.it/dr7r6hqoq2x71', 33331, 104)]
+2022-01-29 at 17:11:06|DEBUG|Файл на загрузку: 104dr7r6hqoq2x71
+2022-01-29 at 17:11:06|DEBUG|Неподходящий файл для скачивания 104dr7r6hqoq2x71104
+2022-01-29 at 17:11:20|DEBUG|Получены данные из БД:[('Пляж разбит', 'https://v.redd.it/4edp3ovuqrx71', 32227, 80)]
+2022-01-29 at 17:11:20|DEBUG|Файл на загрузку: 804edp3ovuqrx71
+2022-01-29 at 17:11:20|DEBUG|Неподходящий файл для скачивания 804edp3ovuqrx7180
+2022-01-29 at 17:11:30|DEBUG|Получены данные из БД:[('Спокойствие этой собаки во время расслабляющей ванны', 'https://v.redd.it/e54md7d8sda81/DASH_1080.mp4', 31787, 382)]
+2022-01-29 at 17:11:30|DEBUG|Файл на загрузку: 382DASH_1080.mp4
+2022-01-29 at 17:11:30|DEBUG|Подходящий файл для скачивания 382DASH_1080.mp4
+2022-01-29 at 17:12:04|DEBUG|Отправка видео 382DASH_1080.mp4
+2022-01-29 at 17:12:08|ERROR|Ошибка с видео для DEV382DASH_1080.mp4
+Traceback (most recent call last):
+
+  File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 184, in <module>
+    executor.start_polling(dp, skip_updates=True)
+    |        |             -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000006F14C48>
+    |        -> <function start_polling at 0x0000000004248558>
+    -> <module 'aiogram.utils.executor' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogr...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 50, in start_polling
+    allowed_updates=allowed_updates
+                    -> None
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 323, in start_polling
+    loop.run_forever()
+    |    -> <function BaseEventLoop.run_forever at 0x000000000309E318>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 534, in run_forever
+    self._run_once()
+    |    -> <function BaseEventLoop._run_once at 0x000000000309FDC8>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 1771, in _run_once
+    handle._run()
+    |      -> <function Handle._run at 0x00000000030615E8>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2B768>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    |    |            |    |           |    -> <member '_args' of 'Handle' objects>
+    |    |            |    |           -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2B768>(<Future finished result=None>)>
+    |    |            |    -> <member '_callback' of 'Handle' objects>
+    |    |            -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2B768>(<Future finished result=None>)>
+    |    -> <member '_context' of 'Handle' objects>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2B768>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.update.Update object at 0x0000000006F5DF88>,)
+                     |           -> <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000006F14C48>>
+                     -> Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 |    |                |      |      -> <aiogram.types.fields.Field object at 0x00000000040BF9C8>
+                 |    |                |      -> <aiogram.types.update.Update object at 0x0000000006F5DF88>
+                 |    |                -> <function Handler.notify at 0x0000000004141CA8>
+                 |    -> <aiogram.dispatcher.handler.Handler object at 0x0000000006F14E88>
+                 -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000006F14C48>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.message.Message object at 0x0000000007069E48>,)
+                     |           -> <function test_message at 0x0000000006F19168>
+                     -> Handler.HandlerObj(handler=<function test_message at 0x0000000006F19168>, spec=FullArgSpec(args=['message'], varargs=None, va...
+
+> File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 113, in test_message
+    await bot.send_video(chat_id=message.from_user.id, video=url_link, reply_markup=lnkb, caption=title)
+          |   |                  |       |                   |                      |             -> 'Спокойствие этой собаки во время расслабляющей ванны'
+          |   |                  |       |                   |                      -> <aiogram.types.inline_keyboard.InlineKeyboardMarkup object at 0x0000000006F24D08>
+          |   |                  |       |                   -> 'https://v.redd.it/e54md7d8sda81/DASH_1080.mp4'
+          |   |                  |       -> <aiogram.types.fields.Field object at 0x0000000003FE1A88>
+          |   |                  -> <aiogram.types.message.Message object at 0x0000000007069E48>
+          |   -> <function Bot.send_video at 0x000000000411D828>
+          -> <aiogram.bot.bot.Bot object at 0x0000000006F14B88>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\bot.py", line 752, in send_video
+    result = await self.request(api.Methods.SEND_VIDEO, payload, files)
+                   |    |       |   |       |           |        -> {}
+                   |    |       |   |       |           -> {'chat_id': 467601941, 'caption': 'Спокойствие этой собаки во время расслабляющей ванны', 'reply_markup': '{"inline_keyboard"...
+                   |    |       |   |       -> <aiogram.utils.helper.Item object at 0x00000000040C84C8>
+                   |    |       |   -> <class 'aiogram.bot.api.Methods'>
+                   |    |       -> <module 'aiogram.bot.api' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogram\\bot...
+                   |    -> <function BaseBot.request at 0x00000000041098B8>
+                   -> <aiogram.bot.bot.Bot object at 0x0000000006F14B88>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\base.py", line 227, in request
+    proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+          |    |                 |    |                   |    |          -> {}
+          |    |                 |    |                   |    -> <property object at 0x0000000004106778>
+          |    |                 |    |                   -> <aiogram.bot.bot.Bot object at 0x0000000006F14B88>
+          |    |                 |    -> None
+          |    |                 -> <aiogram.bot.bot.Bot object at 0x0000000006F14B88>
+          |    -> None
+          -> <aiogram.bot.bot.Bot object at 0x0000000006F14B88>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           |            |       |        |             |        |             |        -> <function ClientResponse.text at 0x0000000003B77558>
+           |            |       |        |             |        |             -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |       |        |             |        |                <CIM...
+           |            |       |        |             |        -> 400
+           |            |       |        |             -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |       |        |                <CIM...
+           |            |       |        -> <property object at 0x0000000003A0FCC8>
+           |            |       -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |          <CIM...
+           |            -> 'sendVideo'
+           -> <function check_result at 0x00000000040C6C18>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+    |          |          |      -> 'Bad Request: failed to get HTTP URL content'
+    |          |          -> <classmethod object at 0x00000000040D4188>
+    |          -> <class 'aiogram.utils.exceptions.BadRequest'>
+    -> <module 'aiogram.utils.exceptions' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aio...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+          |   |   |       -> 'bad request: failed to get http url content'
+          |   |   -> None
+          |   -> <class 'aiogram.utils.exceptions.BadRequest'>
+          -> <class 'aiogram.utils.exceptions.InvalidHTTPUrlContent'>
+
+aiogram.utils.exceptions.InvalidHTTPUrlContent: Failed to get http url content
+2022-01-29 at 17:12:25|DEBUG|Получены данные из БД:[('День изоляции 532', 'https://v.redd.it/kpqigohom3a81/DASH_720.mp4', 30845, 321)]
+2022-01-29 at 17:12:25|DEBUG|Файл на загрузку: 321DASH_720.mp4
+2022-01-29 at 17:12:25|DEBUG|Подходящий файл для скачивания 321DASH_720.mp4
+2022-01-29 at 17:12:45|DEBUG|Отправка видео 321DASH_720.mp4
+2022-01-29 at 17:12:49|SUCCESS|В БД отправлен id сообщения: 1121
+2022-01-29 at 17:13:22|DEBUG|id Сообщения на публикацию: 1121
+2022-01-29 at 17:13:22|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-29 at 17:13:25|DEBUG|Получены данные из БД:[('Приготовление кофе', 'https://v.redd.it/9r3ewi393w981/DASH_1080.mp4', 30750, 283)]
+2022-01-29 at 17:13:25|DEBUG|Файл на загрузку: 283DASH_1080.mp4
+2022-01-29 at 17:13:25|DEBUG|Подходящий файл для скачивания 283DASH_1080.mp4
+2022-01-29 at 17:13:37|DEBUG|Отправка видео 283DASH_1080.mp4
+2022-01-29 at 17:13:37|SUCCESS|В БД отправлен id сообщения: 1124
+2022-01-29 at 17:13:45|DEBUG|id Сообщения на публикацию: 1124
+2022-01-29 at 17:13:45|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-29 at 17:13:57|DEBUG|Получены данные из БД:[('Маятник и Свет словно портал в другое измерение.', 'https://v.redd.it/az5nxn57mbd81/DASH_360.mp4', 30697, 546)]
+2022-01-29 at 17:13:57|DEBUG|Файл на загрузку: 546DASH_360.mp4
+2022-01-29 at 17:13:57|DEBUG|Подходящий файл для скачивания 546DASH_360.mp4
+2022-01-29 at 17:14:03|DEBUG|Отправка видео 546DASH_360.mp4
+2022-01-29 at 17:14:04|SUCCESS|В БД отправлен id сообщения: 1127
+2022-01-29 at 17:16:01|DEBUG|Получены данные из БД:[('Маятник и Свет словно портал в другое измерение.', 'https://v.redd.it/az5nxn57mbd81/DASH_360.mp4', 30697, 546)]
+2022-01-29 at 17:16:01|DEBUG|Файл на загрузку: 546DASH_360.mp4
+2022-01-29 at 17:16:01|DEBUG|Подходящий файл для скачивания 546DASH_360.mp4
+2022-01-29 at 17:16:01|DEBUG|Отправка видео 546DASH_360.mp4
+2022-01-29 at 17:16:01|SUCCESS|В БД отправлен id сообщения: 1129
+2022-01-29 at 17:16:12|DEBUG|id Сообщения на публикацию: 1129
+2022-01-29 at 17:16:12|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-29 at 17:16:18|DEBUG|Получены данные из БД:[('Наша детская жизнь была ложью', 'https://v.redd.it/s4kyrkxtqdd81/DASH_720.mp4', 30414, 495)]
+2022-01-29 at 17:16:18|DEBUG|Файл на загрузку: 495DASH_720.mp4
+2022-01-29 at 17:16:18|DEBUG|Подходящий файл для скачивания 495DASH_720.mp4
+2022-01-29 at 17:16:18|DEBUG|Отправка видео 495DASH_720.mp4
+2022-01-29 at 17:16:21|SUCCESS|В БД отправлен id сообщения: 1132
+2022-01-29 at 17:16:49|DEBUG|id Сообщения на публикацию: 1132
+2022-01-29 at 17:16:49|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-29 at 17:16:51|DEBUG|Получены данные из БД:[('Умпа-лумпы из мультфильма «Чарли и шоколадная фабрика».', 'https://v.redd.it/jmtxa8u66ad81/DASH_480.mp4', 27400, 512)]
+2022-01-29 at 17:16:51|DEBUG|Файл на загрузку: 512DASH_480.mp4
+2022-01-29 at 17:16:51|DEBUG|Подходящий файл для скачивания 512DASH_480.mp4
+2022-01-29 at 17:16:52|DEBUG|Отправка видео 512DASH_480.mp4
+2022-01-29 at 17:16:53|SUCCESS|В БД отправлен id сообщения: 1135
+2022-01-29 at 17:17:19|DEBUG|id Сообщения на публикацию: 1135
+2022-01-29 at 17:17:19|SUCCESS|Сработала кнопка "Опубликовать"
+2022-01-29 at 17:17:22|DEBUG|Получены данные из БД:[('Робин Уильямс абсолютно помешался за кулисами «Аладдина» Диснея — говорили, что Робин так много импровизировал, что у них было более 16 часов материала, но из-за того, что он импровизировал так много своих реплик, Аладдин был отклонен в номинации на премию Академии за лучший адаптированный сценарий.', 'https://v.redd.it/hr0bzk3cmbd81/DASH_1080.mp4', 26247, 503)]
+2022-01-29 at 17:17:22|DEBUG|Файл на загрузку: 503DASH_1080.mp4
+2022-01-29 at 17:17:22|DEBUG|Подходящий файл для скачивания 503DASH_1080.mp4
+2022-01-29 at 17:17:22|DEBUG|Отправка видео 503DASH_1080.mp4
+2022-01-29 at 17:17:26|ERROR|Ошибка с видео для DEV503DASH_1080.mp4
+Traceback (most recent call last):
+
+  File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 183, in <module>
+    executor.start_polling(dp, skip_updates=True)
+    |        |             -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000005671A88>
+    |        -> <function start_polling at 0x0000000004248558>
+    -> <module 'aiogram.utils.executor' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogr...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 50, in start_polling
+    allowed_updates=allowed_updates
+                    -> None
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 323, in start_polling
+    loop.run_forever()
+    |    -> <function BaseEventLoop.run_forever at 0x000000000306E318>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 534, in run_forever
+    self._run_once()
+    |    -> <function BaseEventLoop._run_once at 0x000000000306FDC8>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 1771, in _run_once
+    handle._run()
+    |      -> <function Handle._run at 0x00000000030315E8>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2AF78>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    |    |            |    |           |    -> <member '_args' of 'Handle' objects>
+    |    |            |    |           -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2AF78>(<Future finished result=None>)>
+    |    |            |    -> <member '_callback' of 'Handle' objects>
+    |    |            -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2AF78>(<Future finished result=None>)>
+    |    -> <member '_context' of 'Handle' objects>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F2AF78>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.update.Update object at 0x0000000007204BC8>,)
+                     |           -> <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000005671A88>>
+                     -> Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 |    |                |      |      -> <aiogram.types.fields.Field object at 0x00000000040BF988>
+                 |    |                |      -> <aiogram.types.update.Update object at 0x0000000007204BC8>
+                 |    |                -> <function Handler.notify at 0x0000000004141CA8>
+                 |    -> <aiogram.dispatcher.handler.Handler object at 0x0000000006F16C48>
+                 -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000005671A88>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.message.Message object at 0x0000000007200748>,)
+                     |           -> <function test_message at 0x0000000006F19168>
+                     -> Handler.HandlerObj(handler=<function test_message at 0x0000000006F19168>, spec=FullArgSpec(args=['message'], varargs=None, va...
+
+> File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 112, in test_message
+    await bot.send_video(chat_id=message.from_user.id, video=url_link, reply_markup=lnkb, caption=title)
+          |   |                  |       |                   |                      |             -> 'Робин Уильямс абсолютно помешался за кулисами «Аладдина» Диснея — говорили, что Робин так много импровизировал, что у них бы...
+          |   |                  |       |                   |                      -> <aiogram.types.inline_keyboard.InlineKeyboardMarkup object at 0x0000000006F249C8>
+          |   |                  |       |                   -> 'https://v.redd.it/hr0bzk3cmbd81/DASH_1080.mp4'
+          |   |                  |       -> <aiogram.types.fields.Field object at 0x0000000003FE1A48>
+          |   |                  -> <aiogram.types.message.Message object at 0x0000000007200748>
+          |   -> <function Bot.send_video at 0x000000000411D828>
+          -> <aiogram.bot.bot.Bot object at 0x0000000006F16948>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\bot.py", line 752, in send_video
+    result = await self.request(api.Methods.SEND_VIDEO, payload, files)
+                   |    |       |   |       |           |        -> {}
+                   |    |       |   |       |           -> {'chat_id': 467601941, 'caption': 'Робин Уильямс абсолютно помешался за кулисами «Аладдина» Диснея — говорили, что Робин так ...
+                   |    |       |   |       -> <aiogram.utils.helper.Item object at 0x00000000040C8488>
+                   |    |       |   -> <class 'aiogram.bot.api.Methods'>
+                   |    |       -> <module 'aiogram.bot.api' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogram\\bot...
+                   |    -> <function BaseBot.request at 0x00000000041098B8>
+                   -> <aiogram.bot.bot.Bot object at 0x0000000006F16948>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\base.py", line 227, in request
+    proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+          |    |                 |    |                   |    |          -> {}
+          |    |                 |    |                   |    -> <property object at 0x00000000041066D8>
+          |    |                 |    |                   -> <aiogram.bot.bot.Bot object at 0x0000000006F16948>
+          |    |                 |    -> None
+          |    |                 -> <aiogram.bot.bot.Bot object at 0x0000000006F16948>
+          |    -> None
+          -> <aiogram.bot.bot.Bot object at 0x0000000006F16948>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+           |            |       |        |             |        |             |        -> <function ClientResponse.text at 0x0000000003B77558>
+           |            |       |        |             |        |             -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |       |        |             |        |                <CIM...
+           |            |       |        |             |        -> 400
+           |            |       |        |             -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |       |        |                <CIM...
+           |            |       |        -> <property object at 0x0000000003A0FC78>
+           |            |       -> <ClientResponse(https://api.telegram.org/bot2136282741:AAH4wAhuVESWI5_6uKj-lgYVAsm25OHQCV8/sendVideo) [400 Bad Request]>
+           |            |          <CIM...
+           |            -> 'sendVideo'
+           -> <function check_result at 0x00000000040C6C18>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\bot\api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+    |          |          |      -> 'Bad Request: failed to get HTTP URL content'
+    |          |          -> <classmethod object at 0x00000000040D4148>
+    |          -> <class 'aiogram.utils.exceptions.BadRequest'>
+    -> <module 'aiogram.utils.exceptions' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aio...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+          |   |   |       -> 'bad request: failed to get http url content'
+          |   |   -> None
+          |   -> <class 'aiogram.utils.exceptions.BadRequest'>
+          -> <class 'aiogram.utils.exceptions.InvalidHTTPUrlContent'>
+
+aiogram.utils.exceptions.InvalidHTTPUrlContent: Failed to get http url content
+2022-01-29 at 17:18:20|DEBUG|Получены данные из БД:[('Уборка свежего снега', 'https://v.redd.it/3snqjbtc04b81/DASH_480.mp4', 25157, 469)]
+2022-01-29 at 17:18:20|DEBUG|Файл на загрузку: 469DASH_480.mp4
+2022-01-29 at 17:18:20|DEBUG|Подходящий файл для скачивания 469DASH_480.mp4
+2022-01-29 at 17:18:20|DEBUG|Отправка видео 469DASH_480.mp4
+2022-01-29 at 17:18:21|SUCCESS|В БД отправлен id сообщения: 1139

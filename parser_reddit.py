@@ -128,7 +128,7 @@ def search_reddit():
                 likes = (postOffice['score']) # Лайки 
                 format_cont = postOffice.get("post_hint") # Формат медиа
                 preview = postOffice.get("preview")
-                # Цикл для исключения пустых результатов
+                # Цикл для исключения пустых результатов None
                 if preview is not None:
                     reddit_video_preview = preview.get("reddit_video_preview")
                     if reddit_video_preview is not None:
