@@ -89,7 +89,6 @@ async def test_message(message: types.Message):
                     # print("Ошибка с анимацией для DEV" + path_file)
                     # print(ex)
                     content_error_update(id_post) #Помечаем пост с ошибкой в контенте
-
             elif '.jpg' in path_file or '.png' in path_file or '.jpeg' in url_link:
                 logger.debug("Отправка изображения: " + str(path_file))
                 try:
