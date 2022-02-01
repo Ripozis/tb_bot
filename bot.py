@@ -66,60 +66,59 @@ async def test_message(message: types.Message):
         if '.jpg' in path_file or '.png' in path_file or '.jpeg' in path_file or '. gif' in path_file or '.mp4' in path_file:
             logger.debug("Подходящий файл для скачивания " + str(path_file))
             content_upload(url_link,lin,path_file)
-        else:
-            logger.debug("Неподходящий файл для скачивания " + str(path_file) + str (id_post))
-            content_error_update(id_post)
-
+            path_fi = open('C:/Users/Илья/Desktop/tb_bot/tb_bot/images/' + path_file, 'rb')
         # r = requests.get(url_link, allow_redirects=True)
         # os.chdir(r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images') # для винды
-        path_fi = open('C:/Users/Илья/Desktop/tb_bot/tb_bot/images/' + path_file, 'rb')
+        
         # #os.chdir(r'/home/ripo/tb_bot/images') # для сервера
         # open(lin, 'wb').write(r.content)
         # sql_update(url_link, path_file)
         
-        print(path_file)
-        #path_fi = open(path_file, 'rb')
-        
-        if '.gif' in path_file:
-            logger.debug("Отправка анимации: " + str(path_file))
-            try: 
-                await bot.send_animation(chat_id=message.from_user.id, animation=path_fi, reply_markup=lnkb, caption=title)
-                moder_id = message.message_id + 1
-                moder_msgid(moder_id, id_post)
-                logger.success("В БД отправлен id сообщения: " + str(moder_id))
-            except Exception as ex:
-                logger.exception("Ошибка с анимацией для DEV"  + str(path_file))
-                # print("Ошибка с анимацией для DEV" + path_file)
-                # print(ex)
-                content_error_update(id_post) #Помечаем пост с ошибкой в контенте
+            print(path_file)
+            #path_fi = open(path_file, 'rb')
+            
+            if '.gif' in path_file:
+                logger.debug("Отправка анимации: " + str(path_file))
+                try: 
+                    await bot.send_animation(chat_id=message.from_user.id, animation=path_fi, reply_markup=lnkb, caption=title)
+                    moder_id = message.message_id + 1
+                    moder_msgid(moder_id, id_post)
+                    logger.success("В БД отправлен id сообщения: " + str(moder_id))
+                except Exception as ex:
+                    logger.exception("Ошибка с анимацией для DEV"  + str(path_file))
+                    # print("Ошибка с анимацией для DEV" + path_file)
+                    # print(ex)
+                    content_error_update(id_post) #Помечаем пост с ошибкой в контенте
 
-        elif '.jpg' in path_file or '.png' in path_file or '.jpeg' in url_link:
-            logger.debug("Отправка изображения: " + str(path_file))
-            try:
-                await bot.send_photo(chat_id=message.from_user.id, photo=path_fi, reply_markup=lnkb, caption=title)
-                moder_id = message.message_id + 1
-                moder_msgid(moder_id, id_post)
-                logger.success("В БД отправлен id сообщения: " + str(moder_id))
-            except Exception as ex:
-                logger.exception("Ошибка с картинкой для DEV " + str(path_file))
-                # print("Ошибка с картинкой для DEV" + path_file)
-                # print(ex)
-                content_error_update(id_post) #Помечаем пост с ошибкой в контенте
+            elif '.jpg' in path_file or '.png' in path_file or '.jpeg' in url_link:
+                logger.debug("Отправка изображения: " + str(path_file))
+                try:
+                    await bot.send_photo(chat_id=message.from_user.id, photo=path_fi, reply_markup=lnkb, caption=title)
+                    moder_id = message.message_id + 1
+                    moder_msgid(moder_id, id_post)
+                    logger.success("В БД отправлен id сообщения: " + str(moder_id))
+                except Exception as ex:
+                    logger.exception("Ошибка с картинкой для DEV " + str(path_file))
+                    # print("Ошибка с картинкой для DEV" + path_file)
+                    # print(ex)
+                    content_error_update(id_post) #Помечаем пост с ошибкой в контенте
 
-        elif '.mp4' in path_file:
-            logger.debug("Отправка видео " + str(path_file))
-            # print("Отправка видео")
-            try:
-                await bot.send_video(chat_id=message.from_user.id, video=path_fi, reply_markup=lnkb, caption=title)
-                moder_id = message.message_id + 1
-                moder_msgid(moder_id, id_post)
-                logger.success("В БД отправлен id сообщения: " + str(moder_id))
-            except Exception as ex:
-                logger.exception("Ошибка с видео для DEV" + str(path_file))
-                # print("Ошибка с видео для DEV" + path_file)
-                # print(ex)
-                content_error_update(id_post) #Помечаем пост с ошибкой в контенте        
-
+            elif '.mp4' in path_file:
+                logger.debug("Отправка видео " + str(path_file))
+                # print("Отправка видео")
+                try:
+                    await bot.send_video(chat_id=message.from_user.id, video=path_fi, reply_markup=lnkb, caption=title)
+                    moder_id = message.message_id + 1
+                    moder_msgid(moder_id, id_post)
+                    logger.success("В БД отправлен id сообщения: " + str(moder_id))
+                except Exception as ex:
+                    logger.exception("Ошибка с видео для DEV" + str(path_file))
+                    # print("Ошибка с видео для DEV" + path_file)
+                    # print(ex)
+                    content_error_update(id_post) #Помечаем пост с ошибкой в контенте        
+        else:
+            logger.debug("Неподходящий файл для скачивания " + str(path_file) + str (id_post))
+            content_error_update(id_post)
         # await bot.send_photo(
         #     chat_id=message.from_user.id, photo=file, reply_markup=lnkb, caption=title)
         # moder_id = message.message_id + 1
