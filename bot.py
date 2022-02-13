@@ -11,6 +11,7 @@ from pyrogram import Client, filters
 import requests
 from loguru import logger
 from auth_date import token
+import subprocess
 
 logger.add("logger/bot_log.log", format="{time:YYYY-MM-DD at HH:mm:ss}|{level}|{message}", rotation="100 MB", compression="zip")
 bot = Bot(token=token)
@@ -54,19 +55,62 @@ async def test_message(message: types.Message):
         path_file = str(lin)
         logger.debug("Файл на загрузку: " + str(path_file))
         
-        def content_upload(url_link,lin,path_file):
-            """Функция загрузки контента"""
+        def content_upload_img(url_link,lin,path_file):
+            """Функция загрузки контента кроме видео"""
             r = requests.get(url_link, allow_redirects=True)
             #os.chdir(r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images') # для винды
             os.chdir(r'/home/ripo/tb_bot/images') # для сервера
             open(lin, 'wb').write(r.content)
             sql_update(url_link, path_file)
         
+        def content_upload_video(url_link,id_post):
+            """Функция загрузки видео и склейки с аудио"""
+            # os.chdir(r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images') # для винды
+            os.chdir(r'/home/ripo/tb_bot/images') # для сервера
+            #print(lin)
+            #open(lin, 'wb').write(r.content)
+            print(url_link)
+            dash_url = url_link
+            #headers = {'User-Agent':'Mozilla/5.0'}
+            title = 'video'
+            dash_url = url_link[:int(dash_url.find('DASH')) + 4]
+            print("Наполнение dash_url: " + dash_url)
+            video_url = f'{url_link}'    # this URL will be used to download the video
+            print(video_url)
+            audio_url = f'{dash_url}_audio.mp4'    # this URL will be used to download the      audio part
+            print(audio_url)
+        
+            with open(f'{id_post}_{title}_video.mp4','wb') as file:
+                print('Downloading Video...',end='',flush = True)
+                response = requests.get(video_url,allow_redirects=True)
+                if(response.status_code == 200):
+                    file.write(response.content)
+                    print('\rVideo Downloaded...!')
+                else:
+                    print('\rVideo Download Failed..!')
+            with open(f'{id_post}_{title}_audio.mp4','wb') as file:
+                print('Downloading Audio...',end = '',flush = True)
+                response = requests.get(audio_url,allow_redirects=True)
+                if(response.status_code == 200):
+                    file.write(response.content)
+                    print('\rAudio Downloaded...!')
+                else:
+                    print('\rAudio Download Failed..!')
+            print("Идет склейка ")
+            subprocess.call(['ffmpeg','-i',f'{id_post}_{title}_video.mp4','-i',f'{id_post}_{title}_audio.mp4','-map','0:v', '-map','1:a','-c:v','copy',f'{id_post}_{title}.mp4'])
+            path_file = f'{id_post}_{title}.mp4'
+            sql_update(url_link, path_file)
+            print("Пследняя функция ")
+            #ysubprocess.call(['rm',f'{title}_video.mp4',f'{title}_audio.mp4'])
+            # os.remove(r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images\\' + f'{id_post}_{title}_video.mp4') # для винды
+            # os.remove(r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images\\' + f'{id_post}_{title}_audio.mp4') # для винды
+            os.remove(r'/home/ripo/tb_bot/images/' + f'{id_post}_{title}_video.mp4') # для сервера
+            os.remove(r'/home/ripo/tb_bot/images/' + f'{id_post}_{title}_audio.mp4') # для сервера
         #Проверка контента перед скачиванием 
         logger.info("Проверка контента перед скачиванием: " + str(path_file))
-        if '.jpg' in path_file or '.png' in path_file or '.jpeg' in path_file or '. gif' in path_file or '.mp4' in path_file:
+        if '.jpg' in path_file or '.png' in path_file or '.jpeg' in path_file or '. gif' in path_file:
             logger.debug("Подходящий файл для скачивания " + str(path_file))
-            content_upload(url_link,lin,path_file)
+            content_upload_img(url_link,lin,path_file)
             #path_fi = open('C:/Users/Илья/Desktop/tb_bot/tb_bot/images/' + path_file, 'rb') # для винды
             path_fi = open('/home/ripo/tb_bot/images/' + path_file, 'rb') # для сервера
             logger.debug("Путь файла на загрузку: " + str(path_fi))
@@ -95,20 +139,21 @@ async def test_message(message: types.Message):
                     # print("Ошибка с картинкой для DEV" + path_file)
                     # print(ex)
                     content_error_update(id_post) #Помечаем пост с ошибкой в контенте
+        elif '.mp4' in path_file:
+            content_upload_video(url_link,id_post)
+            logger.debug("Отправка видео " + str(path_file))
 
-            elif '.mp4' in path_file:
-                logger.debug("Отправка видео " + str(path_file))
-                # print("Отправка видео")
-                try:
-                    await bot.send_video(chat_id=message.from_user.id, video=path_fi, reply_markup=lnkb, caption=title)
-                    moder_id = message.message_id + 1
-                    moder_msgid(moder_id, id_post)
-                    logger.success("В БД отправлен id сообщения: " + str(moder_id))
-                except Exception as ex:
-                    logger.exception("Ошибка с видео для DEV" + str(path_file))
-                    # print("Ошибка с видео для DEV" + path_file)
-                    # print(ex)
-                    content_error_update(id_post) #Помечаем пост с ошибкой в контенте        
+            # print("Отправка видео")
+            try:
+                await bot.send_video(chat_id=message.from_user.id, video=path_fi, reply_markup=lnkb, caption=title)
+                moder_id = message.message_id + 1
+                moder_msgid(moder_id, id_post)
+                logger.success("В БД отправлен id сообщения: " + str(moder_id))
+            except Exception as ex:
+                logger.exception("Ошибка с видео для DEV" + str(path_file))
+                # print("Ошибка с видео для DEV" + path_file)
+                # print(ex)
+                content_error_update(id_post) #Помечаем пост с ошибкой в контенте        
         else:
             logger.debug("Неподходящий файл для скачивания " + str(path_file) + str (id_post))
             content_error_update(id_post)
