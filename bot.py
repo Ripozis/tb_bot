@@ -57,25 +57,19 @@ async def test_message(message: types.Message):
         def content_upload(url_link,lin,path_file):
             """Функция загрузки контента"""
             r = requests.get(url_link, allow_redirects=True)
-            os.chdir(r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images') # для винды
-            #os.chdir(r'/home/ripo/tb_bot/images') # для сервера
+            #os.chdir(r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images') # для винды
+            os.chdir(r'/home/ripo/tb_bot/images') # для сервера
             open(lin, 'wb').write(r.content)
             sql_update(url_link, path_file)
         
         #Проверка контента перед скачиванием 
+        logger.info("Проверка контента перед скачиванием: " + str(path_file))
         if '.jpg' in path_file or '.png' in path_file or '.jpeg' in path_file or '. gif' in path_file or '.mp4' in path_file:
             logger.debug("Подходящий файл для скачивания " + str(path_file))
             content_upload(url_link,lin,path_file)
-            path_fi = open('C:/Users/Илья/Desktop/tb_bot/tb_bot/images/' + path_file, 'rb')
-        # r = requests.get(url_link, allow_redirects=True)
-        # os.chdir(r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images') # для винды
-        
-        # #os.chdir(r'/home/ripo/tb_bot/images') # для сервера
-        # open(lin, 'wb').write(r.content)
-        # sql_update(url_link, path_file)
-        
-            print(path_file)
-            #path_fi = open(path_file, 'rb')
+            #path_fi = open('C:/Users/Илья/Desktop/tb_bot/tb_bot/images/' + path_file, 'rb') # для винды
+            path_fi = open('/home/ripo/tb_bot/images/' + path_file, 'rb') # для сервера
+            logger.debug("Путь файла на загрузку: " + str(path_fi))
             
             if '.gif' in path_file:
                 logger.debug("Отправка анимации: " + str(path_file))
