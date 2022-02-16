@@ -79,23 +79,39 @@ async def test_message(message: types.Message):
             print(video_url)
             audio_url = f'{dash_url}_audio.mp4'    # this URL will be used to download the      audio part
             print(audio_url)
-        
             with open(f'{id_post}_{title}_video.mp4','wb') as file:
-                print('Downloading Video...',end='',flush = True)
-                response = requests.get(video_url,allow_redirects=True)
+                try:
+                    print('Downloading Video...',end='',flush = True)
+                    response = requests.get(video_url,allow_redirects=True)
+                except Exception as ex:
+                    logger.exception("Ошибка с Video Downloaded")
                 if(response.status_code == 200):
-                    file.write(response.content)
-                    print('\rVideo Downloaded...!')
+                    try:
+                        file.write(response.content)
+                        print('\rVideo Downloaded...!')
+                    except Exception as ex:
+                        logger.exception("Ошибка с Video Downloaded")
                 else:
-                    print('\rVideo Download Failed..!')
+                    try:
+                        print('\rVideo Download Failed..!')
+                    except Exception as ex:
+                        logger.exception("Ошибка с Video Downloaded")
+        
             with open(f'{id_post}_{title}_audio.mp4','wb') as file:
                 print('Downloading Audio...',end = '',flush = True)
-                response = requests.get(audio_url,allow_redirects=True)
-                if(response.status_code == 200):
-                    file.write(response.content)
-                    print('\rAudio Downloaded...!')
-                else:
-                    print('\rAudio Download Failed..!')
+                try:
+                    response = requests.get(audio_url,allow_redirects=True)
+                except Exception as ex:
+                    logger.exception("Downloading Audio")
+                try:
+                    if(response.status_code == 200):
+                        file.write(response.content)
+                        print('\rAudio Downloaded...!')
+                    else:
+                        print('\rAudio Download Failed..!')
+                except Exception as ex:
+                    logger.exception("Audio Download Failed")
+
             print("Идет склейка ")
             subprocess.call(['ffmpeg','-i',f'{id_post}_{title}_video.mp4','-i',f'{id_post}_{title}_audio.mp4','-map','0:v', '-map','1:a','-c:v','copy',f'{id_post}_{title}.mp4'])
             path_file = f'{id_post}_{title}.mp4'
@@ -106,6 +122,7 @@ async def test_message(message: types.Message):
             # os.remove(r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images\\' + f'{id_post}_{title}_audio.mp4') # для винды
             os.remove(r'/home/ripo/tb_bot/images/' + f'{id_post}_{title}_video.mp4') # для сервера
             os.remove(r'/home/ripo/tb_bot/images/' + f'{id_post}_{title}_audio.mp4') # для сервера
+
         #Проверка контента перед скачиванием 
         logger.info("Проверка контента перед скачиванием: " + str(path_file))
         if '.jpg' in path_file or '.png' in path_file or '.jpeg' in path_file or '. gif' in path_file:
