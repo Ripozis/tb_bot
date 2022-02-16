@@ -85,24 +85,28 @@ async def test_message(message: types.Message):
                     response = requests.get(video_url,allow_redirects=True)
                 except Exception as ex:
                     logger.exception("Ошибка с Video Downloaded")
+                    content_error_update(id_post)
                 if(response.status_code == 200):
                     try:
                         file.write(response.content)
                         print('\rVideo Downloaded...!')
                     except Exception as ex:
                         logger.exception("Ошибка с Video Downloaded")
+                        content_error_update(id_post)
                 else:
                     try:
                         print('\rVideo Download Failed..!')
                     except Exception as ex:
                         logger.exception("Ошибка с Video Downloaded")
-        
+                        content_error_update(id_post)
+
             with open(f'{id_post}_{title}_audio.mp4','wb') as file:
                 print('Downloading Audio...',end = '',flush = True)
                 try:
                     response = requests.get(audio_url,allow_redirects=True)
                 except Exception as ex:
                     logger.exception("Downloading Audio")
+                    content_error_update(id_post)
                 try:
                     if(response.status_code == 200):
                         file.write(response.content)
@@ -111,7 +115,7 @@ async def test_message(message: types.Message):
                         print('\rAudio Download Failed..!')
                 except Exception as ex:
                     logger.exception("Audio Download Failed")
-
+                    content_error_update(id_post)
             print("Идет склейка ")
             subprocess.call(['ffmpeg','-i',f'{id_post}_{title}_video.mp4','-i',f'{id_post}_{title}_audio.mp4','-map','0:v', '-map','1:a','-c:v','copy',f'{id_post}_{title}.mp4'])
             path_file = f'{id_post}_{title}.mp4'
