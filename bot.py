@@ -4,6 +4,9 @@ from aiogram.dispatcher.filters import Text
 from aiogram.types import CallbackQuery, Message,\
     InlineKeyboardButton, InlineKeyboardMarkup, user
 from aiogram.utils.callback_data import CallbackData
+from aiogram.dispatcher.filters.state import State, StatesGroup
+from aiogram.dispatcher import FSMContext
+from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from sql import read_tbl,moder_msgid,publication_attribute_update,to_remove,content_error_update,sql_update, post_on_publik_all,for_editing
 import os
 import time
@@ -15,7 +18,7 @@ import subprocess
 
 logger.add("logger/bot_log.log", format="{time:YYYY-MM-DD at HH:mm:ss}|{level}|{message}", rotation="100 MB", compression="zip")
 bot = Bot(token=token)
-dp =Dispatcher(bot)
+dp =Dispatcher(bot, storage=MemoryStorage())
 
 
 @logger.catch
@@ -116,7 +119,7 @@ async def test_message(message: types.Message):
             # file_path_video = r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images\\' + f'{id_post}_{title}_video.mp4' # для винды 
             file_path_video = r'/home/ripo/tb_bot/images/' + f'{id_post}_{title}_video.mp4' # для сервера
             # file_path_audio = r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images\\' + f'{id_post}_{title}_audio.mp4' # для винды 
-            file_path_audio = r'/home/ripo/tb_bot/images/' + f'{id_post}_{title}__audio.mp4' # для сервера
+            file_path_audio = r'/home/ripo/tb_bot/images/' + f'{id_post}_{title}_audio.mp4' # для сервера
             if os.path.exists(file_path_video):
                     print("Файл существует")
                     # os.remove(r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images\\' + f'{id_post}_{title}_video.mp4') # для винды удаляем видео файл
@@ -147,24 +150,26 @@ async def test_message(message: types.Message):
             if '.gif' in path_file:
                 logger.debug("Отправка анимации: " + str(path_file))
                 try: 
-                    await bot.send_animation(chat_id=message.from_user.id, animation=path_fi, reply_markup=lnkb, caption=title)
+                    await bot.send_animation(chat_id=message.from_user.id, animation=path_fi, reply_markup=lnkb, caption=(title + '\n' + '/id:' + str(id_post)))
                     moder_id = message.message_id + 1
                     moder_msgid(moder_id, id_post)
                     logger.success("В БД отправлен id сообщения: " + str(moder_id))
                 except Exception as ex:
                     logger.exception("Ошибка с анимацией для DEV"  + str(path_file))
+                    await message.answer('Анимация не отправленно из-за ошибки или большого размера')
                     # print("Ошибка с анимацией для DEV" + path_file)
                     # print(ex)
                     content_error_update(id_post) #Помечаем пост с ошибкой в контенте
             elif '.jpg' in path_file or '.png' in path_file or '.jpeg' in url_link:
                 logger.debug("Отправка изображения: " + str(path_file))
                 try:
-                    await bot.send_photo(chat_id=message.from_user.id, photo=path_fi, reply_markup=lnkb, caption=title)
+                    await bot.send_photo(chat_id=message.from_user.id, photo=path_fi, reply_markup=lnkb, caption=(title + '\n' + '/id:' + str(id_post)))
                     moder_id = message.message_id + 1
                     moder_msgid(moder_id, id_post)
                     logger.success("В БД отправлен id сообщения: " + str(moder_id))
                 except Exception as ex:
                     logger.exception("Ошибка с картинкой для DEV " + str(path_file))
+                    await message.answer('Фото не отправленно из-за ошибки или большого размера')
                     # print("Ошибка с картинкой для DEV" + path_file)
                     # print(ex)
                     content_error_update(id_post) #Помечаем пост с ошибкой в контенте
@@ -177,17 +182,19 @@ async def test_message(message: types.Message):
 
             # print("Отправка видео")
             try:
-                await bot.send_video(chat_id=message.from_user.id, video=path, reply_markup=lnkb, caption=title)
+                await bot.send_video(chat_id=message.from_user.id, video=path, reply_markup=lnkb, caption=(title + '\n' + '/id:' + str(id_post)))
                 moder_id = message.message_id + 1
                 moder_msgid(moder_id, id_post)
                 logger.success("В БД отправлен id сообщения: " + str(moder_id))
             except Exception as ex:
                 logger.exception("Ошибка с видео для DEV" + str(path_file))
+                await message.answer('Видео не отправленно из-за ошибки или большого размера')
                 # print("Ошибка с видео для DEV" + path_file)
                 # print(ex)
                 content_error_update(id_post) #Помечаем пост с ошибкой в контенте        
         else:
             logger.debug("Неподходящий файл для скачивания " + str(path_file) + str (id_post))
+            await message.answer('Неподходящий файл для скачивания')
             content_error_update(id_post)
 
 @logger.catch      
@@ -230,18 +237,29 @@ async def public_priz(calback : types.CallbackQuery,):
     await calback.answer("Пост помечен на удаление")
     await calback.message.answer('Пост помечен на удаление')
 
+class DataInput(StatesGroup):
+    kb = State()
 ##действие кнопки при нажатии 'Редактировать'
 @logger.catch
 @dp.callback_query_handler(text='editing')
 async def editing(calback : types.CallbackQuery,):
     moder_id = calback.message.message_id
-    for_editing(moder_id)
+    # for_editing(moder_id) # Убрана функция для пометки на редактирование
     logger.debug("Пост помечен на редактирование: " + str(moder_id))
     # id Сообщения на удаление 
     logger.success('Сработала кнопка "Редактировать"')
     # print('Сработала кнопка "Удалить"')
-    await calback.answer("Пост помечен на редактирование")
-    await calback.message.answer('Пост помечен на редактирование')
+    # await calback.answer("Пост помечен на редактирование")
+    # await calback.message.answer('Пост помечен на редактирование')
+    await DataInput.kb.set()
+    @dp.message_handler(state=DataInput.kb)
+    async def put_registration_number(message: types.Message, state: FSMContext):
+        """Функция захвата текста псоле нажатия кнопки редактирования"""
+        kb_text = message.text
+        print(moder_id)
+        await bot.send_message(message.chat.id, kb_text)
+        await state.finish()
+
 
 #----------------
 if __name__ == '__main__':
