@@ -237,18 +237,16 @@ async def public_priz(calback : types.CallbackQuery,):
     await calback.answer("Пост помечен на удаление")
     await calback.message.answer('Пост помечен на удаление')
 
+# Класс для состояний 
 class DataInput(StatesGroup):
     kb = State()
+
 ##действие кнопки при нажатии 'Редактировать'
 @logger.catch
 @dp.callback_query_handler(text='editing')
 async def editing(calback : types.CallbackQuery,):
     moder_id = calback.message.message_id
-    # for_editing(moder_id) # Убрана функция для пометки на редактирование
-    logger.debug("Пост помечен на редактирование: " + str(moder_id))
-    # id Сообщения на удаление 
     logger.success('Сработала кнопка "Редактировать"')
-    # print('Сработала кнопка "Удалить"')
     # await calback.answer("Пост помечен на редактирование")
     # await calback.message.answer('Пост помечен на редактирование')
     await DataInput.kb.set()
@@ -257,9 +255,9 @@ async def editing(calback : types.CallbackQuery,):
         """Функция захвата текста псоле нажатия кнопки редактирования"""
         kb_text = message.text
         print(moder_id)
-        await bot.send_message(message.chat.id, kb_text)
+        for_editing(kb_text, moder_id)
+        await bot.send_message(message.chat.id, 'Пост отредактирован')
         await state.finish()
-
 
 #----------------
 if __name__ == '__main__':

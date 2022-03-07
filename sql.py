@@ -108,8 +108,8 @@ def to_remove(moder_id):
         con.commit()
 
 # функция пометки постов на редактирование
-def for_editing(moder_id,):
-        cur.execute("""UPDATE parser SET for_editing=1, to_remove=0, publication_attribute=0 where moder_id = ?""", (moder_id,))
+def for_editing(kb_text, moder_id):
+        cur.execute("""UPDATE parser SET title_ru=? where moder_id = ?""", (kb_text, moder_id))
         con.commit()
 
 # функция записи id сообщения из модер бота
