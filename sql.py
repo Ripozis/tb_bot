@@ -114,7 +114,7 @@ def for_editing(kb_text, id_post):
 
 # функция записи id сообщения из модер бота
 def moder_msgid(moder_id, id_post):
-        cur.execute("""UPDATE parser SET moder_id=? where moder_id=0 and id_post = ?""", (moder_id, id_post))
+        cur.execute("""UPDATE parser SET moder_id=? where id_post = ?""", (moder_id, id_post))
         con.commit()
 
 #Функция для вывода всех файлов на удаление

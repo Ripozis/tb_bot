@@ -19,6 +19,10 @@ import subprocess
 logger.add("logger/bot_log.log", format="{time:YYYY-MM-DD at HH:mm:ss}|{level}|{message}", rotation="100 MB", compression="zip")
 bot = Bot(token=token)
 dp =Dispatcher(bot, storage=MemoryStorage())
+path_img = r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images'
+# path_img = r'/home/ripo/tb_bot/images'
+path_img_file = r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images\\'
+# path_img_file  = r'/home/ripo/tb_bot/images/'
 
 
 @logger.catch
@@ -61,14 +65,14 @@ async def test_message(message: types.Message):
         def content_upload_img(url_link,lin,path_file):
             """Функция загрузки контента кроме видео"""
             r = requests.get(url_link, allow_redirects=True)
-            os.chdir(r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images') # для винды
+            os.chdir(path_img) # для винды
             # os.chdir(r'/home/ripo/tb_bot/images') # для сервера
             open(lin, 'wb').write(r.content)
             sql_update(url_link, path_file)
         
         def content_upload_video(url_link,id_post):
             """Функция загрузки видео и склейки с аудио"""
-            os.chdir(r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images') # для винды
+            os.chdir(path_img) # для винды
             # os.chdir(r'/home/ripo/tb_bot/images') # для сервера
             #print(lin)
             #open(lin, 'wb').write(r.content)
@@ -82,7 +86,7 @@ async def test_message(message: types.Message):
             print(video_url)
             audio_url = f'{dash_url}_audio.mp4'    # this URL will be used to download the      audio part
             print(audio_url)
-            path_video = r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images\\' + f'{id_post}_video.mp4' # для винды 
+            path_video = path_img_file + f'{id_post}_video.mp4' # для винды 
             # path_video = r'/home/ripo/tb_bot/images/' + f'{id_post}_video.mp4' # для сервера
             if os.path.exists(path_video):
                 print("файл был ранее скачан")
@@ -111,24 +115,24 @@ async def test_message(message: types.Message):
                             print('\rAudio Download Failed..!')
                             time.sleep(5)
                             logger.exception("Audio Download Failed")
-                            os.rename(r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images\\' + f'{id_post}_{title}_video.mp4',r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images\\' +  f'{id_post}_{title}.mp4') # для винды 
+                            os.rename(path_img_file + f'{id_post}_{title}_video.mp4', path_img_file +  f'{id_post}_{title}.mp4') # для винды 
                             # os.rename(r'/home/ripo/tb_bot/images/' + f'{id_post}_{title}_video.mp4',r'/home/ripo/tb_bot/images/' +  f'{id_post}_{title}.mp4') # для сервера
                             path_file = f'{id_post}_{title}.mp4'
                             sql_update(url_link, path_file)
         
-            file_path_video = r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images\\' + f'{id_post}_{title}_video.mp4' # для винды 
+            file_path_video = path_img_file + f'{id_post}_{title}_video.mp4' # для винды 
             # file_path_video = r'/home/ripo/tb_bot/images/' + f'{id_post}_{title}_video.mp4' # для сервера
-            file_path_audio = r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images\\' + f'{id_post}_{title}_audio.mp4' # для винды 
+            file_path_audio = path_img_file + f'{id_post}_{title}_audio.mp4' # для винды 
             # file_path_audio = r'/home/ripo/tb_bot/images/' + f'{id_post}_{title}_audio.mp4' # для сервера
             if os.path.exists(file_path_video):
                     print("Файл существует")
-                    os.remove(r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images\\' + f'{id_post}_{title}_video.mp4') # для винды удаляем видео файл
+                    os.remove(path_img_file + f'{id_post}_{title}_video.mp4') # для винды удаляем видео файл
                     # os.remove(r'/home/ripo/tb_bot/images/' + f'{id_post}_{title}_video.mp4') # для сервера      
             else:
                 print("Файл не существует")
             
             if os.path.exists(file_path_audio):
-                os.remove(r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images\\' + f'{id_post}_{title}_audio.mp4') # для винды
+                os.remove(path_img_file + f'{id_post}_{title}_audio.mp4') # для винды
                 # os.remove(r'/home/ripo/tb_bot/images/' + f'{id_post}_{title}_audio.mp4') # для сервера
             else:
                 print("Файл не существует")
@@ -143,7 +147,7 @@ async def test_message(message: types.Message):
         if '.jpg' in path_file or '.png' in path_file or '.jpeg' in path_file or '. gif' in path_file:
             logger.debug("Подходящий файл для скачивания " + str(path_file))
             content_upload_img(url_link,lin,path_file)
-            path_fi = open('C:/Users/Илья/Desktop/tb_bot/tb_bot/images/' + path_file, 'rb') # для винды
+            path_fi = open(path_img_file + path_file, 'rb') # для винды
             # path_fi = open('/home/ripo/tb_bot/images/' + path_file, 'rb') # для сервера
             logger.debug("Путь файла на загрузку: " + str(path_fi))
             
@@ -176,7 +180,7 @@ async def test_message(message: types.Message):
         elif '.mp4' in path_file:
             path_file = content_upload_video(url_link,id_post)
             print(path_file)
-            path = open('C:/Users/Илья/Desktop/tb_bot/tb_bot/images/' + content_upload_video(url_link,id_post), 'rb') # для винды
+            path = open(path_img_file + content_upload_video(url_link,id_post), 'rb') # для винды
             # path = open('/home/ripo/tb_bot/images/' + content_upload_video(url_link,id_post), 'rb') # для сервера
             logger.debug("Отправка видео " + str(path_file))
 
@@ -250,7 +254,7 @@ async def editing(calback : types.CallbackQuery,):
     await DataInput.kb.set()
     @dp.message_handler(state=DataInput.kb)
     async def put_registration_number(message: types.Message, state: FSMContext):
-        """Функция захвата текста псоле нажатия кнопки редактирования"""
+        """Функция захвата текста поcле нажатия кнопки редактирования"""
         kb_text = message.text
         re = read_tbl() 
         # Проходим в цикле по всем элементам списка для публикации в модерку

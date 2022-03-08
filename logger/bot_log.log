@@ -3823,3 +3823,203 @@ NoneType: None
 2022-03-07 at 21:09:16|SUCCESS|Сработала кнопка "Удалить"
 2022-03-07 at 21:09:24|DEBUG|id Сообщения на публикацию: 1757
 2022-03-07 at 21:09:24|SUCCESS|Сработала кнопка "Опубликовать"
+2022-03-08 at 19:25:00|DEBUG|Получены данные из БД:[('У этой собаки такое хорошее чувство равновесия!', 'https://v.redd.it/9d1p4pp24mi81/DASH_720.mp4', 10518, 678)]
+2022-03-08 at 19:25:00|DEBUG|Файл на загрузку: 678DASH_720.mp4
+2022-03-08 at 19:25:00|INFO|Проверка контента перед скачиванием: 678DASH_720.mp4
+2022-03-08 at 19:25:17|ERROR|Audio Download Failed
+NoneType: None
+2022-03-08 at 19:25:17|DEBUG|Отправка видео 678_video.mp4
+2022-03-08 at 19:26:39|DEBUG|Получены данные из БД:[('У этой собаки такое хорошее чувство равновесия!', 'https://v.redd.it/9d1p4pp24mi81/DASH_720.mp4', 10518, 678)]
+2022-03-08 at 19:26:39|DEBUG|Файл на загрузку: 678DASH_720.mp4
+2022-03-08 at 19:26:39|INFO|Проверка контента перед скачиванием: 678DASH_720.mp4
+2022-03-08 at 19:26:39|DEBUG|Отправка видео 678_video.mp4
+2022-03-08 at 19:27:29|SUCCESS|В БД отправлен id сообщения: 1767
+2022-03-08 at 19:28:00|DEBUG|id Сообщения на публикацию: 1768
+2022-03-08 at 19:28:00|SUCCESS|Сработала кнопка "Опубликовать"
+2022-03-08 at 19:28:03|DEBUG|Получены данные из БД:[('У этой собаки такое хорошее чувство равновесия!', 'https://v.redd.it/9d1p4pp24mi81/DASH_720.mp4', 10518, 678)]
+2022-03-08 at 19:28:03|DEBUG|Файл на загрузку: 678DASH_720.mp4
+2022-03-08 at 19:28:03|INFO|Проверка контента перед скачиванием: 678DASH_720.mp4
+2022-03-08 at 19:28:03|DEBUG|Отправка видео 678_video.mp4
+2022-03-08 at 19:28:54|DEBUG|Получены данные из БД:[('У этой собаки такое хорошее чувство равновесия!', 'https://v.redd.it/9d1p4pp24mi81/DASH_720.mp4', 10518, 678)]
+2022-03-08 at 19:28:54|DEBUG|Файл на загрузку: 678DASH_720.mp4
+2022-03-08 at 19:28:54|INFO|Проверка контента перед скачиванием: 678DASH_720.mp4
+2022-03-08 at 19:28:54|DEBUG|Отправка видео 678_video.mp4
+2022-03-08 at 19:28:54|SUCCESS|В БД отправлен id сообщения: 1768
+2022-03-08 at 19:33:05|DEBUG|id Сообщения на публикацию: 1772
+2022-03-08 at 19:33:05|SUCCESS|Сработала кнопка "Опубликовать"
+2022-03-08 at 19:33:14|DEBUG|Получены данные из БД:[('У этой собаки такое хорошее чувство равновесия!', 'https://v.redd.it/9d1p4pp24mi81/DASH_720.mp4', 10518, 678)]
+2022-03-08 at 19:33:14|DEBUG|Файл на загрузку: 678DASH_720.mp4
+2022-03-08 at 19:33:14|INFO|Проверка контента перед скачиванием: 678DASH_720.mp4
+2022-03-08 at 19:33:14|DEBUG|Отправка видео 678_video.mp4
+2022-03-08 at 19:35:41|SUCCESS|В БД отправлен id сообщения: 1775
+2022-03-08 at 19:36:52|DEBUG|Получены данные из БД:[('У этой собаки такое хорошее чувство равновесия!', 'https://v.redd.it/9d1p4pp24mi81/DASH_720.mp4', 10518, 678)]
+2022-03-08 at 19:36:52|DEBUG|Файл на загрузку: 678DASH_720.mp4
+2022-03-08 at 19:36:52|INFO|Проверка контента перед скачиванием: 678DASH_720.mp4
+2022-03-08 at 19:36:52|DEBUG|Отправка видео 678_video.mp4
+2022-03-08 at 19:38:33|DEBUG|Получены данные из БД:[('У этой собаки такое хорошее чувство равновесия!', 'https://v.redd.it/9d1p4pp24mi81/DASH_720.mp4', 10518, 678)]
+2022-03-08 at 19:38:33|DEBUG|Файл на загрузку: 678DASH_720.mp4
+2022-03-08 at 19:38:33|INFO|Проверка контента перед скачиванием: 678DASH_720.mp4
+2022-03-08 at 19:38:33|DEBUG|Отправка видео 678_video.mp4
+2022-03-08 at 19:38:58|SUCCESS|В БД отправлен id сообщения: 1777
+2022-03-08 at 19:39:12|DEBUG|id Сообщения на публикацию: 1779
+2022-03-08 at 19:39:12|SUCCESS|Сработала кнопка "Опубликовать"
+2022-03-08 at 19:40:02|DEBUG|id Сообщения на публикацию: 1779
+2022-03-08 at 19:40:02|SUCCESS|Сработала кнопка "Опубликовать"
+2022-03-08 at 19:40:07|DEBUG|id Сообщения на публикацию: 1775
+2022-03-08 at 19:40:07|SUCCESS|Сработала кнопка "Опубликовать"
+2022-03-08 at 19:40:51|ERROR|Ошибка с видео для DEV678_video.mp4
+Traceback (most recent call last):
+
+  File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 272, in <module>
+    executor.start_polling(dp, skip_updates=True)
+    |        |             -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000004B18888>
+    |        -> <function start_polling at 0x000000000424B828>
+    -> <module 'aiogram.utils.executor' from 'C:\\Users\\Илья\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\aiogr...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 50, in start_polling
+    allowed_updates=allowed_updates
+                    -> None
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\utils\executor.py", line 323, in start_polling
+    loop.run_forever()
+    |    -> <function BaseEventLoop.run_forever at 0x00000000030905E8>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 534, in run_forever
+    self._run_once()
+    |    -> <function BaseEventLoop._run_once at 0x00000000030930D8>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 1771, in _run_once
+    handle._run()
+    |      -> <function Handle._run at 0x00000000030528B8>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F959A8>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    |    |            |    |           |    -> <member '_args' of 'Handle' objects>
+    |    |            |    |           -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F959A8>(<Future finished result=None>)>
+    |    |            |    -> <member '_callback' of 'Handle' objects>
+    |    |            -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F959A8>(<Future finished result=None>)>
+    |    -> <member '_context' of 'Handle' objects>
+    -> <Handle <TaskWakeupMethWrapper object at 0x0000000006F959A8>(<Future finished result=None>)>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.update.Update object at 0x0000000006F85388>,)
+                     |           -> <bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000004B18888>>
+                     -> Handler.HandlerObj(handler=<bound method Dispatcher.process_update of <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0...
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+                 |    |                |      |      -> <aiogram.types.fields.Field object at 0x00000000040BFC88>
+                 |    |                |      -> <aiogram.types.update.Update object at 0x0000000006F85388>
+                 |    |                -> <function Handler.notify at 0x0000000004141F78>
+                 |    -> <aiogram.dispatcher.handler.Handler object at 0x0000000004B18A88>
+                 -> <aiogram.dispatcher.dispatcher.Dispatcher object at 0x0000000004B18888>
+
+  File "C:\Users\Илья\AppData\Local\Programs\Python\Python37\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+                     |           |        |       -> {}
+                     |           |        -> (<aiogram.types.message.Message object at 0x0000000006F857C8>,)
+                     |           -> <function test_message at 0x0000000006F29708>
+                     -> Handler.HandlerObj(handler=<function test_message at 0x0000000006F29708>, spec=FullArgSpec(args=['message'], varargs=None, va...
+
+> File "c:/Users/Илья/Desktop/tb_bot/tb_bot/bot.py", line 191, in test_message
+    moder_msgid(moder_id, id_post)
+    |           |         -> '678'
+    |           -> 1779
+    -> <function moder_msgid at 0x000000000426E5E8>
+
+  File "c:\Users\Илья\Desktop\tb_bot\tb_bot\sql.py", line 117, in moder_msgid
+    cur.execute("""UPDATE parser SET moder_id=? where id_post = ?""", (moder_id, id_post))
+    |   |                                                              |         -> '678'
+    |   |                                                              -> 1779
+    |   -> <method 'execute' of 'sqlite3.Cursor' objects>
+    -> <sqlite3.Cursor object at 0x000000000423CC00>
+
+sqlite3.OperationalError: database is locked
+2022-03-08 at 19:41:33|DEBUG|Получены данные из БД:[('У этой собаки такое хорошее чувство равновесия!', 'https://v.redd.it/9d1p4pp24mi81/DASH_720.mp4', 10518, 678)]
+2022-03-08 at 19:41:33|DEBUG|Файл на загрузку: 678DASH_720.mp4
+2022-03-08 at 19:41:33|INFO|Проверка контента перед скачиванием: 678DASH_720.mp4
+2022-03-08 at 19:41:33|DEBUG|Отправка видео 678_video.mp4
+2022-03-08 at 19:43:35|SUCCESS|В БД отправлен id сообщения: 1786
+2022-03-08 at 19:43:58|DEBUG|id Сообщения на публикацию: 1786
+2022-03-08 at 19:43:58|SUCCESS|Сработала кнопка "Опубликовать"
+2022-03-08 at 19:44:06|DEBUG|Пост помечен на удаление: 1786
+2022-03-08 at 19:44:06|SUCCESS|Сработала кнопка "Удалить"
+2022-03-08 at 19:44:13|SUCCESS|Сработала кнопка "Редактировать"
+2022-03-08 at 19:44:45|DEBUG|id Сообщения на публикацию: 1786
+2022-03-08 at 19:44:45|SUCCESS|Сработала кнопка "Опубликовать"
+2022-03-08 at 19:45:57|SUCCESS|Сработала кнопка "Редактировать"
+2022-03-08 at 19:46:46|DEBUG|Пост помечен на удаление: 1786
+2022-03-08 at 19:46:46|SUCCESS|Сработала кнопка "Удалить"
+2022-03-08 at 19:47:44|DEBUG|id Сообщения на публикацию: 1786
+2022-03-08 at 19:47:44|SUCCESS|Сработала кнопка "Опубликовать"
+2022-03-08 at 19:47:55|DEBUG|Пост помечен на удаление: 1786
+2022-03-08 at 19:47:55|SUCCESS|Сработала кнопка "Удалить"
+2022-03-08 at 19:48:03|SUCCESS|Сработала кнопка "Редактировать"
+2022-03-08 at 19:48:26|DEBUG|Пост помечен на удаление: 1786
+2022-03-08 at 19:48:26|SUCCESS|Сработала кнопка "Удалить"
+2022-03-08 at 19:48:33|DEBUG|id Сообщения на публикацию: 1786
+2022-03-08 at 19:48:33|SUCCESS|Сработала кнопка "Опубликовать"
+2022-03-08 at 19:48:40|DEBUG|Пост помечен на удаление: 1786
+2022-03-08 at 19:48:40|SUCCESS|Сработала кнопка "Удалить"
+2022-03-08 at 19:49:41|DEBUG|Получены данные из БД:[('15 трюк с исчезновением лазерного диска', 'https://v.redd.it/ni635rnj5cx71', 10338, 98)]
+2022-03-08 at 19:49:41|DEBUG|Файл на загрузку: 98ni635rnj5cx71
+2022-03-08 at 19:49:41|INFO|Проверка контента перед скачиванием: 98ni635rnj5cx71
+2022-03-08 at 19:49:41|DEBUG|Неподходящий файл для скачивания 98ni635rnj5cx7198
+2022-03-08 at 19:49:48|DEBUG|Получены данные из БД:[('Каллиграфия на внутренней стороне стеклянной тары', 'https://v.redd.it/lrc3wxd1iv981/DASH_1080.mp4', 10169, 250)]
+2022-03-08 at 19:49:48|DEBUG|Файл на загрузку: 250DASH_1080.mp4
+2022-03-08 at 19:49:48|INFO|Проверка контента перед скачиванием: 250DASH_1080.mp4
+2022-03-08 at 19:49:54|ERROR|Audio Download Failed
+NoneType: None
+2022-03-08 at 19:49:54|DEBUG|Отправка видео 250_video.mp4
+2022-03-08 at 19:50:51|SUCCESS|В БД отправлен id сообщения: 1806
+2022-03-08 at 19:55:16|DEBUG|Получены данные из БД:[('Каллиграфия на внутренней стороне стеклянной тары', 'https://v.redd.it/lrc3wxd1iv981/DASH_1080.mp4', 10169, 250)]
+2022-03-08 at 19:55:16|DEBUG|Файл на загрузку: 250DASH_1080.mp4
+2022-03-08 at 19:55:16|INFO|Проверка контента перед скачиванием: 250DASH_1080.mp4
+2022-03-08 at 19:55:16|DEBUG|Отправка видео 250_video.mp4
+2022-03-08 at 19:56:09|SUCCESS|В БД отправлен id сообщения: 1808
+2022-03-08 at 19:56:20|SUCCESS|Сработала кнопка "Редактировать"
+2022-03-08 at 19:56:37|DEBUG|Получены данные из БД:[('Rewww', 'https://v.redd.it/lrc3wxd1iv981/DASH_1080.mp4', 10169, 250)]
+2022-03-08 at 19:56:37|DEBUG|Файл на загрузку: 250DASH_1080.mp4
+2022-03-08 at 19:56:37|INFO|Проверка контента перед скачиванием: 250DASH_1080.mp4
+2022-03-08 at 19:56:37|DEBUG|Отправка видео 250_video.mp4
+2022-03-08 at 19:57:30|SUCCESS|В БД отправлен id сообщения: 1812
+2022-03-08 at 19:57:43|SUCCESS|Сработала кнопка "Редактировать"
+2022-03-08 at 19:59:36|SUCCESS|Сработала кнопка "Редактировать"
+2022-03-08 at 19:59:49|SUCCESS|Сработала кнопка "Редактировать"
+2022-03-08 at 20:00:50|DEBUG|id Сообщения на публикацию: 1812
+2022-03-08 at 20:00:50|SUCCESS|Сработала кнопка "Опубликовать"
+2022-03-08 at 20:01:17|DEBUG|Пост помечен на удаление: 1812
+2022-03-08 at 20:01:17|SUCCESS|Сработала кнопка "Удалить"
+2022-03-08 at 20:04:38|SUCCESS|Сработала кнопка "Редактировать"
+2022-03-08 at 20:04:42|DEBUG|Получены данные из БД:[('Учитель рисования рисует МЛК на доске мелом (2022)', 'https://v.redd.it/lzrv88s39ba81/DASH_360.mp4', 9718, 384)]
+2022-03-08 at 20:06:23|DEBUG|Получены данные из БД:[('Учитель рисования рисует МЛК на доске мелом (2022)', 'https://v.redd.it/lzrv88s39ba81/DASH_360.mp4', 9718, 384)]
+2022-03-08 at 20:06:23|DEBUG|Файл на загрузку: 384DASH_360.mp4
+2022-03-08 at 20:06:23|INFO|Проверка контента перед скачиванием: 384DASH_360.mp4
+2022-03-08 at 20:06:28|DEBUG|Отправка видео 384_video.mp4
+2022-03-08 at 20:06:58|SUCCESS|В БД отправлен id сообщения: 1824
+2022-03-08 at 20:07:03|SUCCESS|Сработала кнопка "Редактировать"
+2022-03-08 at 20:07:18|DEBUG|Получены данные из БД:[('Учитель рисования рисует МЛК на доске мелом (2022)', 'https://v.redd.it/lzrv88s39ba81/DASH_360.mp4', 9718, 384)]
+2022-03-08 at 20:08:04|SUCCESS|Сработала кнопка "Редактировать"
+2022-03-08 at 20:08:07|DEBUG|Получены данные из БД:[('Учитель рисования рисует МЛК на доске мелом (2022)', 'https://v.redd.it/lzrv88s39ba81/DASH_360.mp4', 9718, 384)]
+2022-03-08 at 20:08:37|SUCCESS|Сработала кнопка "Редактировать"
+2022-03-08 at 20:08:40|DEBUG|Получены данные из БД:[('Учитель рисования рисует МЛК на доске мелом (2022)', 'https://v.redd.it/lzrv88s39ba81/DASH_360.mp4', 9718, 384)]
+2022-03-08 at 20:08:47|SUCCESS|Сработала кнопка "Редактировать"
+2022-03-08 at 20:08:50|DEBUG|Получены данные из БД:[('Ggg', 'https://v.redd.it/lzrv88s39ba81/DASH_360.mp4', 9718, 384)]
+2022-03-08 at 20:09:00|SUCCESS|Сработала кнопка "Редактировать"
+2022-03-08 at 20:09:05|DEBUG|Получены данные из БД:[('Gdhd', 'https://v.redd.it/lzrv88s39ba81/DASH_360.mp4', 9718, 384)]
+2022-03-08 at 20:09:17|DEBUG|Получены данные из БД:[('Gdud', 'https://v.redd.it/lzrv88s39ba81/DASH_360.mp4', 9718, 384)]
+2022-03-08 at 20:09:17|DEBUG|Файл на загрузку: 384DASH_360.mp4
+2022-03-08 at 20:09:17|INFO|Проверка контента перед скачиванием: 384DASH_360.mp4
+2022-03-08 at 20:09:17|DEBUG|Отправка видео 384_video.mp4
+2022-03-08 at 20:09:48|SUCCESS|В БД отправлен id сообщения: 1838
+2022-03-08 at 20:09:51|SUCCESS|Сработала кнопка "Редактировать"
+2022-03-08 at 20:09:57|DEBUG|Получены данные из БД:[('Gdud', 'https://v.redd.it/lzrv88s39ba81/DASH_360.mp4', 9718, 384)]
+2022-03-08 at 20:10:10|DEBUG|id Сообщения на публикацию: 1838
+2022-03-08 at 20:10:10|SUCCESS|Сработала кнопка "Опубликовать"
+2022-03-08 at 20:10:15|DEBUG|Пост помечен на удаление: 1838
+2022-03-08 at 20:10:15|SUCCESS|Сработала кнопка "Удалить"
