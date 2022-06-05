@@ -25,6 +25,8 @@ logger.add("logger/main_log.log", format="{time:YYYY-MM-DD at HH:mm:ss}|{level}|
 # search_reddit()
 # ----------------
 
+pbl_path_img = r'/home/ily/Рабочий стол/py/tb_bot/images'
+
 # ----------------
 # Имя сессии pyrogram
 app = Client("my_account")
@@ -46,7 +48,7 @@ def send_post_dev(app):
 
                 # Отправка анимации 
                 print(id_post)
-                os.chdir('/home/ripo/tb_bot/images')
+                os.chdir(pbl_path_img)
                 if '.gif' in path_file:
                     logger.success("Будем отправлять анимацию " + str(path_file))
                     print("анимация и пнг")
@@ -55,7 +57,7 @@ def send_post_dev(app):
                         app.send_animation("Testyfakt", path_file, title)
                         logger.success("Собщение сформировано")
                         attr_dev(id_post)
-                        os.remove('/home/ripo/tb_bot/images/'+ path_file) # удаление файла
+                        os.remove(pbl_path_img + '/' + path_file) # удаление файла
                         logger.success("Файл " + str(path_file) + " удален с диска")
                     except Exception as ex:
                         logger.exception("Ошибка с анимацией для DEV" +  str(path_file) + " id: " + str(id_post))
@@ -71,7 +73,7 @@ def send_post_dev(app):
                         app.send_photo("Testyfakt", path_file, title)
                         logger.success("Собщение сформировано")
                         attr_dev(id_post)
-                        os.remove('/home/ripo/tb_bot/images/'+ path_file) # удаление файла
+                        os.remove(pbl_path_img + '/' + path_file) # удаление файла
                         logger.success("Файл " + str(path_file) + " удален с диска")
                     except Exception as ex:
                         logger.exception("Ошибка с картинкой для DEV" +  str(path_file) + " id: " + str(id_post))
@@ -88,7 +90,7 @@ def send_post_dev(app):
                         app.send_video("Testyfakt", video=path_file, caption=title)
                         logger.success("Собщение сформировано")
                         attr_dev(id_post)
-                        os.remove('/home/ripo/tb_bot/images/'+ path_file) # удаление файла
+                        os.remove(pbl_path_img + '/' + path_file) # удаление файла
                         logger.success("Файл " + str(path_file) + " удален с диска")
                     except Exception as ex:
                         logger.exception("Ошибка с видео для DEV" +  str(path_file) + " id: " + str(id_post))
@@ -142,7 +144,7 @@ schedule.every(1).minutes.do(send_post_dev, app)
 # schedule.every().day.at("21:00").do(run_threaded, send_post_dev)
 # schedule.every().day.at("22:00").do(run_threaded, send_post_dev)
 # schedule.every().day.at("23:00").do(run_threaded, send_post_dev)
-schedule.every(5).minutes.do(search_reddit) #Запуск парсера ~каждые 30 мин
+#schedule.every(1).minutes.do(search_reddit) #Запуск парсера ~каждые 30 мин
 
 while True:
     schedule.run_pending()

@@ -11,3 +11,4 @@ parsreddit.db
 test_bot_aio.py
 chromedriver
 webdriver/
+logger/
