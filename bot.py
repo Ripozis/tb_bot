@@ -19,10 +19,10 @@ import subprocess
 logger.add("logger/bot_log.log", format="{time:YYYY-MM-DD at HH:mm:ss}|{level}|{message}", rotation="100 MB", compression="zip")
 bot = Bot(token=token)
 dp =Dispatcher(bot, storage=MemoryStorage())
-path_img = r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images'
-# path_img = r'/home/ripo/tb_bot/images'
-path_img_file = r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images\\'
-# path_img_file  = r'/home/ripo/tb_bot/images/'
+#path_img = r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images'
+#path_img_file = r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images\\'
+path_img = r'/home/ily/Рабочий стол/py/tb_bot/images'
+path_img_file = r'/home/ily/Рабочий стол/py/tb_bot/images/'
 
 
 @logger.catch
