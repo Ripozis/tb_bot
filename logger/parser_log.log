@@ -2720,3 +2720,1258 @@ urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5184
 2022-01-23 at 13:24:29|DEBUG|Формируем собщение поста с id: 127
 2022-01-23 at 13:24:30|SUCCESS|Собщение сформировано
 2022-01-23 at 13:24:30|SUCCESS|Файл 127bimhjg6qpox71.png удален с диска
+2022-06-05 at 14:08:43|INFO|Получаем посты для публикации
+2022-06-05 at 14:08:43|ERROR|An error has been caught in function 'run', process 'MainProcess' (3922), thread 'MainThread' (140397046589248):
+Traceback (most recent call last):
+
+  File "/home/ily/Рабочий стол/py/tb_bot/main.py", line 150, in <module>
+    schedule.run_pending()
+    │        └ <function run_pending at 0x7fb0b9e34310>
+    └ <module 'schedule' from '/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py'>
+
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 780, in run_pending
+    default_scheduler.run_pending()
+    │                 └ <function Scheduler.run_pending at 0x7fb0b9e24c10>
+    └ <schedule.Scheduler object at 0x7fb0b9e2b9a0>
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 100, in run_pending
+    self._run_job(job)
+    │    │        └ Every 1 minute do send_post_dev(<pyrogram.client.Client object at 0x7fb0b74792b0>) (last run: [never], next run: 2022-06-05 1...
+    │    └ <function Scheduler._run_job at 0x7fb0b9e24f70>
+    └ <schedule.Scheduler object at 0x7fb0b9e2b9a0>
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 172, in _run_job
+    ret = job.run()
+          │   └ <function Job.run at 0x7fb0b9e340d0>
+          └ Every 1 minute do send_post_dev(<pyrogram.client.Client object at 0x7fb0b74792b0>) (last run: [never], next run: 2022-06-05 1...
+> File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 661, in run
+    ret = self.job_func()
+          │    └ functools.partial(<function send_post_dev at 0x7fb0b73d84c0>, <pyrogram.client.Client object at 0x7fb0b74792b0>)
+          └ Every 1 minute do send_post_dev(<pyrogram.client.Client object at 0x7fb0b74792b0>) (last run: [never], next run: 2022-06-05 1...
+
+  File "/home/ily/Рабочий стол/py/tb_bot/main.py", line 101, in send_post_dev
+    on_publik (app, row, post_on_pub)
+    │          │    │    └ [('Завораживающие ледяные голубые глаза этого кота', '470e6uydylsh4b81.jpg', 470, 'https://i.redd.it/e6uydylsh4b81.jpg')]
+    │          │    └ 1
+    │          └ <pyrogram.client.Client object at 0x7fb0b74792b0>
+    └ <function send_post_dev.<locals>.on_publik at 0x7fb0b73d8790>
+
+  File "/home/ily/Рабочий стол/py/tb_bot/main.py", line 51, in on_publik
+    os.chdir('/home/ripo/tb_bot/images')
+    │  └ <built-in function chdir>
+    └ <module 'os' from '/usr/lib/python3.8/os.py'>
+
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ripo/tb_bot/images'
+2022-06-05 at 14:15:08|INFO|Получаем посты для публикации
+2022-06-05 at 14:15:08|SUCCESS|Будем отправлять изображение 470e6uydylsh4b81.jpg
+2022-06-05 at 14:15:08|DEBUG|Формируем собщение поста с id: 470
+2022-06-05 at 14:15:08|ERROR|Ошибка с картинкой для DEV470e6uydylsh4b81.jpg id: 470
+Traceback (most recent call last):
+
+  File "/home/ily/.local/lib/python3.8/site-packages/pyrogram/utils.py", line 47, in get_input_media_from_file_id
+    decoded = FileId.decode(file_id)
+              │      │      └ '470e6uydylsh4b81.jpg'
+              │      └ <staticmethod object at 0x7fb6f83a7940>
+              └ <class 'pyrogram.file_id.FileId'>
+  File "/home/ily/.local/lib/python3.8/site-packages/pyrogram/file_id.py", line 200, in decode
+    decoded = rle_decode(b64_decode(file_id))
+              │          │          └ '470e6uydylsh4b81.jpg'
+              │          └ <function b64_decode at 0x7fb6f83a4a60>
+              └ <function rle_decode at 0x7fb6f83a4b80>
+  File "/home/ily/.local/lib/python3.8/site-packages/pyrogram/file_id.py", line 53, in b64_decode
+    return base64.urlsafe_b64decode(s + "=" * (-len(s) % 4))
+           │      │                 │               └ '470e6uydylsh4b81.jpg'
+           │      │                 └ '470e6uydylsh4b81.jpg'
+           │      └ <function urlsafe_b64decode at 0x7fb6f963eee0>
+           └ <module 'base64' from '/usr/lib/python3.8/base64.py'>
+  File "/usr/lib/python3.8/base64.py", line 133, in urlsafe_b64decode
+    return b64decode(s)
+           │         └ b'470e6uydylsh4b81.jpg'
+           └ <function b64decode at 0x7fb6f964b1f0>
+  File "/usr/lib/python3.8/base64.py", line 87, in b64decode
+    return binascii.a2b_base64(s)
+           │        │          └ b'470e6uydylsh4b81.jpg'
+           │        └ <built-in function a2b_base64>
+           └ <module 'binascii' (built-in)>
+
+binascii.Error: Incorrect padding
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/ily/Рабочий стол/py/tb_bot/main.py", line 150, in <module>
+    schedule.run_pending()
+    │        └ <function run_pending at 0x7fb6f7ab3310>
+    └ <module 'schedule' from '/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py'>
+
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 780, in run_pending
+    default_scheduler.run_pending()
+    │                 └ <function Scheduler.run_pending at 0x7fb6f7aa4c10>
+    └ <schedule.Scheduler object at 0x7fb6f7aa99a0>
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 100, in run_pending
+    self._run_job(job)
+    │    │        └ Every 1 minute do send_post_dev(<pyrogram.client.Client object at 0x7fb6f50f94c0>) (last run: [never], next run: 2022-06-05 1...
+    │    └ <function Scheduler._run_job at 0x7fb6f7aa4f70>
+    └ <schedule.Scheduler object at 0x7fb6f7aa99a0>
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 172, in _run_job
+    ret = job.run()
+          │   └ <function Job.run at 0x7fb6f7ab30d0>
+          └ Every 1 minute do send_post_dev(<pyrogram.client.Client object at 0x7fb6f50f94c0>) (last run: [never], next run: 2022-06-05 1...
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 661, in run
+    ret = self.job_func()
+          │    └ functools.partial(<function send_post_dev at 0x7fb6f5054790>, <pyrogram.client.Client object at 0x7fb6f50f94c0>)
+          └ Every 1 minute do send_post_dev(<pyrogram.client.Client object at 0x7fb6f50f94c0>) (last run: [never], next run: 2022-06-05 1...
+
+  File "/home/ily/Рабочий стол/py/tb_bot/main.py", line 101, in send_post_dev
+    on_publik (app, row, post_on_pub)
+    │          │    │    └ [('Завораживающие ледяные голубые глаза этого кота', '470e6uydylsh4b81.jpg', 470, 'https://i.redd.it/e6uydylsh4b81.jpg')]
+    │          │    └ 1
+    │          └ <pyrogram.client.Client object at 0x7fb6f50f94c0>
+    └ <function send_post_dev.<locals>.on_publik at 0x7fb6f5054550>
+
+> File "/home/ily/Рабочий стол/py/tb_bot/main.py", line 73, in on_publik
+    app.send_photo("Testyfakt", path_file, title)
+    │   │                       │          └ 'Завораживающие ледяные голубые глаза этого кота'
+    │   │                       └ '470e6uydylsh4b81.jpg'
+    │   └ <function SendPhoto.send_photo at 0x7fb6f7db6b80>
+    └ <pyrogram.client.Client object at 0x7fb6f50f94c0>
+
+  File "/home/ily/.local/lib/python3.8/site-packages/pyrogram/sync.py", line 66, in async_to_sync_wrap
+    return loop.run_until_complete(coroutine)
+           │    │                  └ <coroutine object SendPhoto.send_photo at 0x7fb6f5149cc0>
+           │    └ <function BaseEventLoop.run_until_complete at 0x7fb6f8e61a60>
+           └ <_UnixSelectorEventLoop running=False closed=False debug=False>
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+           │      └ <method 'result' of '_asyncio.Task' objects>
+           └ <Task finished name='Task-34' coro=<SendPhoto.send_photo() done, defined at /home/ily/.local/lib/python3.8/site-packages/pyro...
+  File "/home/ily/.local/lib/python3.8/site-packages/pyrogram/methods/messages/send_photo.py", line 161, in send_photo
+    media = utils.get_input_media_from_file_id(photo, FileType.PHOTO)
+            │     │                            │      │        └ <FileType.PHOTO: 2>
+            │     │                            │      └ <enum 'FileType'>
+            │     │                            └ '470e6uydylsh4b81.jpg'
+            │     └ <function get_input_media_from_file_id at 0x7fb6f83a4c10>
+            └ <module 'pyrogram.utils' from '/home/ily/.local/lib/python3.8/site-packages/pyrogram/utils.py'>
+  File "/home/ily/.local/lib/python3.8/site-packages/pyrogram/utils.py", line 49, in get_input_media_from_file_id
+    raise ValueError(f'Failed to decode "{file_id}". The value does not represent an existing local file, '
+
+ValueError: Failed to decode "470e6uydylsh4b81.jpg". The value does not represent an existing local file, HTTP URL, or valid file id.
+2022-06-05 at 14:16:09|INFO|Получаем посты для публикации
+2022-06-05 at 14:16:09|SUCCESS|Будем отправлять видео762_video.mp4
+2022-06-05 at 14:16:09|DEBUG|Формируем собщение поста с id: 762
+2022-06-05 at 14:16:09|ERROR|Ошибка с видео для DEV762_video.mp4 id: 762
+Traceback (most recent call last):
+
+  File "/home/ily/.local/lib/python3.8/site-packages/pyrogram/utils.py", line 47, in get_input_media_from_file_id
+    decoded = FileId.decode(file_id)
+              │      │      └ '762_video.mp4'
+              │      └ <staticmethod object at 0x7fb6f83a7940>
+              └ <class 'pyrogram.file_id.FileId'>
+  File "/home/ily/.local/lib/python3.8/site-packages/pyrogram/file_id.py", line 214, in decode
+    file_type, dc_id = struct.unpack("<ii", buffer.read(8))
+                       │      │             │      └ <method 'read' of '_io.BytesIO' objects>
+                       │      │             └ <_io.BytesIO object at 0x7fb6f47fa9f0>
+                       │      └ <built-in function unpack>
+                       └ <module 'struct' from '/usr/lib/python3.8/struct.py'>
+
+struct.error: unpack requires a buffer of 8 bytes
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/ily/Рабочий стол/py/tb_bot/main.py", line 150, in <module>
+    schedule.run_pending()
+    │        └ <function run_pending at 0x7fb6f7ab3310>
+    └ <module 'schedule' from '/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py'>
+
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 780, in run_pending
+    default_scheduler.run_pending()
+    │                 └ <function Scheduler.run_pending at 0x7fb6f7aa4c10>
+    └ <schedule.Scheduler object at 0x7fb6f7aa99a0>
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 100, in run_pending
+    self._run_job(job)
+    │    │        └ Every 1 minute do send_post_dev(<pyrogram.client.Client object at 0x7fb6f50f94c0>) (last run: 2022-06-05 14:15:09, next run: ...
+    │    └ <function Scheduler._run_job at 0x7fb6f7aa4f70>
+    └ <schedule.Scheduler object at 0x7fb6f7aa99a0>
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 172, in _run_job
+    ret = job.run()
+          │   └ <function Job.run at 0x7fb6f7ab30d0>
+          └ Every 1 minute do send_post_dev(<pyrogram.client.Client object at 0x7fb6f50f94c0>) (last run: 2022-06-05 14:15:09, next run: ...
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 661, in run
+    ret = self.job_func()
+          │    └ functools.partial(<function send_post_dev at 0x7fb6f5054790>, <pyrogram.client.Client object at 0x7fb6f50f94c0>)
+          └ Every 1 minute do send_post_dev(<pyrogram.client.Client object at 0x7fb6f50f94c0>) (last run: 2022-06-05 14:15:09, next run: ...
+
+  File "/home/ily/Рабочий стол/py/tb_bot/main.py", line 101, in send_post_dev
+    on_publik (app, row, post_on_pub)
+    │          │    │    └ [('Test3', '762_video.mp4', 762, 'https://v.redd.it/xutwirolunj81/DASH_240.mp4')]
+    │          │    └ 1
+    │          └ <pyrogram.client.Client object at 0x7fb6f50f94c0>
+    └ <function send_post_dev.<locals>.on_publik at 0x7fb6f50548b0>
+
+> File "/home/ily/Рабочий стол/py/tb_bot/main.py", line 90, in on_publik
+    app.send_video("Testyfakt", video=path_file, caption=title)
+    │   │                             │                  └ 'Test3'
+    │   │                             └ '762_video.mp4'
+    │   └ <function SendVideo.send_video at 0x7fb6f7dba280>
+    └ <pyrogram.client.Client object at 0x7fb6f50f94c0>
+
+  File "/home/ily/.local/lib/python3.8/site-packages/pyrogram/sync.py", line 66, in async_to_sync_wrap
+    return loop.run_until_complete(coroutine)
+           │    │                  └ <coroutine object SendVideo.send_video at 0x7fb6f47beac0>
+           │    └ <function BaseEventLoop.run_until_complete at 0x7fb6f8e61a60>
+           └ <_UnixSelectorEventLoop running=False closed=False debug=False>
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+           │      └ <method 'result' of '_asyncio.Task' objects>
+           └ <Task finished name='Task-35' coro=<SendVideo.send_video() done, defined at /home/ily/.local/lib/python3.8/site-packages/pyro...
+  File "/home/ily/.local/lib/python3.8/site-packages/pyrogram/methods/messages/send_video.py", line 205, in send_video
+    media = utils.get_input_media_from_file_id(video, FileType.VIDEO)
+            │     │                            │      │        └ <FileType.VIDEO: 4>
+            │     │                            │      └ <enum 'FileType'>
+            │     │                            └ '762_video.mp4'
+            │     └ <function get_input_media_from_file_id at 0x7fb6f83a4c10>
+            └ <module 'pyrogram.utils' from '/home/ily/.local/lib/python3.8/site-packages/pyrogram/utils.py'>
+  File "/home/ily/.local/lib/python3.8/site-packages/pyrogram/utils.py", line 49, in get_input_media_from_file_id
+    raise ValueError(f'Failed to decode "{file_id}". The value does not represent an existing local file, '
+
+ValueError: Failed to decode "762_video.mp4". The value does not represent an existing local file, HTTP URL, or valid file id.
+2022-06-05 at 14:48:36|INFO|Получен список каналов
+2022-06-05 at 14:48:36|ERROR|An error has been caught in function '<module>', process 'MainProcess' (5847), thread 'MainThread' (139798099457856):
+Traceback (most recent call last):
+
+  File "/home/ily/.local/lib/python3.8/site-packages/selenium/webdriver/common/service.py", line 71, in start
+    self.process = subprocess.Popen(cmd, env=self.env,
+    │              │          │     │        │    └ environ({'SHELL': '/bin/bash', 'SESSION_MANAGER': 'local/ily-VirtualBox:@/tmp/.ICE-unix/973,unix/ily-VirtualBox:/tmp/.ICE-uni...
+    │              │          │     │        └ <selenium.webdriver.chrome.service.Service object at 0x7f25443009d0>
+    │              │          │     └ ['prs_path_driver', '--port=37701']
+    │              │          └ <class 'subprocess.Popen'>
+    │              └ <module 'subprocess' from '/usr/lib/python3.8/subprocess.py'>
+    └ <selenium.webdriver.chrome.service.Service object at 0x7f25443009d0>
+  File "/usr/lib/python3.8/subprocess.py", line 858, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    │    │              │     │           │           └ True
+    │    │              │     │           └ None
+    │    │              │     └ None
+    │    │              └ ['prs_path_driver', '--port=37701']
+    │    └ <function Popen._execute_child at 0x7f25477de700>
+    └ <subprocess.Popen object at 0x7f2544300a30>
+  File "/usr/lib/python3.8/subprocess.py", line 1704, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+          │                    │          │        └ 'prs_path_driver'
+          │                    │          └ 'No such file or directory'
+          │                    └ 2
+          └ <class 'OSError'>
+
+FileNotFoundError: [Errno 2] No such file or directory: 'prs_path_driver'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+> File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 174, in <module>
+    search_reddit()
+    └ <function search_reddit at 0x7f25479f4ee0>
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 173, in search_reddit
+    redit_login(username, password, redit)
+    │           │         │         └ ('interestingasfuck', 'gifsthatkeepongiving', 'oddlysatisfying')
+    │           │         └ 'UOgyiog8374fgboa8fgdOU6e93ced923c%^CvV'
+    │           └ 'Ripozi'
+    └ <function search_reddit.<locals>.redit_login at 0x7f25443048b0>
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 50, in redit_login
+    browser = webdriver.Chrome(service=s, options=options)
+              │         │              │          └ <selenium.webdriver.chrome.options.Options object at 0x7f2544300be0>
+              │         │              └ <selenium.webdriver.chrome.service.Service object at 0x7f25443009d0>
+              │         └ <class 'selenium.webdriver.chrome.webdriver.WebDriver'>
+              └ <module 'selenium.webdriver' from '/home/ily/.local/lib/python3.8/site-packages/selenium/webdriver/__init__.py'>
+
+  File "/home/ily/.local/lib/python3.8/site-packages/selenium/webdriver/chrome/webdriver.py", line 70, in __init__
+    super(WebDriver, self).__init__(DesiredCapabilities.CHROME['browserName'], "goog",
+          │          │              │                   └ {'browserName': 'chrome'}
+          │          │              └ <class 'selenium.webdriver.common.desired_capabilities.DesiredCapabilities'>
+          │          └ <unprintable WebDriver object>
+          └ <class 'selenium.webdriver.chrome.webdriver.WebDriver'>
+  File "/home/ily/.local/lib/python3.8/site-packages/selenium/webdriver/chromium/webdriver.py", line 90, in __init__
+    self.service.start()
+    │    │       └ <function Service.start at 0x7f2546f868b0>
+    │    └ <selenium.webdriver.chrome.service.Service object at 0x7f25443009d0>
+    └ <unprintable WebDriver object>
+  File "/home/ily/.local/lib/python3.8/site-packages/selenium/webdriver/common/service.py", line 81, in start
+    raise WebDriverException(
+          └ <class 'selenium.common.exceptions.WebDriverException'>
+
+selenium.common.exceptions.WebDriverException: Message: 'prs_path_driver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+
+2022-06-05 at 14:48:56|INFO|Получен список каналов
+2022-06-05 at 14:48:56|ERROR|An error has been caught in function '<module>', process 'MainProcess' (5904), thread 'MainThread' (140511829645120):
+Traceback (most recent call last):
+
+  File "/home/ily/.local/lib/python3.8/site-packages/selenium/webdriver/common/service.py", line 71, in start
+    self.process = subprocess.Popen(cmd, env=self.env,
+    │              │          │     │        │    └ environ({'SHELL': '/bin/bash', 'SESSION_MANAGER': 'local/ily-VirtualBox:@/tmp/.ICE-unix/973,unix/ily-VirtualBox:/tmp/.ICE-uni...
+    │              │          │     │        └ <selenium.webdriver.chrome.service.Service object at 0x7fcb71d23e80>
+    │              │          │     └ ['prs_path_driver', '--port=47127']
+    │              │          └ <class 'subprocess.Popen'>
+    │              └ <module 'subprocess' from '/usr/lib/python3.8/subprocess.py'>
+    └ <selenium.webdriver.chrome.service.Service object at 0x7fcb71d23e80>
+  File "/usr/lib/python3.8/subprocess.py", line 858, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    │    │              │     │           │           └ True
+    │    │              │     │           └ None
+    │    │              │     └ None
+    │    │              └ ['prs_path_driver', '--port=47127']
+    │    └ <function Popen._execute_child at 0x7fcb75204700>
+    └ <subprocess.Popen object at 0x7fcb71d23d30>
+  File "/usr/lib/python3.8/subprocess.py", line 1704, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+          │                    │          │        └ 'prs_path_driver'
+          │                    │          └ 'No such file or directory'
+          │                    └ 2
+          └ <class 'OSError'>
+
+FileNotFoundError: [Errno 2] No such file or directory: 'prs_path_driver'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+> File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 174, in <module>
+    search_reddit()
+    └ <function search_reddit at 0x7fcb7541aee0>
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 173, in search_reddit
+    redit_login(username, password, redit)
+    │           │         │         └ ('interestingasfuck', 'gifsthatkeepongiving', 'oddlysatisfying')
+    │           │         └ 'UOgyiog8374fgboa8fgdOU6e93ced923c%^CvV'
+    │           └ 'Ripozi'
+    └ <function search_reddit.<locals>.redit_login at 0x7fcb71d2a8b0>
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 50, in redit_login
+    browser = webdriver.Chrome(service=s, options=options)
+              │         │              │          └ <selenium.webdriver.chrome.options.Options object at 0x7fcb71d23f70>
+              │         │              └ <selenium.webdriver.chrome.service.Service object at 0x7fcb71d23e80>
+              │         └ <class 'selenium.webdriver.chrome.webdriver.WebDriver'>
+              └ <module 'selenium.webdriver' from '/home/ily/.local/lib/python3.8/site-packages/selenium/webdriver/__init__.py'>
+
+  File "/home/ily/.local/lib/python3.8/site-packages/selenium/webdriver/chrome/webdriver.py", line 70, in __init__
+    super(WebDriver, self).__init__(DesiredCapabilities.CHROME['browserName'], "goog",
+          │          │              │                   └ {'browserName': 'chrome'}
+          │          │              └ <class 'selenium.webdriver.common.desired_capabilities.DesiredCapabilities'>
+          │          └ <unprintable WebDriver object>
+          └ <class 'selenium.webdriver.chrome.webdriver.WebDriver'>
+  File "/home/ily/.local/lib/python3.8/site-packages/selenium/webdriver/chromium/webdriver.py", line 90, in __init__
+    self.service.start()
+    │    │       └ <function Service.start at 0x7fcb749ab8b0>
+    │    └ <selenium.webdriver.chrome.service.Service object at 0x7fcb71d23e80>
+    └ <unprintable WebDriver object>
+  File "/home/ily/.local/lib/python3.8/site-packages/selenium/webdriver/common/service.py", line 81, in start
+    raise WebDriverException(
+          └ <class 'selenium.common.exceptions.WebDriverException'>
+
+selenium.common.exceptions.WebDriverException: Message: 'prs_path_driver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+
+2022-06-05 at 14:51:17|INFO|Получен список каналов
+2022-06-05 at 14:51:17|ERROR|An error has been caught in function '<module>', process 'MainProcess' (6108), thread 'MainThread' (140668748515136):
+Traceback (most recent call last):
+
+  File "/home/ily/.local/lib/python3.8/site-packages/selenium/webdriver/common/service.py", line 71, in start
+    self.process = subprocess.Popen(cmd, env=self.env,
+    │              │          │     │        │    └ environ({'SHELL': '/bin/bash', 'SESSION_MANAGER': 'local/ily-VirtualBox:@/tmp/.ICE-unix/973,unix/ily-VirtualBox:/tmp/.ICE-uni...
+    │              │          │     │        └ <selenium.webdriver.chrome.service.Service object at 0x7feffaea2e20>
+    │              │          │     └ ['prs_path_driver', '--port=39309']
+    │              │          └ <class 'subprocess.Popen'>
+    │              └ <module 'subprocess' from '/usr/lib/python3.8/subprocess.py'>
+    └ <selenium.webdriver.chrome.service.Service object at 0x7feffaea2e20>
+  File "/usr/lib/python3.8/subprocess.py", line 858, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    │    │              │     │           │           └ True
+    │    │              │     │           └ None
+    │    │              │     └ None
+    │    │              └ ['prs_path_driver', '--port=39309']
+    │    └ <function Popen._execute_child at 0x7feffe383700>
+    └ <subprocess.Popen object at 0x7feffaea2cd0>
+  File "/usr/lib/python3.8/subprocess.py", line 1704, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+          │                    │          │        └ 'prs_path_driver'
+          │                    │          └ 'No such file or directory'
+          │                    └ 2
+          └ <class 'OSError'>
+
+FileNotFoundError: [Errno 2] No such file or directory: 'prs_path_driver'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+> File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 174, in <module>
+    search_reddit()
+    └ <function search_reddit at 0x7feffe599ee0>
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 173, in search_reddit
+    redit_login(username, password, redit)
+    │           │         │         └ ('interestingasfuck', 'gifsthatkeepongiving', 'oddlysatisfying')
+    │           │         └ 'UOgyiog8374fgboa8fgdOU6e93ced923c%^CvV'
+    │           └ 'Ripozi'
+    └ <function search_reddit.<locals>.redit_login at 0x7feffaea98b0>
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 50, in redit_login
+    browser = webdriver.Chrome(service=s, options=options)
+              │         │              │          └ <selenium.webdriver.chrome.options.Options object at 0x7feffaea2f10>
+              │         │              └ <selenium.webdriver.chrome.service.Service object at 0x7feffaea2e20>
+              │         └ <class 'selenium.webdriver.chrome.webdriver.WebDriver'>
+              └ <module 'selenium.webdriver' from '/home/ily/.local/lib/python3.8/site-packages/selenium/webdriver/__init__.py'>
+
+  File "/home/ily/.local/lib/python3.8/site-packages/selenium/webdriver/chrome/webdriver.py", line 70, in __init__
+    super(WebDriver, self).__init__(DesiredCapabilities.CHROME['browserName'], "goog",
+          │          │              │                   └ {'browserName': 'chrome'}
+          │          │              └ <class 'selenium.webdriver.common.desired_capabilities.DesiredCapabilities'>
+          │          └ <unprintable WebDriver object>
+          └ <class 'selenium.webdriver.chrome.webdriver.WebDriver'>
+  File "/home/ily/.local/lib/python3.8/site-packages/selenium/webdriver/chromium/webdriver.py", line 90, in __init__
+    self.service.start()
+    │    │       └ <function Service.start at 0x7feffdb2a8b0>
+    │    └ <selenium.webdriver.chrome.service.Service object at 0x7feffaea2e20>
+    └ <unprintable WebDriver object>
+  File "/home/ily/.local/lib/python3.8/site-packages/selenium/webdriver/common/service.py", line 81, in start
+    raise WebDriverException(
+          └ <class 'selenium.common.exceptions.WebDriverException'>
+
+selenium.common.exceptions.WebDriverException: Message: 'prs_path_driver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+
+2022-06-05 at 14:53:38|INFO|Получен список каналов
+2022-06-05 at 14:53:48|SUCCESS|Определены настройки веб драйвера
+2022-06-05 at 14:53:48|DEBUG|Логинимся на reddit
+2022-06-05 at 14:54:10|SUCCESS|Учпешно залогинились
+2022-06-05 at 14:54:10|DEBUG|Переходим в канал interestingasfuck
+2022-06-05 at 14:54:12|SUCCESS|Зашли в канал interestingasfuck и сформировали json
+2022-06-05 at 14:54:12|SUCCESS|Завершили скачивание из канала interestingasfuck
+2022-06-05 at 14:54:12|INFO|Вынимаем данне json из html
+2022-06-05 at 14:54:12|SUCCESS|Завершили формирование Json
+2022-06-05 at 14:54:12|INFO|Начинаем писать в БД из паблика interestingasfuck
+2022-06-05 at 14:54:45|SUCCESS|Закончили писать в БД из паблика interestingasfuck
+2022-06-05 at 14:54:45|DEBUG|Запуск удаления файлов из БД помеченных на удаление[('250_video.mp4', 250), ('384_video.mp4', 384), ('678_video.mp4', 678)]
+2022-06-05 at 14:54:45|ERROR|Ошибка при поиске файла: 
+Traceback (most recent call last):
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 174, in <module>
+    search_reddit()
+    └ <function search_reddit at 0x7f73e0a1dee0>
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 173, in search_reddit
+    redit_login(username, password, redit)
+    │           │         │         └ ('interestingasfuck', 'gifsthatkeepongiving', 'oddlysatisfying')
+    │           │         └ 'UOgyiog8374fgboa8fgdOU6e93ced923c%^CvV'
+    │           └ 'Ripozi'
+    └ <function search_reddit.<locals>.redit_login at 0x7f73dd32d8b0>
+
+> File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 161, in redit_login
+    os.remove(prs_path_img + path_file) # удаление файла
+    │  │      │              └ '250_video.mp4'
+    │  │      └ '/home/ily/Рабочий стол/py/tb_bot/images/'
+    │  └ <built-in function remove>
+    └ <module 'os' from '/usr/lib/python3.8/os.py'>
+
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ily/Рабочий стол/py/tb_bot/images/250_video.mp4'
+2022-06-05 at 14:54:45|ERROR|Ошибка при поиске файла: 
+Traceback (most recent call last):
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 174, in <module>
+    search_reddit()
+    └ <function search_reddit at 0x7f73e0a1dee0>
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 173, in search_reddit
+    redit_login(username, password, redit)
+    │           │         │         └ ('interestingasfuck', 'gifsthatkeepongiving', 'oddlysatisfying')
+    │           │         └ 'UOgyiog8374fgboa8fgdOU6e93ced923c%^CvV'
+    │           └ 'Ripozi'
+    └ <function search_reddit.<locals>.redit_login at 0x7f73dd32d8b0>
+
+> File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 161, in redit_login
+    os.remove(prs_path_img + path_file) # удаление файла
+    │  │      │              └ '384_video.mp4'
+    │  │      └ '/home/ily/Рабочий стол/py/tb_bot/images/'
+    │  └ <built-in function remove>
+    └ <module 'os' from '/usr/lib/python3.8/os.py'>
+
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ily/Рабочий стол/py/tb_bot/images/384_video.mp4'
+2022-06-05 at 14:54:45|ERROR|Ошибка при поиске файла: 
+Traceback (most recent call last):
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 174, in <module>
+    search_reddit()
+    └ <function search_reddit at 0x7f73e0a1dee0>
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 173, in search_reddit
+    redit_login(username, password, redit)
+    │           │         │         └ ('interestingasfuck', 'gifsthatkeepongiving', 'oddlysatisfying')
+    │           │         └ 'UOgyiog8374fgboa8fgdOU6e93ced923c%^CvV'
+    │           └ 'Ripozi'
+    └ <function search_reddit.<locals>.redit_login at 0x7f73dd32d8b0>
+
+> File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 161, in redit_login
+    os.remove(prs_path_img + path_file) # удаление файла
+    │  │      │              └ '678_video.mp4'
+    │  │      └ '/home/ily/Рабочий стол/py/tb_bot/images/'
+    │  └ <built-in function remove>
+    └ <module 'os' from '/usr/lib/python3.8/os.py'>
+
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ily/Рабочий стол/py/tb_bot/images/678_video.mp4'
+2022-06-05 at 14:54:45|INFO|Получен список каналов
+2022-06-05 at 14:54:46|SUCCESS|Определены настройки веб драйвера
+2022-06-05 at 14:54:46|DEBUG|Логинимся на reddit
+2022-06-05 at 14:55:05|SUCCESS|Учпешно залогинились
+2022-06-05 at 14:55:05|DEBUG|Переходим в канал gifsthatkeepongiving
+2022-06-05 at 14:55:09|SUCCESS|Зашли в канал gifsthatkeepongiving и сформировали json
+2022-06-05 at 14:55:09|SUCCESS|Завершили скачивание из канала gifsthatkeepongiving
+2022-06-05 at 14:55:09|INFO|Вынимаем данне json из html
+2022-06-05 at 14:55:09|SUCCESS|Завершили формирование Json
+2022-06-05 at 14:55:09|INFO|Начинаем писать в БД из паблика gifsthatkeepongiving
+2022-06-05 at 14:58:55|INFO|Получен список каналов
+2022-06-05 at 14:58:56|SUCCESS|Определены настройки веб драйвера
+2022-06-05 at 14:58:56|DEBUG|Логинимся на reddit
+2022-06-05 at 14:59:13|SUCCESS|Учпешно залогинились
+2022-06-05 at 14:59:13|DEBUG|Переходим в канал interestingasfuck
+2022-06-05 at 14:59:16|SUCCESS|Зашли в канал interestingasfuck и сформировали json
+2022-06-05 at 14:59:16|SUCCESS|Завершили скачивание из канала interestingasfuck
+2022-06-05 at 14:59:16|INFO|Вынимаем данне json из html
+2022-06-05 at 14:59:16|SUCCESS|Завершили формирование Json
+2022-06-05 at 14:59:16|INFO|Начинаем писать в БД из паблика interestingasfuck
+2022-06-05 at 15:00:42|INFO|Получен список каналов
+2022-06-05 at 15:00:43|SUCCESS|Определены настройки веб драйвера
+2022-06-05 at 15:00:43|DEBUG|Логинимся на reddit
+2022-06-05 at 15:01:02|SUCCESS|Учпешно залогинились
+2022-06-05 at 15:01:02|DEBUG|Переходим в канал interestingasfuck
+2022-06-05 at 15:01:04|SUCCESS|Зашли в канал interestingasfuck и сформировали json
+2022-06-05 at 15:01:04|SUCCESS|Завершили скачивание из канала interestingasfuck
+2022-06-05 at 15:01:04|INFO|Вынимаем данне json из html
+2022-06-05 at 15:01:04|SUCCESS|Завершили формирование Json
+2022-06-05 at 15:01:04|INFO|Начинаем писать в БД из паблика interestingasfuck
+2022-06-05 at 15:01:29|SUCCESS|Закончили писать в БД из паблика interestingasfuck
+2022-06-05 at 15:01:29|DEBUG|Запуск удаления файлов из БД помеченных на удаление[('250_video.mp4', 250), ('384_video.mp4', 384), ('678_video.mp4', 678)]
+2022-06-05 at 15:01:29|ERROR|Ошибка при поиске файла: 
+Traceback (most recent call last):
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 174, in <module>
+    search_reddit()
+    └ <function search_reddit at 0x7f5aa0e6aee0>
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 173, in search_reddit
+    redit_login(username, password, redit)
+    │           │         │         └ ('interestingasfuck', 'gifsthatkeepongiving', 'oddlysatisfying')
+    │           │         └ 'UOgyiog8374fgboa8fgdOU6e93ced923c%^CvV'
+    │           └ 'Ripozi'
+    └ <function search_reddit.<locals>.redit_login at 0x7f5a9d77a8b0>
+
+> File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 161, in redit_login
+    os.remove(prs_path_img + path_file) # удаление файла
+    │  │      │              └ '250_video.mp4'
+    │  │      └ '/home/ily/Рабочий стол/py/tb_bot/images/'
+    │  └ <built-in function remove>
+    └ <module 'os' from '/usr/lib/python3.8/os.py'>
+
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ily/Рабочий стол/py/tb_bot/images/250_video.mp4'
+2022-06-05 at 15:01:29|ERROR|Ошибка при поиске файла: 
+Traceback (most recent call last):
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 174, in <module>
+    search_reddit()
+    └ <function search_reddit at 0x7f5aa0e6aee0>
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 173, in search_reddit
+    redit_login(username, password, redit)
+    │           │         │         └ ('interestingasfuck', 'gifsthatkeepongiving', 'oddlysatisfying')
+    │           │         └ 'UOgyiog8374fgboa8fgdOU6e93ced923c%^CvV'
+    │           └ 'Ripozi'
+    └ <function search_reddit.<locals>.redit_login at 0x7f5a9d77a8b0>
+
+> File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 161, in redit_login
+    os.remove(prs_path_img + path_file) # удаление файла
+    │  │      │              └ '384_video.mp4'
+    │  │      └ '/home/ily/Рабочий стол/py/tb_bot/images/'
+    │  └ <built-in function remove>
+    └ <module 'os' from '/usr/lib/python3.8/os.py'>
+
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ily/Рабочий стол/py/tb_bot/images/384_video.mp4'
+2022-06-05 at 15:01:29|ERROR|Ошибка при поиске файла: 
+Traceback (most recent call last):
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 174, in <module>
+    search_reddit()
+    └ <function search_reddit at 0x7f5aa0e6aee0>
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 173, in search_reddit
+    redit_login(username, password, redit)
+    │           │         │         └ ('interestingasfuck', 'gifsthatkeepongiving', 'oddlysatisfying')
+    │           │         └ 'UOgyiog8374fgboa8fgdOU6e93ced923c%^CvV'
+    │           └ 'Ripozi'
+    └ <function search_reddit.<locals>.redit_login at 0x7f5a9d77a8b0>
+
+> File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 161, in redit_login
+    os.remove(prs_path_img + path_file) # удаление файла
+    │  │      │              └ '678_video.mp4'
+    │  │      └ '/home/ily/Рабочий стол/py/tb_bot/images/'
+    │  └ <built-in function remove>
+    └ <module 'os' from '/usr/lib/python3.8/os.py'>
+
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ily/Рабочий стол/py/tb_bot/images/678_video.mp4'
+2022-06-05 at 15:01:29|INFO|Получен список каналов
+2022-06-05 at 15:01:29|SUCCESS|Определены настройки веб драйвера
+2022-06-05 at 15:01:29|DEBUG|Логинимся на reddit
+2022-06-05 at 15:08:36|INFO|Получен список каналов
+2022-06-05 at 15:08:37|SUCCESS|Определены настройки веб драйвера
+2022-06-05 at 15:08:37|DEBUG|Логинимся на reddit
+2022-06-05 at 15:08:55|SUCCESS|Учпешно залогинились
+2022-06-05 at 15:08:55|DEBUG|Переходим в канал interestingasfuck
+2022-06-05 at 15:08:57|SUCCESS|Зашли в канал interestingasfuck и сформировали json
+2022-06-05 at 15:08:57|SUCCESS|Завершили скачивание из канала interestingasfuck
+2022-06-05 at 15:08:57|INFO|Вынимаем данне json из html
+2022-06-05 at 15:08:57|SUCCESS|Завершили формирование Json
+2022-06-05 at 15:08:57|INFO|Начинаем писать в БД из паблика interestingasfuck
+2022-06-05 at 15:09:22|SUCCESS|Закончили писать в БД из паблика interestingasfuck
+2022-06-05 at 15:09:22|DEBUG|Запуск удаления файлов из БД помеченных на удаление[('250_video.mp4', 250), ('384_video.mp4', 384), ('678_video.mp4', 678)]
+2022-06-05 at 15:09:22|ERROR|Ошибка при поиске файла: 
+Traceback (most recent call last):
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 174, in <module>
+    search_reddit()
+    └ <function search_reddit at 0x7fc9b3aa2ee0>
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 173, in search_reddit
+    redit_login(username, password, redit)
+    │           │         │         └ ('interestingasfuck', 'gifsthatkeepongiving', 'oddlysatisfying')
+    │           │         └ 'UOgyiog8374fgboa8fgdOU6e93ced923c%^CvV'
+    │           └ 'Ripozi'
+    └ <function search_reddit.<locals>.redit_login at 0x7fc9b03b28b0>
+
+> File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 161, in redit_login
+    os.remove(prs_path_img + path_file) # удаление файла
+    │  │      │              └ '250_video.mp4'
+    │  │      └ '/home/ily/Рабочий стол/py/tb_bot/images/'
+    │  └ <built-in function remove>
+    └ <module 'os' from '/usr/lib/python3.8/os.py'>
+
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ily/Рабочий стол/py/tb_bot/images/250_video.mp4'
+2022-06-05 at 15:09:22|ERROR|Ошибка при поиске файла: 
+Traceback (most recent call last):
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 174, in <module>
+    search_reddit()
+    └ <function search_reddit at 0x7fc9b3aa2ee0>
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 173, in search_reddit
+    redit_login(username, password, redit)
+    │           │         │         └ ('interestingasfuck', 'gifsthatkeepongiving', 'oddlysatisfying')
+    │           │         └ 'UOgyiog8374fgboa8fgdOU6e93ced923c%^CvV'
+    │           └ 'Ripozi'
+    └ <function search_reddit.<locals>.redit_login at 0x7fc9b03b28b0>
+
+> File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 161, in redit_login
+    os.remove(prs_path_img + path_file) # удаление файла
+    │  │      │              └ '384_video.mp4'
+    │  │      └ '/home/ily/Рабочий стол/py/tb_bot/images/'
+    │  └ <built-in function remove>
+    └ <module 'os' from '/usr/lib/python3.8/os.py'>
+
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ily/Рабочий стол/py/tb_bot/images/384_video.mp4'
+2022-06-05 at 15:09:22|ERROR|Ошибка при поиске файла: 
+Traceback (most recent call last):
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 174, in <module>
+    search_reddit()
+    └ <function search_reddit at 0x7fc9b3aa2ee0>
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 173, in search_reddit
+    redit_login(username, password, redit)
+    │           │         │         └ ('interestingasfuck', 'gifsthatkeepongiving', 'oddlysatisfying')
+    │           │         └ 'UOgyiog8374fgboa8fgdOU6e93ced923c%^CvV'
+    │           └ 'Ripozi'
+    └ <function search_reddit.<locals>.redit_login at 0x7fc9b03b28b0>
+
+> File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 161, in redit_login
+    os.remove(prs_path_img + path_file) # удаление файла
+    │  │      │              └ '678_video.mp4'
+    │  │      └ '/home/ily/Рабочий стол/py/tb_bot/images/'
+    │  └ <built-in function remove>
+    └ <module 'os' from '/usr/lib/python3.8/os.py'>
+
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ily/Рабочий стол/py/tb_bot/images/678_video.mp4'
+2022-06-05 at 15:09:22|INFO|Получен список каналов
+2022-06-05 at 15:09:23|SUCCESS|Определены настройки веб драйвера
+2022-06-05 at 15:09:23|DEBUG|Логинимся на reddit
+2022-06-05 at 15:09:41|SUCCESS|Учпешно залогинились
+2022-06-05 at 15:09:41|DEBUG|Переходим в канал gifsthatkeepongiving
+2022-06-05 at 15:09:43|SUCCESS|Зашли в канал gifsthatkeepongiving и сформировали json
+2022-06-05 at 15:09:43|SUCCESS|Завершили скачивание из канала gifsthatkeepongiving
+2022-06-05 at 15:09:43|INFO|Вынимаем данне json из html
+2022-06-05 at 15:09:43|SUCCESS|Завершили формирование Json
+2022-06-05 at 15:09:43|INFO|Начинаем писать в БД из паблика gifsthatkeepongiving
+2022-06-05 at 15:10:06|SUCCESS|Закончили писать в БД из паблика gifsthatkeepongiving
+2022-06-05 at 15:10:06|DEBUG|Запуск удаления файлов из БД помеченных на удаление[('250_video.mp4', 250), ('384_video.mp4', 384), ('678_video.mp4', 678)]
+2022-06-05 at 15:10:06|ERROR|Ошибка при поиске файла: 
+Traceback (most recent call last):
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 174, in <module>
+    search_reddit()
+    └ <function search_reddit at 0x7fc9b3aa2ee0>
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 173, in search_reddit
+    redit_login(username, password, redit)
+    │           │         │         └ ('interestingasfuck', 'gifsthatkeepongiving', 'oddlysatisfying')
+    │           │         └ 'UOgyiog8374fgboa8fgdOU6e93ced923c%^CvV'
+    │           └ 'Ripozi'
+    └ <function search_reddit.<locals>.redit_login at 0x7fc9b03b28b0>
+
+> File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 161, in redit_login
+    os.remove(prs_path_img + path_file) # удаление файла
+    │  │      │              └ '250_video.mp4'
+    │  │      └ '/home/ily/Рабочий стол/py/tb_bot/images/'
+    │  └ <built-in function remove>
+    └ <module 'os' from '/usr/lib/python3.8/os.py'>
+
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ily/Рабочий стол/py/tb_bot/images/250_video.mp4'
+2022-06-05 at 15:10:06|ERROR|Ошибка при поиске файла: 
+Traceback (most recent call last):
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 174, in <module>
+    search_reddit()
+    └ <function search_reddit at 0x7fc9b3aa2ee0>
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 173, in search_reddit
+    redit_login(username, password, redit)
+    │           │         │         └ ('interestingasfuck', 'gifsthatkeepongiving', 'oddlysatisfying')
+    │           │         └ 'UOgyiog8374fgboa8fgdOU6e93ced923c%^CvV'
+    │           └ 'Ripozi'
+    └ <function search_reddit.<locals>.redit_login at 0x7fc9b03b28b0>
+
+> File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 161, in redit_login
+    os.remove(prs_path_img + path_file) # удаление файла
+    │  │      │              └ '384_video.mp4'
+    │  │      └ '/home/ily/Рабочий стол/py/tb_bot/images/'
+    │  └ <built-in function remove>
+    └ <module 'os' from '/usr/lib/python3.8/os.py'>
+
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ily/Рабочий стол/py/tb_bot/images/384_video.mp4'
+2022-06-05 at 15:10:06|ERROR|Ошибка при поиске файла: 
+Traceback (most recent call last):
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 174, in <module>
+    search_reddit()
+    └ <function search_reddit at 0x7fc9b3aa2ee0>
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 173, in search_reddit
+    redit_login(username, password, redit)
+    │           │         │         └ ('interestingasfuck', 'gifsthatkeepongiving', 'oddlysatisfying')
+    │           │         └ 'UOgyiog8374fgboa8fgdOU6e93ced923c%^CvV'
+    │           └ 'Ripozi'
+    └ <function search_reddit.<locals>.redit_login at 0x7fc9b03b28b0>
+
+> File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 161, in redit_login
+    os.remove(prs_path_img + path_file) # удаление файла
+    │  │      │              └ '678_video.mp4'
+    │  │      └ '/home/ily/Рабочий стол/py/tb_bot/images/'
+    │  └ <built-in function remove>
+    └ <module 'os' from '/usr/lib/python3.8/os.py'>
+
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ily/Рабочий стол/py/tb_bot/images/678_video.mp4'
+2022-06-05 at 15:10:06|INFO|Получен список каналов
+2022-06-05 at 15:10:07|SUCCESS|Определены настройки веб драйвера
+2022-06-05 at 15:10:07|DEBUG|Логинимся на reddit
+2022-06-05 at 15:10:24|SUCCESS|Учпешно залогинились
+2022-06-05 at 15:10:24|DEBUG|Переходим в канал oddlysatisfying
+2022-06-05 at 15:10:28|SUCCESS|Зашли в канал oddlysatisfying и сформировали json
+2022-06-05 at 15:10:28|SUCCESS|Завершили скачивание из канала oddlysatisfying
+2022-06-05 at 15:10:28|INFO|Вынимаем данне json из html
+2022-06-05 at 15:10:28|SUCCESS|Завершили формирование Json
+2022-06-05 at 15:10:28|INFO|Начинаем писать в БД из паблика oddlysatisfying
+2022-06-05 at 15:15:51|INFO|Получаем посты для публикации
+2022-06-05 at 15:15:51|INFO|Получен список каналов
+2022-06-05 at 15:15:52|SUCCESS|Определены настройки веб драйвера
+2022-06-05 at 15:15:52|DEBUG|Логинимся на reddit
+2022-06-05 at 15:16:08|SUCCESS|Учпешно залогинились
+2022-06-05 at 15:16:08|DEBUG|Переходим в канал interestingasfuck
+2022-06-05 at 15:16:14|SUCCESS|Зашли в канал interestingasfuck и сформировали json
+2022-06-05 at 15:16:14|SUCCESS|Завершили скачивание из канала interestingasfuck
+2022-06-05 at 15:16:14|INFO|Вынимаем данне json из html
+2022-06-05 at 15:16:14|SUCCESS|Завершили формирование Json
+2022-06-05 at 15:16:14|INFO|Начинаем писать в БД из паблика interestingasfuck
+2022-06-05 at 15:16:41|SUCCESS|Закончили писать в БД из паблика interestingasfuck
+2022-06-05 at 15:16:41|DEBUG|Запуск удаления файлов из БД помеченных на удаление[('250_video.mp4', 250), ('384_video.mp4', 384), ('678_video.mp4', 678)]
+2022-06-05 at 15:16:41|ERROR|Ошибка при поиске файла: 
+Traceback (most recent call last):
+
+  File "/home/ily/Рабочий стол/py/tb_bot/main.py", line 150, in <module>
+    schedule.run_pending()
+    │        └ <function run_pending at 0x7fc745a6d310>
+    └ <module 'schedule' from '/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py'>
+
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 780, in run_pending
+    default_scheduler.run_pending()
+    │                 └ <function Scheduler.run_pending at 0x7fc745a5fc10>
+    └ <schedule.Scheduler object at 0x7fc745a649a0>
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 100, in run_pending
+    self._run_job(job)
+    │    │        └ Every 1 minute do search_reddit() (last run: [never], next run: 2022-06-05 15:15:51)
+    │    └ <function Scheduler._run_job at 0x7fc745a5ff70>
+    └ <schedule.Scheduler object at 0x7fc745a649a0>
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 172, in _run_job
+    ret = job.run()
+          │   └ <function Job.run at 0x7fc745a6d0d0>
+          └ Every 1 minute do search_reddit() (last run: [never], next run: 2022-06-05 15:15:51)
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 661, in run
+    ret = self.job_func()
+          │    └ functools.partial(<function search_reddit at 0x7fc745a6daf0>)
+          └ Every 1 minute do search_reddit() (last run: [never], next run: 2022-06-05 15:15:51)
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 173, in search_reddit
+    redit_login(username, password, redit)
+    │           │         │         └ ('interestingasfuck', 'gifsthatkeepongiving', 'oddlysatisfying')
+    │           │         └ 'UOgyiog8374fgboa8fgdOU6e93ced923c%^CvV'
+    │           └ 'Ripozi'
+    └ <function search_reddit.<locals>.redit_login at 0x7fc74300f790>
+
+> File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 161, in redit_login
+    os.remove(prs_path_img + path_file) # удаление файла
+    │  │      │              └ '250_video.mp4'
+    │  │      └ '/home/ily/Рабочий стол/py/tb_bot/images/'
+    │  └ <built-in function remove>
+    └ <module 'os' from '/usr/lib/python3.8/os.py'>
+
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ily/Рабочий стол/py/tb_bot/images/250_video.mp4'
+2022-06-05 at 15:16:41|ERROR|Ошибка при поиске файла: 
+Traceback (most recent call last):
+
+  File "/home/ily/Рабочий стол/py/tb_bot/main.py", line 150, in <module>
+    schedule.run_pending()
+    │        └ <function run_pending at 0x7fc745a6d310>
+    └ <module 'schedule' from '/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py'>
+
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 780, in run_pending
+    default_scheduler.run_pending()
+    │                 └ <function Scheduler.run_pending at 0x7fc745a5fc10>
+    └ <schedule.Scheduler object at 0x7fc745a649a0>
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 100, in run_pending
+    self._run_job(job)
+    │    │        └ Every 1 minute do search_reddit() (last run: [never], next run: 2022-06-05 15:15:51)
+    │    └ <function Scheduler._run_job at 0x7fc745a5ff70>
+    └ <schedule.Scheduler object at 0x7fc745a649a0>
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 172, in _run_job
+    ret = job.run()
+          │   └ <function Job.run at 0x7fc745a6d0d0>
+          └ Every 1 minute do search_reddit() (last run: [never], next run: 2022-06-05 15:15:51)
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 661, in run
+    ret = self.job_func()
+          │    └ functools.partial(<function search_reddit at 0x7fc745a6daf0>)
+          └ Every 1 minute do search_reddit() (last run: [never], next run: 2022-06-05 15:15:51)
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 173, in search_reddit
+    redit_login(username, password, redit)
+    │           │         │         └ ('interestingasfuck', 'gifsthatkeepongiving', 'oddlysatisfying')
+    │           │         └ 'UOgyiog8374fgboa8fgdOU6e93ced923c%^CvV'
+    │           └ 'Ripozi'
+    └ <function search_reddit.<locals>.redit_login at 0x7fc74300f790>
+
+> File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 161, in redit_login
+    os.remove(prs_path_img + path_file) # удаление файла
+    │  │      │              └ '384_video.mp4'
+    │  │      └ '/home/ily/Рабочий стол/py/tb_bot/images/'
+    │  └ <built-in function remove>
+    └ <module 'os' from '/usr/lib/python3.8/os.py'>
+
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ily/Рабочий стол/py/tb_bot/images/384_video.mp4'
+2022-06-05 at 15:16:41|ERROR|Ошибка при поиске файла: 
+Traceback (most recent call last):
+
+  File "/home/ily/Рабочий стол/py/tb_bot/main.py", line 150, in <module>
+    schedule.run_pending()
+    │        └ <function run_pending at 0x7fc745a6d310>
+    └ <module 'schedule' from '/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py'>
+
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 780, in run_pending
+    default_scheduler.run_pending()
+    │                 └ <function Scheduler.run_pending at 0x7fc745a5fc10>
+    └ <schedule.Scheduler object at 0x7fc745a649a0>
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 100, in run_pending
+    self._run_job(job)
+    │    │        └ Every 1 minute do search_reddit() (last run: [never], next run: 2022-06-05 15:15:51)
+    │    └ <function Scheduler._run_job at 0x7fc745a5ff70>
+    └ <schedule.Scheduler object at 0x7fc745a649a0>
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 172, in _run_job
+    ret = job.run()
+          │   └ <function Job.run at 0x7fc745a6d0d0>
+          └ Every 1 minute do search_reddit() (last run: [never], next run: 2022-06-05 15:15:51)
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 661, in run
+    ret = self.job_func()
+          │    └ functools.partial(<function search_reddit at 0x7fc745a6daf0>)
+          └ Every 1 minute do search_reddit() (last run: [never], next run: 2022-06-05 15:15:51)
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 173, in search_reddit
+    redit_login(username, password, redit)
+    │           │         │         └ ('interestingasfuck', 'gifsthatkeepongiving', 'oddlysatisfying')
+    │           │         └ 'UOgyiog8374fgboa8fgdOU6e93ced923c%^CvV'
+    │           └ 'Ripozi'
+    └ <function search_reddit.<locals>.redit_login at 0x7fc74300f790>
+
+> File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 161, in redit_login
+    os.remove(prs_path_img + path_file) # удаление файла
+    │  │      │              └ '678_video.mp4'
+    │  │      └ '/home/ily/Рабочий стол/py/tb_bot/images/'
+    │  └ <built-in function remove>
+    └ <module 'os' from '/usr/lib/python3.8/os.py'>
+
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ily/Рабочий стол/py/tb_bot/images/678_video.mp4'
+2022-06-05 at 15:16:41|INFO|Получен список каналов
+2022-06-05 at 15:16:42|SUCCESS|Определены настройки веб драйвера
+2022-06-05 at 15:16:42|DEBUG|Логинимся на reddit
+2022-06-05 at 15:16:58|SUCCESS|Учпешно залогинились
+2022-06-05 at 15:16:58|DEBUG|Переходим в канал gifsthatkeepongiving
+2022-06-05 at 15:17:04|SUCCESS|Зашли в канал gifsthatkeepongiving и сформировали json
+2022-06-05 at 15:17:05|SUCCESS|Завершили скачивание из канала gifsthatkeepongiving
+2022-06-05 at 15:17:05|INFO|Вынимаем данне json из html
+2022-06-05 at 15:17:05|SUCCESS|Завершили формирование Json
+2022-06-05 at 15:17:05|INFO|Начинаем писать в БД из паблика gifsthatkeepongiving
+2022-06-05 at 15:17:29|SUCCESS|Закончили писать в БД из паблика gifsthatkeepongiving
+2022-06-05 at 15:17:29|DEBUG|Запуск удаления файлов из БД помеченных на удаление[('250_video.mp4', 250), ('384_video.mp4', 384), ('678_video.mp4', 678)]
+2022-06-05 at 15:17:29|ERROR|Ошибка при поиске файла: 
+Traceback (most recent call last):
+
+  File "/home/ily/Рабочий стол/py/tb_bot/main.py", line 150, in <module>
+    schedule.run_pending()
+    │        └ <function run_pending at 0x7fc745a6d310>
+    └ <module 'schedule' from '/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py'>
+
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 780, in run_pending
+    default_scheduler.run_pending()
+    │                 └ <function Scheduler.run_pending at 0x7fc745a5fc10>
+    └ <schedule.Scheduler object at 0x7fc745a649a0>
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 100, in run_pending
+    self._run_job(job)
+    │    │        └ Every 1 minute do search_reddit() (last run: [never], next run: 2022-06-05 15:15:51)
+    │    └ <function Scheduler._run_job at 0x7fc745a5ff70>
+    └ <schedule.Scheduler object at 0x7fc745a649a0>
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 172, in _run_job
+    ret = job.run()
+          │   └ <function Job.run at 0x7fc745a6d0d0>
+          └ Every 1 minute do search_reddit() (last run: [never], next run: 2022-06-05 15:15:51)
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 661, in run
+    ret = self.job_func()
+          │    └ functools.partial(<function search_reddit at 0x7fc745a6daf0>)
+          └ Every 1 minute do search_reddit() (last run: [never], next run: 2022-06-05 15:15:51)
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 173, in search_reddit
+    redit_login(username, password, redit)
+    │           │         │         └ ('interestingasfuck', 'gifsthatkeepongiving', 'oddlysatisfying')
+    │           │         └ 'UOgyiog8374fgboa8fgdOU6e93ced923c%^CvV'
+    │           └ 'Ripozi'
+    └ <function search_reddit.<locals>.redit_login at 0x7fc74300f790>
+
+> File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 161, in redit_login
+    os.remove(prs_path_img + path_file) # удаление файла
+    │  │      │              └ '250_video.mp4'
+    │  │      └ '/home/ily/Рабочий стол/py/tb_bot/images/'
+    │  └ <built-in function remove>
+    └ <module 'os' from '/usr/lib/python3.8/os.py'>
+
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ily/Рабочий стол/py/tb_bot/images/250_video.mp4'
+2022-06-05 at 15:17:29|ERROR|Ошибка при поиске файла: 
+Traceback (most recent call last):
+
+  File "/home/ily/Рабочий стол/py/tb_bot/main.py", line 150, in <module>
+    schedule.run_pending()
+    │        └ <function run_pending at 0x7fc745a6d310>
+    └ <module 'schedule' from '/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py'>
+
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 780, in run_pending
+    default_scheduler.run_pending()
+    │                 └ <function Scheduler.run_pending at 0x7fc745a5fc10>
+    └ <schedule.Scheduler object at 0x7fc745a649a0>
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 100, in run_pending
+    self._run_job(job)
+    │    │        └ Every 1 minute do search_reddit() (last run: [never], next run: 2022-06-05 15:15:51)
+    │    └ <function Scheduler._run_job at 0x7fc745a5ff70>
+    └ <schedule.Scheduler object at 0x7fc745a649a0>
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 172, in _run_job
+    ret = job.run()
+          │   └ <function Job.run at 0x7fc745a6d0d0>
+          └ Every 1 minute do search_reddit() (last run: [never], next run: 2022-06-05 15:15:51)
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 661, in run
+    ret = self.job_func()
+          │    └ functools.partial(<function search_reddit at 0x7fc745a6daf0>)
+          └ Every 1 minute do search_reddit() (last run: [never], next run: 2022-06-05 15:15:51)
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 173, in search_reddit
+    redit_login(username, password, redit)
+    │           │         │         └ ('interestingasfuck', 'gifsthatkeepongiving', 'oddlysatisfying')
+    │           │         └ 'UOgyiog8374fgboa8fgdOU6e93ced923c%^CvV'
+    │           └ 'Ripozi'
+    └ <function search_reddit.<locals>.redit_login at 0x7fc74300f790>
+
+> File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 161, in redit_login
+    os.remove(prs_path_img + path_file) # удаление файла
+    │  │      │              └ '384_video.mp4'
+    │  │      └ '/home/ily/Рабочий стол/py/tb_bot/images/'
+    │  └ <built-in function remove>
+    └ <module 'os' from '/usr/lib/python3.8/os.py'>
+
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ily/Рабочий стол/py/tb_bot/images/384_video.mp4'
+2022-06-05 at 15:17:29|ERROR|Ошибка при поиске файла: 
+Traceback (most recent call last):
+
+  File "/home/ily/Рабочий стол/py/tb_bot/main.py", line 150, in <module>
+    schedule.run_pending()
+    │        └ <function run_pending at 0x7fc745a6d310>
+    └ <module 'schedule' from '/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py'>
+
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 780, in run_pending
+    default_scheduler.run_pending()
+    │                 └ <function Scheduler.run_pending at 0x7fc745a5fc10>
+    └ <schedule.Scheduler object at 0x7fc745a649a0>
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 100, in run_pending
+    self._run_job(job)
+    │    │        └ Every 1 minute do search_reddit() (last run: [never], next run: 2022-06-05 15:15:51)
+    │    └ <function Scheduler._run_job at 0x7fc745a5ff70>
+    └ <schedule.Scheduler object at 0x7fc745a649a0>
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 172, in _run_job
+    ret = job.run()
+          │   └ <function Job.run at 0x7fc745a6d0d0>
+          └ Every 1 minute do search_reddit() (last run: [never], next run: 2022-06-05 15:15:51)
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 661, in run
+    ret = self.job_func()
+          │    └ functools.partial(<function search_reddit at 0x7fc745a6daf0>)
+          └ Every 1 minute do search_reddit() (last run: [never], next run: 2022-06-05 15:15:51)
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 173, in search_reddit
+    redit_login(username, password, redit)
+    │           │         │         └ ('interestingasfuck', 'gifsthatkeepongiving', 'oddlysatisfying')
+    │           │         └ 'UOgyiog8374fgboa8fgdOU6e93ced923c%^CvV'
+    │           └ 'Ripozi'
+    └ <function search_reddit.<locals>.redit_login at 0x7fc74300f790>
+
+> File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 161, in redit_login
+    os.remove(prs_path_img + path_file) # удаление файла
+    │  │      │              └ '678_video.mp4'
+    │  │      └ '/home/ily/Рабочий стол/py/tb_bot/images/'
+    │  └ <built-in function remove>
+    └ <module 'os' from '/usr/lib/python3.8/os.py'>
+
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ily/Рабочий стол/py/tb_bot/images/678_video.mp4'
+2022-06-05 at 15:17:29|INFO|Получен список каналов
+2022-06-05 at 15:17:30|SUCCESS|Определены настройки веб драйвера
+2022-06-05 at 15:17:30|DEBUG|Логинимся на reddit
+2022-06-05 at 15:17:49|SUCCESS|Учпешно залогинились
+2022-06-05 at 15:17:49|DEBUG|Переходим в канал oddlysatisfying
+2022-06-05 at 15:17:52|SUCCESS|Зашли в канал oddlysatisfying и сформировали json
+2022-06-05 at 15:17:52|SUCCESS|Завершили скачивание из канала oddlysatisfying
+2022-06-05 at 15:17:52|INFO|Вынимаем данне json из html
+2022-06-05 at 15:17:52|SUCCESS|Завершили формирование Json
+2022-06-05 at 15:17:52|INFO|Начинаем писать в БД из паблика oddlysatisfying
+2022-06-05 at 15:18:21|SUCCESS|Закончили писать в БД из паблика oddlysatisfying
+2022-06-05 at 15:18:21|DEBUG|Запуск удаления файлов из БД помеченных на удаление[('250_video.mp4', 250), ('384_video.mp4', 384), ('678_video.mp4', 678)]
+2022-06-05 at 15:18:21|ERROR|Ошибка при поиске файла: 
+Traceback (most recent call last):
+
+  File "/home/ily/Рабочий стол/py/tb_bot/main.py", line 150, in <module>
+    schedule.run_pending()
+    │        └ <function run_pending at 0x7fc745a6d310>
+    └ <module 'schedule' from '/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py'>
+
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 780, in run_pending
+    default_scheduler.run_pending()
+    │                 └ <function Scheduler.run_pending at 0x7fc745a5fc10>
+    └ <schedule.Scheduler object at 0x7fc745a649a0>
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 100, in run_pending
+    self._run_job(job)
+    │    │        └ Every 1 minute do search_reddit() (last run: [never], next run: 2022-06-05 15:15:51)
+    │    └ <function Scheduler._run_job at 0x7fc745a5ff70>
+    └ <schedule.Scheduler object at 0x7fc745a649a0>
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 172, in _run_job
+    ret = job.run()
+          │   └ <function Job.run at 0x7fc745a6d0d0>
+          └ Every 1 minute do search_reddit() (last run: [never], next run: 2022-06-05 15:15:51)
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 661, in run
+    ret = self.job_func()
+          │    └ functools.partial(<function search_reddit at 0x7fc745a6daf0>)
+          └ Every 1 minute do search_reddit() (last run: [never], next run: 2022-06-05 15:15:51)
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 173, in search_reddit
+    redit_login(username, password, redit)
+    │           │         │         └ ('interestingasfuck', 'gifsthatkeepongiving', 'oddlysatisfying')
+    │           │         └ 'UOgyiog8374fgboa8fgdOU6e93ced923c%^CvV'
+    │           └ 'Ripozi'
+    └ <function search_reddit.<locals>.redit_login at 0x7fc74300f790>
+
+> File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 161, in redit_login
+    os.remove(prs_path_img + path_file) # удаление файла
+    │  │      │              └ '250_video.mp4'
+    │  │      └ '/home/ily/Рабочий стол/py/tb_bot/images/'
+    │  └ <built-in function remove>
+    └ <module 'os' from '/usr/lib/python3.8/os.py'>
+
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ily/Рабочий стол/py/tb_bot/images/250_video.mp4'
+2022-06-05 at 15:18:21|ERROR|Ошибка при поиске файла: 
+Traceback (most recent call last):
+
+  File "/home/ily/Рабочий стол/py/tb_bot/main.py", line 150, in <module>
+    schedule.run_pending()
+    │        └ <function run_pending at 0x7fc745a6d310>
+    └ <module 'schedule' from '/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py'>
+
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 780, in run_pending
+    default_scheduler.run_pending()
+    │                 └ <function Scheduler.run_pending at 0x7fc745a5fc10>
+    └ <schedule.Scheduler object at 0x7fc745a649a0>
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 100, in run_pending
+    self._run_job(job)
+    │    │        └ Every 1 minute do search_reddit() (last run: [never], next run: 2022-06-05 15:15:51)
+    │    └ <function Scheduler._run_job at 0x7fc745a5ff70>
+    └ <schedule.Scheduler object at 0x7fc745a649a0>
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 172, in _run_job
+    ret = job.run()
+          │   └ <function Job.run at 0x7fc745a6d0d0>
+          └ Every 1 minute do search_reddit() (last run: [never], next run: 2022-06-05 15:15:51)
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 661, in run
+    ret = self.job_func()
+          │    └ functools.partial(<function search_reddit at 0x7fc745a6daf0>)
+          └ Every 1 minute do search_reddit() (last run: [never], next run: 2022-06-05 15:15:51)
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 173, in search_reddit
+    redit_login(username, password, redit)
+    │           │         │         └ ('interestingasfuck', 'gifsthatkeepongiving', 'oddlysatisfying')
+    │           │         └ 'UOgyiog8374fgboa8fgdOU6e93ced923c%^CvV'
+    │           └ 'Ripozi'
+    └ <function search_reddit.<locals>.redit_login at 0x7fc74300f790>
+
+> File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 161, in redit_login
+    os.remove(prs_path_img + path_file) # удаление файла
+    │  │      │              └ '384_video.mp4'
+    │  │      └ '/home/ily/Рабочий стол/py/tb_bot/images/'
+    │  └ <built-in function remove>
+    └ <module 'os' from '/usr/lib/python3.8/os.py'>
+
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ily/Рабочий стол/py/tb_bot/images/384_video.mp4'
+2022-06-05 at 15:18:21|ERROR|Ошибка при поиске файла: 
+Traceback (most recent call last):
+
+  File "/home/ily/Рабочий стол/py/tb_bot/main.py", line 150, in <module>
+    schedule.run_pending()
+    │        └ <function run_pending at 0x7fc745a6d310>
+    └ <module 'schedule' from '/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py'>
+
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 780, in run_pending
+    default_scheduler.run_pending()
+    │                 └ <function Scheduler.run_pending at 0x7fc745a5fc10>
+    └ <schedule.Scheduler object at 0x7fc745a649a0>
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 100, in run_pending
+    self._run_job(job)
+    │    │        └ Every 1 minute do search_reddit() (last run: [never], next run: 2022-06-05 15:15:51)
+    │    └ <function Scheduler._run_job at 0x7fc745a5ff70>
+    └ <schedule.Scheduler object at 0x7fc745a649a0>
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 172, in _run_job
+    ret = job.run()
+          │   └ <function Job.run at 0x7fc745a6d0d0>
+          └ Every 1 minute do search_reddit() (last run: [never], next run: 2022-06-05 15:15:51)
+  File "/home/ily/.local/lib/python3.8/site-packages/schedule/__init__.py", line 661, in run
+    ret = self.job_func()
+          │    └ functools.partial(<function search_reddit at 0x7fc745a6daf0>)
+          └ Every 1 minute do search_reddit() (last run: [never], next run: 2022-06-05 15:15:51)
+
+  File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 173, in search_reddit
+    redit_login(username, password, redit)
+    │           │         │         └ ('interestingasfuck', 'gifsthatkeepongiving', 'oddlysatisfying')
+    │           │         └ 'UOgyiog8374fgboa8fgdOU6e93ced923c%^CvV'
+    │           └ 'Ripozi'
+    └ <function search_reddit.<locals>.redit_login at 0x7fc74300f790>
+
+> File "/home/ily/Рабочий стол/py/tb_bot/parser_reddit.py", line 161, in redit_login
+    os.remove(prs_path_img + path_file) # удаление файла
+    │  │      │              └ '678_video.mp4'
+    │  │      └ '/home/ily/Рабочий стол/py/tb_bot/images/'
+    │  └ <built-in function remove>
+    └ <module 'os' from '/usr/lib/python3.8/os.py'>
+
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ily/Рабочий стол/py/tb_bot/images/678_video.mp4'
+2022-06-05 at 15:18:26|INFO|Получаем посты для публикации
+2022-06-05 at 15:19:22|INFO|Получен список каналов
+2022-06-05 at 15:19:22|SUCCESS|Определены настройки веб драйвера
+2022-06-05 at 15:19:22|DEBUG|Логинимся на reddit
+2022-06-05 at 15:37:05|INFO|Получаем посты для публикации
+2022-06-05 at 15:38:05|INFO|Получаем посты для публикации
+2022-06-05 at 15:39:05|INFO|Получаем посты для публикации
+2022-06-05 at 15:40:05|INFO|Получаем посты для публикации
+2022-06-05 at 15:41:05|INFO|Получаем посты для публикации
+2022-06-05 at 15:42:05|INFO|Получаем посты для публикации
+2022-06-05 at 15:43:09|INFO|Получаем посты для публикации
+2022-06-05 at 15:44:09|INFO|Получаем посты для публикации
+2022-06-05 at 15:45:10|INFO|Получаем посты для публикации
+2022-06-05 at 15:46:10|INFO|Получаем посты для публикации
+2022-06-05 at 15:47:10|INFO|Получаем посты для публикации
+2022-06-05 at 15:48:10|INFO|Получаем посты для публикации
+2022-06-05 at 15:49:10|INFO|Получаем посты для публикации
+2022-06-05 at 15:50:10|INFO|Получаем посты для публикации
+2022-06-05 at 15:51:10|INFO|Получаем посты для публикации
+2022-06-05 at 15:52:11|INFO|Получаем посты для публикации
+2022-06-05 at 15:53:11|INFO|Получаем посты для публикации
+2022-06-05 at 15:54:11|INFO|Получаем посты для публикации
+2022-06-05 at 15:55:11|INFO|Получаем посты для публикации
+2022-06-05 at 15:56:11|INFO|Получаем посты для публикации
+2022-06-05 at 15:57:11|INFO|Получаем посты для публикации
+2022-06-05 at 15:58:11|INFO|Получаем посты для публикации
+2022-06-05 at 15:59:12|INFO|Получаем посты для публикации
+2022-06-05 at 16:00:12|INFO|Получаем посты для публикации
+2022-06-05 at 16:01:12|INFO|Получаем посты для публикации
+2022-06-05 at 16:02:12|INFO|Получаем посты для публикации
+2022-06-05 at 16:03:12|INFO|Получаем посты для публикации
+2022-06-05 at 16:04:12|INFO|Получаем посты для публикации
+2022-06-05 at 16:05:12|INFO|Получаем посты для публикации
+2022-06-05 at 16:06:12|INFO|Получаем посты для публикации
+2022-06-05 at 16:07:12|INFO|Получаем посты для публикации
+2022-06-05 at 16:08:12|INFO|Получаем посты для публикации
+2022-06-05 at 16:09:12|INFO|Получаем посты для публикации
+2022-06-05 at 16:10:13|INFO|Получаем посты для публикации
+2022-06-05 at 16:11:13|INFO|Получаем посты для публикации
+2022-06-05 at 16:12:13|INFO|Получаем посты для публикации
+2022-06-05 at 16:13:13|INFO|Получаем посты для публикации
+2022-06-05 at 16:14:13|INFO|Получаем посты для публикации
+2022-06-05 at 16:15:13|INFO|Получаем посты для публикации
+2022-06-05 at 16:16:13|INFO|Получаем посты для публикации
+2022-06-05 at 16:17:13|INFO|Получаем посты для публикации
+2022-06-05 at 16:18:13|INFO|Получаем посты для публикации
+2022-06-05 at 16:19:13|INFO|Получаем посты для публикации
+2022-06-05 at 16:20:13|INFO|Получаем посты для публикации
+2022-06-05 at 16:21:14|INFO|Получаем посты для публикации
+2022-06-05 at 16:22:14|INFO|Получаем посты для публикации
+2022-06-05 at 16:23:14|INFO|Получаем посты для публикации
+2022-06-05 at 16:24:14|INFO|Получаем посты для публикации
+2022-06-05 at 16:25:14|INFO|Получаем посты для публикации
+2022-06-05 at 16:26:14|INFO|Получаем посты для публикации
+2022-06-05 at 16:27:14|INFO|Получаем посты для публикации
+2022-06-05 at 16:28:14|INFO|Получаем посты для публикации
+2022-06-05 at 16:29:14|INFO|Получаем посты для публикации
+2022-06-05 at 16:30:14|INFO|Получаем посты для публикации
+2022-06-05 at 16:31:14|INFO|Получаем посты для публикации
+2022-06-05 at 16:32:14|INFO|Получаем посты для публикации
+2022-06-05 at 16:33:14|INFO|Получаем посты для публикации
+2022-06-05 at 16:34:15|INFO|Получаем посты для публикации
+2022-06-05 at 16:35:15|INFO|Получаем посты для публикации
+2022-06-05 at 16:36:15|INFO|Получаем посты для публикации
+2022-06-05 at 16:37:15|INFO|Получаем посты для публикации
+2022-06-05 at 16:38:15|INFO|Получаем посты для публикации
+2022-06-05 at 16:39:15|INFO|Получаем посты для публикации
+2022-06-05 at 16:40:15|INFO|Получаем посты для публикации
+2022-06-05 at 16:41:15|INFO|Получаем посты для публикации
+2022-06-05 at 16:42:15|INFO|Получаем посты для публикации
+2022-06-05 at 16:43:15|INFO|Получаем посты для публикации
+2022-06-05 at 16:44:16|INFO|Получаем посты для публикации
+2022-06-05 at 16:45:16|INFO|Получаем посты для публикации
+2022-06-05 at 16:46:16|INFO|Получаем посты для публикации

@@ -16,7 +16,10 @@ from loguru import logger
 
 logger.add("logger/parser_log.log", format="{time:YYYY-MM-DD at HH:mm:ss}|{level}|{message}", rotation="100 MB", compression="zip")
 
-
+prs_path_img = r'/home/ily/Рабочий стол/py/tb_bot/images/'
+prs_path_driver = str(r'/home/ily/Рабочий стол/py/tb_bot/webdriver/chromedriver')
+prs_path_html = r'/home/ily/Рабочий стол/py/tb_bot/logger/data.html'
+prs_path_json = r'/home/ily/Рабочий стол/py/tb_bot/logger/data.json'
 
 """test browser"""
 # # options
@@ -24,7 +27,7 @@ logger.add("logger/parser_log.log", format="{time:YYYY-MM-DD at HH:mm:ss}|{level
 # options.add_argument("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36") # Прописываем user agent
 # options.add_argument("--disable-blink-features=AutomationControlled") # Отключаем режим веб драйвера
 # options.headless = True # Запускаем браузер в фоновом режиме
-# s = Service('/home/ripo/tb_bot/webdriver/chromedriver')
+# s = Service('prs_path_driver')
 # browser = webdriver.Chrome(service=s, options=options)
 # browser.get("https://intoli.com/blog/not-possible-to-block-chrome-headless/chrome-headless-test.html")
 
@@ -43,7 +46,7 @@ def search_reddit():
             options.add_argument("--disable-blink-features=AutomationControlled") # Отключаем режим веб драйвера
             options.add_argument("--no-sandbox")
             options.headless = True # Запускаем браузер в фоновом режиме
-            s = Service('/home/ripo/tb_bot/webdriver/chromedriver')
+            s = Service(prs_path_driver)
             browser = webdriver.Chrome(service=s, options=options)
             logger.success("Определены настройки веб драйвера")
             # browser = webdriver.Firefox(service=s)
@@ -78,7 +81,7 @@ def search_reddit():
                     browser.quit()
                 # time.sleep(10)
                 # # сохраняем страницу в файл
-                    with open('/home/ripo/tb_bot/logger/data.html', 'w', encoding='utf=8') as file:
+                    with open(prs_path_html, 'w', encoding='utf=8') as file:
                         file.write(html)
                     logger.success("Завершили скачивание из канала " + str(redit))
                 except Exception as ex:
@@ -94,18 +97,18 @@ def search_reddit():
                 browser.quit()
 
             logger.info("Вынимаем данне json из html")
-            with open("/home/ripo/tb_bot/logger/data.html") as file:
+            with open(prs_path_html) as file:
                 src = file.read()
             soup = BeautifulSoup(src, "lxml")
             js = soup.get_text()# выниваем данне json из html
 
             #####_Создаем data.json по данным из html
-            with open("/home/ripo/tb_bot/logger/data.json", "w") as file:
+            with open(prs_path_json, "w") as file:
                 file.write(js)
                 dictData = json.loads(js)
 
             # #####_Вынимаем необходмые данне из data.json 
-            with open("/home/ripo/tb_bot/logger/data.json") as file:
+            with open(prs_path_json) as file:
                 datJs = file.read()
             data = json.loads(datJs)
             dictChildren = data['data']
@@ -155,7 +158,7 @@ def search_reddit():
                     if path_file is not None:
                         print("Файл на удаление" + path_file)
                         try:
-                            os.remove(r'/home/ripo/tb_bot/images/' + path_file) # удаление файла
+                            os.remove(prs_path_img + path_file) # удаление файла
                             print("Файл удален")
                             delite_post(id_post)
                         except Exception as ex:
