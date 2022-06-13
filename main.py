@@ -25,7 +25,7 @@ logger.add("logger/main_log.log", format="{time:YYYY-MM-DD at HH:mm:ss}|{level}|
 # search_reddit()
 # ----------------
 
-pbl_path_img = r'/home/ily/Рабочий стол/py/tb_bot/images'
+pbl_path_img = r'/root/tb_bot/images'
 
 # ----------------
 # Имя сессии pyrogram
@@ -125,26 +125,34 @@ def send_post_dev(app):
 
 #Отправки на dev поста с пометкой ~каждый час
 # # schedule.every().hour.do(send_post_dev, app) #Отправки на dev поста с пометкой ~каждый час
-schedule.every(1).minutes.do(send_post_dev, app)
-# Минасануть на 3 часа расписание
-# schedule.every().day.at("07:30").do(run_threaded, send_post_dev)
-# schedule.every().day.at("08:00").do(run_threaded, send_post_dev)
-# schedule.every().day.at("09:00").do(run_threaded, send_post_dev)
-# schedule.every().day.at("10:00").do(run_threaded, send_post_dev)
-# schedule.every().day.at("11:00").do(run_threaded, send_post_dev)
-# schedule.every().day.at("12:00").do(run_threaded, send_post_dev)
-# schedule.every().day.at("13:00").do(run_threaded, send_post_dev)
-# schedule.every().day.at("14:00").do(run_threaded, send_post_dev)
-# schedule.every().day.at("15:00").do(run_threaded, send_post_dev)
-# schedule.every().day.at("16:00").do(run_threaded, send_post_dev)
-# schedule.every().day.at("17:00").do(run_threaded, send_post_dev)
-# schedule.every().day.at("18:00").do(run_threaded, send_post_dev)
-# schedule.every().day.at("19:00").do(run_threaded, send_post_dev)
-# schedule.every().day.at("20:00").do(run_threaded, send_post_dev)
-# schedule.every().day.at("21:00").do(run_threaded, send_post_dev)
-# schedule.every().day.at("22:00").do(run_threaded, send_post_dev)
-# schedule.every().day.at("23:00").do(run_threaded, send_post_dev)
-#schedule.every(1).minutes.do(search_reddit) #Запуск парсера ~каждые 30 мин
+#schedule.every(1).minutes.do(send_post_dev, app)
+
+schedule.every().day.at("02:30").do(search_reddit)
+schedule.every().day.at("06:30").do(search_reddit)
+schedule.every().day.at("07:30").do(send_post_dev, app)
+schedule.every().day.at("08:00").do(send_post_dev, app)
+schedule.every().day.at("09:00").do(send_post_dev, app)
+schedule.every().day.at("09:30").do(search_reddit)
+schedule.every().day.at("10:00").do(send_post_dev, app)
+schedule.every().day.at("11:00").do(send_post_dev, app)
+schedule.every().day.at("12:00").do(send_post_dev, app)
+schedule.every().day.at("13:00").do(send_post_dev, app)
+schedule.every().day.at("13:30").do(search_reddit)
+schedule.every().day.at("14:00").do(send_post_dev, app)
+schedule.every().day.at("15:00").do(send_post_dev, app)
+schedule.every().day.at("16:00").do(send_post_dev, app)
+schedule.every().day.at("16:30").do(search_reddit)
+schedule.every().day.at("17:00").do(send_post_dev, app)
+schedule.every().day.at("18:00").do(send_post_dev, app)
+schedule.every().day.at("19:00").do(send_post_dev, app)
+schedule.every().day.at("19:30").do(search_reddit)
+schedule.every().day.at("20:00").do(send_post_dev, app)
+schedule.every().day.at("21:00").do(send_post_dev, app)
+schedule.every().day.at("22:00").do(send_post_dev, app)
+schedule.every().day.at("23:00").do(send_post_dev, app)
+schedule.every().day.at("00:30").do(search_reddit)
+
+#schedule.every(3).minutes.do(search_reddit) #Запуск парсера ~каждые 30 мин
 
 while True:
     schedule.run_pending()

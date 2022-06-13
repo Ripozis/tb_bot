@@ -16,10 +16,10 @@ from loguru import logger
 
 logger.add("logger/parser_log.log", format="{time:YYYY-MM-DD at HH:mm:ss}|{level}|{message}", rotation="100 MB", compression="zip")
 
-prs_path_img = r'/home/ily/Рабочий стол/py/tb_bot/images/'
-prs_path_driver = str(r'/home/ily/Рабочий стол/py/tb_bot/webdriver/chromedriver')
-prs_path_html = r'/home/ily/Рабочий стол/py/tb_bot/logger/data.html'
-prs_path_json = r'/home/ily/Рабочий стол/py/tb_bot/logger/data.json'
+prs_path_img = r'/root/tb_bot/images/'
+prs_path_driver = str(r'/root/tb_bot/webdriver/chromedriver')
+prs_path_html = r'/root/tb_bot/logger/data.html'
+prs_path_json = r'/root/tb_bot/logger/data.json'
 
 """test browser"""
 # # options
