@@ -21,9 +21,9 @@ bot = Bot(token=token)
 dp =Dispatcher(bot, storage=MemoryStorage())
 #path_img = str(r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images')
 #path_img_file = str(r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images\\')
+
 path_img = r'/root/tb_bot/images'
 path_img_file = r'/root/tb_bot/images/'
-
 
 @logger.catch
 @dp.message_handler(commands="start")
@@ -47,8 +47,8 @@ async def start(message: types.Message):
 async def test_message(message: types.Message):
     # await message.answer('Тут должен быть текст поста', reply_markup=lnkb)
     re = read_tbl() 
-    #row = len(re) # Считаем количество количество элементов в списке
-    #print(row) 
+    row = len(re) # Считаем количество количество элементов в списке
+    print(row) 
     # Проходим в цикле по всем элементам списка для публикации в модерку
     logger.debug("Получены данные из БД:" + str(re))
     for row in re:
@@ -65,20 +65,16 @@ async def test_message(message: types.Message):
         def content_upload_img(url_link,lin,path_file):
             """Функция загрузки контента кроме видео"""
             r = requests.get(url_link, allow_redirects=True)
-            os.chdir(path_img) # для винды
-            # os.chdir(r'/home/ripo/tb_bot/images') # для сервера
+            print("Функция для картинок")
+            os.chdir(path_img) 
             open(lin, 'wb').write(r.content)
             sql_update(url_link, path_file)
         
         def content_upload_video(url_link,id_post):
             """Функция загрузки видео и склейки с аудио"""
             os.chdir(path_img) # для винды
-            # os.chdir(r'/home/ripo/tb_bot/images') # для сервера
-            #print(lin)
-            #open(lin, 'wb').write(r.content)
             print(url_link)
             dash_url = url_link
-            #headers = {'User-Agent':'Mozilla/5.0'}
             title = 'video'
             dash_url = url_link[:int(dash_url.find('DASH')) + 4]
             print("Наполнение dash_url: " + dash_url)
@@ -87,60 +83,67 @@ async def test_message(message: types.Message):
             audio_url = f'{dash_url}_audio.mp4'    # this URL will be used to download the      audio part
             print(audio_url)
             path_video = path_img_file + f'{id_post}_video.mp4' # для винды 
-            # path_video = r'/home/ripo/tb_bot/images/' + f'{id_post}_video.mp4' # для сервера
+
             if os.path.exists(path_video):
                 print("файл был ранее скачан")
             else:    
+                
                 with open(f'{id_post}_{title}_video.mp4','wb') as file:
                         print('Downloading Video...',end='',flush = True)
                         response = requests.get(video_url,allow_redirects=True)
+                        
                         if(response.status_code == 200):
                             file.write(response.content)
                             print('\rVideo Downloaded...!')
+                            file.close()
+                            # upload_audio(id_post,title)
+                            with open(f'{id_post}_{title}_audio.mp4','wb') as file:
+                                    print('Downloading Audio...',end = '',flush = True)
+                                    response = requests.get(audio_url,allow_redirects=True)
+                                    if(response.status_code == 200):
+                                        file.write(response.content)
+                                        print('\rAudio Downloaded...!')
+                                        print("Идет склейка ")
+                                        subprocess.call(['ffmpeg','-i',f'{id_post}_{title}_video.mp4','-i',f'{id_post}_{title}_audio.mp4','-map','0:v', '-map','1:a','-c:v','copy',f'{id_post}_{title}.mp4'])
+                                        path_file = f'{id_post}_{title}.mp4'
+                                        sql_update(url_link, path_file)
+                                    else:
+                                        print('\rAudio Download Failed..!')
+                                        time.sleep(5)
+                                        logger.exception("Audio Download Failed")
+                                        print("переименование если нет склейки с аудио")
+                                        os.rename(path_img_file + f'{id_post}_{title}_video.mp4', path_img_file +  f'{id_post}_{title}.mp4') # переименование если нет склейки с аудио
+                                        # os.rename(r'/home/ripo/tb_bot/images/' + f'{id_post}_{title}_video.mp4',r'/home/ripo/tb_bot/images/' +  f'{id_post}_{title}.mp4') # для сервера
+                                        # print("удаление битого аудио")
+                                        # os.remove(path_img_file + f'{id_post}_{title}_audio.mp4')
+                                        path_file = f'{id_post}_{title}.mp4'
+                                        sql_update(url_link, path_file)
                         else:
                             print('\rVideo Download Failed..!')
                             logger.exception("rVideo Download Failed")
+                            # os.remove(path_img_file + f'{id_post}_{title}_video.mp4')
                             content_error_update(id_post)
-                with open(f'{id_post}_{title}_audio.mp4','wb') as file:
-                        print('Downloading Audio...',end = '',flush = True)
-                        response = requests.get(audio_url,allow_redirects=True)
-                        if(response.status_code == 200):
-                            file.write(response.content)
-                            print('\rAudio Downloaded...!')
-                            print("Идет склейка ")
-                            subprocess.call(['ffmpeg','-i',f'{id_post}_{title}_video.mp4','-i',f'{id_post}_{title}_audio.mp4','-map','0:v', '-map','1:a','-c:v','copy',f'{id_post}_{title}.mp4'])
-                            path_file = f'{id_post}_{title}.mp4'
-                            sql_update(url_link, path_file)
-                        else:
-                            print('\rAudio Download Failed..!')
-                            time.sleep(5)
-                            logger.exception("Audio Download Failed")
-                            os.rename(path_img_file + f'{id_post}_{title}_video.mp4', path_img_file +  f'{id_post}_{title}.mp4') # для винды 
-                            # os.rename(r'/home/ripo/tb_bot/images/' + f'{id_post}_{title}_video.mp4',r'/home/ripo/tb_bot/images/' +  f'{id_post}_{title}.mp4') # для сервера
-                            path_file = f'{id_post}_{title}.mp4'
-                            sql_update(url_link, path_file)
-        
+
             file_path_video = path_img_file + f'{id_post}_{title}_video.mp4' # для винды 
-            # file_path_video = r'/home/ripo/tb_bot/images/' + f'{id_post}_{title}_video.mp4' # для сервера
             file_path_audio = path_img_file + f'{id_post}_{title}_audio.mp4' # для винды 
-            # file_path_audio = r'/home/ripo/tb_bot/images/' + f'{id_post}_{title}_audio.mp4' # для сервера
+            
             if os.path.exists(file_path_video):
-                    print("Файл существует")
-                    os.remove(path_img_file + f'{id_post}_{title}_video.mp4') # для винды удаляем видео файл
-                    # os.remove(r'/home/ripo/tb_bot/images/' + f'{id_post}_{title}_video.mp4') # для сервера      
+                    print("Файл существует " + f'{id_post}_{title}_video.mp4'+ "будем удалять")
+                    os.remove(path_img_file + f'{id_post}_{title}_video.mp4') # удаляем видео файл      
             else:
-                print("Файл не существует")
+                print("Файл" + f'{id_post}_{title}_video.mp4' +" не существует")
             
             if os.path.exists(file_path_audio):
-                os.remove(path_img_file + f'{id_post}_{title}_audio.mp4') # для винды
-                # os.remove(r'/home/ripo/tb_bot/images/' + f'{id_post}_{title}_audio.mp4') # для сервера
+                print("Файл существует " + f'{id_post}_{title}_audio.mp4'+ "будем удалять")
+                os.remove(path_img_file + f'{id_post}_{title}_audio.mp4')
+                
             else:
-                print("Файл не существует")
+                print("Файл" + f'{id_post}_{title}_audio.mp4' +" не существует")
 
             path_file = f'{id_post}_{title}.mp4'
             print(path_file)
             sql_update(url_link, path_file)
-            return path_file
+            return path_file #возвращает название файла для отправки видео в бот
 
         #Проверка контента перед скачиванием 
         logger.info("Проверка контента перед скачиванием: " + str(path_file))
@@ -178,8 +181,9 @@ async def test_message(message: types.Message):
                     # print(ex)
                     content_error_update(id_post) #Помечаем пост с ошибкой в контенте
         elif '.mp4' in path_file:
-            path_file = content_upload_video(url_link,id_post)
-            print(path_file)
+            # print ("первый раз запустил")
+            # path_file = content_upload_video(url_link,id_post)
+            # print ("второй раз запустил")
             path = open(path_img_file + content_upload_video(url_link,id_post), 'rb') # для винды
             # path = open('/home/ripo/tb_bot/images/' + content_upload_video(url_link,id_post), 'rb') # для сервера
             logger.debug("Отправка видео " + str(path_file))
@@ -198,7 +202,7 @@ async def test_message(message: types.Message):
                 content_error_update(id_post) #Помечаем пост с ошибкой в контенте        
         else:
             logger.debug("Неподходящий файл для скачивания " + str(path_file) + str (id_post))
-            await message.answer('Неподходящий файл для скачивания')
+            await message.answer('Неподходящий видео файл для скачивания')
             content_error_update(id_post)
 
 @logger.catch      
