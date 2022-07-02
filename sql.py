@@ -29,10 +29,15 @@ def create_tbl():
     """)
 
 # проверка на дубли в БД и записывать только уникальные занчения title
-def recordingDateJson(title, url,creadat, title_ru, format_cont, likes):
+def recordingDateJson(title, url,creadat,date_publication, title_ru, format_cont, likes):
+    print("Запeск скрипта на проверку")
+    print("Заголовок для записи: " + title)
     cur.execute("""SELECT title_en FROM parser WHERE title_en=?""", (title,))
+    print("-------------------------")
     if not cur.fetchall():
-        cur.execute("INSERT INTO parser (title_en, url, date_created, title_ru, content_format, likes) VALUES (?,?,?,?,?,?)", (title, url, creadat, title_ru,format_cont, likes)) #записываем данные в БД
+        print("пишем в БД" + title)
+        print(cur.fetchall())
+        cur.execute("INSERT INTO parser (title_en, url, date_created,date_publication, title_ru, content_format, likes) VALUES (?,?,?,?,?,?,?)", (title, url, creadat,date_publication, title_ru,format_cont, likes)) #записываем данные в БД
         con.commit()
         return title, url,creadat, title_ru, format_cont, likes
 
@@ -41,7 +46,7 @@ def read_tbl():
         today = datetime.date.today()
         bb = datetime.timedelta(days=3)
         minusday = today-bb # вычисляем посты за последние 3 дня
-        cur.execute("""SELECT * from (SELECT title_ru, url, max(likes) as likes, id_post 
+        cur.execute("""SELECT * from (SELECT title_ru, url, max(likes) as likes, id_post, date_publication 
 				from parser where title_ru is not null and publication_attribute =0 
 				and public_attr_dev is NULL and content_error is NULL and to_remove =0 and for_editing =0 
 				and date_created BETWEEN (?) AND (?)) LIMIT 1""", (minusday, today))

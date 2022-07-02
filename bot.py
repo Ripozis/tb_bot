@@ -55,6 +55,7 @@ async def test_message(message: types.Message):
         title = (row[0]) # из списка выбераем 1е значенеие - title
         url_link = (row[1]) # из списка выбераем 2е значенеие - url
         id_post = str((row[3]))
+        date_publication = str((row[4]))
         # Выполняем скачивание файла
         # Сделать проверку на наличеее в ссылке .jpeg, .png, .jpg или .mp4. Возможно в самом парсере (?)
         lin = url_link.split('/')[-1] #выявляет по слешу название файла
@@ -157,7 +158,7 @@ async def test_message(message: types.Message):
             if '.gif' in path_file:
                 logger.debug("Отправка анимации: " + str(path_file))
                 try: 
-                    await bot.send_animation(chat_id=message.from_user.id, animation=path_fi, reply_markup=lnkb, caption=(title + '\n' + '/id:' + str(id_post)))
+                    await bot.send_animation(chat_id=message.from_user.id, animation=path_fi, reply_markup=lnkb, caption=(title + '\n' + '/id:' + str(id_post) + '\n' + "Дата записи в БД: " +   str(date_publication)))
                     moder_id = message.message_id + 1
                     moder_msgid(moder_id, id_post)
                     logger.success("В БД отправлен id сообщения: " + str(moder_id))
@@ -170,7 +171,7 @@ async def test_message(message: types.Message):
             elif '.jpg' in path_file or '.png' in path_file or '.jpeg' in url_link:
                 logger.debug("Отправка изображения: " + str(path_file))
                 try:
-                    await bot.send_photo(chat_id=message.from_user.id, photo=path_fi, reply_markup=lnkb, caption=(title + '\n' + '/id:' + str(id_post)))
+                    await bot.send_photo(chat_id=message.from_user.id, photo=path_fi, reply_markup=lnkb, caption=(title + '\n' + '/id:' + str(id_post) + '\n' + "Дата записи в БД: " +   str(date_publication)))
                     moder_id = message.message_id + 1
                     moder_msgid(moder_id, id_post)
                     logger.success("В БД отправлен id сообщения: " + str(moder_id))
@@ -190,7 +191,7 @@ async def test_message(message: types.Message):
 
             # print("Отправка видео")
             try:
-                await bot.send_video(chat_id=message.from_user.id, video=path, reply_markup=lnkb, caption=(title + '\n' + '/id:' + str(id_post)))
+                await bot.send_video(chat_id=message.from_user.id, video=path, reply_markup=lnkb, caption=(title + '\n' + '/id:' + str(id_post) + '\n' + "Дата записи в БД: " +   str(date_publication)))
                 moder_id = message.message_id + 1
                 moder_msgid(moder_id, id_post)
                 logger.success("В БД отправлен id сообщения: " + str(moder_id))

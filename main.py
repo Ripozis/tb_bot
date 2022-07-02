@@ -54,7 +54,7 @@ def send_post_dev(app):
                     print("анимация и пнг")
                     try: 
                         logger.debug("Формируем собщение поста с id: " + str(id_post))
-                        app.send_animation("Testyfakt", path_file, title)
+                        app.send_animation("u_u7898", path_file, title)
                         logger.success("Собщение сформировано")
                         attr_dev(id_post)
                         os.remove(pbl_path_img + '/' + path_file) # удаление файла
@@ -70,7 +70,7 @@ def send_post_dev(app):
                     try:
                         logger.debug("Формируем собщение поста с id: " + str(id_post))
                         
-                        app.send_photo("Testyfakt", path_file, title)
+                        app.send_photo("u_u7898", path_file, title)
                         logger.success("Собщение сформировано")
                         attr_dev(id_post)
                         os.remove(pbl_path_img + '/' + path_file) # удаление файла
@@ -87,7 +87,7 @@ def send_post_dev(app):
                     try:
                         logger.debug("Формируем собщение поста с id: " + str(id_post))
                         
-                        app.send_video("Testyfakt", video=path_file, caption=title)
+                        app.send_video("u_u7898", video=path_file, caption=title)
                         logger.success("Собщение сформировано")
                         attr_dev(id_post)
                         os.remove(pbl_path_img + '/' + path_file) # удаление файла

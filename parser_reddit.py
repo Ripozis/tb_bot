@@ -125,6 +125,7 @@ def search_reddit():
                 # print(postOffice.keys())
                 created = (postOffice['created']) # дата создания поста
                 creadat = (datetime.utcfromtimestamp(created).strftime('%Y-%m-%d %H:%M:%S'))
+                date_publication = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                 title = (postOffice['title'])
                 title_ru = GoogleTranslator ( source = 'auto' , target = 'ru' ).translate(title)
                 url = (postOffice['url'])
@@ -144,7 +145,7 @@ def search_reddit():
                         url=fallback_url.replace("?source=fallback", "")
                         # print(url + " " + title) # Cсылка на видео
                 #####_Записываем таблицу SQL parser значения из переменных (title, url)
-                recordingDateJson(title, url, creadat, title_ru,format_cont,likes)
+                recordingDateJson(title, url, creadat,date_publication, title_ru,format_cont,likes)
             logger.success("Закончили писать в БД из паблика " + str(redit))
             # print("Закончили писать в БД из паблика " + redit)
             # Удаление файлов из БД помеченных на удаление 
@@ -171,4 +172,4 @@ def search_reddit():
                     print(ex)
 
     redit_login(username, password, redit)
-#search_reddit()
+# search_reddit()
