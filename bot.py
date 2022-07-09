@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+ # -*- coding: utf-8 -*-
 from aiogram import Bot, Dispatcher, executor, types
 from aiogram.dispatcher.filters import Text
 from aiogram.types import CallbackQuery, Message,\
@@ -148,7 +148,7 @@ async def test_message(message: types.Message):
 
         #Проверка контента перед скачиванием 
         logger.info("Проверка контента перед скачиванием: " + str(path_file))
-        if '.jpg' in path_file or '.png' in path_file or '.jpeg' in path_file or '. gif' in path_file:
+        if '.jpg' in path_file or '.png' in path_file or '.jpeg' in path_file or '.gif' in path_file:
             logger.debug("Подходящий файл для скачивания " + str(path_file))
             content_upload_img(url_link,lin,path_file)
             path_fi = open(path_img_file + path_file, 'rb') # для винды
@@ -185,10 +185,12 @@ async def test_message(message: types.Message):
             # print ("первый раз запустил")
             # path_file = content_upload_video(url_link,id_post)
             # print ("второй раз запустил")
-            path = open(path_img_file + content_upload_video(url_link,id_post), 'rb') # для винды
+            try:
+                path = open(path_img_file + content_upload_video(url_link,id_post), 'rb') # для винды
             # path = open('/home/ripo/tb_bot/images/' + content_upload_video(url_link,id_post), 'rb') # для сервера
-            logger.debug("Отправка видео " + str(path_file))
-
+                logger.debug("Отправка видео " + str(path_file))
+            except Exception as ex:
+                content_error_update(id_post) 
             # print("Отправка видео")
             try:
                 await bot.send_video(chat_id=message.from_user.id, video=path, reply_markup=lnkb, caption=(title + '\n' + '/id:' + str(id_post) + '\n' + "Дата записи в БД: " +   str(date_publication)))

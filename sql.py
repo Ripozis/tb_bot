@@ -2,6 +2,11 @@ import os
 import threading
 import sqlite3 as sq
 import datetime
+from loguru import logger
+
+logger.add("logger/sql_log.log", format="{time:YYYY-MM-DD at HH:mm:ss}|{level}|{message}", rotation="100 MB", compression="zip")
+
+
 #####Создаем БД SQL
 with sq.connect("parsreddit.db", check_same_thread=False) as con:
         cur = con.cursor()
@@ -28,18 +33,27 @@ def create_tbl():
     )
     """)
 
-# проверка на дубли в БД и записывать только уникальные занчения title
+# проверка на дубли в БД и записывать только уникальные заначения title
+@logger.catch
 def recordingDateJson(title, url,creadat,date_publication, title_ru, format_cont, likes):
-    print("Запeск скрипта на проверку")
-    print("Заголовок для записи: " + title)
-    cur.execute("""SELECT title_en FROM parser WHERE title_en=?""", (title,))
-    print("-------------------------")
-    if not cur.fetchall():
-        print("пишем в БД" + title)
-        print(cur.fetchall())
-        cur.execute("INSERT INTO parser (title_en, url, date_created,date_publication, title_ru, content_format, likes) VALUES (?,?,?,?,?,?,?)", (title, url, creadat,date_publication, title_ru,format_cont, likes)) #записываем данные в БД
-        con.commit()
-        return title, url,creadat, title_ru, format_cont, likes
+        logger.debug("-----------Запуск скрипта на проверку записи в БД-----------")
+        logger.debug("Заголовок для записи: " + title)
+        cur.execute("""SELECT title_en FROM parser WHERE title_en=?""", (title,))
+        sq =cur.fetchall()
+# #       logger.debug(cur.fetchall())
+#         print(type(sq))
+        logger.debug(sq)
+    
+        if not sq:
+                logger.debug('список пуст' )
+                logger.debug("Пишем в БД" + title)
+                # logger.debug(sq)
+                cur.execute("INSERT INTO parser (title_en, url, date_created,date_publication, title_ru, content_format, likes) VALUES (?,?,?,?,?,?,?)", (title, url, creadat,date_publication, title_ru,format_cont, likes)) #записываем данные в БД
+                con.commit()
+                logger.debug("------Запись в БД окончена--------------" + title)
+        else:
+                logger.debug('список не пуст')
+        logger.debug("-----------Проверка окончена--------------")
 
 # Получение всех строк из таблицы
 def read_tbl():
@@ -48,8 +62,8 @@ def read_tbl():
         minusday = today-bb # вычисляем посты за последние 3 дня
         cur.execute("""SELECT * from (SELECT title_ru, url, max(likes) as likes, id_post, date_publication 
 				from parser where title_ru is not null and publication_attribute =0 
-				and public_attr_dev is NULL and content_error is NULL and to_remove =0 and for_editing =0 
-				and date_created BETWEEN (?) AND (?)) LIMIT 1""", (minusday, today))
+				and public_attr_dev is NULL and content_error is NULL and to_remove =0 and for_editing =0 ) LIMIT 1""")
+				# and date_created BETWEEN (?) AND (?)) LIMIT 1""", (minusday, today))
         records = cur.fetchall()
         return (records)
 # Получение url для определения пути (только для фото)

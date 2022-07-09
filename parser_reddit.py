@@ -161,7 +161,7 @@ def search_reddit():
                         try:
                             os.remove(prs_path_img + path_file) # удаление файла
                             print("Файл удален")
-                            delite_post(id_post)
+                            # delite_post(id_post)# удаление поста из таблицы
                         except Exception as ex:
                             logger.exception("Ошибка при поиске файла: ")
                     else:
