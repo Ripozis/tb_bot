@@ -4,7 +4,7 @@ import sqlite3 as sq
 import datetime
 from loguru import logger
 
-logger.add("logger/sql_log.log", format="{time:YYYY-MM-DD at HH:mm:ss}|{level}|{message}", rotation="100 MB", compression="zip")
+logger.add("/root/tb_bot/logger/sql_log.log", format="{time:YYYY-MM-DD at HH:mm:ss}|{level}|{message}", rotation="100 MB", compression="zip")
 
 
 #####Создаем БД SQL
@@ -110,7 +110,7 @@ def publication_attribute_update(moder_id):
 
 # функция выборки постов на публикацию
 def post_on_publik():
-        con = """SELECT title_ru, path_file,id_post,url from parser where likes in(SELECT max(likes) from parser where path_file is not null and publication_attribute=1 and public_attr_dev is NULL and content_error is NULL and to_remove=0 and for_editing =0)"""
+        con = """SELECT title_ru, path_file,id_post,url from parser where likes in(SELECT max(likes) from parser where path_file is not null and publication_attribute=1 and public_attr_dev is NULL and content_error is NULL and to_remove=0 and for_editing =0) and path_file is not null and publication_attribute=1 and public_attr_dev is NULL and content_error is NULL and to_remove=0 and for_editing =0 LIMIT 1"""
         cur.execute(con)
         on_publik = cur.fetchall()
         return (on_publik)

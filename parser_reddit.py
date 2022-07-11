@@ -14,7 +14,7 @@ import os
 from deep_translator import (GoogleTranslator)
 from loguru import logger
 
-logger.add("logger/parser_log.log", format="{time:YYYY-MM-DD at HH:mm:ss}|{level}|{message}", rotation="100 MB", compression="zip")
+logger.add("/root/tb_bot/logger/parser_log.log", format="{time:YYYY-MM-DD at HH:mm:ss}|{level}|{message}", rotation="100 MB", compression="zip")
 
 prs_path_img = r'/root/tb_bot/images/'
 prs_path_driver = str(r'/root/tb_bot/webdriver/chromedriver')

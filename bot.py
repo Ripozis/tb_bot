@@ -164,10 +164,13 @@ async def test_message(message: types.Message):
                     logger.success("В БД отправлен id сообщения: " + str(moder_id))
                 except Exception as ex:
                     logger.exception("Ошибка с анимацией для DEV"  + str(path_file))
+                    content_error_update(id_post) #Помечаем пост с ошибкой в контенте
                     await message.answer('Анимация не отправленно из-за ошибки или большого размера')
+                    os.remove(path_img_file +str(path_file))
+                    
                     # print("Ошибка с анимацией для DEV" + path_file)
                     # print(ex)
-                    content_error_update(id_post) #Помечаем пост с ошибкой в контенте
+                    
             elif '.jpg' in path_file or '.png' in path_file or '.jpeg' in url_link:
                 logger.debug("Отправка изображения: " + str(path_file))
                 try:
@@ -177,10 +180,13 @@ async def test_message(message: types.Message):
                     logger.success("В БД отправлен id сообщения: " + str(moder_id))
                 except Exception as ex:
                     logger.exception("Ошибка с картинкой для DEV " + str(path_file))
+                    content_error_update(id_post) #Помечаем пост с ошибкой в контенте
                     await message.answer('Фото не отправленно из-за ошибки или большого размера')
+                    os.remove(path_img_file +str(path_file))
+                    
                     # print("Ошибка с картинкой для DEV" + path_file)
                     # print(ex)
-                    content_error_update(id_post) #Помечаем пост с ошибкой в контенте
+                    
         elif '.mp4' in path_file:
             # print ("первый раз запустил")
             # path_file = content_upload_video(url_link,id_post)
@@ -191,6 +197,7 @@ async def test_message(message: types.Message):
                 logger.debug("Отправка видео " + str(path_file))
             except Exception as ex:
                 content_error_update(id_post) 
+                os.remove(path_img_file + f'{id_post}_video.mp4')
             # print("Отправка видео")
             try:
                 await bot.send_video(chat_id=message.from_user.id, video=path, reply_markup=lnkb, caption=(title + '\n' + '/id:' + str(id_post) + '\n' + "Дата записи в БД: " +   str(date_publication)))
@@ -199,14 +206,17 @@ async def test_message(message: types.Message):
                 logger.success("В БД отправлен id сообщения: " + str(moder_id))
             except Exception as ex:
                 logger.exception("Ошибка с видео для DEV" + str(path_file))
+                content_error_update(id_post) #Помечаем пост с ошибкой в контенте
                 await message.answer('Видео не отправленно из-за ошибки или большого размера')
+                os.remove(path_img_file + f'{id_post}_video.mp4')
                 # print("Ошибка с видео для DEV" + path_file)
-                # print(ex)
-                content_error_update(id_post) #Помечаем пост с ошибкой в контенте        
+                # print(ex)             
         else:
             logger.debug("Неподходящий файл для скачивания " + str(path_file) + str (id_post))
-            await message.answer('Неподходящий видео файл для скачивания')
+            await message.answer('Неподходящий файл для скачивания')
             content_error_update(id_post)
+
+            
 
 @logger.catch      
 @dp.message_handler(Text(equals="Все посты на публикацию"))

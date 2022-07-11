@@ -19,7 +19,7 @@ import threading
 from queue import Queue
 from loguru import logger
 
-logger.add("logger/main_log.log", format="{time:YYYY-MM-DD at HH:mm:ss}|{level}|{message}", rotation="100 MB", compression="zip")
+logger.add("/root/tb_bot/logger/main_log.log", format="{time:YYYY-MM-DD at HH:mm:ss}|{level}|{message}", rotation="100 MB", compression="zip")
 # ----------------
 # Функция запуска парсера
 # search_reddit()
@@ -63,6 +63,7 @@ def send_post_dev(app):
                         logger.exception("Ошибка с анимацией для DEV" +  str(path_file) + " id: " + str(id_post))
                         print("Ошибка с анимацией для DEV" + path_file)
                         print(ex)
+                        os.remove(pbl_path_img + '/' + path_file)
                         content_error_update(id_post) #Помечаем пост с ошибкой в контенте
 
                 elif '.jpg' in path_file or '.png' in path_file or '.jpeg' in path_file:
@@ -79,6 +80,7 @@ def send_post_dev(app):
                         logger.exception("Ошибка с картинкой для DEV" +  str(path_file) + " id: " + str(id_post))
                         print("Ошибка с картинкой для DEV" + path_file)
                         print(ex)
+                        os.remove(pbl_path_img + '/' + path_file)
                         content_error_update(id_post) #Помечаем пост с ошибкой в контенте
 
                 elif '.mp4' in path_file:
@@ -96,6 +98,7 @@ def send_post_dev(app):
                         logger.exception("Ошибка с видео для DEV" +  str(path_file) + " id: " + str(id_post))
                         print("Ошибка с видео для DEV" + path_file)
                         print(ex)
+                        os.remove(pbl_path_img + '/' + path_file)
                         content_error_update(id_post) #Помечаем пост с ошибкой в контенте
                 
     on_publik (app, row, post_on_pub)
@@ -145,6 +148,7 @@ schedule.every().day.at("16:30").do(search_reddit)
 schedule.every().day.at("17:00").do(send_post_dev, app)
 schedule.every().day.at("18:00").do(send_post_dev, app)
 schedule.every().day.at("19:00").do(send_post_dev, app)
+schedule.every().day.at("19:15").do(send_post_dev, app)
 schedule.every().day.at("19:30").do(search_reddit)
 schedule.every().day.at("20:00").do(send_post_dev, app)
 schedule.every().day.at("21:00").do(send_post_dev, app)
