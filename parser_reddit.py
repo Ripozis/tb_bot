@@ -132,6 +132,7 @@ def search_reddit():
                 likes = (postOffice['score']) # Лайки 
                 format_cont = postOffice.get("post_hint") # Формат медиа
                 preview = postOffice.get("preview")
+                tred_red = redit
                 # Цикл для исключения пустых результатов None
                 if preview is not None:
                     reddit_video_preview = preview.get("reddit_video_preview")
@@ -145,7 +146,7 @@ def search_reddit():
                         url=fallback_url.replace("?source=fallback", "")
                         # print(url + " " + title) # Cсылка на видео
                 #####_Записываем таблицу SQL parser значения из переменных (title, url)
-                recordingDateJson(title, url, creadat,date_publication, title_ru,format_cont,likes)
+                recordingDateJson(title, url, creadat, date_publication, title_ru, format_cont, likes, tred_red)
             logger.success("Закончили писать в БД из паблика " + str(redit))
             # print("Закончили писать в БД из паблика " + redit)
             # Удаление файлов из БД помеченных на удаление 

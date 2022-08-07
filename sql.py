@@ -35,7 +35,7 @@ def create_tbl():
 
 # проверка на дубли в БД и записывать только уникальные заначения title
 @logger.catch
-def recordingDateJson(title, url,creadat,date_publication, title_ru, format_cont, likes):
+def recordingDateJson(title, url, creadat, date_publication, title_ru, format_cont, likes, tred_red):
         logger.debug("-----------Запуск скрипта на проверку записи в БД-----------")
         logger.debug("Заголовок для записи: " + title)
         cur.execute("""SELECT title_en FROM parser WHERE title_en=?""", (title,))
@@ -48,7 +48,7 @@ def recordingDateJson(title, url,creadat,date_publication, title_ru, format_cont
                 logger.debug('список пуст' )
                 logger.debug("Пишем в БД" + title)
                 # logger.debug(sq)
-                cur.execute("INSERT INTO parser (title_en, url, date_created,date_publication, title_ru, content_format, likes) VALUES (?,?,?,?,?,?,?)", (title, url, creadat,date_publication, title_ru,format_cont, likes)) #записываем данные в БД
+                cur.execute("INSERT INTO parser (title_en, url, date_created,date_publication, title_ru, content_format, likes, tred_red) VALUES (?,?,?,?,?,?,?,?)", (title, url, creadat,date_publication, title_ru,format_cont, likes, tred_red)) #записываем данные в БД
                 con.commit()
                 logger.debug("------Запись в БД окончена--------------" + title)
         else:
