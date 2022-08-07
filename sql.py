@@ -62,7 +62,7 @@ def read_tbl():
         minusday = today-bb # вычисляем посты за последние 3 дня
         cur.execute("""SELECT * from (SELECT title_ru, url, max(likes) as likes, id_post, date_publication 
 				from parser where title_ru is not null and publication_attribute =0 
-				and public_attr_dev is NULL and content_error is NULL and to_remove =0 and for_editing =0 ) LIMIT 1""")
+				and public_attr_dev is NULL and content_error is NULL and to_remove =0 and for_editing =0 and (url like '%.jpg' or url like '%.png' or url like '%.jpeg' or url like '%.gif'  or url like '%.mp4')) LIMIT 1""")
 				# and date_created BETWEEN (?) AND (?)) LIMIT 1""", (minusday, today))
         records = cur.fetchall()
         return (records)
