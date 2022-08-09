@@ -147,74 +147,81 @@ async def test_message(message: types.Message):
             return path_file #возвращает название файла для отправки видео в бот
 
         #Проверка контента перед скачиванием 
-        logger.info("Проверка контента перед скачиванием: " + str(path_file))
-        if '.jpg' in path_file or '.png' in path_file or '.jpeg' in path_file or '.gif' in path_file:
-            logger.debug("Подходящий файл для скачивания " + str(path_file))
-            content_upload_img(url_link,lin,path_file)
-            path_fi = open(path_img_file + path_file, 'rb') # для винды
-            # path_fi = open('/home/ripo/tb_bot/images/' + path_file, 'rb') # для сервера
-            logger.debug("Путь файла на загрузку: " + str(path_fi))
-            
-            if '.gif' in path_file:
-                logger.debug("Отправка анимации: " + str(path_file))
-                try: 
-                    await bot.send_animation(chat_id=message.from_user.id, animation=path_fi, reply_markup=lnkb, caption=(title + '\n' + '/id:' + str(id_post) + '\n' + "Дата записи в БД: " +   str(date_publication)))
-                    moder_id = message.message_id + 1
-                    moder_msgid(moder_id, id_post)
-                    logger.success("В БД отправлен id сообщения: " + str(moder_id))
-                except Exception as ex:
-                    logger.exception("Ошибка с анимацией для DEV"  + str(path_file))
-                    content_error_update(id_post) #Помечаем пост с ошибкой в контенте
-                    await message.answer('Анимация не отправленно из-за ошибки или большого размера')
-                    os.remove(path_img_file +str(path_file))
-                    
-                    # print("Ошибка с анимацией для DEV" + path_file)
-                    # print(ex)
-                    
-            elif '.jpg' in path_file or '.png' in path_file or '.jpeg' in url_link:
-                logger.debug("Отправка изображения: " + str(path_file))
+        try:
+            logger.info("Проверка контента перед скачиванием: " + str(path_file))
+            if '.jpg' in path_file or '.png' in path_file or '.jpeg' in path_file or '.gif' in path_file:
+                logger.debug("Подходящий файл для скачивания " + str(path_file))
+                content_upload_img(url_link,lin,path_file)
+                path_fi = open(path_img_file + path_file, 'rb') # для винды
+                # path_fi = open('/home/ripo/tb_bot/images/' + path_file, 'rb') # для сервера
+                logger.debug("Путь файла на загрузку: " + str(path_fi))
+
+                if '.gif' in path_file:
+                    logger.debug("Отправка анимации: " + str(path_file))
+                    try: 
+                        await bot.send_animation(chat_id=message.from_user.id, animation=path_fi, reply_markup=lnkb, caption=(title + '\n' + '/id:' + str(id_post) + '\n' + "Дата записи в БД: " +   str(date_publication)))
+                        moder_id = message.message_id + 1
+                        moder_msgid(moder_id, id_post)
+                        logger.success("В БД отправлен id сообщения: " + str(moder_id))
+                    except Exception as ex:
+                        logger.exception("Ошибка с анимацией для DEV"  + str(path_file))
+                        content_error_update(id_post) #Помечаем пост с ошибкой в контенте
+                        await message.answer('Анимация не отправленно из-за ошибки или большого размера')
+                        os.remove(path_img_file +str(path_file))
+
+                        # print("Ошибка с анимацией для DEV" + path_file)
+                        # print(ex)
+
+                elif '.jpg' in path_file or '.png' in path_file or '.jpeg' in url_link:
+                    logger.debug("Отправка изображения: " + str(path_file))
+                    try:
+                        await bot.send_photo(chat_id=message.from_user.id, photo=path_fi, reply_markup=lnkb, caption=(title + '\n' + '/id:' + str(id_post) + '\n' + "Дата записи в БД: " +   str(date_publication)))
+                        moder_id = message.message_id + 1
+                        moder_msgid(moder_id, id_post)
+                        logger.success("В БД отправлен id сообщения: " + str(moder_id))
+                    except Exception as ex:
+                        logger.exception("Ошибка с картинкой для DEV " + str(path_file))
+                        content_error_update(id_post) #Помечаем пост с ошибкой в контенте
+                        await message.answer('Фото не отправленно из-за ошибки или большого размера')
+                        os.remove(path_img_file +str(path_file))
+
+                        # print("Ошибка с картинкой для DEV" + path_file)
+                        # print(ex)
+
+            elif '.mp4' in path_file:
+                # print ("первый раз запустил")
+                # path_file = content_upload_video(url_link,id_post)
+                # print ("второй раз запустил")
                 try:
-                    await bot.send_photo(chat_id=message.from_user.id, photo=path_fi, reply_markup=lnkb, caption=(title + '\n' + '/id:' + str(id_post) + '\n' + "Дата записи в БД: " +   str(date_publication)))
+                    path = open(path_img_file + content_upload_video(url_link,id_post), 'rb') # для винды
+                # path = open('/home/ripo/tb_bot/images/' + content_upload_video(url_link,id_post), 'rb') # для сервера
+                    logger.debug("Отправка видео " + str(path_file))
+                except Exception as ex:
+                    content_error_update(id_post) 
+                    await message.answer('Видео не отправленно из-за ошибки отправки')
+                    os.remove(path_img_file + f'{id_post}_video.mp4')
+                # print("Отправка видео")
+                try:
+                    await bot.send_video(chat_id=message.from_user.id, video=path, reply_markup=lnkb, caption=(title + '\n' + '/id:' + str(id_post) + '\n' + "Дата записи в БД: " +   str(date_publication)))
                     moder_id = message.message_id + 1
                     moder_msgid(moder_id, id_post)
                     logger.success("В БД отправлен id сообщения: " + str(moder_id))
                 except Exception as ex:
-                    logger.exception("Ошибка с картинкой для DEV " + str(path_file))
+                    logger.exception("Ошибка с видео для DEV" + str(path_file))
                     content_error_update(id_post) #Помечаем пост с ошибкой в контенте
-                    await message.answer('Фото не отправленно из-за ошибки или большого размера')
-                    os.remove(path_img_file +str(path_file))
-                    
-                    # print("Ошибка с картинкой для DEV" + path_file)
-                    # print(ex)
-                    
-        elif '.mp4' in path_file:
-            # print ("первый раз запустил")
-            # path_file = content_upload_video(url_link,id_post)
-            # print ("второй раз запустил")
-            try:
-                path = open(path_img_file + content_upload_video(url_link,id_post), 'rb') # для винды
-            # path = open('/home/ripo/tb_bot/images/' + content_upload_video(url_link,id_post), 'rb') # для сервера
-                logger.debug("Отправка видео " + str(path_file))
-            except Exception as ex:
-                content_error_update(id_post) 
-                os.remove(path_img_file + f'{id_post}_video.mp4')
-            # print("Отправка видео")
-            try:
-                await bot.send_video(chat_id=message.from_user.id, video=path, reply_markup=lnkb, caption=(title + '\n' + '/id:' + str(id_post) + '\n' + "Дата записи в БД: " +   str(date_publication)))
-                moder_id = message.message_id + 1
-                moder_msgid(moder_id, id_post)
-                logger.success("В БД отправлен id сообщения: " + str(moder_id))
-            except Exception as ex:
-                logger.exception("Ошибка с видео для DEV" + str(path_file))
-                content_error_update(id_post) #Помечаем пост с ошибкой в контенте
-                await message.answer('Видео не отправленно из-за ошибки или большого размера')
-                os.remove(path_img_file + f'{id_post}_video.mp4')
-                # print("Ошибка с видео для DEV" + path_file)
-                # print(ex)             
-        else:
-            logger.debug("Неподходящий файл для скачивания " + str(path_file) + str (id_post))
-            await message.answer('Неподходящий файл для скачивания')
+                    await message.answer('Видео не отправленно из-за ошибки или большого размера')
+                    os.remove(path_img_file + f'{id_post}_video.mp4')
+                    # print("Ошибка с видео для DEV" + path_file)
+                    # print(ex)             
+            else:
+                logger.debug("Неподходящий файл для скачивания " + str(path_file) + str (id_post))
+                await message.answer('Неподходящий файл для скачивания')
+                content_error_update(id_post)
+        except Exception as ex:
+            logger.exception("Ошибка с видео для DEV" + str(path_file))
             content_error_update(id_post)
+            await message.answer('Видео не отправленно из-за ошибки')
+            os.remove(path_img_file + f'{id_post}_video.mp4')
 
             
 
