@@ -130,7 +130,7 @@ def send_post_dev(app):
 # # schedule.every().hour.do(send_post_dev, app) #Отправки на dev поста с пометкой ~каждый час
 #schedule.every(1).minutes.do(send_post_dev, app)
 
-schedule.every().day.at("02:30").do(search_reddit)
+schedule.every().day.at("06:30").do(search_reddit)
 schedule.every().day.at("07:30").do(send_post_dev, app)
 schedule.every().day.at("08:00").do(send_post_dev, app)
 schedule.every().day.at("09:00").do(send_post_dev, app)
