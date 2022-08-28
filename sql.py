@@ -129,6 +129,7 @@ def  content_error_update(id_post):
 def to_remove(moder_id):
         cur.execute("""UPDATE parser SET to_remove=1, for_editing=0, publication_attribute=0 where moder_id = ?""", (moder_id,))
         con.commit()
+        remove_file_on_dot(moder_id)
 
 # функция пометки постов на редактирование
 def for_editing(kb_text, id_post):
@@ -158,3 +159,14 @@ def post_on_publik_all():
         cur.execute(con)
         post_on_publik_all = cur.fetchall()
         return (post_on_publik_all)
+
+def remove_file_on_dot(moder_id): 
+        """Функция для удаления файлов помеченных на удаление"""
+        cur.execute("""SELECT path_file from parser where moder_id = ?""", (moder_id,))
+        dell = cur.fetchall()
+        for row in dell:
+                path_file_rem = str((row[0]))
+                print(path_file_rem)
+                # path_img_file = str(r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images\\')
+                path_img_file = r'/root/tb_bot/images/'
+                os.remove(path_img_file + f'{path_file_rem}')

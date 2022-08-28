@@ -20,11 +20,11 @@ import signal
 logger.add("logger/bot_log.log", format="{time:YYYY-MM-DD at HH:mm:ss}|{level}|{message}", rotation="100 MB", compression="zip")
 bot = Bot(token=token)
 dp =Dispatcher(bot, storage=MemoryStorage())
-path_img = str(r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images')
-path_img_file = str(r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images\\')
+# path_img = str(r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images')
+# path_img_file = str(r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images\\')
 
-# path_img = r'/root/tb_bot/images'
-# path_img_file = r'/root/tb_bot/images/'
+path_img = r'/root/tb_bot/images'
+path_img_file = r'/root/tb_bot/images/'
 
 @logger.catch
 @dp.message_handler(commands="start")
