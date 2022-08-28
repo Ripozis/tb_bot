@@ -122,16 +122,9 @@ async def test_message(message: types.Message):
                                 time.sleep(5)
                                 logger.exception("Audio Download Failed")
                                 print("переименование если нет склейки с аудио")
-                                try:
-                                    os.rename(path_img_file + f'{id_post}_{title}_video.mp4', path_img_file +  f'{id_post}_{title}.mp4') # переименование если нет склейки с    аудио
-                                    # os.rename(r'/home/ripo/tb_bot/images/' + f'{id_post}_{title}_video.mp4',r'/home/ripo/tb_bot/images/' +  f'{id_post}_{title}.mp4') # для   сервера
-                                    # print("удаление битого аудио")
-                                    # os.remove(path_img_file + f'{id_post}_{title}_audio.mp4')
-                                    path_file = f'{id_post}_{title}.mp4'
-                                    sql_update(url_link, path_file)
-                                except Exception as ex:
-                                    print("Пробуем переименованть файл ")
-                                    os.rename(path_img_file + f'{id_post}_{title}_video.mp4', path_img_file +  f'{id_post}_{title}.mp4')
+                                os.rename(path_img_file + f'{id_post}_{title}_video.mp4', path_img_file +  f'{id_post}_{title}.mp4') # переименование если нет склейки с    аудио
+                                path_file = f'{id_post}_{title}.mp4'
+                                sql_update(url_link, path_file)
                         else:
                             print('\rVideo Download Failed..!')
                             logger.exception("rVideo Download Failed")
