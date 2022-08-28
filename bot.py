@@ -20,11 +20,11 @@ import signal
 logger.add("logger/bot_log.log", format="{time:YYYY-MM-DD at HH:mm:ss}|{level}|{message}", rotation="100 MB", compression="zip")
 bot = Bot(token=token)
 dp =Dispatcher(bot, storage=MemoryStorage())
-#path_img = str(r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images')
-#path_img_file = str(r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images\\')
+path_img = str(r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images')
+path_img_file = str(r'C:\\Users\\Илья\\Desktop\\tb_bot\\tb_bot\\images\\')
 
-path_img = r'/root/tb_bot/images'
-path_img_file = r'/root/tb_bot/images/'
+# path_img = r'/root/tb_bot/images'
+# path_img_file = r'/root/tb_bot/images/'
 
 @logger.catch
 @dp.message_handler(commands="start")
@@ -89,8 +89,6 @@ async def test_message(message: types.Message):
             if os.path.exists(path_video):
                 print("файл был ранее скачан")
             else:    
-                with open(f'{id_post}_{title}_video.mp4','wb') as file:
-                    print('Downloading Video...',end='', flush = True)
                     x = requests.head(video_url) # Качаем заголовки для проверки размера файла
                     ContentLength = int(x.headers.get('Content-Length'))
                     response = requests.get(video_url, allow_redirects=True, stream=True)
@@ -103,30 +101,37 @@ async def test_message(message: types.Message):
                     else:
                         if(response.status_code == 200):
                             print('получили 200')
-                            file.write(response.content)
-                            # file.close()
-                            # upload_audio(id_post,title)
-                            with open(f'{id_post}_{title}_audio.mp4','wb') as file:
-                                    print('Downloading Audio...',end = '',flush = True)
-                                    response = requests.get(audio_url,allow_redirects=True)
-                                    if(response.status_code == 200):
-                                        file.write(response.content)
-                                        print('\rAudio Downloaded...!')
-                                        print("Идет склейка ")
-                                        subprocess.call(['ffmpeg','-i',f'{id_post}_{title}_video.mp4','-i',f'{id_post}_{title}_audio.mp4','-map','0:v', '-map','1:a','-c:v','copy', f'{id_post}_{title}.mp4'])
-                                        path_file = f'{id_post}_{title}.mp4'
-                                        sql_update(url_link, path_file)
-                                    else:
-                                        print('\rAudio Download Failed..!')
-                                        time.sleep(5)
-                                        logger.exception("Audio Download Failed")
-                                        print("переименование если нет склейки с аудио")
-                                        os.rename(path_img_file + f'{id_post}_{title}_video.mp4', path_img_file +  f'{id_post}_{title}.mp4') # переименование если нет склейки с    аудио
-                                        # os.rename(r'/home/ripo/tb_bot/images/' + f'{id_post}_{title}_video.mp4',r'/home/ripo/tb_bot/images/' +  f'{id_post}_{title}.mp4') # для   сервера
-                                        # print("удаление битого аудио")
-                                        # os.remove(path_img_file + f'{id_post}_{title}_audio.mp4')
-                                        path_file = f'{id_post}_{title}.mp4'
-                                        sql_update(url_link, path_file)
+                            with open(f'{id_post}_{title}_video.mp4','wb') as file:
+                                file.write(response.content)
+                            file.close()
+                            print('Downloading Audio...',end = '',flush = True)
+                            print(audio_url)
+                            response = requests.get(audio_url,allow_redirects=True)
+                            if(response.status_code == 200):
+                                with open(f'{id_post}_{title}_audio.mp4','wb') as file:
+                                    print('Downloading Video...',end='', flush = True)
+                                    file.write(response.content)
+                                    print('\rAudio Downloaded...!')
+                                    print("Идет склейка ")
+                                    subprocess.call(['ffmpeg','-i',f'{id_post}_{title}_video.mp4','-i',f'{id_post}_{title}_audio.mp4','-map','0:v', '-map','1:a','-c:v','copy', f'{id_post}_{title}.mp4'])
+                                    path_file = f'{id_post}_{title}.mp4'
+                                    sql_update(url_link, path_file)
+                                file.close()
+                            else:
+                                print('\rAudio Download Failed..!')
+                                time.sleep(5)
+                                logger.exception("Audio Download Failed")
+                                print("переименование если нет склейки с аудио")
+                                try:
+                                    os.rename(path_img_file + f'{id_post}_{title}_video.mp4', path_img_file +  f'{id_post}_{title}.mp4') # переименование если нет склейки с    аудио
+                                    # os.rename(r'/home/ripo/tb_bot/images/' + f'{id_post}_{title}_video.mp4',r'/home/ripo/tb_bot/images/' +  f'{id_post}_{title}.mp4') # для   сервера
+                                    # print("удаление битого аудио")
+                                    # os.remove(path_img_file + f'{id_post}_{title}_audio.mp4')
+                                    path_file = f'{id_post}_{title}.mp4'
+                                    sql_update(url_link, path_file)
+                                except Exception as ex:
+                                    print("Пробуем переименованть файл ")
+                                    os.rename(path_img_file + f'{id_post}_{title}_video.mp4', path_img_file +  f'{id_post}_{title}.mp4')
                         else:
                             print('\rVideo Download Failed..!')
                             logger.exception("rVideo Download Failed")
