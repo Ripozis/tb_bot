@@ -84,8 +84,8 @@ def search_reddit():
                 # time.sleep(10)
                 # Получает источник текущей страницы html на странице и записываем в переменную
                     html = browser.page_source
-                    browser.close()
-                    browser.quit()
+                    # browser.close()
+                    # browser.quit()
                 # time.sleep(10)
                 # # сохраняем страницу в файл
                     with open(prs_path_html, 'w', encoding='utf=8') as file:
@@ -178,6 +178,7 @@ def search_reddit():
             #     except Exception as ex:
             #         logger.exception("Ошибка при удалении файла: ")
             #         print(ex)
-
+        browser.close()
+        browser.quit()
     redit_login(username, password, redit)
 search_reddit()
