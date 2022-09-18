@@ -180,4 +180,4 @@ def search_reddit():
             #         print(ex)
 
     redit_login(username, password, redit)
-# search_reddit()
+search_reddit()
